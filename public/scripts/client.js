@@ -1,5 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute']).
 controller('gusuController', gusuController).
+controller('loginController', loginController).
 controller('signupController', signupController).
 controller('injuryController', injuryController).
 controller('hobbyController', hobbyController).
@@ -11,6 +12,9 @@ myApp.config(function($routeProvider) {
   $routeProvider.when('/', {
     template: '',
     controller: "gusuController "
+  }).when('/login', {
+    templateUrl: "views/partials/login.html",
+    controller: "loginController as lc"
   }).when('/signup', {
     templateUrl: "views/partials/signup.html",
     controller: "signupController as sc"
