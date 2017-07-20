@@ -9,10 +9,20 @@
   <script src="vendors/bootstrap-ui.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="vendors/bootstrap-ui.min.css">
   <link rel="stylesheet" href="vendors/bootstrap.min.css">
+  <!--controllers  -->
+  <script src="scripts/controllers/signupController.js" charset="utf-8"></script>
+  <script src="scripts/controllers/injuryController.js" charset="utf-8"></script>
+  <script src="scripts/controllers/questionController.js" charset="utf-8"></script>
+  <script src="scripts/controllers/adminController.js" charset="utf-8"></script>
+  <script src="scripts/controllers/hobbyController.js" charset="utf-8"></script>
+  <script src="scripts/controllers/userController.js" charset="utf-8"></script>
+  <script src="scripts/controllers/gusuController.js" charset="utf-8"></script>
+
+
 
   <!--scripts  -->
   <script src="scripts/client.js" charset="utf-8"></script>
-  <script src="scripts/gusuController.js" charset="utf-8"></script>
+
 
   <!-- sytles -->
   <link rel="stylesheet" href="styles/styles.css">
@@ -21,9 +31,9 @@
   <title>GUSU2CURE</title>
 </head>
 
-<body>
+<body ng-app='myApp' ng-controller='gusuController as gc'>
   <h1>Get Up Stand Up 2 Cure</h1>
-  <h2>changing locally</h2>
+  <ng-view></ng-view>
 </body>
 
 </html>
