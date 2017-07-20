@@ -6,6 +6,7 @@ var port = process.env.PORT || 8000;
 
 app.use(express.static('public'));
 
+
 app.listen(port, function() {
   console.log('Listening on port:', port);
 }); //
@@ -13,4 +14,6 @@ app.listen(port, function() {
 app.get('/', function(req, res) {
   console.log('Main url hit');
   res.sendFile(path.resolve('public/views/index.html'));
+
+
 });
