@@ -3,6 +3,7 @@ controller('gusuController', gusuController).
 controller('loginController', loginController).
 controller('signupController', signupController).
 controller('injuryController', injuryController).
+controller('bioController', bioController).
 controller('hobbyController', hobbyController).
 controller('questionController', questionController).
 controller('adminController', adminController).
@@ -21,6 +22,9 @@ myApp.config(function($routeProvider) {
   }).when('/injury', {
     templateUrl: "views/partials/injury.html",
     controller: "injuryController as ic"
+  }).when('/bio', {
+    templateUrl: "views/partials/bio.html",
+    controller: "bioController as bc"
   }).when('/hobby', {
     templateUrl: "views/partials/hobby.html",
     controller: "hobbyController as hc"
