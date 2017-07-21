@@ -31,7 +31,7 @@ function questionController() {
     //only runs of object is correctly filled out
     if (count === 0) {
       console.log('object is ok');
-      UserInfoService.getUserInfo(signupObject);
+      UserInfoService.getUserInfo(questionToSend);
     }
   };
 
