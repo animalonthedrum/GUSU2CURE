@@ -1,12 +1,12 @@
-function signupController() {
+function signupController(UserInfoService) {
   var vm = this;
   vm.visitArray = [];
 
 
   vm.submit = function() {
-      var count = 0;
+    var count = 0;
 
-      var v = document.getElementsByName('visit');
+    var v = document.getElementsByName('visit');
 
       for (var i = 0; i < v.length; i++) {
           if (v[i].checked) {
@@ -16,30 +16,28 @@ function signupController() {
              console.log(vm.visitType);
              vm.visitArray.push(vm.visitType);
           }
+      }//end of loop
 
-      }
-      var signupObject = {
-        typeUser:vm.radioValue,
-        dateOfBirth:vm.dateBirth,
-        gender:vm.gender,
-        address:vm.address,
-        city:vm.city,
-        state:vm.state,
-        zipcode:vm.zipcode,
-        phone:vm.phone,
-        phoneType:vm.phoneType,
-        visitType:vm.visitArray
-      };//end of signupObject
+          var signupObject = {
+            "Type of User":vm.radioValue,
+            "Date of birth":vm.dateBirth,
+            gender:vm.gender,
+            address:vm.address,
+            city:vm.city,
+            state:vm.state,
+            zipcode:vm.zipcode,
+            phone:vm.phone,
+            "phone type":vm.phoneType,
+            "visit type":vm.visitArray
+          };//end of signupObject
 
-      console.log(signupObject);
-
-
-      //checks if object is filled out
-    //   count = checkObject(signupObject);
+          //checks if object is filled out
+          count = checkObject(signupObject);
 
       //only runs of object is correctly filled out
       if (count === 0) {
           console.log('object is ok');
+          UserInfoService.getUserInfo(signupObject);
       }
 
 
