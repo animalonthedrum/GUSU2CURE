@@ -1,4 +1,4 @@
-function questionController() {
+function questionController(UserInfoService) {
   console.log('questionController');
   var vm = this;
   var count = 0;
