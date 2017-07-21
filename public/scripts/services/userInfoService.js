@@ -10,6 +10,8 @@ myApp.service('UserInfoService', function($http) {
             sv.fulluserObject.injury = data;
         } else if(data.id === "signup") {
             sv.fulluserObject.signup = data;
+        } else if (data.id === "bio") {
+            sv.fulluserObject.bio = data;
         }
         console.log(sv.fulluserObject);
     };//end of getUserInfo

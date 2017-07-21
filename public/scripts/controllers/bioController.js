@@ -1,4 +1,4 @@
-function bioController() {
+function bioController(UserInfoService) {
   console.log('bioController');
   var vm = this;
 
@@ -7,6 +7,7 @@ function bioController() {
       var count = 0;
       console.log(vm.familyStatus);
       var bioObject = {
+          id:"bio",
           relationShipStatus:vm.relationshipStatus,
           familyStatus:vm.familyStatus,
           educationLevel:vm.educationLevel,
@@ -18,7 +19,7 @@ function bioController() {
 
       //only runs if err count is 0
       if (count === 0) {
-          console.log('object is ready');
+          UserInfoService.getUserInfo(bioObject);
       }
 
   };//end of submit button
