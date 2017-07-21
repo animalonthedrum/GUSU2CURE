@@ -1,10 +1,11 @@
-function injuryController() {
+function injuryController(UserInfoService) {
   var vm = this;
   var count = 0;
-  vm.levelArray = [];
+
 
   vm.submit = function() {
     console.log('clicked');
+    vm.levelArray = [];
 
     var l = document.getElementsByName('level');
 
@@ -31,7 +32,7 @@ function injuryController() {
     count = checkOBject(injuryObject);
 
     if (count === 0) {
-      console.log('object is ready', injuryObject);
+        UserInfoService.getUserInfo(injuryObject);
     }
   }; //end of submit
 }
@@ -40,7 +41,7 @@ function checkOBject(object) {
   var count = 0;
   for (var x in object) {
     if (object.hasOwnProperty(x)) {
-      if (object[x] === undefined || object[x] === null || object[x] === "") {
+      if (object[x] === undefined || object[x] === null || object[x] === "" || object[x] === false) {
         alert('Please fill out ' + x);
         count++;
         break;

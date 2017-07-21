@@ -1,11 +1,11 @@
 function signupController(UserInfoService) {
   var vm = this;
-  vm.visitArray = [];
+
 
 
   vm.submit = function() {
     var count = 0;
-
+    vm.visitArray = [];
     var v = document.getElementsByName('visit');
 
       for (var i = 0; i < v.length; i++) {
@@ -19,6 +19,7 @@ function signupController(UserInfoService) {
       }//end of loop
 
           var signupObject = {
+              id:'signup',
             "Type of User":vm.radioValue,
             "Date of birth":vm.dateBirth,
             gender:vm.gender,
