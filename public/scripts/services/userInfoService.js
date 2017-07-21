@@ -14,10 +14,8 @@ myApp.service('UserInfoService', function($http) {
       sv.fulluserObject.bio = data;
     } else if (data.id === "question") {
       sv.fulluserObject.question = data;
-    } else {
-      //this statement will run if there is nothing in the data argument
-      console.log('going to send to the databasae');
     }
+    console.log(sv.fulluserObject);
 
   }; //end of getUserInfo
 
