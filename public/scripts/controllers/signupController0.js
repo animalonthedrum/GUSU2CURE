@@ -1,9 +1,23 @@
 function signupController() {
   var vm = this;
+  vm.visitArray = [];
 
 
   vm.submit = function() {
       var count = 0;
+
+      var v = document.getElementsByName('visit');
+
+      for (var i = 0; i < v.length; i++) {
+          if (v[i].checked) {
+              console.log('this is true');
+              vm.visitType = v[i].defaultValue;
+
+             console.log(vm.visitType);
+             vm.visitArray.push(vm.visitType);
+          }
+
+      }
       var signupObject = {
         typeUser:vm.radioValue,
         dateOfBirth:vm.dateBirth,
@@ -13,11 +27,15 @@ function signupController() {
         state:vm.state,
         zipcode:vm.zipcode,
         phone:vm.phone,
-        phoneType:vm.phoneType
+        phoneType:vm.phoneType,
+        visitType:vm.visitArray
       };//end of signupObject
 
+      console.log(signupObject);
+
+
       //checks if object is filled out
-      count = checkObject(signupObject);
+    //   count = checkObject(signupObject);
 
       //only runs of object is correctly filled out
       if (count === 0) {
