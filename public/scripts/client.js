@@ -12,7 +12,7 @@ controller('userController', userController);
 myApp.config(function($routeProvider) {
   $routeProvider.when('/', {
     template: '',
-    controller: "gusuController "
+    controller: "gusuController"
   }).when('/login', {
     templateUrl: "views/partials/login.html",
     controller: "loginController as lc"

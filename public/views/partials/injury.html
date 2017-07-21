@@ -23,7 +23,7 @@
   </select>
 
 <label for="year">Year of Injury</label>
-<input type="number" minlength='4' maxlength='4' name="year"  min='1920' max='2050' placeholder="(yyyy)" ng-model='ic.yearInjury'>
+<input type="number" minlength='4' maxlength='4' name="year" min='1920' max='2050' placeholder="(yyyy)" ng-model='ic.yearInjury'>
 
 <select class="level" name="" ng-model='ic.level'>
   <option value="" disabled selected>Paralysis Level</option>
@@ -46,6 +46,31 @@
   <option value="D">D</option>
   <option value="E">E</option>
 </select>
+
+<select class="movement" name="">
+  <option value="" disabled selected>Mobility Requirements</option>
+  <option value="Power Wheelchair">Power Wheelchair</option>
+  <option value="Manual Wheelchair">Manual Wheelchair</option>
+  <option value="Walker">Walker/Cane</option>
+  <option value="Nothing">Nothing</option>
+  <option value="Other">Other</option>
+</select>
+
+<select class="transportation" name="">
+  <option value="" disabled selected>Primary Transportation</option>
+  <option value="Personal Vehicle">Personal Vehicle</option>
+  <option value="Public Transportation">Public Transportation</option>
+  <option value="Other">Other</option>
+</select>
+
+
+
 <a href="#!/signup"><button type="button" name="button">Previous</button></a>
 <a href="#!/bio"><button type="button" name="button">Next</button></a>
 <button type="button" name="button" ng-click='ic.submit()'>Submit</button>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+    <span class="sr-only">20% Complete</span>
+  </div>
+</div>
