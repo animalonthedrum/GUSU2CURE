@@ -1,5 +1,5 @@
 <h1>Injury Partial</h1>
-<select class="relation" name="">
+<select class="relation" name="" ng-model='ic.sciRelation'>
   <option value="" disabled selected>SCI Relation</option>
   <option value="">Self</option>
   <option value="">Spouse</option>
@@ -11,40 +11,41 @@
 </select>
 
 
-<select class="cause" name="">
+<select class="cause" name="" ng-model='ic.cause'>
   <option value="" disabled selected>SCI Cause</option>
-  <option value="">Motor Vehicle Accident</option>
-  <option value="">Fall</option>
-  <option value="">Alcohol</option>
-  <option value="">Act of Violence</option>
-  <option value="">Sport/Recreation</option>
-  <option value="">Disease</option>
-  <option value="">Other</option>
+  <option value="Motor Vehicle Accident">Motor Vehicle Accident</option>
+  <option value="Fall">Fall</option>
+  <option value="Alcohol">Alcohol</option>
+  <option value="Act of Violence">Act of Violence</option>
+  <option value="Sport.Recreation">Sport/Recreation</option>
+  <option value="Disease">Disease</option>
+  <option value="Other">Other</option>
   </select>
 
 
-<input type="number" minlength='4' maxlength='4' name="" value="" placeholder="Year of Injury">
+<input type="number" minlength='4' maxlength='4' name="" value="" placeholder="Year of Injury" ng-model='ic.yearInjury'>
 
-<select class="level" name="">
+<select class="level" name="" ng-model='ic.level'>
   <option value="" disabled selected>Paralysis Level</option>
-  <option value="">C1 - C4</option>
-  <option value="">C5</option>
-  <option value="">C6</option>
-  <option value="">C7</option>
-  <option value="">C8</option>
-  <option value="">T1-T5</option>
-  <option value="">T6-T12</option>
-  <option value="">L1-L5</option>
-  <option value="">S1-S5</option>
+  <option value="Ci-C4">C1 - C4</option>
+  <option value="C5">C5</option>
+  <option value="C6">C6</option>
+  <option value="C7">C7</option>
+  <option value="C8">C8</option>
+  <option value="T1-T5">T1-T5</option>
+  <option value="T6-T12">T6-T12</option>
+  <option value="Li-L5">L1-L5</option>
+  <option value="S1-S5">S1-S5</option>
 </select>
 
-<select class="asia" name="">
+<select class="asia" name="" ng-model='ic.asia'>
   <option value="" disabled selected>ASIA Score</option>
-  <option value="">A</option>
-  <option value="">B</option>
-  <option value="">C</option>
-  <option value="">D</option>
-  <option value="">E</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
 </select>
 <a href="#!/signup"><button type="button" name="button">Previous</button></a>
 <a href="#!/bio"><button type="button" name="button">Next</button></a>
+<button type="button" name="button" ng-click='ic.submit()'>Submit</button>

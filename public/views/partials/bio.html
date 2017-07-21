@@ -1,48 +1,42 @@
 <h1>Bio</h1>
-<select class="" name="">
+<select class="" name="" ng-model='bc.relationshipStatus'>
   <option value="" selected disabled>Relationship Status</option>
-  <option value="">Married</option>
-  <option value="">Single</option>
-  <option value="">Divorced</option>
-  <option value="">Widow/Widower</option>
+  <option value="married">Married</option>
+  <option value="single">Single</option>
+  <option value="divorced">Divorced</option>
+  <option value="widow/widower">Widow/Widower</option>
 </select>
 
-<select class="" name="">
+<select class="" name="" ng-model='bc.familyStatus'>
     <option value="" selected disabled>Family Status</option>
-    <option value="">Children at Home</option>
-    <option value="">Children grown/out of home</option>
-    <option value="">No Children</option>
+    <option value="childrenAtHome">Children at Home</option>
+    <option value="ChildrenGrown">Children grown/out of home</option>
+    <option value="noChildren">No Children</option>
 </select>
 
-<select class="" name="">
+<select class="" name="" ng-model='bc.educationLevel'>
       <option value="" selected disabled>Education Level</option>
-      <option value="">Elementary</option>
-      <option value="">Some High School</option>
-      <option value="">High School Grad/GED</option>
-      <option value="">Some College</option>
-      <option value="">Associate Degree</option>
-      <option value="">Undergraduate Degree</option>
-      <option value="">Graduate Degree</option>
-      <option value="">None/NA</option>
+      <option value="Elementry">Elementary</option>
+      <option value="Some High School">Some High School</option>
+      <option value="High school Grad">High School Grad/GED</option>
+      <option value="Some College">Some College</option>
+      <option value="Associate Degree">Associate Degree</option>
+      <option value="Undergraduate Degree">Undergraduate Degree</option>
+      <option value="Graduate Degree">Graduate Degree</option>
+      <option value="None">None/NA</option>
 </select>
 
-<select class="married" name="">
-        <option value="" selected disabled>Relationship Status</option>
-        <option value="">Married</option>
-        <option value="">Single</option>
-        <option value="">Divorced</option>
-        <option value="">Widow/Widower</option>
-</select>
 
-<select class="language" name="">
+<select class="language" name="" ng-model='bc.language'>
   <option value="" selected disabled>Language</option>
-  <option value="">English</option>
-  <option value="">Hmong</option>
-  <option value="">Spanish</option>
-  <option value="">Somali</option>
-  <option value="">Vietnamese</option>
-  <option value="">Other</option>
+  <option value="English">English</option>
+  <option value="Hmong">Hmong</option>
+  <option value="Spanish">Spanish</option>
+  <option value="Somali">Somali</option>
+  <option value="Vietnamese">Vietnamese</option>
+  <option value="Other">Other</option>
   </select>
 
 <a href="#!/injury"><button type="button" name="button">Previous</button></a>
 <a href="#!/hobby"><button type="button" name="button">Next</button></a>
+<button type="button" name="button" ng-click='bc.submit()'>Submit</button>
