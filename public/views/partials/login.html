@@ -1,10 +1,11 @@
 <h1>login</h1>
 
-<input type="text" name="" value="" placeholder='First Name'>
-<input type="text" name="" value="" placeholder='Last Name'>
-<input type="text" name="" value="" placeholder='Email Address'>
-<input type="password" name="" value="" placeholder='Password'>
-<input type="password" name="" value="" placeholder='Confirm Password'>
+<input type="text" name="" value="" placeholder='First Name' ng-model='lc.firstName'>
+<input type="text" name="" value="" placeholder='Last Name' ng-model='lc.lastName'>
+<input type="email" name="" value="" placeholder='Email Address' ng-model='lc.email'>
+<input type="password" name="" value="" placeholder='Password' ng-model='lc.password'>
+<input type="password" name="" value="" placeholder='Confirm Password' ng-model='lc.confirmPassword'>
 <label for="Terms">Terms and Conditions</label>
-<input type="checkbox" name="Terms" value="Terms and Conditions">
-<a href="#!/signup"><button type="button" name="button">Submit</button></a>
+<input type="checkbox" name="Terms" value="Terms and Conditions" ng-model='lc.termsAndConditions'>
+<a href="#!/signup"><button type="button" name="button">Next</button></a >
+<button type="button" name="button" ng-click='lc.submitLogin()'>Submit</button>

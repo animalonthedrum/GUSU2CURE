@@ -3,33 +3,36 @@
   <option value="" disabled selected>Mentor or Mentee</option>
   <option value="Mentor">Mentor</option>
   <option value="Mentee">Mentee</option> -->
-<input type="radio" name="match" value="mentor">
+<input type="radio" name="match" value="mentor" ng-model='sc.radioValue'>
 <label for="mentor">Mentor</label>
 
-<input type="radio" name="match" value="Mentee">
+<input type="radio" name="match" value="mentee" ng-model='sc.radioValue'>
 <label for="mentee">Mentee</label>
 
-</select>
-<label for="dob">Date of Birth</label>
-<input type="date" name="dob" value="">
 
-<select class="Gender" name="">
+<label for="dob">Date of Birth</label>
+<input type="date" name="dob" value="" ng-model='sc.dateBirth'>
+
+<select class="Gender" name="" ng-model='sc.gender'>
   <option value="" disabled selected>Gender</option>
 <option value="Male">Male</option>
 <option value="Female">Female</option>
 <option value="Other">Other</option>
 <option value="Not">Prefer Not to Say</option>
 </select>
-<input type="text" name="" value="" placeholder="Address">
-<input type="text" name="" value="" placeholder='City'>
-<input type="text" name="" value="" maxlength='2' placeholder="State">
-<input type="number" name="" value="" maxlength="5" placeholder='Zip'>
-<input type="tel" id='phone' name="" value="" placeholder='Phone (xxx-xxx-xxxx)' minlength="12" maxlength="12">
-<select class="" name="" value='phone'>
+
+
+<input type="text" name="" value="" placeholder="Address" ng-model='sc.address'>
+<input type="text" name="" value="" placeholder='City' ng-model='sc.city'>
+<input type="text" name="" value="" maxlength='2' placeholder="State" ng-model='sc.state'>
+<input type="number" name="" value="" maxlength="5" placeholder='Zip' ng-model='sc.zipcode'>
+<input type="tel" id='phone' name="" value="" placeholder='Phone (xxx-xxx-xxxx)' minlength="10" ng-model='sc.phone'>
+<select class="" name="" value='phone' ng-model='sc.phoneType'>
   <option value="" disabled selected>Phone Type</option>
   <option value="Cell">Mobile</option>
   <option value="Home">Home</option>
   <option value="Work">Work</option>
   <option value="Other">Other</option>
   </select>
-<a href="#!/injury"><button type="button" name="button">Submit</button></a>
+<a href="#!/injury"><button type="button" name="button">next</button></a>
+<button type="button" name="button" ng-click='sc.submit()'>Submit</button>
