@@ -3,8 +3,12 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 8000;
+var signup = require('./routes/signup');
 
+
+//uses
 app.use(express.static('public'));
+app.use('/signup', signup);
 
 
 app.listen(port, function() {
