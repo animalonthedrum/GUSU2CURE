@@ -2,17 +2,16 @@ myApp.service('UserInfoService', function($http) {
     var sv = this;
     console.log('inside of ');
     //will contain the users full information
-    var fulluserObject = {};
+    sv.fulluserObject = {};
 
     sv.getUserInfo = function(data) {
         console.log('inside of getUserInfo');
         if (data.id === "injury") {
-            fulluserObject.injury = data;
+            sv.fulluserObject.injury = data;
         } else if(data.id === "signup") {
-            fulluserObject.signup = data;
+            sv.fulluserObject.signup = data;
         }
-        localStorage.setItem("fulluserObject", fulluserObject );
-        console.log(localStorage.getItem("fulluserObject"));
+        console.log(sv.fulluserObject);
     };//end of getUserInfo
 
 });
