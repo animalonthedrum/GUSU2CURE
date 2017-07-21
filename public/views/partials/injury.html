@@ -1,13 +1,13 @@
 <h1>Injury Partial</h1>
 <select class="relation" name="" ng-model='ic.sciRelation'>
   <option value="" disabled selected>SCI Relation</option>
-  <option value="">Self</option>
-  <option value="">Spouse</option>
-  <option value="">Parent</option>
-  <option value="">Sibling</option>
-  <option value="">Friend</option>
-  <option value="">Caregiver</option>
-  <option value="">Medical Professional</option>
+  <option value="Self">Self</option>
+  <option value="Spouse">Spouse</option>
+  <option value="Parent">Parent</option>
+  <option value="Sibling">Sibling</option>
+  <option value="Friend">Friend</option>
+  <option value="CareGiver">Caregiver</option>
+  <option value="Medical">Medical Professional</option>
 </select>
 
 
@@ -22,8 +22,8 @@
   <option value="Other">Other</option>
   </select>
 
-
-<input type="number" minlength='4' maxlength='4' name="" value="" placeholder="Year of Injury" ng-model='ic.yearInjury'>
+<label for="year">Year of Injury</label>
+<input type="number" minlength='4' maxlength='4' name="year"  min='1920' max='2050' placeholder="(yyyy)" ng-model='ic.yearInjury'>
 
 <select class="level" name="" ng-model='ic.level'>
   <option value="" disabled selected>Paralysis Level</option>
