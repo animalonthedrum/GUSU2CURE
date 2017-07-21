@@ -1,8 +1,53 @@
 <h1>question</h1>
 
+<label for="questions">Do you have a problem with answering uncomfortable questions?</label>
+<input type="radio" name="questions" value="Yes" ng-model='qc.question'>
+<label for="Yes">Yes</label>
+
+<input type="radio" name="questions" value="No" ng-model='qc.question'>
+<label for="No">No</label>
+
+<div class="exp">
+  <label for="experience">What is your experience with helping others with Spinal Cord Injury?</label>
+  <textarea name="experience" rows="4" cols="60" ng-model='qc.experience'></textarea>
+</div>
+
+
+
+<div class="additional">
+  <label for="additionalInfo">Is there anything else that might be good to know about you for considering a match with Peer Visiting?</label>
+  <textarea name="additionalInfo" rows="4" cols="60" placeholder="Life Experiences, anything about yourself that you think is relevant to helping others." ng-model='qc.additional'></textarea>
+</div>
+
+
+<div class="comment">
+  <label for="comments">Do you have any Comments or Suggestions?</label>
+  <textarea name="comments" rows="4" cols="60" ng-model='qc.comment'></textarea>
+</div>
+
+<label for="heardAboutUs"></label>
+<div>
+  <ul>
+    <label for="heardAbout">How did you hear about this Mentoring Program?</label>
+    <li><input type='checkbox' name='heardAbout' value=" Personal Reference">Personal Reference</input>
+    </li>
+    <li><input type='checkbox' name='heardAbout' value="Email">Email</input>
+    </li>
+    <li><input type='checkbox' name='heardAbout' value="Website">Website</input>
+    </li>
+    <li><input type='checkbox' name='heardAbout' value="Hospital System">Hospital System</input>
+    </li>
+    <li><input type='checkbox' name='heardAbout' value="Other">Other</input>
+    </li>
+  </ul>
+</div>
+
+<a href="#!/hobby"><button type="button" name="button">Previous</button></a>
+<a href="#!/done"><button type="button" name="button">Next</button></a>
+<button type="button" name="button" ng-click='qc.submit()'>Submit</button>
 
 <div class="progress">
-  <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
     <span class="sr-only">80% Complete</span>
   </div>
 </div>
