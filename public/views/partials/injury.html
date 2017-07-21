@@ -25,18 +25,32 @@
 <label for="year">Year of Injury</label>
 <input type="number" minlength='4' maxlength='4' name="year" min='1920' max='2050' placeholder="(yyyy)" ng-model='ic.yearInjury'>
 
-<select class="level" name="" ng-model='ic.level'>
-  <option value="" disabled selected>Paralysis Level</option>
-  <option value="Ci-C4">C1 - C4</option>
-  <option value="C5">C5</option>
-  <option value="C6">C6</option>
-  <option value="C7">C7</option>
-  <option value="C8">C8</option>
-  <option value="T1-T5">T1-T5</option>
-  <option value="T6-T12">T6-T12</option>
-  <option value="Li-L5">L1-L5</option>
-  <option value="S1-S5">S1-S5</option>
-</select>
+
+<div>
+  <ul>
+    <label for="level">Paralysis Level</label>
+    <li><input type='checkbox' name='level' value="C1-C4">C1-C4</input>
+    </li>
+    <li><input type='checkbox' name='level' value="C5">C5</input>
+    </li>
+    <li><input type='checkbox' name='level' value="C6">At theirt home</input>
+    </li>
+    <li><input type='checkbox' name='level' value="C7">Online, via Skype or other</input>
+    </li>
+    <li><input type='checkbox' name='level' value="C8">Phone Calls</input>
+    </li>
+    <li><input type='checkbox' name='level' value="T1-T5">T1-T5</input>
+    </li>
+    <li><input type='checkbox' name='level' value="T6-T12">T6-T12</input>
+    </li>
+    <li><input type='checkbox' name='level' value="L1-L5">L1-L5</input>
+    </li>
+    <li><input type='checkbox' name='level' value="S1-S5">S1-S5</input>
+    </li>
+  </ul>
+</div>
+
+
 
 <select class="asia" name="" ng-model='ic.asia'>
   <option value="" disabled selected>ASIA Score</option>
