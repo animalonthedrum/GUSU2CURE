@@ -32,7 +32,7 @@ function questionController(UserInfoService, $window) {
     if (count === 0) {
       console.log('object is ok');
       UserInfoService.getUserInfo(questionToSend);
-      $window.location.href = '#!/hobby';
+      window.location.href = '#!/hobby';
     }
   };
 

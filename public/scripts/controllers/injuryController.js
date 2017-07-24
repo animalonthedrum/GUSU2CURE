@@ -33,7 +33,7 @@ function injuryController(UserInfoService, $window) {
 
     if (count === 0) {
         UserInfoService.getUserInfo(injuryObject);
-        $window.location.href = '#!/bio';
+        window.location.href = '#!/bio';
     }
   }; //end of submit
 }

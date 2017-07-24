@@ -4,6 +4,7 @@ myApp.service('UserInfoService', function($http) {
 
 	//will contain the users full information
 	sv.fulluserObject = {};
+
 	sv.getUserInfo = function(data) {
 		if (data.id === "injury") {
 			sv.fulluserObject.injury = data;

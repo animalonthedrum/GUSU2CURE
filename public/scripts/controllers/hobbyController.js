@@ -24,6 +24,7 @@ function hobbyController(UserInfoService) {
       //only runs if array has 3 or more items
       if (count === 0) {
           UserInfoService.getUserInfo(hobbiesObject);
+          UserInfoService.sendRegistration();
       }//end of conditional statement
   };//end of submit
 }//end of controller

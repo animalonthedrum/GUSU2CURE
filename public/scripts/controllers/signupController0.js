@@ -39,7 +39,7 @@ function signupController(UserInfoService, $window) {
 		if (count === 0) {
 			console.log('object is ok');
 			UserInfoService.getUserInfo(signupObject);
-			$window.location.href = '#!/injury';
+			window.location.href = '#!/injury';
 		}
 
 

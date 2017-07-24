@@ -20,8 +20,7 @@ function bioController(UserInfoService, $window) {
 		//only runs if err count is 0
 		if (count === 0) {
 			UserInfoService.getUserInfo(bioObject);
-			// UserInfoService.sendRegistration();
-			$window.location.href = '#!/question';
+			window.location.href = '#!/question';
 		}
 
 	}; //end of submit button
