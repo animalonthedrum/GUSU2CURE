@@ -14,6 +14,8 @@ myApp.service('UserInfoService', function($http) {
       sv.fulluserObject.bio = data;
     } else if (data.id === "question") {
       sv.fulluserObject.question = data;
+    } else if (data.id === "signup") {
+      sv.fulluserObject.signup = data;
     }
     console.log(sv.fulluserObject);
 

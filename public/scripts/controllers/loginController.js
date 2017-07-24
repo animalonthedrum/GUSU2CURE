@@ -1,15 +1,16 @@
-function loginController() {
+function loginController(UserInfoService) {
   var vm = this;
 
 
   vm.submitLogin = function() {
     var count = 0;
     var userLoginObject = {
-         firstName:vm.firstName,
-         lastName:vm.lastName,
+         id:'signup',
+         "First Name":vm.firstName,
+         "Last Name":vm.lastName,
          email:vm.email,
          password:vm.password,
-         confirmPassword:vm.confirmPassword,
+         "Confirm Password":vm.confirmPassword,
          terms: vm.termsAndConditions
       };//end of userLoginObject
 
@@ -18,8 +19,8 @@ function loginController() {
 
     //will only run if everything is filled out correctly
     if (count === 0) {
-
-        console.log('object is all filled out', userLoginObject);
+    console.log('object is ok');
+    UserInfoService.getUserInfo(userLoginObject);
     }//end of conditional statement
     };//end of submitLogin
 }//end of loginController
