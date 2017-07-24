@@ -1,4 +1,4 @@
-function loginController(UserInfoService) {
+function loginController(UserInfoService, $window) {
 	var vm = this;
 
 
@@ -21,6 +21,7 @@ function loginController(UserInfoService) {
 		if (count === 0) {
 			console.log('object is ok');
 			UserInfoService.getUserInfo(userLoginObject);
+			$window.location.href = '#!/signup';
 		} //end of conditional statement
 	}; //end of submitLogin
 } //end of loginController

@@ -1,4 +1,4 @@
-function signupController(UserInfoService) {
+function signupController(UserInfoService, $window) {
 	var vm = this;
 
 
@@ -39,6 +39,7 @@ function signupController(UserInfoService) {
 		if (count === 0) {
 			console.log('object is ok');
 			UserInfoService.getUserInfo(signupObject);
+			$window.location.href = '#!/injury';
 		}
 
 

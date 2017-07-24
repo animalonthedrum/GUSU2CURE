@@ -1,4 +1,4 @@
-function injuryController(UserInfoService) {
+function injuryController(UserInfoService, $window) {
   var vm = this;
   var count = 0;
 
@@ -33,6 +33,7 @@ function injuryController(UserInfoService) {
 
     if (count === 0) {
         UserInfoService.getUserInfo(injuryObject);
+        $window.location.href = '#!/bio';
     }
   }; //end of submit
 }
