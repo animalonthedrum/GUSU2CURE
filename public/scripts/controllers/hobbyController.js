@@ -7,6 +7,13 @@ function hobbyController(UserInfoService) {
       var hobbies = document.getElementsByName('hobby');
       vm.hobbiesArr = [];
 
+      //creates a date stamp
+      var month = new Date().getMonth() + 1;
+      var year = new Date().getFullYear();
+      var day = new Date().getDate();
+      var dateUserCreated = month + "/" + day + "/" + year;
+
+
       //adds hobbies to vm.hobbiesArr
       for (var i = 0; i < hobbies.length; i++) {
          if (hobbies[i].checked) {
@@ -16,7 +23,8 @@ function hobbyController(UserInfoService) {
 
       var hobbiesObject = {
           id:'hobbies',
-          hobbies: vm.hobbiesArr
+          hobbies: vm.hobbiesArr,
+          dateStamp:dateUserCreated
       };//end of hobbiesArr
 
       count = checkObjectArr(hobbiesObject);
@@ -24,12 +32,12 @@ function hobbyController(UserInfoService) {
       //only runs if array has 3 or more items
       if (count === 0) {
           UserInfoService.getUserInfo(hobbiesObject);
-          UserInfoService.sendRegistration();
+        //   UserInfoService.sendRegistration();
       }//end of conditional statement
   };//end of submit
 }//end of controller
 
-
+//checks if array is valid
 function checkObjectArr(object) {
     var count = 0;
     for(var x in object ) {
