@@ -1,91 +1,91 @@
 function signupController(UserInfoService) {
-  var vm = this;
+	var vm = this;
 
 
 
-  vm.submit = function() {
-    var count = 0;
-    vm.visitArray = [];
-    var v = document.getElementsByName('visit');
+	vm.submit = function() {
+		var count = 0;
+		vm.visitArray = [];
+		var v = document.getElementsByName('visit');
 
-      for (var i = 0; i < v.length; i++) {
-          if (v[i].checked) {
-              console.log('this is true');
-              vm.visitType = v[i].defaultValue;
+		for (var i = 0; i < v.length; i++) {
+			if (v[i].checked) {
+				console.log('this is true');
+				vm.visitType = v[i].defaultValue;
 
-             console.log(vm.visitType);
-             vm.visitArray.push(vm.visitType);
-          }
-      }//end of loop
+				console.log(vm.visitType);
+				vm.visitArray.push(vm.visitType);
+			}
+		} //end of loop
 
-          var signupObject = {
-              id:'signup',
-            "Type of User":vm.radioValue,
-            "Date of birth":vm.dateBirth,
-            gender:vm.gender,
-            address:vm.address,
-            city:vm.city,
-            state:vm.state,
-            zipcode:vm.zipcode,
-            phone:vm.phone,
-            "phone type":vm.phoneType,
-            "visit type":vm.visitArray
-          };//end of signupObject
+		var signupObject = {
+			id: 'signup',
+			typeOfUser: vm.radioValue,
+			dob: vm.dateBirth,
+			gender: vm.gender,
+			address: vm.address,
+			city: vm.city,
+			state: vm.state,
+			zipcode: vm.zipcode,
+			phone: vm.phone,
+			phoneType: vm.phoneType,
+			visitType: vm.visitArray
+		}; //end of signupObject
 
-          //checks if object is filled out
-          count = checkObject(signupObject);
+		//checks if object is filled out
+		count = checkObject(signupObject);
 
-      //only runs of object is correctly filled out
-      if (count === 0) {
-          console.log('object is ok');
-          UserInfoService.getUserInfo(signupObject);
-      }
+		//only runs of object is correctly filled out
+		if (count === 0) {
+			console.log('object is ok');
+			UserInfoService.getUserInfo(signupObject);
+		}
 
 
-  };//end of submit funciton
+	}; //end of submit funciton
 }
 
 
 function checkObject(object) {
-    var count = 0;
-    for(var x in object) {
-        if (object.hasOwnProperty(x)) {
-            if (object[x] === undefined || object[x] === null || object[x] === " ") {
-                if (x === 'phone') {
-                    sweetAlert({
-            	               title: "Error!",
-                               text: "Please enter a valid phone number" ,
-                               type: "warning"
-                           });//end of sweetAlert;
-                    count++;
-                    break;
-                } else if (x === 'Type of User' ) {
-                    sweetAlert({
-            	               title: "Error!",
-                               text: "Please choose type of user",
-                               type: "warning"
-                           });//end of sweetAlert
-                    count++;
-                    break;
-                } else if (x === 'Date of birth'){
-                    sweetAlert({
-            	               title: "Error!",
-                               text: "Please fill out your date of birth",
-                               type: "warning"
-                        });//end of sweetAlert
-                    count++;
-                    break;
-                } else {
-                    sweetAlert({
-            	               title: "Error!",
-                               text: "Please fill out " + x,
-                               type: "warning"
-                           });//end of sweetAlert
-                    count++;
-                    break;
-                }
-            }//end of if
-        }//end of if hasOwnProperty
-    }//emd of for loop
-    return count;
+	var count = 0;
+	for (var x in object) {
+		if (object.hasOwnProperty(x)) {
+			if (object[x] === undefined || object[x] === null || object[x] === " ") {
+				if (x === 'phone') {
+					sweetAlert({
+						title: "Error!",
+						text: "Please enter a valid phone number",
+						type: "warning"
+					}); //end of sweetAlert;
+					count++;
+					break;
+				} else if (x === 'Type of User') {
+					sweetAlert({
+						title: "Error!",
+						text: "Please choose type of user",
+						type: "warning"
+					}); //end of sweetAlert
+					count++;
+					break;
+				} else if (x === 'Date of birth') {
+					sweetAlert({
+						title: "Error!",
+						text: "Please fill out your date of birth",
+						type: "warning"
+					}); //end of sweetAlert
+					count++;
+					break;
+				} else {
+					sweetAlert({
+						title: "Error!",
+						text: "Please fill out " + x,
+						type: "warning"
+					}); //end of sweetAlert
+					count++;
+					break;
+				}
+			} //end of if
+		} //end of if hasOwnProperty
+	} //emd of for loop
+	return count;
 }
