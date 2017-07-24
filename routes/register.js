@@ -6,19 +6,19 @@ var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
 
 /* GLOBALS */
-var date = new Date();
-
-function formatDate(date) {
-	var d = new Date(date),
-		month = '' + (d.getMonth() + 1),
-		day = '' + d.getDate(),
-		year = d.getFullYear();
-	if (month.length < 2) month = '0' + month;
-	if (day.length < 2) day = '0' + day;
-	return [year, month, day].join('-');
-};
-
-var dateStamp = formatDate(date);
+// var date = new Date();
+//
+// function formatDate(date) {
+// 	var d = new Date(date),
+// 		month = '' + (d.getMonth() + 1),
+// 		day = '' + d.getDate(),
+// 		year = d.getFullYear();
+// 	if (month.length < 2) month = '0' + month;
+// 	if (day.length < 2) day = '0' + day;
+// 	return [year, month, day].join('-');
+// };
+//
+// var dateStamp = formatDate(date);
 
 
 /* USES for register.js */
@@ -70,7 +70,15 @@ router.post('/', function(req, res) {
 							var state = req.body.signup.state;
 							var zip = req.body.signup.zipcode;
 							var sci_cause = req.body.signup.cause;
-							connection.query("INSERT INTO tbl_user (first_name, last_name, email, password, date_created, enabled, dob, gender, phone, phone_type, street, city, state, zip, sci_cause) VALUES ('" + first + "', '" + last + "','" + email + "','" + password + "','" + dateStamp + "', TRUE,'" + dob + "','" + gender + "','" + phone + "','" + phoneType + "','" + street + "','" + city + "','" + state + "','" + zip + "','" + sci_cause + "');");
+							var rel_status = req.body.bio.relationShipStatus;
+							var lang = req.body.bio.language;
+							console.log(first, last, email, password, dob, gender, phone, phoneType, street, city, state, zip, sci_cause, rel_status, lang);
+
+							connection.query("INSERT INTO tbl_user (email, access_lvl, enabled, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip, rel_status) VALUES ('" + email + "', '2', TRUE, '" + first + "', '" + last + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + phoneType + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "', '" + rel_status + "');")
+
+
+
+
 							done();
 							res.send('user created');
 						}
