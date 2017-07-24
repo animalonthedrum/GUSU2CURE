@@ -83,5 +83,12 @@
 		})
 	}
 
+	sv.loginUser = function(user) {
+		console.log('inside of loginUser', user);
+		return $http.post('/login', user).then(function(res) {
+			console.log('back from the server with', res);
+		})
+	}
+
 
 }); //end of service

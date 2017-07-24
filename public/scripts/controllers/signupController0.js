@@ -17,11 +17,14 @@ function signupController(UserInfoService, $window) {
 				vm.visitArray.push(vm.visitType);
 			}
 		} //end of loop
+// 
+		vm.dateOfBirth = vm.dateBirth.getMonth() + "/" + vm.dateBirth.getDate() + "/" + vm.dateBirth.getFullYear()
 
+//
 		var signupObject = {
 			id: 'signup',
 			typeOfUser: vm.radioValue,
-			dob: vm.dateBirth,
+			dob: vm.dateOfBirth,
 			gender: vm.gender,
 			address: vm.address,
 			city: vm.city,
@@ -33,7 +36,7 @@ function signupController(UserInfoService, $window) {
 		}; //end of signupObject
 
 		//checks if object is filled out
-		count = checkObject(signupObject);
+		// count = checkObject(signupObject);
 
 		//only runs of object is correctly filled out
 		if (count === 0) {
