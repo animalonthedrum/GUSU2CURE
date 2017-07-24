@@ -41,14 +41,21 @@ router.post('/', function(req, res) {
 						if (err) {
 							res.send('hash gen err:', err);
 						} else {
-							var first = req.body.login.
+							var first = req.body.login.firstName;
+							var last = req.body.login.lastName;
+							var email = req.body.login.email;
+							var password = hash;
+							connection.query("INSERT INTO tbl_user (first_name, last_name, email, password) VALUES ('" + first + "', '" + last + "','" + email + "','" + password + "');");
+							done();
+							res.send('user created');
 						}
-					})
+					}) // END INSERT user user query
 				}
-			})
+			}) // END salt generation
 		}
-	})
+	}) // END dB connection
 })
+// END POST newUserReg registration
 
 /* EXPORTS for register.js */
 module.exports = router;
