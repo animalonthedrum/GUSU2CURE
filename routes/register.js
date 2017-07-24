@@ -74,7 +74,7 @@ router.post('/', function(req, res) {
 							var lang = req.body.bio.language;
 							console.log(first, last, email, password, dob, gender, phone, phoneType, street, city, state, zip, sci_cause, rel_status, lang);
 
-							connection.query("INSERT INTO tbl_user (email, access_lvl, enabled, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip, rel_status) VALUES ('" + email + "', '2', TRUE, '" + first + "', '" + last + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + phoneType + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "', '" + rel_status + "');")
+							connection.query("INSERT INTO tbl_user (email, access_lvl, enabled, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip) VALUES ('" + email + "', '2', TRUE, '" + first + "', '" + last + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + phoneType + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "');")
 
 
 

@@ -8,10 +8,10 @@ function bioController(UserInfoService, $window) {
 		console.log(vm.familyStatus);
 		var bioObject = {
 			id: "bio",
-			relationShipStatus: vm.relationshipStatus,
-			familyStatus: vm.familyStatus,
-			educationLevel: vm.educationLevel,
-			language: vm.language
+			relStatus: vm.relationshipStatus,
+			famStatus: vm.familyStatus,
+			edLevel: vm.educationLevel,
+			lang: vm.language
 		}; //end bio object
 
 		//check if object has any err

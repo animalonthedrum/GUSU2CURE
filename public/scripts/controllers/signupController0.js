@@ -26,7 +26,7 @@ function signupController(UserInfoService, $window) {
 			address: vm.address,
 			city: vm.city,
 			state: vm.state,
-			zipcode: vm.zipcode,
+			zip: vm.zipcode,
 			phone: vm.phone,
 			phoneType: vm.phoneType,
 			visitType: vm.visitArray
