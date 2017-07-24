@@ -29,24 +29,10 @@ function injuryController(UserInfoService) {
       "ASIA Score": vm.asia,
     };
 
-    count = checkOBject(injuryObject);
+    count = checkObject(injuryObject);
 
     if (count === 0) {
         UserInfoService.getUserInfo(injuryObject);
     }
   }; //end of submit
-}
-
-function checkOBject(object) {
-  var count = 0;
-  for (var x in object) {
-    if (object.hasOwnProperty(x)) {
-      if (object[x] === undefined || object[x] === null || object[x] === "" || object[x] === false) {
-        alert('Please fill out ' + x);
-        count++;
-        break;
-      }
-    }
-  }
-  return count;
 }

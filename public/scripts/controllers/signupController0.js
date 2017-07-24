@@ -52,19 +52,35 @@ function checkObject(object) {
         if (object.hasOwnProperty(x)) {
             if (object[x] === undefined || object[x] === null || object[x] === " ") {
                 if (x === 'phone') {
-                    alert('please enter a valid phone number');
+                    sweetAlert({
+            	               title: "Error!",
+                               text: "Please enter a valid phone number" ,
+                               type: "warning"
+                           });//end of sweetAlert;
                     count++;
                     break;
-                } else if (x === 'typeUser' ) {
-                    alert('Please choose Mentor/Mentee');
+                } else if (x === 'Type of User' ) {
+                    sweetAlert({
+            	               title: "Error!",
+                               text: "Please choose type of user",
+                               type: "warning"
+                           });//end of sweetAlert
                     count++;
                     break;
-                } else if (x === 'dateOfBirth'){
-                    alert('please fill enter date of birth' );
+                } else if (x === 'Date of birth'){
+                    sweetAlert({
+            	               title: "Error!",
+                               text: "Please fill out your date of birth",
+                               type: "warning"
+                        });//end of sweetAlert
                     count++;
                     break;
                 } else {
-                    alert('please fill out ' +  x);
+                    sweetAlert({
+            	               title: "Error!",
+                               text: "Please fill out " + x,
+                               type: "warning"
+                           });//end of sweetAlert
                     count++;
                     break;
                 }

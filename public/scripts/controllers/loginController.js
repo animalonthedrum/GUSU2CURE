@@ -14,7 +14,7 @@ function loginController() {
       };//end of userLoginObject
 
     //makes sure everything is filled out correctly
-    count = checkobject(userLoginObject);
+    count = checkObject(userLoginObject);
 
     //will only run if everything is filled out correctly
     if (count === 0) {
@@ -23,31 +23,3 @@ function loginController() {
     }//end of conditional statement
     };//end of submitLogin
 }//end of loginController
-
-
-function checkobject(object) {
-    var count = 0;
-   for(var x in object) {
-       if(object.hasOwnProperty(x)) {
-           if (object[x] === undefined || object[x] === "") {
-               if (x === 'email') {
-                   console.log('please enter a valid email');
-                   count++;
-                   break;
-               }
-               else{
-                   console.log('please fill out', x);
-
-                   count++;
-                   break;
-               }//end of conditional statements
-           }//end of if
-       }//end of if
-
-  }//end of loop
-  if (object.password !== object.confirmPassword) {
-      console.log('Passwords do not match');
-      count++;
-  }
-  return count;
-}//end of checkobject function

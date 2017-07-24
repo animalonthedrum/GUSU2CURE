@@ -24,17 +24,3 @@ function bioController(UserInfoService) {
 
   };//end of submit button
 }
-
-function checkObject(object) {
-    var count = 0;
-    for(var x in object) {
-        if (object.hasOwnProperty(x)) {
-            if (object[x] === undefined || object[x] === null || object[x] === " ") {
-                alert('Please fill out ' + x);
-                count++;
-                break;
-            }//end of if
-        }//end of if hasOwnProperty
-    }//emd of for loop
-    return count;
-}
