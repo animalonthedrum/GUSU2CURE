@@ -20,28 +20,28 @@ var config = {
 	max: 20
 };
 
-var pool - new pg.Pool(config);
+var pool = new pg.Pool(config);
 
 // START POST newUserReg registration
 router.post('/', function(req, res) {
-	// START connection to dB
-	pool.connect(function(err, commection, done) {
+	// START dB connection
+	pool.connect(function(err, connection, done) {
 		if (err) {
 			done();
-			res.sendStatus(400)
+			res.send('pool connect err:', err);
 		} else {
 			// START salt generation
 			bcrypt.genSalt(12, function(err, salt) {
 				if (err) {
-					console.log('genSalt error:', err);
+					console.log('getSalt err:', err);
 				} else {
 					// START hash generation
-					bcrypt.hash(req.body.password, salt, function(err, hash) {
-						// START INSERT new user into dB
+					bcrypt.hash(req.body.login.password, salt, function(err, hash) {
+						// START INSERT new user query
 						if (err) {
-							res.sendStatus(400);
+							res.send('hash gen err:', err);
 						} else {
-							var first = req.body.
+							var first = req.body.login.
 						}
 					})
 				}
@@ -49,3 +49,6 @@ router.post('/', function(req, res) {
 		}
 	})
 })
+
+/* EXPORTS for register.js */
+module.exports = router;

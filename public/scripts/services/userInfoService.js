@@ -21,8 +21,10 @@ myApp.service('UserInfoService', function($http) {
 
 	}; //end of getUserInfo
 
-	sv.sendRegistration = function(newUserInfo) {
-		return $http.post('/register', newUserInfo).then(function(response) {
+
+	sv.sendRegistration = function() {
+		console.log(sv.fulluserObject);
+		return $http.post('/register', sv.fulluserObject).then(function(response) {
 
 		})
 	}
