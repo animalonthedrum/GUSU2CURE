@@ -16,18 +16,16 @@ myApp.service('UserInfoService', function($http) {
 			sv.fulluserObject.question = data;
 		} else if (data.id === "login") {
 			sv.fulluserObject.login = data;
-		} else if (data.id === "hobbies" ) {
+		} else if (data.id === "hobbies") {
 			sv.fulluserObject.hobbies = data;
 		}
 		console.log(sv.fulluserObject);
-
 	}; //end of getUserInfo
-
 
 	sv.sendRegistration = function() {
 		console.log(sv.fulluserObject);
 		return $http.post('/register', sv.fulluserObject).then(function(response) {
-
+			console.log(response);
 		})
 	}
 

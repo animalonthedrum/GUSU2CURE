@@ -5,22 +5,6 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
 
-/* GLOBALS */
-// var date = new Date();
-//
-// function formatDate(date) {
-// 	var d = new Date(date),
-// 		month = '' + (d.getMonth() + 1),
-// 		day = '' + d.getDate(),
-// 		year = d.getFullYear();
-// 	if (month.length < 2) month = '0' + month;
-// 	if (day.length < 2) day = '0' + day;
-// 	return [year, month, day].join('-');
-// };
-//
-// var dateStamp = formatDate(date);
-
-
 /* USES for register.js */
 router.use(bodyParser.urlencoded({
 	extended: true
@@ -37,6 +21,7 @@ var config = {
 };
 
 var pool = new pg.Pool(config);
+
 
 // START POST newUserReg registration
 router.post('/', function(req, res) {
@@ -57,6 +42,7 @@ router.post('/', function(req, res) {
 						if (err) {
 							res.send('hash gen err:', err);
 						} else {
+							// START query variables
 							var first = req.body.login.firstName;
 							var last = req.body.login.lastName;
 							var email = req.body.login.email;
@@ -68,16 +54,17 @@ router.post('/', function(req, res) {
 							var street = req.body.signup.address;
 							var city = req.body.signup.city;
 							var state = req.body.signup.state;
-							var zip = req.body.signup.zipcode;
+							var zip = req.body.signup.zip;
 							var sci_cause = req.body.signup.cause;
-							var rel_status = req.body.bio.relationShipStatus;
-							var lang = req.body.bio.language;
-							console.log(first, last, email, password, dob, gender, phone, phoneType, street, city, state, zip, sci_cause, rel_status, lang);
+							var rel_status = req.body.bio.relStatus;
+							var lang = req.body.bio.lang;
+							var sci_year = req.body.injury.yrInjury;
+							var asia = req.body.injury.asia;
+							// END query variables
 
-							connection.query("INSERT INTO tbl_user (email, access_lvl, enabled, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip) VALUES ('" + email + "', '2', TRUE, '" + first + "', '" + last + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + phoneType + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "');")
-
-
-
+							// START INSERT query
+							connection.query("INSERT INTO tbl_user (email, enabled, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip, sci_year, asia_score) VALUES ('" + email + "', TRUE, '" + first + "', '" + last + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + phoneType + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "','" + sci_year + "','" + asia + "');")
+							// END INSERT query
 
 							done();
 							res.send('user created');
