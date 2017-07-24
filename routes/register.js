@@ -60,10 +60,11 @@ router.post('/', function(req, res) {
 							var lang = req.body.bio.lang;
 							var sci_year = req.body.injury.yrInjury;
 							var asia = req.body.injury.asia;
+							var fam_status = req.body.bio.famStatus;
 							// END query variables
 
 							// START INSERT query
-							connection.query("INSERT INTO tbl_user (email, enabled, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip, sci_year, asia_score) VALUES ('" + email + "', TRUE, '" + first + "', '" + last + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + phoneType + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "','" + sci_year + "','" + asia + "');")
+							connection.query("INSERT INTO tbl_user (email, enabled, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip, sci_year, asia_score, fam_status) VALUES ('" + email + "', TRUE, '" + first + "', '" + last + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + phoneType + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "','" + sci_year + "','" + asia + "', '" + fam_status + "');")
 							// END INSERT query
 
 							done();
