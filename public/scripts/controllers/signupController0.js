@@ -6,6 +6,7 @@ function signupController(UserInfoService) {
 	vm.submit = function() {
 		var count = 0;
 		vm.visitArray = [];
+		console.log(vm.mentorMentee);
 		var v = document.getElementsByName('visit');
 
 		for (var i = 0; i < v.length; i++) {
