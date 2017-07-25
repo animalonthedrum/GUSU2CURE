@@ -11,7 +11,8 @@ function bioController(UserInfoService, $window) {
 			relStatus: vm.relationshipStatus,
 			famStatus: vm.familyStatus,
 			edLevel: vm.educationLevel,
-			lang: vm.language
+			lang: vm.language,
+			pets: vm.pets
 		}; //end bio object
 
 		//check if object has any err

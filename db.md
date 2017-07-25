@@ -78,7 +78,8 @@ CREATE TABLE tbl_user (
     experience text,
     additional text,
     comments text,
-    heard_about text
+    heard_about text,
+    password text
 );
 
 INSERT INTO tbl_access_lvl

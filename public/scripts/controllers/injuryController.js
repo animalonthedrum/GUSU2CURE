@@ -27,6 +27,7 @@ function injuryController(UserInfoService, $window) {
 			injAge: vm.injAge,
 			level: vm.levelArray,
 			asia: vm.asia,
+			mobility: vm.mobility
 		};
 
 		count = checkObject(injuryObject);
