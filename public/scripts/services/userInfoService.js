@@ -88,6 +88,11 @@
 			console.log('inside of loginUser', user);
 			return $http.post('/login', user).then(function(res) {
 				console.log('back from the server with', res);
+				sv.backFromServer = res.data
+			}).catch(function(err) {
+				console.log('err', err);
+				sv.backFromServer = err
+				console.log('data', sv.backFromServer);
 			})
 		}
 
