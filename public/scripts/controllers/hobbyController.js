@@ -27,11 +27,11 @@ function hobbyController(UserInfoService) {
 			dateStamp: dateUserCreated
 		}; //end of hobbiesArr
 
-		// count = checkObjectArr(hobbiesObject);
+		count = checkObjectArr(hobbiesObject);
 
 		//only runs if array has 3 or more items
 		if (count === 0) {
-			// UserInfoService.getUserInfo(hobbiesObject);
+			UserInfoService.getUserInfo(hobbiesObject);
 			UserInfoService.sendRegistration();
 		} //end of conditional statement
 	}; //end of submit
@@ -45,7 +45,7 @@ function checkObjectArr(object) {
 			if (object[x].length < 3) {
 				sweetAlert({
 					title: "Hobbies",
-					text: "Please choose atleast three hobies",
+					text: "Please choose atleast three hobbies",
 					type: "warning"
 				}); //end of sweetAlert
 				count++;

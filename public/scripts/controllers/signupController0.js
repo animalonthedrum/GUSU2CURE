@@ -1,4 +1,4 @@
-function signupController(UserInfoService, $window) {
+function signupController(UserInfoService) {
 	var vm = this;
 
 
@@ -17,10 +17,12 @@ function signupController(UserInfoService, $window) {
 				vm.visitArray.push(vm.visitType);
 			}
 		} //end of loop
-// 
-		vm.dateOfBirth = vm.dateBirth.getMonth() + "/" + vm.dateBirth.getDate() + "/" + vm.dateBirth.getFullYear()
 
-//
+		//functionality for dates
+		vm.userAge = new Date().getFullYear() -vm.dateBirth.getFullYear()
+		vm.dateOfBirth = vm.dateBirth.getMonth() + "/" + vm.dateBirth.getDate() + "/" + vm.dateBirth.getFullYear();
+
+
 		var signupObject = {
 			id: 'signup',
 			typeOfUser: vm.radioValue,
@@ -32,18 +34,19 @@ function signupController(UserInfoService, $window) {
 			zip: vm.zipcode,
 			phone: vm.phone,
 			phoneType: vm.phoneType,
-			visitType: vm.visitArray
+			visitType: vm.visitArray,
+			age:vm.userAge
 		}; //end of signupObject
 
 		//checks if object is filled out
-		// count = checkObject(signupObject);
+		count = checkObject(signupObject);
 
 		//only runs of object is correctly filled out
 		if (count === 0) {
 			console.log('object is ok');
 			UserInfoService.getUserInfo(signupObject);
 			window.location.href = '#!/injury';
-		}
+		}//end of conditional statements;
 
 
 	}; //end of submit funciton
