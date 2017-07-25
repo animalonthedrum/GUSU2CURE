@@ -1,3 +1,5 @@
-function userController() {
-  console.log('userController');
+function userController(UserInfoService) {
+  var vm = this;
+
+  
 }

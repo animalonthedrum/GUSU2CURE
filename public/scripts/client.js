@@ -1,21 +1,22 @@
 var myApp = angular.module('myApp', ['ngRoute']).
 controller('gusuController', gusuController).
-controller('loginController', loginController).
+controller('registerController', registerController).
 controller('signupController', signupController).
 controller('injuryController', injuryController).
 controller('bioController', bioController).
 controller('hobbyController', hobbyController).
 controller('questionController', questionController).
 controller('adminController', adminController).
-controller('userController', userController);
+controller('userController', userController).
+controller('loginController', loginController);
 
 myApp.config(function($routeProvider) {
   $routeProvider.when('/', {
     template: '',
     controller: "gusuController"
-  }).when('/login', {
-    templateUrl: "views/partials/login.html",
-    controller: "loginController as lc"
+}).when('/register', {
+    templateUrl: "views/partials/register.html",
+    controller: "registerController as lc"
   }).when('/signup', {
     templateUrl: "views/partials/signup.html",
     controller: "signupController as sc"
@@ -37,5 +38,8 @@ myApp.config(function($routeProvider) {
   }).when('/user', {
     templateUrl: "views/partials/user.html",
     controller: "userController as uc"
+}).when('/login', {
+    templateUrl: "views/partials/login.html",
+    controller: "loginController as lc"
   });
 });
