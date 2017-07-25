@@ -2,6 +2,6 @@ function userController(UserInfoService, userPageService) {
   var vm = this;
 
   vm.getUserInfo = function() {
-      userPageService.saveUserInfo();
+      userPageService.getUserInfo();
   };//end of getUserInfo
 }//end of controller
