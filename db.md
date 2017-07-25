@@ -45,7 +45,7 @@ CREATE TABLE tbl_visit_pref (
 );
 
 CREATE TABLE tbl_user (
-    email character varying(40) PRIMARY KEY,
+    email character varying(50) PRIMARY KEY,
     date_created date,
     access_lvl integer REFERENCES tbl_access_lvl,
     enabled boolean,
@@ -62,8 +62,8 @@ CREATE TABLE tbl_user (
     visit_pref integer REFERENCES tbl_visit_pref,
     sci_relation integer REFERENCES tbl_sci_rel,
     sci_cause integer REFERENCES tbl_sci_cause,
-    sci_year character(4),
-    sci_lvl character varying(8),
+    sci_age character(2),
+    sci_lvl character varying(45),
     asia_score character(1),
     mobility_req character varying(20),
     trans_type integer REFERENCES tbl_trans_type,
@@ -73,7 +73,12 @@ CREATE TABLE tbl_user (
     emp_work text,
     lang integer REFERENCES tbl_lang,
     pets boolean,
-    hobbies text
+    hobbies text,
+    questions text,
+    experience text,
+    additional text,
+    comments text,
+    heard_about text
 );
 
 INSERT INTO tbl_access_lvl
