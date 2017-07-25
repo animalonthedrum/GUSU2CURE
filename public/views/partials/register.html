@@ -1,14 +1,19 @@
-<h1>signup</h1>
-
-<input type="text" name="firstName" value="" placeholder='First Name' ng-model='lc.firstName'>
-<input type="text" name="lastName" value="" placeholder='Last Name' ng-model='lc.lastName'>
-<input type="email" name="email" value="" placeholder='Email Address' ng-model='lc.email'>
-<input type="password" name="password" value="" placeholder='Password' ng-model='lc.password'>
-<input type="password" name="confirmPassword" value="" placeholder='Confirm Password' ng-model='lc.confirmPassword'>
-<label for="Terms">Terms and Conditions</label>
-<input type="checkbox" name="Terms" value="Terms and Conditions" ng-model='lc.termsAndConditions'>
-<a href="#!/signup"><button type="button" name="button">Next</button></a >
+<h1>BACK2LIFE</h1>
+<div class="window">
+  <div class="inputs">
+    <input type="text" name="firstName" value="" placeholder='First Name' ng-model='lc.firstName'>
+    <input type="text" name="lastName" value="" placeholder='Last Name' ng-model='lc.lastName'>
+    <input type="email" name="email" value="" placeholder='Email Address' ng-model='lc.email'>
+  </div>
+  <input type="password" name="password" value="" placeholder='Password' ng-model='lc.password'>
+  <input type="password" name="confirmPassword" value="" placeholder='Confirm Password' ng-model='lc.confirmPassword'>
+  <label for="Terms">Terms and Conditions</label>
+  <input type="checkbox" name="Terms" value="Terms and Conditions" ng-model='lc.termsAndConditions'>
+</div>
+<div class="buttons">
+  <a href="#!/signup"><button type="button" name="button">Next</button></a >
 <button type="button" name="button" ng-click='lc.submitLogin()'>Submit</button>
+</div>
 <!-- <div class="progress">
   <div class="progress-bar progress-bar-stripped progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
     <span class="sr-only">10% Complete</span>
