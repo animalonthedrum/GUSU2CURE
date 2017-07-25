@@ -1,18 +1,18 @@
-myApp.service('userPageService', function() {
-    console.log('inside of userPageService');
+myApp.service('userPageService', function($http) {
     var sv = this;
 
     sv.saveUserInfo = function(user) {
-        console.log('hello world', user);
         if (user === undefined) {
-            console.log('retriving user data');
-
-            var data = JSON.parse(localStorage.getItem('userData'));
-            console.log('this is always here', data);
+            sv.userInfo = JSON.parse(localStorage.getItem('userData'));
+            console.log('sv.userInfo', sv.userInfo);
+            var email = sv.userInfo.email;
+            console.log(email);
+            return $http.post('/login', email ).then(function(res) {
+                console.log('back from the server with', res);
+            });
 
         } else {
             var userLogin = user[0];
-            console.log('saving user data', user[0]);
             localStorage.setItem('userData', JSON.stringify(userLogin));
             sv.userdata = user;
 
