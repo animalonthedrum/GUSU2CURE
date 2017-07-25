@@ -21,9 +21,7 @@
 			asia: "B",
 			cause: "2",
 			id: "injury",
-			level: ['C6', 'C7', 'C8',
-				'T1 - T5'
-			],
+			level: ['C6', 'C7', 'C8', 'T1 - T5'],
 			sciRel: "Self",
 			yrInjury: 1999,
 			mobility: 'Wheelchair (manual)'
@@ -37,7 +35,6 @@
 			password: "go",
 			terms: true
 		}
-
 		sv.dummyObject.question = {
 			additional: "asdfasd",
 			comment: "asdfasdf",
@@ -81,8 +78,8 @@
 		}; //end of getUserInfo
 
 		sv.sendRegistration = function() {
-			console.log(sv.dummyObject);
-			return $http.post('/register', sv.dummyObject).then(function(response) {
+			console.log(sv.fulluserObject);
+			return $http.post('/register', sv.fulluserObject).then(function(response) {
 				console.log(response);
 			})
 		}
@@ -93,6 +90,5 @@
 				console.log('back from the server with', res);
 			})
 		}
-
 
 	}); //end of service

@@ -76,7 +76,11 @@ router.post('/', function(req, res) {
 							// END query variables
 
 							// START INSERT query
-							connection.query("INSERT INTO tbl_user (email, enabled, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip, asia_score, fam_status, sci_lvl, mobility_req, ed_lvl, pets, date_created) VALUES ('" + email + "', TRUE, '" + first + "', '" + last + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + phoneType + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "','" + asia + "', '" + fam_status + "','" + sci_lvl + "','" + mobility + "','" + ed_lvl + "', '" + pets + "', '" + dateCreated + "');")
+							connection.query("INSERT INTO tbl_user (email, first_name, last_name, password) VALUES ('" + email + "','" + first + "','" + last + "','" + password + "');")
+
+
+
+							// connection.query("INSERT INTO tbl_user (email, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip, asia_score, fam_status, sci_lvl, mobility_req, ed_lvl, pets, date_created) VALUES ('" + email + "', '" + first + "', '" + last + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + phoneType + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "','" + asia + "', '" + fam_status + "','" + sci_lvl + "','" + mobility + "','" + ed_lvl + "', '" + pets + "', '" + dateCreated + "');")
 							// END INSERT query
 
 							done();
