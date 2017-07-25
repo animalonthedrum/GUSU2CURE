@@ -78,8 +78,8 @@
 		}; //end of getUserInfo
 
 		sv.sendRegistration = function() {
-			console.log(sv.dummyObject);
-			return $http.post('/register', sv.dummyObject).then(function(response) {
+			console.log(sv.fulluserObject);
+			return $http.post('/register', sv.fulluserObject).then(function(response) {
 				console.log(response);
 			})
 		}
