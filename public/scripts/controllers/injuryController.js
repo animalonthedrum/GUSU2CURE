@@ -24,7 +24,7 @@ function injuryController(UserInfoService, $window) {
 			id: 'injury',
 			sciRel: vm.sciRelation,
 			cause: vm.cause,
-			yrInjury: vm.yearInjury,
+			injAge: vm.injAge,
 			level: vm.levelArray,
 			asia: vm.asia,
 		};
