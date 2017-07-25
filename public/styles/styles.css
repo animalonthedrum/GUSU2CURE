@@ -24,3 +24,9 @@ li {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.logoImg {
+  height: 200px;
+  width: 200px;
+  float: right;
+}
