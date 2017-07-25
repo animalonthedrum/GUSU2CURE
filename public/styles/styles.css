@@ -10,3 +10,17 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 li {
   list-style: none;
 }
+
+.inputs {
+  margin-bottom: 20px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.window {
+  margin-left: 15%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
