@@ -23,7 +23,7 @@
 			id: "injury",
 			level: ['C6', 'C7', 'C8', 'T1 - T5'],
 			sciRel: "Self",
-			yrInjury: 1999,
+			injAge: 23,
 			mobility: 'Wheelchair (manual)'
 		}
 		sv.dummyObject.login = {
@@ -36,9 +36,9 @@
 			terms: true
 		}
 		sv.dummyObject.question = {
-			additional: "asdfasd",
-			comment: "asdfasdf",
-			experience: "adsfasdf",
+			additional: "I do not have reliable transportation all of the time.",
+			comment: "This seems like a really cool opportunity!",
+			experience: "I have never helped anyone who has a SCI before, but I am excited to help however I am able",
 			heardAbout: ['Personal Reference'],
 			id: "question",
 			question: "Yes",
@@ -52,7 +52,7 @@
 			phone: "9878764563",
 			phoneType: "Home",
 			state: "MN",
-			typeOfUser: "Mentor",
+			typeOfUser: "1",
 			visitType: ['Hospital'],
 			zip: 55044
 		}
@@ -78,8 +78,8 @@
 		}; //end of getUserInfo
 
 		sv.sendRegistration = function() {
-			console.log(sv.fulluserObject);
-			return $http.post('/register', sv.fulluserObject).then(function(response) {
+			console.log(sv.dummyObject);
+			return $http.post('/register', sv.dummyObject).then(function(response) {
 				console.log(response);
 			})
 		}
