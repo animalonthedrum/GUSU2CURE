@@ -1,4 +1,4 @@
-function questionController(UserInfoService) {
+function questionController(UserInfoService, $window) {
   console.log('questionController');
   var vm = this;
   var count = 0;
@@ -32,6 +32,7 @@ function questionController(UserInfoService) {
     if (count === 0) {
       console.log('object is ok');
       UserInfoService.getUserInfo(questionToSend);
+      window.location.href = '#!/hobby';
     }
   };
 
