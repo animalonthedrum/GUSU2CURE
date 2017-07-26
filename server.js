@@ -9,6 +9,7 @@ var menuSciCause = require('./routes/menuSciCause');
 var menuTransType = require('./routes/menuTransType');
 var userInfo = require('./routes/userInfo');
 var register = require('./routes/register');
+var allUsers = require('./routes/allUsers');
 
 
 //uses
@@ -19,6 +20,7 @@ app.use('/menuTransType', menuTransType);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/userInfo', userInfo);
+app.use('/allUsers', allUsers);
 
 
 app.listen(port, function() {

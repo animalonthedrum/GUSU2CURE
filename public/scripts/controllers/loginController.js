@@ -10,8 +10,8 @@ function loginController(UserInfoService, userPageService) {
         };//end of userCredentials
         UserInfoService.loginUser(userCredentials).then(function() {
             vm.userData = UserInfoService.backFromServer;
+            console.log(vm.userData);
             if (vm.userData === 'Not in system' ) {
-                console.log('user does not exist');
                 sweetAlert({
                     title: "Error!",
                     text: "No user Found",
@@ -25,8 +25,15 @@ function loginController(UserInfoService, userPageService) {
                 }); //end of sweetAlert
             } else {
                 console.log('saving this data', vm.userData);
+                if (vm.userData[0].access_lvl === 3) {
+                    window.location.href = '#!/admin';
+                } else {
+                    window.location.href = '#!/user';
+                }
                 userPageService.saveUserInfo(vm.userData);
-                window.location.href = '#!/user';
+                console.log(vm.userData);
+
+
             }
         });//end of service
     };//end of login
