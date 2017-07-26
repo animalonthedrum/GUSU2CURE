@@ -24,7 +24,8 @@ myApp.service('userPageService', function($http) {
 			email: sv.email
 		}
 		return $http.post('/userInfo', sendEmail).then(function(res) {
-			console.log('Back from userInfo.js with:', res);
+
+			sv.userLoggedInInfo = res.data[0];
 		});
 	};
 	// END getUserInfo
