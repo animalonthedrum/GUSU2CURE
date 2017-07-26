@@ -1,4 +1,4 @@
-<div class="page">
+<div class="page" ng-init="ic.getSciMenu()">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4 injuryInfo">
@@ -12,6 +12,9 @@
   <option value="CareGiver">Caregiver</option>
   <option value="Medical">Medical Professional</option>
 </select>
+
+<select ng-options="item as item.sci_rel for item in ic.sci_rel track by item.id" ng-model="ic.sciRelation"></select>
+
 
 
         <select class="cause" name="" ng-model='ic.cause'>

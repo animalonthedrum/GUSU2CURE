@@ -1,4 +1,4 @@
-function injuryController(UserInfoService, $window) {
+function injuryController(UserInfoService, menuService, $window) {
 	var vm = this;
 	var count = 0;
 
@@ -37,4 +37,17 @@ function injuryController(UserInfoService, $window) {
 			window.location.href = '#!/bio';
 		}
 	}; //end of submit
-}
+
+	vm.getSciMenu = function() {
+		menuService.getSciRelMenu().then(function() {
+			menuService.sci_rel;
+			vm.sci_rel = menuService.sci_rel;
+			console.log('ic:45', vm.sci_rel);
+		});
+	}
+
+	vm.sci_rel = [];
+
+
+
+} // END of injuryController

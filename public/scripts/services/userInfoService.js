@@ -96,4 +96,10 @@
 			})
 		}
 
+		sv.getSciRelMenu = function() {
+			return $http.get('/sciMenu').then(function(res) {
+				console.log('Back from dB with:', res);
+			});
+		};
+
 	}); //end of service
