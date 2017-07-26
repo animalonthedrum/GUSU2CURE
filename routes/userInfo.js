@@ -23,14 +23,12 @@ var config = {
 
 var pool = new pg.Pool(config);
 
-// START GET userInfo
+// START getUserInfo
 router.post('/', function(req, res) {
-	console.log(req.body.email);
 	var email = req.body.email;
 	pool.connect().then(function(client) {
 			client.query("SELECT email, tbl_access_lvl.access_lvl, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip, tbl_visit_pref.visit_pref, tbl_sci_rel.sci_rel, tbl_sci_cause.sci_cause, sci_age, sci_lvl, asia_score, mobility_req, tbl_trans_type.trans_type, tbl_rel_status.rel_status, fam_status, ed_lvl, emp_work, tbl_lang.lang, pets, hobbies, questions, experience, additional, heard_about FROM tbl_user LEFT JOIN tbl_access_lvl ON tbl_access_lvl.id = tbl_user.access_lvl LEFT JOIN tbl_lang ON tbl_lang.id = tbl_user.lang LEFT JOIN tbl_rel_status ON tbl_rel_status.id = tbl_user.rel_status LEFT JOIN tbl_sci_cause ON tbl_sci_cause.id = tbl_user.sci_cause LEFT JOIN tbl_sci_rel ON tbl_sci_rel.id = tbl_user.sci_relation LEFT JOIN tbl_trans_type ON tbl_trans_type.id = tbl_user.trans_type LEFT JOIN tbl_visit_pref ON tbl_visit_pref.id = tbl_user.visit_pref WHERE email = '" + email + "'").then(function(userData) {
 				client.release();
-				console.log(userData.rows);
 				res.send(userData.rows);
 			});
 		})
@@ -39,8 +37,22 @@ router.post('/', function(req, res) {
 			res.sendStatus(500);
 		});
 });
+// END getUserInfo
 
-// END GET userInfo
+// START getAllUserInfo
+router.get('/', function(res) {
+	pool.connect().then(function(client) {
+			client.query("SELECT email, tbl_access_lvl.access_lvl, first_name, last_name, dob, gender, phone, phone_type, street, city, state, zip, tbl_visit_pref.visit_pref, tbl_sci_rel.sci_rel, tbl_sci_cause.sci_cause, sci_age, sci_lvl, asia_score, mobility_req, tbl_trans_type.trans_type, tbl_rel_status.rel_status, fam_status, ed_lvl, emp_work, tbl_lang.lang, pets, hobbies, questions, experience, additional, heard_about FROM tbl_user LEFT JOIN tbl_access_lvl ON tbl_access_lvl.id = tbl_user.access_lvl LEFT JOIN tbl_lang ON tbl_lang.id = tbl_user.lang LEFT JOIN tbl_rel_status ON tbl_rel_status.id = tbl_user.rel_status LEFT JOIN tbl_sci_cause ON tbl_sci_cause.id = tbl_user.sci_cause LEFT JOIN tbl_sci_rel ON tbl_sci_rel.id = tbl_user.sci_relation LEFT JOIN tbl_trans_type ON tbl_trans_type.id = tbl_user.trans_type LEFT JOIN tbl_visit_pref ON tbl_visit_pref.id = tbl_user.visit_pref").then(function(allUserData) {
+				client.release();
+				res.send(allUserData.rows);
+			});
+		})
+		.catch(function(err) {
+			client.release();
+			res.sendStatus(500);
+		});
+})
+// END getAllUserInfo
 
 /* EXPORTS for userInfo.js */
 module.exports = router;

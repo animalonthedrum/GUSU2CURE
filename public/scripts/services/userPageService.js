@@ -8,7 +8,6 @@ myApp.service('userPageService', function($http) {
 			var email = sv.userInfo.email;
 			console.log(email);
 			// return $http.post('/login', email).then(function(res) {
-			// 	console.log('back from the server with', res);
 			// });
 		} else {
 			var userLogin = user[0];
@@ -24,12 +23,19 @@ myApp.service('userPageService', function($http) {
 		var sendEmail = {
 			email: sv.email
 		}
-		// console.log(sendEmail);
-		// console.log(sv.email);
 		return $http.post('/userInfo', sendEmail).then(function(res) {
 			console.log('Back from userInfo.js with:', res);
 		});
-	}; // END getUserInfo
+	};
+	// END getUserInfo
+
+	// START getAllUserInfo
+	sv.getAllUserInfo = function() {
+		return $http.get('/userInfo').then(function(res) {
+			console.log('Back from userInfo.js with:', res);
+		});
+	};
+	// END getAllUserInfo
 
 	// START updateUserInfo
 
