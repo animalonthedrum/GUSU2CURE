@@ -7,6 +7,7 @@ var login = require('./routes/login');
 var sciMenu = require('./routes/sciMenu');
 var userInfo = require('./routes/userInfo');
 var register = require('./routes/register');
+var allUsers = require('./routes/allUsers');
 
 
 //uses
@@ -15,6 +16,7 @@ app.use('/sciMenu', sciMenu);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/userInfo', userInfo);
+app.use('/allUsers', allUsers);
 
 
 app.listen(port, function() {
