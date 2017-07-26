@@ -1,4 +1,4 @@
-/* REQUIRES for sciMenu.js */
+/* REQUIRES for menuSciCause.js */
 var express = require('express');
 var path = require('path');
 var router = express.Router();
@@ -6,7 +6,7 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 
 
-/* USES for userInfo.js */
+/* USES for menuSciCause.js */
 router.use(bodyParser.urlencoded({
 	extended: true
 }));
@@ -23,12 +23,12 @@ var config = {
 
 var pool = new pg.Pool(config);
 
-// START sciRelMenu
+// START GET menuSciCause
 router.get('/', function(req, res) {
 	pool.connect().then(function(client) {
-			client.query("SELECT * FROM tbl_sci_rel ORDER BY id;").then(function(sciRel) {
+			client.query("SELECT * FROM tbl_sci_cause ORDER BY id;").then(function(sciCause) {
 				client.release();
-				res.send(sciRel.rows);
+				res.send(sciCause.rows);
 			});
 		})
 		.catch(function(err) {
@@ -36,7 +36,7 @@ router.get('/', function(req, res) {
 			res.sendStatus(500);
 		});
 });
-// END sciRelMenu
+// END GET menuSciCause
 
-/* EXPORTS for sciMenu.js */
+/* EXPORTS for menuSciCause.js */
 module.exports = router;

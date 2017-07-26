@@ -58,7 +58,7 @@ router.post('/', function(req, res) {
 							var state = req.body.signup.state;
 							var zip = req.body.signup.zip;
 							// var visit_pref;
-							// var sci_rel;
+							var sci_rel = req.body.injury.sciRel.id;
 							// var sci_cause = req.body.signup.cause;
 							var sci_age = req.body.injury.injAge;
 							var sci_lvl = req.body.injury.level;
@@ -81,7 +81,7 @@ router.post('/', function(req, res) {
 							// END query variables
 
 							// START INSERT query
-							connection.query("INSERT INTO tbl_user (email, date_created, access_lvl, enabled, first_name, last_name, password, dob, gender, phone, phone_type, street, city, state, zip, sci_age, sci_lvl, asia_score, mobility_req, fam_status, ed_lvl, pets, questions, experience, additional, comments) VALUES ('" + email + "','" + dateCreated + "','" + accessLvl + "','" + enabled + "','" + first + "','" + last + "','" + password + "','" + dob + "','" + gender + "','" + phone + "','" + phoneType + "','" + street + "','" + city + "','" + state + "','" + zip + "','" + sci_age + "','" + sci_lvl + "','" + asia + "','" + mobility + "','" + fam_status + "','" + ed_lvl + "', '" + pets + "','" + questions + "','" + experience + "','" + additional + "','" + comments + "');")
+							connection.query("INSERT INTO tbl_user (email, date_created, access_lvl, enabled, first_name, last_name, password, dob, gender, phone, phone_type, street, city, state, zip, sci_age, sci_lvl, asia_score, mobility_req, fam_status, ed_lvl, pets, questions, experience, additional, comments, sci_relation) VALUES ('" + email + "','" + dateCreated + "','" + accessLvl + "','" + enabled + "','" + first + "','" + last + "','" + password + "','" + dob + "','" + gender + "','" + phone + "','" + phoneType + "','" + street + "','" + city + "','" + state + "','" + zip + "','" + sci_age + "','" + sci_lvl + "','" + asia + "','" + mobility + "','" + fam_status + "','" + ed_lvl + "', '" + pets + "','" + questions + "','" + experience + "','" + additional + "','" + comments + "','" + sci_rel + "');")
 							// END INSERT query
 
 							done();

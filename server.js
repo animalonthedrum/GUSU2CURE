@@ -4,14 +4,18 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 8000;
 var login = require('./routes/login');
-var sciMenu = require('./routes/sciMenu');
+var menuSciRel = require('./routes/menuSciRel');
+var menuSciCause = require('./routes/menuSciCause');
+var menuTransType = require('./routes/menuTransType');
 var userInfo = require('./routes/userInfo');
 var register = require('./routes/register');
 
 
 //uses
 app.use(express.static('public'));
-app.use('/sciMenu', sciMenu);
+app.use('/menuSciRel', menuSciRel);
+app.use('/menuSciCause', menuSciCause);
+app.use('/menuTransType', menuTransType);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/userInfo', userInfo);
