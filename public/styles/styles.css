@@ -1,3 +1,7 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 h1 {
   text-align: center;
 }
@@ -25,8 +29,88 @@ li {
   margin-bottom: 50px;
 }
 
+input {
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 2px;
+}
+
+label {
+  font-weight: 900;
+  font-family: 'Lato', sans-serif;
+}
+
+
+/*navbar*/
+
 .logoImg {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
+}
+
+.navbar {
+  background-color: #bdb9b8;
+  border-bottom: solid rgb(153, 21, 13);
+  border-width: thin;
+  max-height: 80px;
+}
+
+select {
+  font-family: 'Open Sans', sans-serif;
+}
+
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-color: rgb(153, 21, 13);
+  border-width: thin;
+}
+
+
+/*signup*/
+
+.role {
+  display: inline;
+  margin-left: 30vw;
+  font-size: 24px;
+}
+
+.page {
+  max-width: 95vw;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+}
+
+.state {
+  max-width: 40px;
+  text-align: center;
+}
+
+.zipInput {
+  width: 50px;
+}
+
+#phone {
+  width: 100px;
+}
+
+.submitBtn {
+  border: none;
+  border-radius: 2px;
   float: right;
 }
+
+.submitBtn:hover {
+  opacity: 0.3;
+}
+
+
+/*injuryInfo*/
+
+.ageInj {
+  width: 40px;
+  text-align: center;
+}
+
+
+/*bio*/
