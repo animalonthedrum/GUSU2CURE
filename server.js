@@ -4,7 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 8000;
 var login = require('./routes/login');
-// var userInfo = require('/routes/userInfo');
+var userInfo = require('./routes/userInfo');
 var register = require('./routes/register');
 
 
@@ -12,7 +12,7 @@ var register = require('./routes/register');
 app.use(express.static('public'));
 app.use('/register', register);
 app.use('/login', login);
-// app.use('/userInfo', userInfo);
+app.use('/userInfo', userInfo);
 
 
 app.listen(port, function() {
