@@ -1,6 +1,5 @@
 function userController(UserInfoService, userPageService) {
   var vm = this;
-
   vm.getUserInfo = function() {
       userPageService.getUserInfo().then(function() {
           vm.user = userPageService.userLoggedInInfo;
