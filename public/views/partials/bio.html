@@ -1,5 +1,6 @@
-<h1>Bio</h1>
-<select class="" name="" ng-model='bc.relationshipStatus'>
+<!-- <h1>Bio</h1> -->
+<div class="page">
+  <select class="" name="" ng-model='bc.relationshipStatus'>
   <option value="" selected disabled>Relationship Status</option>
   <option value="Single">Single</option>
   <option value="Married">Married</option>
@@ -8,14 +9,14 @@
   <option value="Widow/Widower">Widow/Widower</option>
 </select>
 
-<select class="" name="" ng-model='bc.familyStatus'>
+  <select class="" name="" ng-model='bc.familyStatus'>
     <option value="" selected disabled>Family Status</option>
     <option value="Children at Home">Children at Home</option>
     <option value="Children grown, out of home">Children grown, out of home</option>
     <option value="No children">No children</option>
 </select>
 
-<select class="" name="" ng-model='bc.educationLevel'>
+  <select class="" name="" ng-model='bc.educationLevel'>
       <option value="" selected disabled>Education Level</option>
       <option value="Elementry">Elementary</option>
       <option value="Some High School">Some High School</option>
@@ -28,7 +29,7 @@
 </select>
 
 
-<select class="language" name="" ng-model='bc.language'>
+  <select class="language" name="" ng-model='bc.language'>
   <option value="" selected disabled>Language</option>
   <option value="1">English</option>
   <option value="2">Hmong</option>
@@ -37,22 +38,27 @@
   <option value="5">Vietnamese</option>
   <option value="6">Other</option>
   </select>
+  <hr>
+  <label for="work">Occupation</label>
+  <input type="text" name="" value="">
 
-<label for="work">Occupation</label>
-<input type="text" name="" value="">
-
-<label for="animals">Do you have a problem with household animals? (Pets, Service Dogs, Allergies)</label>
-<select class="" name="animals" ng-model='bc.pets'>
+  <div class="pets">
+    <label for="animals">Do you have a problem with household animals? (Pets, Service Dogs, Allergies)</label>
+    <select class="" name="animals" ng-model='bc.pets'>
+      <option value ='' selected disabled>Yes/No</option>
     <option value="false">No</option>
     <option value="true">Yes</option>
   </select>
 
-<a href="#!/injury"><button type="button" name="button">Previous</button></a>
-<a href="#!/hobby"><button type="button" name="button">Next</button></a>
-<button type="button" name="button" ng-click='bc.submit()'>Submit</button>
+  </div>
+  <hr>
+  <a href="#!/injury"><button type="button" name="button">Previous</button></a>
+  <a href="#!/hobby"><button type="button" name="button">Next</button></a>
+  <button class='submitBtn' type="button" name="button" ng-click='bc.submit()'>Submit</button>
 
-<div class="progress">
-  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-    <span class="sr-only">40% Complete</span>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+      <span class="sr-only">40% Complete</span>
+    </div>
   </div>
 </div>
