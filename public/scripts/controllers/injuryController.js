@@ -38,16 +38,34 @@ function injuryController(UserInfoService, menuService, $window) {
 		}
 	}; //end of submit
 
-	vm.getSciMenu = function() {
+
+	// START getSciRelMenu
+	vm.getSciRelMenu = function() {
 		menuService.getSciRelMenu().then(function() {
 			menuService.sci_rel;
 			vm.sci_rel = menuService.sci_rel;
-			console.log('ic:45', vm.sci_rel);
+			// console.log('ic:45', vm.sci_rel);
 		});
 	}
+	// END getSciRelMenu
 
-	vm.sci_rel = [];
+	// START getSciCauseMenu
+	vm.getSciCauseMenu = function() {
+		menuService.getSciCauseMenu().then(function() {
+			vm.sci_cause = menuService.sci_cause;
+		});
+	}
+	// END getSciCauseMenu
 
+	// START getTransTypeMenu
+	vm.getTransTypeMenu = function() {
+		menuService.getTransTypeMenu().then(function() {
+			// menuService.sci_rel;
+			vm.trans_type = menuService.trans_type;
+			// console.log('ic:45', vm.sci_rel);
+		});
+	}
+	// END getTransTypeMenu
 
 
 } // END of injuryController
