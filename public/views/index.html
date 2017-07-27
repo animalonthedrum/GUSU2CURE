@@ -31,8 +31,6 @@
   <!-- Services -->
   <script src="scripts/services/userInfoService.js" charset="utf-8"></script>
   <script src="scripts/services/userPageService.js" charset="utf-8"></script>
-  <script src="scripts/services/menuService.js" charset="utf-8"></script>
-  <script src="scripts/services/adminService.js" charset="utf-8"></script>
 
   <!-- styles -->
   <link rel="stylesheet" href="styles/styles.css">
@@ -68,14 +66,16 @@
 
 <body ng-app='myApp' ng-controller='gusuController as gc'>
 
-  <nav class="navbar navbar-default">
+  <!-- <nav class="navbar">
     <div class="container-fluid">
       <div class="navbar-header">
-        <img alt="Brand" src="images/gusu-logo.png" class='logoImg'>
+        <img alt="Brand" src="" class='logoImg'>
       </div>
     </div>
-  </nav>
-
+  </nav> -->
+  <div class="headerImg">
+    <img class='logoImg' src="images/gusu-logo-white.png" alt="">
+  </div>
   <ng-view></ng-view>
 </body>
 

@@ -1,59 +1,70 @@
+<div class="question1">
+  <h1>INJURY INFORMATION</h1></div>
 <div class="page">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-md-4 injuryInfo">
 
         <!-- START sci_rel -->
         <label for="sci_rel">SCI patient:</label>
-          <select class='relation' ng-options="item as item.sci_rel for item in ic.sci_rel track by item.id" ng-model="ic.sciRelation" ng-init="ic.getSciRelMenu()" name="sci_rel">
+        <select class='relation' ng-options="item as item.sci_rel for item in ic.sci_rel track by item.id" ng-model="ic.sciRelation" ng-init="ic.getSciRelMenu()" name="sci_rel">
           </select>
         <!-- END sci_rel -->
         <br>
-
-        <!-- START sci_cause -->
-        <label for="sci_cause">SCI cause:</label>
-          <select class='relation' ng-options="item as item.sci_cause for item in ic.sci_cause track by item.id" ng-model="ic.cause" ng-init="ic.getSciCauseMenu()" name="sci_cause">
-          </select>
-        <!-- END sci_cause -->
-        <br>
-        <!-- START sci_age -->
-        <label for="year">Age when SCI occured:</label>
-          <input class='ageInj' type="text" name="year" pattern="\d*" min='0' max='99' maxlength="2" placeholder="YY" ng-model='ic.injAge'>
-        <!-- END sci_age -->
-
       </div>
+      <!-- START sci_cause -->
+
+      <div class="col-md-4 injuryInfo">
+        <label for="sci_cause">SCI cause:</label>
+        <select class='relation' ng-options="item as item.sci_cause for item in ic.sci_cause track by item.id" ng-model="ic.cause" ng-init="ic.getSciCauseMenu()" name="sci_cause">
+          </select>
+      </div>
+      <!-- END sci_cause -->
+      <br>
+      <!-- START sci_age -->
+      <div class="col-md-4 injuryInfo">
+        <label for="year">Age when SCI occured:</label>
+        <input class='ageInj' type="text" name="year" pattern="\d*" min='0' max='99' maxlength="2" placeholder="YY" ng-model='ic.injAge'>
+      </div>
+      <!-- END sci_age -->
+
     </div>
   </div>
+
   <hr>
 
   <div>
-    <ul>
-      <label for="level">Paralysis Level</label>
-      <li><input type='checkbox' name='level' value="C1-C4"> C1-C4</input>
+    <div class='pLevel'><label for="level">Paralysis Level</label></div>
+    <ul class='multi-column2'>
+
+      <li><input class='checks' type='checkbox' name='level' value="C1-C4"> C1-C4</input>
       </li>
-      <li><input type='checkbox' name='level' value="C5"> C5</input>
+      <li><input class='checks' type='checkbox' name='level' value="C5"> C5</input>
       </li>
-      <li><input type='checkbox' name='level' value="C6"> C6</input>
+      <li><input class='checks' type='checkbox' name='level' value="C6"> C6</input>
       </li>
-      <li><input type='checkbox' name='level' value="C7"> C7</input>
+      <li><input class='checks' type='checkbox' name='level' value="C7"> C7</input>
       </li>
-      <li><input type='checkbox' name='level' value="C8"> C8</input>
+      <li><input class='checks' type='checkbox' name='level' value="C8"> C8</input>
       </li>
-      <li><input type='checkbox' name='level' value="T1-T5"> T1-T5</input>
+      <li><input class='checks' type='checkbox' name='level' value="T1-T5"> T1-T5</input>
       </li>
-      <li><input type='checkbox' name='level' value="T6-T12"> T6-T12</input>
+      <li><input class='checks' type='checkbox' name='level' value="T6-T12"> T6-T12</input>
       </li>
-      <li><input type='checkbox' name='level' value="L1-L5"> L1-L5</input>
+      <li><input class='checks' type='checkbox' name='level' value="L1-L5"> L1-L5</input>
       </li>
-      <li><input type='checkbox' name='level' value="S1-S5"> S1-S5</input>
+      <li><input class='checks' type='checkbox' name='level' value="S1-S5"> S1-S5</input>
       </li>
     </ul>
   </div>
   <hr>
-  <div class="col-md-4 asia">
 
-    <!-- START asia -->
-    <select class="asia" name="" ng-model='ic.asia'>
+
+  <!-- START asia -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 asia">
+        <select class="asia" name="" ng-model='ic.asia'>
       <option value="" disabled selected>ASIA Score</option>
       <option value="A">A</option>
       <option value="B">B</option>
@@ -61,10 +72,12 @@
       <option value="D">D</option>
       <option value="E">E</option>
     </select>
-    <!-- END asia -->
+      </div>
+      <!-- END asia -->
 
-    <!-- START mobility_req -->
-    <select class="movement" name="mobility_req" ng-model='ic.mobility'>
+      <!-- START mobility_req -->
+      <div class="col-md-4">
+        <select class="movement" name="mobility_req" ng-model='ic.mobility'>
       <option value="" disabled selected>Mobility Requirements</option>
       <option value="Wheelchair (powered)">Wheelchair (powered)</option>
       <option value="Wheelchair (manual)">Wheelchair (manual)</option>
@@ -72,14 +85,17 @@
       <option value="Nothing">Nothing</option>
       <option value="Other">Other</option>
     </select>
-    <!-- END mobility_req -->
+      </div>
+      <!-- END mobility_req -->
 
-    <!-- START trans_type -->
-    <label for="trans_type">Primary transportation:</label>
-      <select class='relation' ng-options="item as item.trans_type for item in ic.trans_type track by item.id" ng-model="ic.trans_type" ng-init="ic.getTransTypeMenu()" name="trans_type">
+      <!-- START trans_type -->
+      <div class="col-md-4 asia">
+        <label for="trans_type">Primary transportation:</label>
+        <select class='relation' ng-options="item as item.trans_type for item in ic.trans_type track by item.id" ng-model="ic.trans_type" ng-init="ic.getTransTypeMenu()" name="trans_type">
       </select>
-    <!-- END trans_type -->
-
+        <!-- END trans_type -->
+      </div>
+    </div>
   </div>
   <hr>
 
