@@ -1,12 +1,10 @@
 function adminController(adminService, UserInfoService) {
-  console.log('adminController');
   var vm = this;
   vm.mentorsMentees = function() {
       adminService.getMentorsMentees().then(function() {
           vm.users = adminService.users;
           vm.users.forEach(function(user) {
               if (user.access_lvl === 1) {
-                  console.log('this is mentor');
                   user.access_lvl = 'Mentor';
                   return user.access_lvl;
               } else if (user.access_lvl === 2) {
@@ -31,9 +29,12 @@ function adminController(adminService, UserInfoService) {
 
   vm.displayUserModal = function(index) {
       vm.userInModal = vm.users[index];
-      console.log(vm.userInModal);
   };//end of funciton
 
-
+  vm.goToUserPage = function() {
+      vm.userToLogIn = vm.userInModal;
+      UserInfoService.seeOtherUsersPage(vm.userToLogIn);
+      window.location.href = '#!/visit';
+  };//end of function
 
 }//end of controller

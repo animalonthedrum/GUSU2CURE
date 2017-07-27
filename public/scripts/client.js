@@ -8,7 +8,8 @@ controller('hobbyController', hobbyController).
 controller('questionController', questionController).
 controller('adminController', adminController).
 controller('userController', userController).
-controller('loginController', loginController);
+controller('loginController', loginController).
+controller('visitUserPage', visitUserPage);
 
 myApp.config(function($routeProvider) {
   $routeProvider.when('/', {
@@ -41,5 +42,8 @@ myApp.config(function($routeProvider) {
 }).when('/login', {
     templateUrl: "views/partials/login.html",
     controller: "loginController as lc"
-  });
+}).when('/visit', {
+      templateUrl: "views/partials/visitUserPage.html",
+      controller: "visitUserPage as vc"
+    });
 });

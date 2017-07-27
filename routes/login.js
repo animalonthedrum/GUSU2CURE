@@ -24,6 +24,7 @@ var pool = new pg.Pool(config);
 router.post('/', function(req, res) {
 	var email = req.body.email;
 	var password = req.body.password;
+	console.log(email , password);
 	// START pool.connect
 	pool.connect(function(err, connection, done) {
 		if (err) {
@@ -62,6 +63,6 @@ router.post('/', function(req, res) {
 				})
 		}
 	})
-})
+});
 
 module.exports = router;

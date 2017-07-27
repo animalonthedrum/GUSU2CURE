@@ -12,6 +12,7 @@ var menuLang = require('./routes/menuLang');
 var userInfo = require('./routes/userInfo');
 var register = require('./routes/register');
 var allUsers = require('./routes/allUsers');
+var userSearched = require('./routes/userSearch');
 
 
 //uses
@@ -25,7 +26,7 @@ app.use('/register', register);
 app.use('/login', login);
 app.use('/userInfo', userInfo);
 app.use('/allUsers', allUsers);
-
+app.use('/userSearch', userSearched );
 
 app.listen(port, function() {
 	console.log('Listening on port:', port);

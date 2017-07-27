@@ -92,7 +92,7 @@
 			}).catch(function(err) {
 				console.log('err', err);
 				sv.backFromServer = err
-				console.log('data', sv.backFromServer);
+				console.log('err', sv.backFromServer);
 			})
 		}
 
@@ -103,6 +103,19 @@
 			});
 		};
 		// END sv.getSciRelMenu
+
+		sv.seeOtherUsersPage = function(user) {
+			if (user === undefined) {
+				var userSearchEmail = JSON.parse(localStorage.getItem('userSearched')).email
+				console.log();
+				$http.get('/userSearch/' + userSearchEmail).then(function(res) {
+					console.log('back from the server with', res);
+				})
+			}
+			else {
+				localStorage.setItem('userSearched', JSON.stringify(user))
+			}
+		};//end of function
 
 
 
