@@ -27,7 +27,8 @@ function injuryController(UserInfoService, menuService, $window) {
 			injAge: vm.injAge,
 			level: vm.levelArray,
 			asia: vm.asia,
-			mobility: vm.mobility
+			mobility: vm.mobility,
+			trans_type: vm.trans
 		};
 
 		count = checkObject(injuryObject);
@@ -60,9 +61,8 @@ function injuryController(UserInfoService, menuService, $window) {
 	// START getTransTypeMenu
 	vm.getTransTypeMenu = function() {
 		menuService.getTransTypeMenu().then(function() {
-			// menuService.sci_rel;
 			vm.trans_type = menuService.trans_type;
-			// console.log('ic:45', vm.sci_rel);
+			console.log(vm.trans_type);
 		});
 	}
 	// END getTransTypeMenu

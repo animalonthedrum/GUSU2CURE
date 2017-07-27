@@ -89,11 +89,12 @@
       <!-- END mobility_req -->
 
       <!-- START trans_type -->
-      <div class="col-md-4 asia">
+      <div class="col-md-4 asia" ng-init="ic.getTransTypeMenu()">
         <label for="trans_type">Primary transportation:</label>
-        <select class='relation' ng-options="item as item.trans_type for item in ic.trans_type track by item.id" ng-model="ic.trans_type" ng-init="ic.getTransTypeMenu()" name="trans_type">
-      </select>
-        <!-- END trans_type -->
+        <select class='relation' ng-options="item as item.trans_type for item in ic.trans_type track by item.id" ng-model="ic.trans" name="trans_type">
+        </select>
+      <!-- END trans_type -->
+
       </div>
     </div>
   </div>
