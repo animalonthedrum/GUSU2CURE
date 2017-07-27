@@ -22,9 +22,9 @@ var config = {
 var pool = new pg.Pool(config);
 
 router.get('/', function(req, res) {
-    console.log('allUsers url hit ');
+	console.log('allUsers url hit ');
 
-    pool.connect().then(function(client) {
+	pool.connect().then(function(client) {
 			client.query("SELECT * FROM tbl_user").then(function(userData) {
 				client.release();
 				res.send(userData.rows);
@@ -35,12 +35,34 @@ router.get('/', function(req, res) {
 			res.sendStatus(500);
 		});
 
-});//end of get
+}); //end of get
 
+// START PUT userEnableDisable
 router.put('/', function(req, res) {
-	console.log('update url hit', req.body);
-	res.send(200);
-
-});//end of get
+	var email = req.body.email;
+	var enabled = req.body.enabled;
+	console.log('email sent', email);
+	console.log('enabled status sent:', enabled);
+	if (enabled == true) {
+		pool.connect().then(function(client) {
+			client.query("UPDATE tbl_user SET enabled = true WHERE email = '" + email + "';").then(function() {
+				client.release();
+				res.sendStatus(200);
+			})
+		})
+	} else if (enabled == false) {
+		pool.connect().then(function(client) {
+				client.query("UPDATE tbl_user SET enabled = false WHERE email = '" + email + "';").then(function() {
+					client.release();
+					res.sendStatus(200);
+				})
+			})
+			.catch(function(err) {
+				client.release();
+				res.sendStatus(500);
+			});
+	}
+});
+// END PUT userEnableDisable
 
 module.exports = router;
