@@ -1,43 +1,175 @@
-<div class="container "  ng-init='ac.mentorsMentees()'>
-    <h1>Welcome </h1>
-    <table class="table table-striped">
-  <thead>
-    <tr>
+<div class="container " ng-init='ac.mentorsMentees()'>
+  <h1>Welcome </h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
         <th>Role</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Enabled</th>
-      <th>Info</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Enabled</th>
+        <th>Info</th>
 
-    </tr>
-  </thead>
-  <tbody class = 'table-striped'>
-    <tr ng-repeat='users in ac.users' >
+      </tr>
+    </thead>
+    <tbody class='table-striped'>
+      <tr ng-repeat='users in ac.users'>
         <td>{{users.access_lvl | uppercase}}</td>
-      <td>{{users.first_name |uppercase}}</td>
-      <td>{{users.last_name |uppercase}}</td>
-      <td>{{users.email}}</td>
-      <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td>
-      <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)' > Show Info </button></td>
+        <td>{{users.first_name |uppercase}}</td>
+        <td>{{users.last_name |uppercase}}</td>
+        <td>{{users.email}}</td>
+        <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td>
+        <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> Show Info </button></td>
 
-    </tr>
-  </tbody>
-</table>
+      </tr>
+    </tbody>
+  </table>
 
 
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-    <div class="userContent">
-        <h1>{{ac.userInModal.first_name}}</h1>
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+      <div class="userContent">
+        <!-- <h1>{{ac.userInModal.first_name}}</h1> -->
+        <table class="table table-striped">
+          <thead>
 
+            <h2>{{ac.userInModal.first_name}} {{ac.userInModal.last_name}}'s Info</h2>
+
+          </thead>
+          <tbody class='table-striped'>
+
+            <!-- <tr>
+              <td>
+                <h4>Date of Birth</h4></td>
+              <td>{{ac.userInModal.dob | date}} </td>
+            </tr> -->
+            <tr>
+              <td>
+                <h4>Gender</h4></td>
+              <td>{{ac.userInModal.gender}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Address</h4></td>
+              <td>{{ac.userInModal.address}} {{ac.userInModal.city}} {{ac.userInModal.state}} {{ac.userInModal.zip}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Phone</h4></td>
+              <td>{{ac.userInModal.phone}} Type: {{ac.userInModal.phone_type}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Visit Preference</h4></td>
+              <td>{{ac.userInModal.visit_pref}}</td>
+            </tr>
+            <tr>
+              <td>
+                <h4>SCI Relation</h4></td>
+              <td>{{ac.userInModal.sci_relation}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>SCI Cause</h4></td>
+              <td>{{ac.userInModal.sci_cause}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Age of Injury</h4></td>
+              <td>{{ac.userInModal.sci_age}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Paralysis Level</h4></td>
+              <td>{{ac.userInModal.sci_lvl}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>ASIA Score</h4></td>
+              <td>{{ac.userInModal.asia_score}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Mobility Requirements</h4></td>
+              <td>{{ac.userInModal.mobility_req}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Primary Transportaion</h4></td>
+              <td>{{ac.userInModal.trans_type}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Relationship Status</h4></td>
+              <td>{{ac.userInModal.rel_status}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Family Status</h4></td>
+              <td>{{ac.userInModal.fam_status}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Education Level</h4></td>
+              <td>{{ac.userInModal.ed_lvl}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Language Preference</h4></td>
+              <td>{{ac.userInModal.lang}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Occupation</h4></td>
+              <td>{{ac.userInModal.emp_work}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Pet Issues</h4></td>
+              <td>{{ac.userInModal.pets}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Hobbies</h4></td>
+              <td>{{ac.userInModal.hobbies}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Question Sensitivity</h4></td>
+              <td>{{ac.userInModal.questions}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4> SCI Help Experience</h4></td>
+              <td>{{ac.userInModal.experience}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Additional Info</h4></td>
+              <td>{{ac.userInModal.additional}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Comments</h4></td>
+              <td>{{ac.userInModal.comments}} </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Referal</h4></td>
+              <td>{{ac.userInModal.heard_about}} </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+
+      </div>
     </div>
-  </div>
 
-</div>
+  </div>
 </div>
