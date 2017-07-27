@@ -28,6 +28,24 @@ myApp.service('menuService', function($http) {
 	};
 	// END getTransTypeMenu
 
+	// START sv.getRelStatusMenu
+	sv.getRelStatusMenu = function() {
+		return $http.get('/menuRelStatus').then(function(resultSet) {
+			console.log('Back from dB with:', resultSet.data);
+			sv.rel_status = resultSet.data;
+		});
+	};
+	// END sv.getRelStatusMenu
+
+	// START sv.getLangMenu
+	sv.getLangMenu = function() {
+		return $http.get('/menuLang').then(function(resultSet) {
+			console.log('Back from dB with:', resultSet.data);
+			sv.lang = resultSet.data;
+		});
+	};
+	// END sv.getLangMenu
+
 
 
 }); //end of service

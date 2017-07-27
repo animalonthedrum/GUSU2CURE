@@ -96,10 +96,14 @@
 			})
 		}
 
+		// START sv.getSciRelMenu
 		sv.getSciRelMenu = function() {
 			return $http.get('/sciMenu').then(function(res) {
 				console.log('Back from dB with:', res);
 			});
 		};
+		// END sv.getSciRelMenu
+
+
 
 	}); //end of service

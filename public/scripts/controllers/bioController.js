@@ -1,4 +1,4 @@
-function bioController(UserInfoService, $window) {
+function bioController(UserInfoService, menuService, $window) {
 	console.log('bioController');
 	var vm = this;
 
@@ -25,4 +25,24 @@ function bioController(UserInfoService, $window) {
 		}
 
 	}; //end of submit button
+
+	// START getRelStatusMenu
+	vm.getRelStatusMenu = function() {
+		menuService.getRelStatusMenu().then(function() {
+			vm.rel_status = menuService.rel_status;
+			console.log(vm.rel_status);
+		});
+	}
+	// END getRelStatusMenu
+
+	// START getLangMenu
+	vm.getLangMenu = function() {
+		menuService.getLangMenu().then(function() {
+			vm.lang = menuService.lang;
+			console.log(vm.lang);
+		});
+	}
+	// END getLangMenu
+
+
 }

@@ -1,14 +1,13 @@
 <div class="question1">
   <h1>BIO</h1></div>
 <div class="page">
-  <select class="" name="" ng-model='bc.relationshipStatus'>
-  <option value="" selected disabled>Relationship Status</option>
-  <option value="Single">Single</option>
-  <option value="Married">Married</option>
-  <option value="Separated">Separated</option>
-  <option value="Divorced">Divorced</option>
-  <option value="Widow/Widower">Widow/Widower</option>
-</select>
+
+  <!-- START rel_status -->
+  <label for="rel_status">Relationship status:</label>
+    <select class='relation' ng-options="item as item.rel_status for item in bc.rel_status track by item.id" ng-model="bc.relationshipStatus" ng-init="bc.getRelStatusMenu()" name="rel_status">
+    </select>
+  <!-- END rel_status -->
+
 
   <select class="" name="" ng-model='bc.familyStatus'>
     <option value="" selected disabled>Family Status</option>
@@ -29,16 +28,15 @@
       <option value="None/NA">None/NA</option>
 </select>
 
+<br>
 
-  <select class="language" name="" ng-model='bc.language'>
-  <option value="" selected disabled>Language</option>
-  <option value="1">English</option>
-  <option value="2">Hmong</option>
-  <option value="4">Spanish</option>
-  <option value="3">Somali</option>
-  <option value="5">Vietnamese</option>
-  <option value="6">Other</option>
+<!-- START lang -->
+<label for="lang">Language preference:</label>
+  <select class='relation' ng-options="item as item.lang for item in bc.lang track by item.id" ng-model="bc.language" ng-init="bc.getLangMenu()" name="lang">
   </select>
+<!-- END lang -->
+
+
   <hr>
   <label for="work">Occupation</label>
   <input type="text" name="" value="">
