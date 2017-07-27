@@ -17,7 +17,7 @@
       <td>{{users.first_name |uppercase}}</td>
       <td>{{users.last_name |uppercase}}</td>
       <td>{{users.email}}</td>
-      <td><input type="checkbox" name=""  ng-model='ac.enabledUser'></td>
+      <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td>
 
     </tr>
   </tbody>

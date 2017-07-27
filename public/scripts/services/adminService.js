@@ -15,4 +15,13 @@ myApp.service('adminService', function($http) {
             });//end of loop
         });//end of promise)
     };//end of sv.getMentorsMentees
+
+    sv.switchUserEnabled = function(user) {
+        console.log(user);
+        return $http.put('/allUsers', user).then(function(res) {
+            console.log('back from the server with', res);
+        });
+    };//end of function
+
+
 });//end of service

@@ -37,4 +37,10 @@ router.get('/', function(req, res) {
 
 });//end of get
 
+router.put('/', function(req, res) {
+	console.log('update url hit', req.body);
+	res.send(200);
+
+});//end of get
+
 module.exports = router;
