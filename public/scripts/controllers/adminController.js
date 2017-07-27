@@ -1,4 +1,4 @@
-function adminController(adminService) {
+function adminController(adminService, UserInfoService) {
   console.log('adminController');
   var vm = this;
   vm.mentorsMentees = function() {
@@ -27,6 +27,13 @@ function adminController(adminService) {
 
       adminService.switchUserEnabled(vm.users[index]);
   };//end of funciton
+
+
+  vm.displayUserModal = function(index) {
+      vm.userInModal = vm.users[index];
+      console.log(vm.userInModal);
+  };//end of funciton
+
 
 
 }//end of controller

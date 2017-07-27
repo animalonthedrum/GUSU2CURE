@@ -8,18 +8,36 @@
       <th>Last Name</th>
       <th>Email</th>
       <th>Enabled</th>
+      <th>Info</th>
 
     </tr>
   </thead>
   <tbody class = 'table-striped'>
-    <tr ng-repeat='users in ac.users'>
+    <tr ng-repeat='users in ac.users' >
         <td>{{users.access_lvl | uppercase}}</td>
       <td>{{users.first_name |uppercase}}</td>
       <td>{{users.last_name |uppercase}}</td>
       <td>{{users.email}}</td>
       <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td>
+      <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)' > Show Info </button></td>
 
     </tr>
   </tbody>
 </table>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+    <div class="userContent">
+        <h1>{{ac.userInModal.first_name}}</h1>
+
+    </div>
+  </div>
+
+</div>
 </div>
