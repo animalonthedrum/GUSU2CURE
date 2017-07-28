@@ -41,17 +41,11 @@ function adminController(adminService, UserInfoService) {
 
 
   vm.search = function() {
-      console.log(vm.users);
        adminService.getMentorsMentees().then(function() {
            vm.typeUserSearch = adminService.users;
 
-           for (var i = 0; i < vm.typeUserSearch.length; i++) {
-               if (vm.searchUserBy === vm.typeUserSearch[i].first_name) {
-                   vm.users.pop([i]);
-                   vm.users.unshift(vm.typeUserSearch[i]);
+           something(vm, vm.users);
 
-               }
-           }//end of for loop
            vm.users.forEach(function(user) {
                if (user.access_lvl === 1) {
                    user.access_lvl = 'Mentor';
@@ -67,4 +61,23 @@ function adminController(adminService, UserInfoService) {
 
 
 
+
+
 }//end of controller
+
+function something(vm) {
+    console.log(vm.searchUserBy);
+    for (var i = 0; i < vm.typeUserSearch.length; i++) {
+        for(var x in vm.typeUserSearch[i]) {
+            if (vm.typeUserSearch[i].hasOwnProperty(x)) {
+                if (vm.searchUserBy === vm.typeUserSearch[i][x]) {
+                    console.log('found', vm.typeUserSearch[i]);
+                    vm.users.pop(vm.typeUserSearch[i]);
+                    vm.users.unshift(vm.typeUserSearch[i]);
+                    break;
+                }
+            }//end of has ownProperty
+        }//end of for loop var x
+    }//end of for loop
+    return vm.users;
+}
