@@ -1,16 +1,21 @@
 function hobbyController(UserInfoService) {
   var vm = this;
   var count = 0;
+  vm.hobbiesArr = [];
+
 
   vm.submitHobby = function(index) {
     console.log(vm.hobbyArr[index].name);
+    vm.hobbiesArr.push(vm.hobbyArr[index].name);
   };
+
 
 
   vm.submit = function() {
     console.log('clicked ');
     var hobbies = document.getElementsByName('hobby');
-    vm.hobbiesArr = [];
+    vm.hobbiesArr.push(vm.otherHobby);
+
 
     //creates a date stamp
     var month = new Date().getMonth() + 1;
@@ -29,9 +34,10 @@ function hobbyController(UserInfoService) {
     var hobbiesObject = {
       id: 'hobbies',
       hobbies: vm.hobbiesArr,
+
       dateStamp: dateUserCreated
     }; //end of hobbiesArr
-
+    console.log(hobbiesObject);
     count = checkObjectArr(hobbiesObject);
 
     //only runs if array has 3 or more items
@@ -119,13 +125,7 @@ function hobbyController(UserInfoService) {
       url: 'images/gusustock/music.jpg'
     }
 
-  ];
-
-
-
-
-
-
+  ]; //end hoobyArr
 
 } //end of controller
 
