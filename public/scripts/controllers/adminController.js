@@ -5,6 +5,8 @@ function adminController(adminService, UserInfoService) {
       adminService.getMentorsMentees().then(function() {
 
           vm.users = adminService.users;
+
+
           vm.users.forEach(function(user) {
               if (user.access_lvl === 1) {
                   user.access_lvl = 'Mentor';
@@ -44,7 +46,7 @@ function adminController(adminService, UserInfoService) {
        adminService.getMentorsMentees().then(function() {
            vm.typeUserSearch = adminService.users;
 
-           something(vm, vm.users);
+           searchDatabase(vm, vm.users);
 
            vm.users.forEach(function(user) {
                if (user.access_lvl === 1) {
@@ -65,16 +67,16 @@ function adminController(adminService, UserInfoService) {
 
 }//end of controller
 
-function something(vm) {
-    console.log(vm.searchUserBy);
+function searchDatabase(vm) {
+    var usersFound = [];
     for (var i = 0; i < vm.typeUserSearch.length; i++) {
         for(var x in vm.typeUserSearch[i]) {
             if (vm.typeUserSearch[i].hasOwnProperty(x)) {
                 if (vm.searchUserBy === vm.typeUserSearch[i][x]) {
-                    console.log('found', vm.typeUserSearch[i]);
-                    vm.users.pop(vm.typeUserSearch[i]);
-                    vm.users.unshift(vm.typeUserSearch[i]);
-                    break;
+                    usersFound.push(vm.typeUserSearch[i]);
+                    vm.users = usersFound;
+                } else if (vm.typeUserSearch[i][x] === 'access_lvl') {
+                    console.log('yes');
                 }
             }//end of has ownProperty
         }//end of for loop var x
