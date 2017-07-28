@@ -3,37 +3,44 @@
 
 
 <!-- 20 hobbies -->
-<ul class='multi-column3'>
-  <img src="images/gusustock/basketball.jpg" alt="" class='stockImg'>
+<div class="container">
+
+
+  <ul class='multi-column3'>
+
+
+    <li ng-repeat='hobby in hc.hobbyArr' ng-click='hc.submitHobby($index)'><img ng-src='{{hobby.url}}' alt="" class='img-circle stockImg'><label for="hobby" class='hobbyLabel'>{{hobby.name}}</label></li>
+
+
+
+    <!-- <img src="images/gusustock/basketball.jpg" alt="" class='stockImg' name="hobbyPic" value="Basketball" ng-click='hc.submitHobby($index)'>
   <li><input type="checkbox" name="hobby" value="Basketball">Basketball</li>
-  <img src="images/gusustock/pexels-photo-395074.jpeg" alt="" class='stockImg'>
+  <img src="images/gusustock/pexels-photo-395074.jpeg" alt="" class='stockImg' name="hobbyPic" value="Crafting" ng-click='hc.submitHobby($index)'>
   <li><input type="checkbox" name="hobby" value="Crafting">Crafting</li>
   <img src="images/gusustock/food-pizza-kitchen-recipe.jpg" alt="" class='stockImg'>
   <li><input type="checkbox" name="hobby" value="Baking">Baking</li>
   <img src="images/gusustock/pexels-photo-512779.jpeg" alt="" class='stockImg'>
   <li><input type="checkbox" name="hobby" value="Fishing">Fishing</li>
+  <img src="images/gusustock/pexels-photo-110473.jpeg" alt="" class='stockImg'>
   <li><input type="checkbox" name="hobby" value="Writting">Writing</li>
+  <img src="images/gusustock/pexels-photo-226243.jpeg" alt="" class='stockImg'>
   <li><input type="checkbox" name="hobby" value="Photography">Photography</li>
-  <li><input type="checkbox" name="hobby" value="Scrapbooking">Scrapbooking</li>
+  <img src="images/gusustock/controller-pad-afternoon-xbox.jpg" alt="" class='stockImg'>
   <li><input type="checkbox" name="hobby" value="Videogaming">Videogaming</li>
+  <img src="images/gusustock/bluejay.jpeg" alt="" class='stockImg'>
   <li><input type="checkbox" name="hobby" value="Bird Watching">Bird Watching</li>
-  <li><input type="checkbox" name="hobby" value="Home Brewing">Home Brewing</li>
-  <li><input type="checkbox" name="hobby" value="Bird Watching">Bird Watching</li>
-  <li><input type="checkbox" name="hobby" value="Swimming">Swimming</li>
-  <li><input type="checkbox" name="hobby" value="Photoshop">Photoshop</li>
-  <li><input type="checkbox" name="hobby" value="Wine Tasting">Wine Tasting</li>
-  <li><input type="checkbox" name="hobby" value="Drawing">Drawing</li>
-  <li><input type="checkbox" name="hobby" value="Boating">Boating</li>
-  <li><input type="checkbox" name="hobby" value="Bowling">Bowling</li>
-  <li><input type="checkbox" name="hobby" value="Music">Music</li>
-  <li><input type="checkbox" name="hobby" value="Playing Cards">Playing Cards</li>
-  <li><input type="checkbox" name="hobby" value="Hunting">Hunting</li>
+  <img src="images/gusustock/summer-sunshine-alcohol-drink.jpg" alt="" class='stockImg'>
+  <li><input type="checkbox" name="hobby" value="Home Brewing">Home Brewing</li> -->
 
 
 
 
-</ul>
 
+
+    <input class='otherInput' type="text" name="hobby" value="" placeholder="Other">
+
+  </ul>
+</div>
 <a href="#!/bio"><button type="button" name="button">Previous</button></a>
 <a href="#!/question"><button type="button" name="button">Next</button></a>
 <button type="button" name="button" ng-click='hc.submit()'>Submit</button>
