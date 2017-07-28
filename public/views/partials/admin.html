@@ -4,8 +4,7 @@
     <thead>
       <tr>
         <th>Role</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Name</th>
         <th>Email</th>
         <th>Enabled</th>
         <th>Info</th>
@@ -15,8 +14,7 @@
     <tbody class='table-striped'>
       <tr ng-repeat='users in ac.users'>
         <td>{{users.access_lvl | uppercase}}</td>
-        <td>{{users.first_name |uppercase}}</td>
-        <td>{{users.last_name |uppercase}}</td>
+        <td>{{users.first_name |uppercase}} {{users.last_name |uppercase}}</td>
         <td>{{users.email}}</td>
         <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td>
         <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> Show Info </button></td>
@@ -38,7 +36,8 @@
         <table class="table table-striped">
           <thead>
 
-            <h2>{{ac.userInModal.first_name}} {{ac.userInModal.last_name}}'s Info</h2>
+            <div>
+              <h2>{{ac.userInModal.first_name | uppercase}} {{ac.userInModal.last_name | uppercase}}'S INFO</h2><button class='viewProfile' type="button" name="button" ng-click='ac.goToUserPage()'>View Profile</button></div>
 
           </thead>
           <tbody class='table-striped'>
@@ -167,7 +166,7 @@
 
           </tbody>
         </table>
-        <button type="button" name="button" ng-click='ac.goToUserPage()'>GO to page</button>
+
       </div>
       <!-- END of userContentdiv -->
     </div>

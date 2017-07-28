@@ -266,8 +266,14 @@ hr {
 
 #myModal {
   max-height: 100vh;
-  max-width: 50%;
+  max-width: 66%;
   margin: 0 auto;
+  background-color: transparent;
+  overflow-x: hidden;
+}
+
+.modal-content {
+  margin-right: -5px;
 }
 
 .userContent {
@@ -275,10 +281,31 @@ hr {
   margin: 0 auto;
 }
 
-td {
+.userContent {
   text-align: center;
+}
+
+td.userContent {
+  width: 100px;
+}
+
+.table tbody tr td {
+  vertical-align: middle;
 }
 
 h4 {
   text-align: left;
+}
+
+.viewProfile {
+  float: right;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border-width: thin;
+  border: none;
+  padding: 10px;
+}
+
+table, td, th {
+  border: 1px solid rgb(195, 194, 194);
 }
