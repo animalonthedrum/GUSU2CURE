@@ -5,6 +5,8 @@ myApp.service('adminService', function($http) {
 	sv.getMentorsMentees = function() {
 		return $http.get('/allUsers').then(function(res) {
 			sv.allUsers = res.data;
+			sv.users = [];
+			sv.admins = [];
 			sv.allUsers.forEach(function(user) {
 				if (user.access_lvl === 3) {
 					//if we need them we have info to admins
