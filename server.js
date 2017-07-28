@@ -8,6 +8,7 @@ var menuSciRel = require('./routes/menuSciRel');
 var menuSciCause = require('./routes/menuSciCause');
 var menuTransType = require('./routes/menuTransType');
 var menuRelStatus = require('./routes/menuRelStatus');
+var viewMatchNonMatched = require('./routes/viewMatchNonMatched');
 var menuLang = require('./routes/menuLang');
 var userInfo = require('./routes/userInfo');
 var register = require('./routes/register');
@@ -22,11 +23,12 @@ app.use('/menuSciCause', menuSciCause);
 app.use('/menuTransType', menuTransType);
 app.use('/menuRelStatus', menuRelStatus);
 app.use('/menuLang', menuLang);
+app.use('/viewMatchNonMatched', viewMatchNonMatched);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/userInfo', userInfo);
 app.use('/allUsers', allUsers);
-app.use('/userSearch', userSearched );
+app.use('/userSearch', userSearched);
 
 app.listen(port, function() {
 	console.log('Listening on port:', port);
