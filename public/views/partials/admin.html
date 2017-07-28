@@ -22,7 +22,7 @@
       <tr ng-repeat='users in ac.users'>
         <td>{{users.access_lvl | uppercase}}</td>
         <td>{{users.first_name |uppercase}} {{users.last_name |uppercase}}</td>
-        <td>{{users.email}}</td>
+        <td><a href="mailto:{{users.email}}">{{users.email}}</a></td>
         <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td>
         <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> Show Info </button></td>
 
