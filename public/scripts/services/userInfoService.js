@@ -107,8 +107,8 @@
 		sv.seeOtherUsersPage = function(user) {
 			if (user === undefined) {
 				var userSearchEmail = JSON.parse(localStorage.getItem('userSearched')).email
-				console.log();
-				$http.get('/userSearch/' + userSearchEmail).then(function(res) {
+				console.log('looking for new user');
+				return $http.get('/userSearch/' + userSearchEmail).then(function(res){
 					console.log('back from the server with', res);
 				})
 			}
