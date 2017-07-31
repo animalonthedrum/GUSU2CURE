@@ -2,6 +2,7 @@ function hobbyController(UserInfoService) {
   var vm = this;
   var count = 0;
   vm.hobbiesArr = [];
+  vm.active = false;
 
 
   vm.submitHobby = function(index) {
@@ -34,7 +35,6 @@ function hobbyController(UserInfoService) {
     var hobbiesObject = {
       id: 'hobbies',
       hobbies: vm.hobbiesArr,
-
       dateStamp: dateUserCreated
     }; //end of hobbiesArr
     console.log(hobbiesObject);

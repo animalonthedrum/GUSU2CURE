@@ -1,12 +1,12 @@
 <div class="question1">
   <h1>WELCOME</h1></div>
 <div class="container " ng-init='ac.mentorsMentees()'>
+  <div class="row adminBtn">
 
-
-  <input type="text" name="" value="" ng-model='ac.searchUserBy' placeholder="Search">
-  <button type="button" name="button" ng-click='ac.search()'>Search</button>
-  <button type="button" name="button" ng-click='ac.mentorsMentees()'>All users</button>
-
+    <i class="fa fa-search fa-2x adminSearch" aria-hidden="true"><input class='adminSearch' type="text" name="" value="" ng-model='ac.searchUserBy' placeholder="Search"></i>
+    <button type="button" name="button" ng-click='ac.search()'>Search</button>
+    <button type="button" name="button" ng-click='ac.mentorsMentees()'>All users</button>
+  </div>
   <table class="table table-striped">
     <thead>
       <tr>
