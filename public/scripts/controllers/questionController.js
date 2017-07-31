@@ -15,6 +15,11 @@ function questionController(UserInfoService, $window) {
         console.log(vm.heardType);
         vm.heardArray.push(vm.heardType);
       }
+      swal(
+        'Thank You For Getting Up Signing Up!',
+        'An email will be sent to you shortly',
+        'success'
+      );
     } //end of loop
 
     var questionToSend = {
@@ -32,7 +37,7 @@ function questionController(UserInfoService, $window) {
     if (count === 0) {
       console.log('object is ok');
       UserInfoService.getUserInfo(questionToSend);
-      window.location.href = '#!/hobby';
+      window.location.href = '#!/login';
     }
   };
 
