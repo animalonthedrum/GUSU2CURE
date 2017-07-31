@@ -1,4 +1,21 @@
 <div class="user" ng-init=uc.getUserInfo()>
-    <h1>Welcome {{uc.userData.first_name}}</h1>
-    <div class="userProfileImage" style='height:10px'><img src="images/gusu-logo.png" alt="images/gusu-logo.png"></div
+    <h1>Welcome {{uc.thisUser.first_name | uppercase}}</h1>
+
+    <div id="placeholder-rr"></div>
+    <div >
+        <img   class="userImage" ng-src="{{uc.thisUser.image}}" alt="" >
+    </div>
+
+    <button class="upload" ng-click="uc.showPicker()"><i class="fa fa-picture-o" aria-hidden="true"></i> <u>Upload</u></button>
+
 </div>
+
+
+<script>
+  gapi.hangout.render('placeholder-rr', {
+    'render': 'createhangout',
+    'widget_size': 150
+  });
+
+
+</script>

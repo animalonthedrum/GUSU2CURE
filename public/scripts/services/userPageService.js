@@ -43,7 +43,17 @@ myApp.service('userPageService', function($http) {
 	// END of updateUserInfo
 
 
-
+	sv.updateImage = function(img) {
+		var image = {
+			imagePic:img
+		}
+		return $http.put('/userInfo', image).then(function(res) {
+			console.log('back from the server with', res.data.rows[0].image);
+			sv.userImage = res.data.rows[0].image;
+		}).catch(function(err) {
+			console.log('err', err);
+		})
+	}
 
 
 
