@@ -1,9 +1,10 @@
-/* REQUIRES for userInfo.js */
+
 var express = require('express');
 var path = require('path');
 var router = express.Router();
 var pg = require('pg');
 var bodyParser = require('body-parser');
+var passport = require('../strategies/user.strategy');
 
 router.use(bodyParser.urlencoded({
 	extended: true
@@ -22,18 +23,23 @@ var config = {
 var pool = new pg.Pool(config);
 
 router.get('/', function(req, res) {
-	console.log('allUsers url hit ');
-
-	pool.connect().then(function(client) {
-			client.query("SELECT * FROM tbl_user").then(function(userData) {
+	console.log('allUsers url hit ', req.isAuthenticated());
+	if (req.isAuthenticated()) {
+		pool.connect().then(function(client) {
+				client.query("SELECT * FROM tbl_user").then(function(userData) {
+					client.release();
+					res.send(userData.rows);
+				});
+			})
+			.catch(function(err) {
 				client.release();
-				res.send(userData.rows);
+				res.sendStatus(500);
 			});
-		})
-		.catch(function(err) {
-			client.release();
-			res.sendStatus(500);
-		});
+	} else {
+		console.log('not authenticated');
+		res.sendStatus(403)
+	}
+
 
 }); //end of get
 
@@ -41,27 +47,32 @@ router.get('/', function(req, res) {
 router.put('/', function(req, res) {
 	var email = req.body.email;
 	var enabled = req.body.enabled;
-	console.log('email sent', email);
-	console.log('enabled status sent:', enabled);
-	if (enabled == true) {
-		pool.connect().then(function(client) {
-			client.query("UPDATE tbl_user SET enabled = true WHERE email = '" + email + "';").then(function() {
-				client.release();
-				res.sendStatus(200);
-			})
-		})
-	} else if (enabled == false) {
-		pool.connect().then(function(client) {
-				client.query("UPDATE tbl_user SET enabled = false WHERE email = '" + email + "';").then(function() {
+	if (req.isAuthenticated() ) {
+		console.log('enabled status sent:', enabled);
+		if (enabled == true) {
+			pool.connect().then(function(client) {
+				client.query("UPDATE tbl_user SET enabled = true WHERE email = '" + email + "';").then(function() {
 					client.release();
 					res.sendStatus(200);
 				})
 			})
-			.catch(function(err) {
-				client.release();
-				res.sendStatus(500);
-			});
+		} else if (enabled == false) {
+			pool.connect().then(function(client) {
+					client.query("UPDATE tbl_user SET enabled = false WHERE email = '" + email + "';").then(function() {
+						client.release();
+						res.sendStatus(200);
+					})
+				})
+				.catch(function(err) {
+					client.release();
+					res.sendStatus(403);
+				});
+		}
+	} else if (req.isAuthenticated() === false) {
+		console.log('not authenticated');
+		res.sendStatus(403)
 	}
+
 });
 // END PUT userEnableDisable
 

@@ -3,15 +3,12 @@ myApp.service('userPageService', function($http) {
 
 	sv.saveUserInfo = function(user) {
 		if (user === undefined) {
+			console.log('this is undefined');
+			console.log(JSON.parse(localStorage.getItem('userData')));
 			sv.userInfo = JSON.parse(localStorage.getItem('userData'));
 			console.log('sv.userInfo', sv.userInfo);
-			var email = sv.userInfo.email;
-			console.log(email);
-			// return $http.post('/login', email).then(function(res) {
-			// });
 		} else {
-			var userLogin = user[0];
-			localStorage.setItem('userData', JSON.stringify(userLogin));
+			localStorage.setItem('userData', JSON.stringify(user));
 		}
 	}; //end of saveUserInfo
 
@@ -23,9 +20,12 @@ myApp.service('userPageService', function($http) {
 		var sendEmail = {
 			email: sv.email
 		}
-		return $http.post('/userInfo', sendEmail).then(function(res) {
 
-			sv.userLoggedInInfo = res.data[0];
+		return $http.post('/userInfo', sendEmail).then(function(res) {
+			sv.userLoggedInInfo = res.data.rows[0];
+			console.log('back from the server with', res.data.rows[0]);
+		}).catch(function(err) {
+			window.location.href = '#!/login'
 		});
 	};
 	// END getUserInfo

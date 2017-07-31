@@ -4,6 +4,7 @@ myApp.service('adminService', function($http) {
 	sv.users = [];
 	sv.getMentorsMentees = function() {
 		return $http.get('/allUsers').then(function(res) {
+			console.log('back with', res);
 			sv.allUsers = res.data;
 			sv.users = [];
 			sv.admins = [];
@@ -15,6 +16,8 @@ myApp.service('adminService', function($http) {
 					sv.users.push(user);
 				}
 			}); //end of loop
+		}).catch(function(err) {
+			window.location.href = '#!/login'
 		}); //end of promise)
 	}; //end of sv.getMentorsMentees
 

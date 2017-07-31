@@ -10,7 +10,6 @@ function loginController(UserInfoService, userPageService) {
         };//end of userCredentials
         UserInfoService.loginUser(userCredentials).then(function() {
             vm.userData = UserInfoService.backFromServer;
-            console.log(vm.userData);
             if (vm.userData === 'Not in system' ) {
                 sweetAlert({
                     title: "Error!",
@@ -24,14 +23,12 @@ function loginController(UserInfoService, userPageService) {
                     type: "error"
                 }); //end of sweetAlert
             } else {
-                console.log('saving this data', vm.userData);
-                if (vm.userData[0].access_lvl === 3) {
+                if (vm.userData.data.access_lvl === 3) {
                     window.location.href = '#!/admin';
                 } else {
                     window.location.href = '#!/user';
                 }
                 userPageService.saveUserInfo(vm.userData);
-                console.log(vm.userData);
 
 
             }

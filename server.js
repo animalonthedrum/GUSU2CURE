@@ -14,10 +14,32 @@ var userInfo = require('./routes/userInfo');
 var register = require('./routes/register');
 var allUsers = require('./routes/allUsers');
 var userSearched = require('./routes/userSearch');
-
-
+var index = require('./routes/index');
+var bodyparser = require('body-parser');
+var passport = require('./strategies/user.strategy');
+var session = require('express-session');
 //uses
 app.use(express.static('public'));
+
+app.use(bodyparser.json());
+
+
+app.use(session({
+   secret: 'secret',
+   key: 'user', // this is the name of the req.variable. 'user' is convention, but not required
+   resave: 'true',
+   saveUninitialized: false,
+   cookie: { maxage: 60000, secure: false }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
+// start up passport sessions
+
 app.use('/menuSciRel', menuSciRel);
 app.use('/menuSciCause', menuSciCause);
 app.use('/menuTransType', menuTransType);
@@ -29,12 +51,8 @@ app.use('/login', login);
 app.use('/userInfo', userInfo);
 app.use('/allUsers', allUsers);
 app.use('/userSearch', userSearched);
+app.use('/', index);
 
 app.listen(port, function() {
 	console.log('Listening on port:', port);
 }); //
-
-app.get('/', function(req, res) {
-	console.log('Main url hit');
-	res.sendFile(path.resolve('public/views/index.html'));
-});
