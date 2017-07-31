@@ -15,6 +15,7 @@
         <th>Email</th>
         <th>Enabled</th>
         <th>Info</th>
+        <th>Match</th>
 
       </tr>
     </thead>
@@ -25,6 +26,7 @@
         <td><a href="mailto:{{users.email}}">{{users.email}}</a></td>
         <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td>
         <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> Show Info </button></td>
+        <td><button type="button" name="button" ng-click='ac.getMatches($index)'>Get Matches</button></td>
 
       </tr>
     </tbody>

@@ -9,6 +9,7 @@ var menuSciCause = require('./routes/menuSciCause');
 var menuTransType = require('./routes/menuTransType');
 var menuRelStatus = require('./routes/menuRelStatus');
 var viewMatchNonMatched = require('./routes/viewMatchNonMatched');
+var matching = require('./routes/matching');
 var menuLang = require('./routes/menuLang');
 var userInfo = require('./routes/userInfo');
 var register = require('./routes/register');
@@ -25,11 +26,14 @@ app.use(bodyparser.json());
 
 
 app.use(session({
-   secret: 'secret',
-   key: 'user', // this is the name of the req.variable. 'user' is convention, but not required
-   resave: 'true',
-   saveUninitialized: false,
-   cookie: { maxage: 60000, secure: false }
+	secret: 'secret',
+	key: 'user', // this is the name of the req.variable. 'user' is convention, but not required
+	resave: 'true',
+	saveUninitialized: false,
+	cookie: {
+		maxage: 60000,
+		secure: false
+	}
 }));
 
 app.use(passport.initialize());
@@ -41,6 +45,7 @@ app.use(passport.session());
 // start up passport sessions
 
 app.use('/menuSciRel', menuSciRel);
+app.use('/matching', matching);
 app.use('/menuSciCause', menuSciCause);
 app.use('/menuTransType', menuTransType);
 app.use('/menuRelStatus', menuRelStatus);
