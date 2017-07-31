@@ -28,5 +28,14 @@ myApp.service('adminService', function($http) {
 		});
 	}; //end of function
 
+	// START getMatches
+	sv.matchingUsers = function(user) {
+		console.log('matchingUsers req:', user);
+		$http.post('/matching', user).then(function(res) {
+			console.log('back from matching:');
+		})
+	}
+	// END getMatches
+
 
 }); //end of service
