@@ -34,8 +34,17 @@
   <hr>
 
   <div>
-    <div class='pLevel'><label for="level">Paralysis Level</label></div>
-    <ul class='multi-column2'>
+    <div class='pLevel'>
+      <!-- <label for="sci_lvl">Injury Level:</label></div> -->
+      <label for="sci_lvl">Injury Level: </label>
+      <select class="" name="sci_lvl">
+        <option value=""></option>
+        <option value="C1-C3">Upper-Cervical (C1-C3)</option>
+        <option value="C4-C5">Mid-Cervical (C4-C5)</option>
+        <option value="C6-C8">Lower-Cervical (C6-C8)</option>
+        <option value="T1-S5">Lower Spine (T1-S5)</option>
+      </select>
+    <!-- <ul class='multi-column2'>
 
       <li><input class='checks' type='checkbox' name='level' value="C1-C4"> C1-C4</input>
       </li>
@@ -55,37 +64,36 @@
       </li>
       <li><input class='checks' type='checkbox' name='level' value="S1-S5"> S1-S5</input>
       </li>
-    </ul>
+    </ul> -->
   </div>
-  <hr>
+  <!-- <hr> -->
 
 
   <!-- START asia -->
   <div class="container">
     <div class="row">
       <div class="col-md-4 asia">
+        <label for="asia">ASIA Score: </label>
         <select class="asia" name="" ng-model='ic.asia'>
-      <option value="" disabled selected>ASIA Score</option>
-      <option value="A">A</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-      <option value="D">D</option>
-      <option value="E">E</option>
-    </select>
-      </div>
+          <option value="A">No Motor Function / No Sensory Function</option>
+          <option value="B">No Motor Function / Some Sensory Function</option>
+          <option value="C">Some Motor Function / Some Sensory Function</option>
+          <option value="D">Most Motor Function / Most Sensory Function</option>
+      </select>
+    </div>
       <!-- END asia -->
 
       <!-- START mobility_req -->
-      <div class="col-md-4">
-        <select class="movement" name="mobility_req" ng-model='ic.mobility'>
-      <option value="" disabled selected>Mobility Requirements</option>
-      <option value="Wheelchair (powered)">Wheelchair (powered)</option>
-      <option value="Wheelchair (manual)">Wheelchair (manual)</option>
-      <option value="Walker/Cane">Walker/Cane</option>
-      <option value="Nothing">Nothing</option>
-      <option value="Other">Other</option>
-    </select>
-      </div>
+    <div class="col-md-4">
+      <label for="mobility_req">Mobility Requirement: </label>
+      <select class="movement" name="mobility_req" ng-model='ic.mobility'>
+        <option value="Wheelchair (powered)">Wheelchair (powered)</option>
+        <option value="Wheelchair (manual)">Wheelchair (manual)</option>
+        <option value="Walker/Cane">Walker/Cane</option>
+        <option value="Nothing">Nothing</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
       <!-- END mobility_req -->
 
       <!-- START trans_type -->
