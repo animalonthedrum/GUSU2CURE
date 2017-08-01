@@ -19,11 +19,16 @@ function hobbyController(UserInfoService) {
     //creates a date stamp
 
     //adds hobbies to vm.hobbiesArr
+
     for (var i = 0; i < hobbies.length; i++) {
       if (hobbies[i].checked) {
         vm.hobbiesArr.push(hobbies[i].defaultValue);
       }
+
     } //end of for loop
+
+    vm.hobbiesArr = checkArr(vm.hobbiesArr);
+    console.log(vm.hobbiesArr);
 
     var hobbiesObject = {
       id: 'hobbies',
@@ -120,6 +125,24 @@ function hobbyController(UserInfoService) {
   ]; //end hoobyArr
 
 } //end of controller
+
+
+function checkArr(arr) {
+    console.log(arr);
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                console.log('this matches', arr[j]);
+                arr.splice(j, 1);
+                break;
+            }
+        }
+    }
+    return arr;
+}//end of checkArr
+
+
+
 
 //checks if array is valid
 function checkObjectArr(object) {

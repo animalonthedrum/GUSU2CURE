@@ -4,6 +4,7 @@ function injuryController(UserInfoService, menuService, $window) {
 
 
 	vm.submit = function() {
+		console.log('submit');
 		vm.levelArray = [];
 
 		var l = document.getElementsByName('level');
@@ -15,6 +16,7 @@ function injuryController(UserInfoService, menuService, $window) {
 				vm.levelArray.push(vm.levelType);
 			}
 		} //end of loop
+
 
 		injuryObject = {
 			id: 'injury',
