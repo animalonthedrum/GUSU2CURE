@@ -25,7 +25,7 @@ myApp.service('userPageService', function($http) {
 			sv.userLoggedInInfo = res.data.rows[0];
 			console.log('back from the server with', res.data.rows[0]);
 		}).catch(function(err) {
-			window.location.href = '#!/login'
+			window.location.href = '#!/register'
 		});
 	};
 	// END getUserInfo
