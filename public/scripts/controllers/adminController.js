@@ -84,7 +84,9 @@ function adminController(adminService, UserInfoService) {
 };
   // END getMatches
 
-
+  vm.logout = function () {
+      adminService.logout();
+  };//end of logout
 
 
 } //end of controller

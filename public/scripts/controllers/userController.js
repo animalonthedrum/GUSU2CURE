@@ -1,4 +1,4 @@
-function userController(UserInfoService, userPageService) {
+function userController(UserInfoService, userPageService, adminService) {
   var vm = this;
 
   //globals
@@ -20,4 +20,9 @@ function userController(UserInfoService, userPageService) {
       });
     }); //end uploadImg
 };//end of showPicker
+
+
+vm.logout = function () {
+    adminService.logout();
+};//end of logout
 }//end of controller

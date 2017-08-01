@@ -37,5 +37,13 @@ myApp.service('adminService', function($http) {
 	}
 	// END getMatches
 
+	sv.logout = function() {
+		$http.get('/logout').then(function(res) {
+			console.log('Back from the server with', res);
+			if (res.data === 'OK') {
+				window.location.href = '#!/login'
+			}
+		});
+	}
 
 }); //end of service

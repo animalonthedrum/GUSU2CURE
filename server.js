@@ -16,6 +16,7 @@ var register = require('./routes/register');
 var allUsers = require('./routes/allUsers');
 var userSearched = require('./routes/userSearch');
 var index = require('./routes/index');
+var logout = require('./routes/logout');
 var bodyparser = require('body-parser');
 var passport = require('./strategies/user.strategy');
 var session = require('express-session');
@@ -57,6 +58,7 @@ app.use('/userInfo', userInfo);
 app.use('/allUsers', allUsers);
 app.use('/userSearch', userSearched);
 app.use('/', index);
+app.use('/logout', logout);
 
 app.listen(port, function() {
 	console.log('Listening on port:', port);
