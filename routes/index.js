@@ -13,6 +13,12 @@ router.post('/', passport.authenticate('local'),  function(req, res) {
 
 });
 
+router.put('/', function(req, res){
+    console.log('Loging out');
+    req.logout();
+    res.send(200);
+});//end pf put
+
 
 // Handle index file separately
 // Also catches any other request not explicitly matched elsewhere

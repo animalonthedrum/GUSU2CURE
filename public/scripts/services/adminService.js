@@ -17,7 +17,7 @@ myApp.service('adminService', function($http) {
 				}
 			}); //end of loop
 		}).catch(function(err) {
-			window.location.href = '#!/login'
+			window.location.href = '#!/register'
 		}); //end of promise)
 	}; //end of sv.getMentorsMentees
 
@@ -35,7 +35,18 @@ myApp.service('adminService', function($http) {
 			console.log('back from matching:', res);
 		})
 	}
+
+
 	// END getMatches
+
+
+
+	sv.logout = function() {
+		$http.put('/').then(function(res) {
+			console.log('Back from the server with', res);
+			window.location.href = '#!/register'
+		} )
+	}//end of logout
 
 
 }); //end of service
