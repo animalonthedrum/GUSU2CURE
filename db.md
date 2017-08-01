@@ -83,6 +83,59 @@ CREATE TABLE tbl_user (
     matched_with text
 );
 
+<!-- START INSTRUCTIONS TO CREATE MATERIALIZED VIEW -->
+1. In the db_gusu database select '+ Materialized View' at the bottom of the Postico window
+2. In the 'MATERIALIZED VIEW NAME' text box type 'main_matview'
+3. Copy the entire Materialzed View Definition below from line 95 to line 135
+4. Paste the Materialzed View Definition into the 'MATERIALIZED VIEW DEFINITION' and save changes
+<!-- END INSTRUCTIONS TO CREATE MATERIALIZED VIEW -->
+
+
+<!-- START MATERIALIZED VIEW DEFINITION  -->
+SELECT tbl_user.email,
+    tbl_access_lvl.access_lvl,
+    tbl_user.first_name,
+    tbl_user.last_name,
+    tbl_user.dob,
+    tbl_user.gender,
+    tbl_user.phone,
+    tbl_user.phone_type,
+    tbl_user.street,
+    tbl_user.city,
+    tbl_user.state,
+    tbl_user.zip,
+    tbl_visit_pref.visit_pref,
+    tbl_sci_rel.sci_rel,
+    tbl_sci_cause.sci_cause,
+    tbl_user.sci_age,
+    tbl_user.sci_lvl,
+    tbl_user.asia_score,
+    tbl_user.mobility_req,
+    tbl_trans_type.trans_type,
+    tbl_rel_status.rel_status,
+    tbl_user.fam_status,
+    tbl_user.ed_lvl,
+    tbl_user.emp_work,
+    tbl_lang.lang,
+    tbl_user.pets,
+    tbl_user.hobbies,
+    tbl_user.questions,
+    tbl_user.experience,
+    tbl_user.additional,
+    tbl_user.heard_about,
+    tbl_user.matched,
+    date_part('year'::text, age(tbl_user.dob::timestamp with time zone)) AS age
+   FROM tbl_user
+     LEFT JOIN tbl_access_lvl ON tbl_access_lvl.id = tbl_user.access_lvl
+     LEFT JOIN tbl_lang ON tbl_lang.id = tbl_user.lang
+     LEFT JOIN tbl_rel_status ON tbl_rel_status.id = tbl_user.rel_status
+     LEFT JOIN tbl_sci_cause ON tbl_sci_cause.id = tbl_user.sci_cause
+     LEFT JOIN tbl_sci_rel ON tbl_sci_rel.id = tbl_user.sci_relation
+     LEFT JOIN tbl_trans_type ON tbl_trans_type.id = tbl_user.trans_type
+     LEFT JOIN tbl_visit_pref ON tbl_visit_pref.id = tbl_user.visit_pref;
+<!-- END MATERIALIZED VIEW DEFINITION  -->
+
+
 INSERT INTO tbl_access_lvl
 VALUES (1, 'Mentor'),
 (2, 'Mentee'),
