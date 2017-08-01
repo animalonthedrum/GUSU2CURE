@@ -41,7 +41,7 @@ myApp.service('adminService', function($http) {
 		$http.get('/logout').then(function(res) {
 			console.log('Back from the server with', res);
 			if (res.data === 'OK') {
-				window.location.href = '#!/login'
+				window.location.href = '#!/register'
 			}
 		});
 	}
