@@ -3,26 +3,27 @@
 <div class="page">
   <div class="container">
     <div class="row">
+
       <div class="col-md-6">
 
         <input type="radio" name="mentor" value="1" ng-model='sc.radioValue'>
-        <label class='role' for="mentor">Mentor</label>
+          <label class='role' for="mentor">Mentor</label>
 
         <input type="radio" name="mentee" value="2" ng-model='sc.radioValue'>
         <label class='role' for="mentee">Mentee</label>
       </div>
+
       <div class="col-md-6">
-        <!-- <hr> -->
         <label for="dob">Date of Birth</label>
-        <input type="date" name="dob" value="" ng-model='sc.dateBirth'>
+        <input type="date" name="dob" class="inputDOB" ng-model='sc.dateBirth'>
 
         <select class="Gender" name="gender" ng-model='sc.gender'>
-  <option value="" disabled selected>Gender</option>
-<option value="Male">Male</option>
-<option value="Female">Female</option>
-<option value="Other">Other</option>
-<option value="Not">Prefer Not to Say</option>
-</select>
+          <option value="" disabled selected>Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+          <option value="Not">Prefer Not to Say</option>
+        </select>
       </div>
 
     </div>
@@ -31,21 +32,25 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 address">
-        <label for="address">Address</label><input type="text" name="address" value="" placeholder="123 Place St." ng-model='sc.address'>
-        <label for="city">City</label><input type="text" name="city" value="" placeholder='City Name' ng-model='sc.city'>
-        <label for="state">State</label><input type="text" name="state" value="" maxlength='2' placeholder="XX" ng-model='sc.state' class='state'>
+        <label for="address">Street</label><input type="text" class="street" name="street" ng-model='sc.address'>
+        <label for="city">City</label><input type="text" class="city" name="city" ng-model='sc.city'>
+        <label for="state">State</label><input type="text" class="state" name="state" value="" maxlength='2' ng-model='sc.state' class='state'>
       </div>
 
       <div class="col-md-6 zip">
-        <label for="zip">Zip</label><input type="number" name="zip" value="" maxlength="5" placeholder='XXXX' ng-model='sc.zipcode' class='zipInput'>
-        <label for="phone">Phone</label><input type="tel" id='phone' name="phone" value="" placeholder='(xxx-xxx-xxxx)' minlength="10" ng-model='sc.phone'>
-        <select class="" name="" value='phone' ng-model='sc.phoneType'>
-  <option value="" disabled selected>Phone Type</option>
-  <option value="Cell">Mobile</option>
-  <option value="Home">Home</option>
-  <option value="Work">Work</option>
-  <option value="Other">Other</option>
-  </select>
+        <label for="zip">ZIP Code</label>
+        <input type="number" name="zip" maxlength="5" ng-model='sc.zipcode' class='zipInput'>
+
+        <label for="phone_type">Phone</label>
+        <input type="tel" id='phone' name="phone" minlength="10" ng-model='sc.phone'>
+        
+        <select class="" name="phone_type" ng-model='sc.phoneType'>
+          <option value="" disabled selected>Phone Type</option>
+          <option value="Mobile">Mobile</option>
+          <option value="Home">Home</option>
+          <option value="Work">Work</option>
+          <option value="Other">Other</option>
+        </select>
       </div>
     </div>
   </div>
