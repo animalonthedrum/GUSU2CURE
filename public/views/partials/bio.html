@@ -9,31 +9,32 @@
 
       <div class="col-md-4 rel">
         <label for="rel_status">Relationship status:</label>
-        <select class='relation' ng-options="item as item.rel_status for item in bc.rel_status track by item.id" ng-model="bc.relationshipStatus" ng-init="bc.getRelStatusMenu()" name="rel_status">
-    </select>
+          <select class='relation' ng-options="item as item.rel_status for item in bc.rel_status track by item.id" ng-model="bc.relationshipStatus" ng-init="bc.getRelStatusMenu()" name="rel_status">
+          </select>
         <!-- END rel_status -->
 
       </div>
       <div class="col-md-4 rel">
-        <select class="" name="" ng-model='bc.familyStatus'>
-    <option value="" selected disabled>Family Status</option>
-    <option value="Children at Home">Children at Home</option>
-    <option value="Children grown, out of home">Children grown, out of home</option>
-    <option value="No children">No children</option>
-</select>
+        <label for="fam_status">Family Status</label>
+          <select class="" name="fam_status" ng-model='bc.familyStatus'>
+            <option value="Children at Home">Children at Home</option>
+            <option value="Children grown, out of home">Children grown, out of home</option>
+            <option value="No children">No children</option>
+          </select>
       </div>
+
       <div class='col-md-4 rel'>
-        <select class="" name="" ng-model='bc.educationLevel'>
-      <option value="" selected disabled>Education Level</option>
-      <option value="Elementry">Elementary</option>
-      <option value="Some High School">Some High School</option>
-      <option value="HS Grad/GED">HS Grad/GED</option>
-      <option value="Some College">Some College</option>
-      <option value="Associate Degree">Associate Degree</option>
-      <option value="Undergrad Degree">Undergrad Degree</option>
-      <option value="Graduate Degree">Graduate Degree</option>
-      <option value="None/NA">None/NA</option>
-</select>
+        <label for="ed_lvl">Education Level</label>
+          <select class="" name="ed_lvl" ng-model='bc.educationLevel'>
+            <option value="Elementry">Elementary</option>
+            <option value="Some High School">Some High School</option>
+            <option value="HS Grad/GED">HS Grad/GED</option>
+            <option value="Some College">Some College</option>
+            <option value="Associate Degree">Associate Degree</option>
+            <option value="Undergrad Degree">Undergrad Degree</option>
+            <option value="Graduate Degree">Graduate Degree</option>
+            <option value="None/NA">None/NA</option>
+          </select>
       </div>
     </div>
   </div>
@@ -45,8 +46,8 @@
     <div class="row">
       <div class="col-md-6 rel">
         <label for="lang">Language preference:</label>
-        <select class='relation' ng-options="item as item.lang for item in bc.lang track by item.id" ng-model="bc.language" ng-init="bc.getLangMenu()" name="lang">
-  </select>
+          <select class='relation' ng-options="item as item.lang for item in bc.lang track by item.id" ng-model="bc.language" ng-init="bc.getLangMenu()" name="lang">
+          </select>
       </div>
 
 
@@ -62,12 +63,10 @@
     </div>
     <div class="pets">
       <label for="animals">Do you have a problem with household animals? (Pets, Service Dogs, Allergies)</label>
-      <select class="" name="animals" ng-model='bc.pets'>
-      <option value ='' selected disabled>Yes/No</option>
-    <option value="false">No</option>
-    <option value="true">Yes</option>
-  </select>
-
+        <select class="" name="animals" ng-model='bc.pets'>
+          <option value="false">No</option>
+          <option value="true">Yes</option>
+        </select>
     </div>
 
   </div>

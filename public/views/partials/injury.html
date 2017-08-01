@@ -4,10 +4,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 injuryInfo">
+        <p>The following questions are about the details regarding the SCI. </p>
 
         <!-- START sci_rel -->
-        <label for="sci_rel">SCI patient:</label>
-        <select class='relation' ng-options="item as item.sci_rel for item in ic.sci_rel track by item.id" ng-model="ic.sciRelation" ng-init="ic.getSciRelMenu()" name="sci_rel">
+        <label for="sci_rel">Patient</label>
+          <select class='relation' ng-options="item as item.sci_rel for item in ic.sci_rel track by item.id" ng-model="ic.sciRelation" ng-init="ic.getSciRelMenu()" name="sci_rel">
           </select>
         <!-- END sci_rel -->
         <br>
@@ -15,16 +16,16 @@
       <!-- START sci_cause -->
 
       <div class="col-md-4 injuryInfo">
-        <label for="sci_cause">SCI cause:</label>
-        <select class='relation' ng-options="item as item.sci_cause for item in ic.sci_cause track by item.id" ng-model="ic.cause" ng-init="ic.getSciCauseMenu()" name="sci_cause">
+        <label for="sci_cause">Cause</label>
+          <select class='cause' ng-options="item as item.sci_cause for item in ic.sci_cause track by item.id" ng-model="ic.cause" ng-init="ic.getSciCauseMenu()" name="sci_cause">
           </select>
       </div>
       <!-- END sci_cause -->
       <br>
       <!-- START sci_age -->
       <div class="col-md-4 injuryInfo">
-        <label for="year">Age when SCI occured:</label>
-        <input class='ageInj' type="text" name="year" pattern="\d*" min='0' max='99' maxlength="2" placeholder="YY" ng-model='ic.injAge'>
+        <label for="year">Age SCI occured</label>
+        <input class='ageInj' type="text" name="year" pattern="\d*" min='0' max='99' maxlength="2" ng-model='ic.injAge'>
       </div>
       <!-- END sci_age -->
 
