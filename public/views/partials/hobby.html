@@ -1,63 +1,43 @@
 <div class="question1">
   <h1>HOBBIES</h1></div>
-<div class="page">
-  <div class="threeHobbies">
+<div class="threeHobbies">
 
-    <div class='currentPage'>
-      <p class='circles'>1</p>
-      <p class='circles'>2</p>
-      <p class='circles'>3</p>
-      <p class='circlesAct'>4</p>
-      <p class='circlesNon'>5</p>
+  <div class='currentPage'>
+    <p class='circles'>1</p>
+    <p class='circles'>2</p>
+    <p class='circles'>3</p>
+    <p class='circlesAct'>4</p>
+    <p class='circlesNon'>5</p>
+
+  </div>
+  <p>*Select at least three hobbies</p>
+</div>
+<div class="nextBtn">
+  <button type="button" name="button" class='submitBtn' ng-click='hc.submit()'>NEXT</button>
+</div>
+<div class="sides">
+  <div class="page">
+
+
+
+    <!-- 20 hobbies -->
+    <div class="container">
+
+
+      <ul class='multi-column3'>
+
+
+        <li class='hobbyDiv' ng-repeat='hobby in hc.hobbyArr' ng-click='hc.submitHobby($index)' ng-class="{active : active}"><img ng-src='{{hobby.url}}' alt="" class='img-circle stockImg' ng-click="active = !active"><label for="hobby" class='hobbyLabel'>{{hobby.name}}</label></li>
+
+
+        <input class='otherInput' type="text" name="hobby" value="" placeholder="Other" ng-model='hc.otherHobby'>
+
+      </ul>
+
+      <a href="#!/bio"><button type="button" name="button">Previous</button></a>
+      <a href="#!/question"><button type="button" name="button">Next</button></a>
+
 
     </div>
-    <p>*Select at least three hobbies</p>
   </div>
-
-
-  <!-- 20 hobbies -->
-  <div class="container">
-
-
-    <ul class='multi-column3'>
-
-
-      <li ng-repeat='hobby in hc.hobbyArr' ng-click='hc.submitHobby($index)' ng-class="{active : active}"><img ng-src='{{hobby.url}}' alt="" class='img-circle stockImg' ng-click="active = !active"><label for="hobby" class='hobbyLabel'>{{hobby.name}}</label></li>
-
-
-
-      <!-- <img src="images/gusustock/basketball.jpg" alt="" class='stockImg' name="hobbyPic" value="Basketball" ng-click='hc.submitHobby($index)'>
-  <li><input type="checkbox" name="hobby" value="Basketball">Basketball</li>
-  <img src="images/gusustock/pexels-photo-395074.jpeg" alt="" class='stockImg' name="hobbyPic" value="Crafting" ng-click='hc.submitHobby($index)'>
-  <li><input type="checkbox" name="hobby" value="Crafting">Crafting</li>
-  <img src="images/gusustock/food-pizza-kitchen-recipe.jpg" alt="" class='stockImg'>
-  <li><input type="checkbox" name="hobby" value="Baking">Baking</li>
-  <img src="images/gusustock/pexels-photo-512779.jpeg" alt="" class='stockImg'>
-  <li><input type="checkbox" name="hobby" value="Fishing">Fishing</li>
-  <img src="images/gusustock/pexels-photo-110473.jpeg" alt="" class='stockImg'>
-  <li><input type="checkbox" name="hobby" value="Writting">Writing</li>
-  <img src="images/gusustock/pexels-photo-226243.jpeg" alt="" class='stockImg'>
-  <li><input type="checkbox" name="hobby" value="Photography">Photography</li>
-  <img src="images/gusustock/controller-pad-afternoon-xbox.jpg" alt="" class='stockImg'>
-  <li><input type="checkbox" name="hobby" value="Videogaming">Videogaming</li>
-  <img src="images/gusustock/bluejay.jpeg" alt="" class='stockImg'>
-  <li><input type="checkbox" name="hobby" value="Bird Watching">Bird Watching</li>
-  <img src="images/gusustock/summer-sunshine-alcohol-drink.jpg" alt="" class='stockImg'>
-  <li><input type="checkbox" name="hobby" value="Home Brewing">Home Brewing</li> -->
-
-
-
-
-
-
-      <input class='otherInput' type="text" name="hobby" value="" placeholder="Other" ng-model='hc.otherHobby'>
-
-    </ul>
-  </div>
-  <a href="#!/bio"><button type="button" name="button">Previous</button></a>
-  <a href="#!/question"><button type="button" name="button">Next</button></a>
-  <button type="button" name="button" class='submitBtn' ng-click='hc.submit()'>SUBMIT</button>
-
-
-
 </div>
