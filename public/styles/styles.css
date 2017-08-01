@@ -27,6 +27,14 @@ h2 {
   text-transform: uppercase;
 }
 
+.inputEmail {
+  width: 300px;
+}
+
+.password {
+  width: 120px;
+}
+
 
 /*buttons*/
 

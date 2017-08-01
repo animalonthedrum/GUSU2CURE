@@ -3,14 +3,24 @@
 <div class="window">
 
   <div class="inputs">
-    <input type="text" name="firstName" value="" placeholder='First Name' ng-model='lc.firstName'>
-    <input type="text" name="lastName" value="" placeholder='Last Name' ng-model='lc.lastName'>
-    <input type="email" name="email" value="" placeholder='Email Address' ng-model='lc.email'>
+    <label for="firstName">First name</label>
+      <input type="text" name="firstName" ng-model='lc.firstName'>
+
+    <label for="lastname">Last name</label>
+      <input type="text" name="lastName" ng-model='lc.lastName'>
+
+    <label for="email">Email address</label>
+      <input type="email" class="inputEmail" name="email" ng-model='lc.email'>
+
   </div>
-  <input type="password" name="password" value="" placeholder='Password' ng-model='lc.password'>
-  <input type="password" name="confirmPassword" value="" placeholder='Confirm Password' ng-model='lc.confirmPassword'>
+  <label for="password">Password</label>
+    <input type="password" class="password" name="password" ng-model='lc.password'>
+
+  <label for="confirmPassword">Confirm password</label>
+    <input type="password" class="password" name="confirmPassword" ng-model='lc.confirmPassword'>
+
   <label for="Terms">Terms and Conditions</label>
-  <input type="checkbox" name="Terms" value="Terms and Conditions" ng-model='lc.termsAndConditions'>
+    <input type="checkbox" name="Terms" value="Terms and Conditions" ng-model='lc.termsAndConditions'>
   <div class="buttons">
     <a href="#!/signup"><button type="button" name="button">Next</button></a >
 <button type="button" name="button" ng-click='lc.submitLogin()'>SUBMIT</button>
