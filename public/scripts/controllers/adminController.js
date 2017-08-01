@@ -64,7 +64,6 @@ function adminController(adminService, UserInfoService) {
 
   // START getMatches
   vm.getMatches = function(index) {
-    console.log(vm.users[index]);
     var userToMatch = {
       email: vm.users[index].email,
       type: vm.users[index].access_lvl,
@@ -79,11 +78,10 @@ function adminController(adminService, UserInfoService) {
       zip: vm.users[index].zip,
       lang: vm.users[index].lang,
       fam_status: vm.users[index].fam_status,
-    }
-    console.log('userToMatch:', userToMatch);
+  };
     adminService.matchingUsers(userToMatch);
 
-  }
+};
   // END getMatches
 
 
@@ -100,7 +98,6 @@ function searchDatabase(vm) {
           usersFound.push(vm.typeUserSearch[i]);
           vm.users = usersFound;
         } else if (vm.typeUserSearch[i][x] === 'access_lvl') {
-          console.log('yes');
         }
       } //end of has ownProperty
     } //end of for loop var x

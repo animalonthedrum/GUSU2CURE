@@ -32,7 +32,7 @@ router.post('/', function(req, res) {
 			res.send('pool connect err:', err);
 		} else {
 			// START salt generation
-			bcrypt.genSalt(12, function(err, salt) {
+			bcrypt.genSalt(12, function(err, salt) { 
 				if (err) {
 					console.log('getSalt err:', err);
 				} else {

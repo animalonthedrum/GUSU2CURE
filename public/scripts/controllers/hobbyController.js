@@ -6,24 +6,17 @@ function hobbyController(UserInfoService) {
 
 
   vm.submitHobby = function(index) {
-    console.log(vm.hobbyArr[index].name);
     vm.hobbiesArr.push(vm.hobbyArr[index].name);
   };
 
 
 
   vm.submit = function() {
-    console.log('clicked ');
     var hobbies = document.getElementsByName('hobby');
     vm.hobbiesArr.push(vm.otherHobby);
 
 
     //creates a date stamp
-    var month = new Date().getMonth() + 1;
-    var year = new Date().getFullYear();
-    var day = new Date().getDate();
-    var dateUserCreated = month + "/" + day + "/" + year;
-
 
     //adds hobbies to vm.hobbiesArr
     for (var i = 0; i < hobbies.length; i++) {
@@ -35,15 +28,14 @@ function hobbyController(UserInfoService) {
     var hobbiesObject = {
       id: 'hobbies',
       hobbies: vm.hobbiesArr,
-      dateStamp: dateUserCreated
+      dateStamp: new Date()
     }; //end of hobbiesArr
-    console.log(hobbiesObject);
     count = checkObjectArr(hobbiesObject);
 
     //only runs if array has 3 or more items
     if (count === 0) {
       UserInfoService.getUserInfo(hobbiesObject);
-      UserInfoService.sendRegistration();
+      window.location.href = '#!/question';
     } //end of conditional statement
   }; //end of submit
 
@@ -134,7 +126,8 @@ function checkObjectArr(object) {
   var count = 0;
   for (var x in object) {
     if (object.hasOwnProperty(x)) {
-      if (object[x].length < 3) {
+
+      if (object[x].length <= 3) {
         sweetAlert({
           title: "Hobbies",
           text: "Please choose atleast three hobbies",

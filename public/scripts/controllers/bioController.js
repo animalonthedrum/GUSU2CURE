@@ -1,9 +1,7 @@
 function bioController(UserInfoService, menuService, $window) {
-	console.log('bioController');
 	var vm = this;
 
 	vm.submit = function() {
-		console.log('clicked');
 		var count = 0;
 		console.log(vm.familyStatus);
 		var bioObject = {
@@ -31,7 +29,6 @@ function bioController(UserInfoService, menuService, $window) {
 	vm.getRelStatusMenu = function() {
 		menuService.getRelStatusMenu().then(function() {
 			vm.rel_status = menuService.rel_status;
-			console.log(vm.rel_status);
 		});
 	}
 	// END getRelStatusMenu
@@ -40,7 +37,6 @@ function bioController(UserInfoService, menuService, $window) {
 	vm.getLangMenu = function() {
 		menuService.getLangMenu().then(function() {
 			vm.lang = menuService.lang;
-			console.log(vm.lang);
 		});
 	}
 	// END getLangMenu

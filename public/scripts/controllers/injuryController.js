@@ -4,20 +4,16 @@ function injuryController(UserInfoService, menuService, $window) {
 
 
 	vm.submit = function() {
-		console.log('clicked');
 		vm.levelArray = [];
 
 		var l = document.getElementsByName('level');
 
 		for (var i = 0; i < l.length; i++) {
 			if (l[i].checked) {
-				console.log('this is true');
 				vm.levelType = l[i].defaultValue;
 
-				console.log(vm.levelType);
 				vm.levelArray.push(vm.levelType);
 			}
-			console.log(l[i].checked);
 		} //end of loop
 
 		injuryObject = {
@@ -25,7 +21,7 @@ function injuryController(UserInfoService, menuService, $window) {
 			sciRel: vm.sciRelation,
 			cause: vm.cause,
 			injAge: vm.injAge,
-			level: vm.levelArray,
+			level: vm.injLevel,
 			asia: vm.asia,
 			mobility: vm.mobility,
 			trans_type: vm.trans
@@ -62,7 +58,6 @@ function injuryController(UserInfoService, menuService, $window) {
 	vm.getTransTypeMenu = function() {
 		menuService.getTransTypeMenu().then(function() {
 			vm.trans_type = menuService.trans_type;
-			console.log(vm.trans_type);
 		});
 	}
 	// END getTransTypeMenu

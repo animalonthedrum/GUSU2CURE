@@ -19,7 +19,6 @@ function registerController(UserInfoService, $window) {
 
 		//will only run if everything is filled out correctly
 		if (count === 0) {
-			console.log('object is ok');
 			UserInfoService.getUserInfo(userLoginObject);
 			window.location.href = '#!/signup';
 		} //end of conditional statement

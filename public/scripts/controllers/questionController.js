@@ -1,5 +1,4 @@
 function questionController(UserInfoService, $window) {
-  console.log('questionController');
   var vm = this;
   var count = 0;
 
@@ -9,15 +8,12 @@ function questionController(UserInfoService, $window) {
 
     for (var i = 0; i < h.length; i++) {
       if (h[i].checked) {
-        console.log('this is true');
         vm.heardType = h[i].defaultValue;
-
-        console.log(vm.heardType);
         vm.heardArray.push(vm.heardType);
       }
       swal(
-        'Thank You For Getting Up Signing Up!',
-        'An email will be sent to you shortly',
+        'Thank You For Signing Up!',
+        'Login to create a profile',
         'success'
       );
     } //end of loop
@@ -30,14 +26,14 @@ function questionController(UserInfoService, $window) {
       comment: vm.comment,
       heardAbout: vm.heardArray
     }; //end object
-    console.log(questionToSend);
     count = checkObject(questionToSend);
 
     //only runs of object is correctly filled out
     if (count === 0) {
-      console.log('object is ok');
       UserInfoService.getUserInfo(questionToSend);
+      UserInfoService.sendRegistration();
       window.location.href = '#!/login';
+
     }
   };
 

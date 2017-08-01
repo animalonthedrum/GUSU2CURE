@@ -22,25 +22,19 @@
 	    } else if (data.id === "hobbies") {
 	      sv.fulluserObject.hobbies = data;
 	    }
-	    console.log(sv.fulluserObject);
 	  }; //end of getUserInfo
 
 	  sv.sendRegistration = function() {
-	    console.log(sv.fulluserObject);
 	    return $http.post('/register', sv.fulluserObject).then(function(response) {
-	      console.log(response);
 	    })
 	  }
 
 	  sv.loginUser = function(user) {
-	    console.log('inside of loginUser', user);
 	    return $http.post('/', user).then(function(res) {
 	      console.log('back from the server with', res);
 	      sv.backFromServer = res
 	    }).catch(function(err) {
-	      console.log('err', err);
 	      sv.backFromServer = err
-	      console.log('err', sv.backFromServer);
 	    })
 	  }
 
@@ -55,7 +49,6 @@
 	  sv.seeOtherUsersPage = function(user) {
 	    if (user === undefined) {
 	      var userSearchEmail = JSON.parse(localStorage.getItem('userSearched')).email
-	      console.log('looking for new user');
 	      return $http.get('/userSearch/' + userSearchEmail).then(function(res) {
 	        console.log('back from the server with', res);
 	      })

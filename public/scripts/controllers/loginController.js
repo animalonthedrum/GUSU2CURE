@@ -2,8 +2,6 @@ function loginController(UserInfoService, userPageService) {
     var vm = this;
 
     vm.login = function() {
-        console.log('clicked');
-        console.log(vm.email, vm.password);
         var userCredentials = {
             email:vm.email,
             password:vm.password
@@ -29,8 +27,6 @@ function loginController(UserInfoService, userPageService) {
                     window.location.href = '#!/user';
                 }
                 userPageService.saveUserInfo(vm.userData);
-
-
             }
         });//end of service
     };//end of login
