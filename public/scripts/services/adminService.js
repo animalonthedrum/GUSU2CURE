@@ -32,7 +32,7 @@ myApp.service('adminService', function($http) {
 	sv.matchingUsers = function(user) {
 		console.log('matchingUsers req:', user);
 		$http.post('/matching', user).then(function(res) {
-			console.log('back from matching:');
+			console.log('back from matching:', res);
 		})
 	}
 	// END getMatches

@@ -31,20 +31,31 @@ var asia = asia;
 
 // START GET matchingUsers
 router.post('/', function(req, res) {
+	var matchUserEmail = req.body.email;
 	var matchUserType = req.body.type;
-	// var matchAgeX = userAge - Math.ceil(userAge - ((userAge / 1.75) + 7));
-	// var matchAgeY = userAge + Math.ceil(userAge - ((userAge / 1.75) + 7));
+	var userAge = req.body.age;
+	var matchAgeX = userAge - Math.ceil(userAge - ((userAge / 1.75) + 7));
+	var matchAgeY = userAge + Math.ceil(userAge - ((userAge / 1.75) + 7));
+	var matchGender = req.body.gender;
 	var matchSciAge = req.body.sci_age;
-	var matchUserZIP = req.body.zip.slice(0, 3) + '%';
+	var matchSciAgeX = (req.body.sci_age - 5);
+	var matchSciAgeY = (req.body.sci_age + 5);
+	var matchUserZIP = req.body.zip.slice(0, 2) + '%';
+	console.log('email', matchUserEmail);
+	console.log('matchUserType', matchUserType);
+	console.log('userAge', userAge);
+	console.log('matchAgeX', matchAgeX);
+	console.log('matchAgeY', matchAgeY);
+	console.log('matchGender', matchGender);
+	console.log('matchSciAge', matchSciAge);
+	console.log('matchSciAgeX', matchSciAgeX);
+	console.log('matchSciAgeY', matchSciAgeY);
+	console.log('matchUserZIP', matchUserZIP);
 
-	console.log('matchUserType:', matchUserType);
-	// console.log('matchAgeX:', matchAgeX);
-	// console.log('matchAgeY:', matchAgeY);
-	console.log('matchSciAge:', matchSciAge);
-	console.log('matchUserZIP:', matchUserZIP);
 	pool.connect().then(function(client) {
-		client.query("SELECT * FROM tbl_user;").then(function(matchData) {
+		client.query("SELECT * FROM main_matview WHERE access_lvl != '" + matchUserType + "' AND access_lvl != 'Admin' AND age BETWEEN '" + matchAgeX + "' AND '" + matchAgeY + "' AND gender = '" + matchGender + "' AND sci_age BETWEEN '" + matchSciAgeX + "' AND '" + matchSciAgeY + "' AND zip LIKE '" + matchUserZIP + "' AND matched = 'FALSE' AND email !='" + matchUserEmail + "' LIMIT 3;").then(function(matchData) {
 			client.release();
+			console.log('matchData', matchData.rows);
 			res.send(matchData.rows);
 		});
 	}).catch(function(err) {
