@@ -17,7 +17,7 @@ myApp.service('adminService', function($http) {
 				}
 			}); //end of loop
 		}).catch(function(err) {
-			window.location.href = '#!/login'
+			window.location.href = '#!/register'
 		}); //end of promise)
 	}; //end of sv.getMentorsMentees
 
@@ -32,7 +32,6 @@ myApp.service('adminService', function($http) {
 	sv.matchingUsers = function(user) {
 		console.log('matchingUsers req:', user);
 		$http.post('/matching', user).then(function(res) {
-			console.log('back from matching:');
 		})
 	}
 	// END getMatches
