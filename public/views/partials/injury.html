@@ -1,5 +1,17 @@
 <div class="question1">
   <h1>INJURY INFORMATION</h1></div>
+<div class="threeHobbies">
+
+  <div class='currentPage'>
+    <p class='circles'>1</p>
+    <p class='circlesAct'>2</p>
+    <p class='circlesNon'>3</p>
+    <p class='circlesNon'>4</p>
+    <p class='circlesNon'>5</p>
+
+  </div>
+  <p>*All Fields Required</p>
+</div>
 <div class="page">
   <div class="container">
     <div class="row">
@@ -45,7 +57,7 @@
         <option value="C6-C8">Lower-Cervical (C6-C8)</option>
         <option value="T1-S5">Lower Spine (T1-S5)</option>
       </select>
-    <!-- <ul class='multi-column2'>
+      <!-- <ul class='multi-column2'>
 
       <li><input class='checks' type='checkbox' name='level' value="C1-C4"> C1-C4</input>
       </li>
@@ -66,56 +78,51 @@
       <li><input class='checks' type='checkbox' name='level' value="S1-S5"> S1-S5</input>
       </li>
     </ul> -->
-  </div>
-  <!-- <hr> -->
+    </div>
+    <!-- <hr> -->
 
 
-  <!-- START asia -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 asia">
-        <label for="asia">ASIA Score: </label>
-        <select class="asia" name="" ng-model='ic.asia'>
+    <!-- START asia -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 asia">
+          <label for="asia">ASIA Score: </label>
+          <select class="asia" name="" ng-model='ic.asia'>
           <option value="A">No Motor Function / No Sensory Function</option>
           <option value="B">No Motor Function / Some Sensory Function</option>
           <option value="C">Some Motor Function / Some Sensory Function</option>
           <option value="D">Most Motor Function / Most Sensory Function</option>
       </select>
-    </div>
-      <!-- END asia -->
+        </div>
+        <!-- END asia -->
 
-      <!-- START mobility_req -->
-    <div class="col-md-4">
-      <label for="mobility_req">Mobility Requirement: </label>
-      <select class="movement" name="mobility_req" ng-model='ic.mobility'>
+        <!-- START mobility_req -->
+        <div class="col-md-4">
+          <label for="mobility_req">Mobility Requirement: </label>
+          <select class="movement" name="mobility_req" ng-model='ic.mobility'>
         <option value="Wheelchair (powered)">Wheelchair (powered)</option>
         <option value="Wheelchair (manual)">Wheelchair (manual)</option>
         <option value="Walker/Cane">Walker/Cane</option>
         <option value="Nothing">Nothing</option>
         <option value="Other">Other</option>
       </select>
-    </div>
-      <!-- END mobility_req -->
+        </div>
+        <!-- END mobility_req -->
 
-      <!-- START trans_type -->
-      <div class="col-md-4 asia" ng-init="ic.getTransTypeMenu()">
-        <label for="trans_type">Primary transportation:</label>
-        <select class='relation' ng-options="item as item.trans_type for item in ic.trans_type track by item.id" ng-model="ic.trans" name="trans_type">
+        <!-- START trans_type -->
+        <div class="col-md-4 asia" ng-init="ic.getTransTypeMenu()">
+          <label for="trans_type">Primary transportation:</label>
+          <select class='relation' ng-options="item as item.trans_type for item in ic.trans_type track by item.id" ng-model="ic.trans" name="trans_type">
         </select>
-        <!-- END trans_type -->
+          <!-- END trans_type -->
 
+        </div>
       </div>
     </div>
-  </div>
-  <hr>
+    <hr>
 
-  <a href="#!/signup"><button type="button" name="button">Previous</button></a>
-  <a href="#!/bio"><button type="button" name="button">Next</button></a>
-  <button class='submitBtn' type="button" name="button" ng-click='ic.submit()'>SUBMIT</button>
+    <a href="#!/signup"><button type="button" name="button">Previous</button></a>
+    <a href="#!/bio"><button type="button" name="button">Next</button></a>
+    <button class='submitBtn' type="button" name="button" ng-click='ic.submit()'>SUBMIT</button>
 
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-      <span class="sr-only">20% Complete</span>
-    </div>
   </div>
-</div>

@@ -280,6 +280,11 @@ hr {
   color: #9a252b;
 }
 
+.threeHobbies {
+  text-align: center;
+  color: #9a252b;
+}
+
 
 /* The Modal (background) */
 
@@ -395,11 +400,6 @@ p {
   opacity: 0.7;
 }
 
-
-/*.submitBtn:hover {
-  background-color: #9a252b;
-}*/
-
 .submitBtn:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
@@ -412,4 +412,53 @@ p {
 .userImage {
   max-height: 10em;
   max-width: 10em;
+}
+
+.circles {
+  border-radius: 40px;
+  border-width: thin;
+  height: 40px;
+  width: 40px;
+  border: solid #4d4949;
+  background-color: #716d6d;
+  text-align: center;
+  color: #4d4949;
+  vertical-align: middle;
+  font-size: 24px;
+  font-family: 'Ubuntu', sans-serif;
+  opacity: 0.5;
+  margin: 10px;
+  display: inline-block;
+}
+
+.circlesAct {
+  border-radius: 50px;
+  border-width: thin;
+  height: 50px;
+  width: 50px;
+  border: solid #4d4949;
+  text-align: center;
+  color: #4d4949;
+  vertical-align: middle;
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: transparent;
+  margin: 10px;
+  display: inline-block;
+}
+
+.circlesNon {
+  border-radius: 40px;
+  border-width: thin;
+  height: 40px;
+  width: 40px;
+  border: solid #4d4949;
+  text-align: center;
+  color: #4d4949;
+  vertical-align: middle;
+  font-size: 24px;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: transparent;
+  margin: 10px;
+  display: inline-block;
 }
