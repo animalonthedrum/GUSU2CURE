@@ -12,67 +12,74 @@
   </div>
   <p>*All Fields Required</p>
 </div>
-<div class="page">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
+<div class="nextBtn">
+  <button class='submitBtn' type="button" name="button" ng-click='qc.submit()'>SUBMIT</button>
+</div>
+<div class="sides">
 
-        <label for="questions">Do you have a problem with answering uncomfortable questions?</label>
-        <input type="radio" name="questions" value="Yes" ng-model='qc.question'>
-        <label for="Yes">Yes</label>
 
-        <input type="radio" name="questions" value="No" ng-model='qc.question'>
-        <label for="No">No</label>
-      </div>
-      <div class="col-md-6">
-        <div class="exp">
-          <label for="experience">What is your experience helping others with Spinal Cord Injury?</label>
-          <textarea name="experience" rows="4" cols="60" ng-model='qc.experience'></textarea>
-        </div>
-
-      </div>
-    </div>
-    <hr>
-    <div class="container">
-      <div class="row">
-        <div class="additional">
-          <label for="additionalInfo">Is there anything else that might be good to know about you for considering a match with Peer Visiting?</label>
-          <textarea class='additional' name="additionalInfo" rows="4" cols="60" placeholder="Life Experiences, anything about yourself that you think is relevant to helping others." ng-model='qc.additional'></textarea>
-        </div>
-      </div>
-    </div>
-    <hr>
+  <div class="page">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="comment">
-            <label for="comments">Do you have any Comments or Suggestions?</label>
-            <textarea name="comments" rows="10" cols="60" ng-model='qc.comment'></textarea>
+
+          <label for="questions">Do you have a problem with answering uncomfortable questions? <br> (Going to the bathroom, sex, ...)</label>
+          <input type="radio" name="questions" value="Yes" ng-model='qc.question'>
+          <label for="Yes">Yes</label>
+
+          <input type="radio" name="questions" value="No" ng-model='qc.question'>
+          <label for="No">No</label>
+        </div>
+        <div class="col-md-6">
+          <div class="exp">
+            <label for="experience">What is your experience helping others with Spinal Cord Injury?</label>
+            <textarea name="experience" rows="4" cols="60" ng-model='qc.experience'></textarea>
+          </div>
+
+        </div>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class="additional">
+            <label for="additionalInfo">Is there anything else that might be good to know about you for considering a match with Peer Visiting?</label>
+            <textarea class='additional' name="additionalInfo" rows="4" cols="60" placeholder="Life Experiences, anything about yourself that you think is relevant to helping others." ng-model='qc.additional'></textarea>
           </div>
         </div>
-        <label for="heardAboutUs"></label>
-        <div class="col-md-6">
-          <ul>
-            <label for="heardAbout">How did you hear about this Mentoring Program?</label>
-            <li><input class='checks' type='checkbox' name='heardAbout' value=" Personal Reference">Personal Reference</input>
-            </li>
-            <li><input class='checks' type='checkbox' name='heardAbout' value="Email">Email</input>
-            </li>
-            <li><input class='checks' type='checkbox' name='heardAbout' value="Website">Website</input>
-            </li>
-            <li><input class='checks' type='checkbox' name='heardAbout' value="Hospital System">Hospital System</input>
-            </li>
-            <li><input class='checks' type='checkbox' name='heardAbout' value="Other">Other</input>
-            </li>
-          </ul>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="comment">
+              <label for="comments">Do you have any Comments or Suggestions?</label>
+              <textarea name="comments" rows="10" cols="60" ng-model='qc.comment'></textarea>
+            </div>
+          </div>
+          <label for="heardAboutUs"></label>
+          <div class="col-md-6">
+            <ul>
+              <label for="heardAbout">How did you hear about this Mentoring Program?</label>
+              <li><input class='checks' type='checkbox' name='heardAbout' value=" Personal Reference">Personal Reference</input>
+              </li>
+              <li><input class='checks' type='checkbox' name='heardAbout' value="Email">Email</input>
+              </li>
+              <li><input class='checks' type='checkbox' name='heardAbout' value="Website">Website</input>
+              </li>
+              <li><input class='checks' type='checkbox' name='heardAbout' value="Hospital System">Hospital System</input>
+              </li>
+              <li><input class='checks' type='checkbox' name='heardAbout' value="Other">Other</input>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+    <hr>
+
+    <a href="#!/hobby"><button type="button" name="button">Previous</button></a>
+    <a href="#!/done"><button type="button" name="button">Next</button></a>
+
+
   </div>
-  <hr>
-
-  <a href="#!/hobby"><button type="button" name="button">Previous</button></a>
-  <a href="#!/done"><button type="button" name="button">Next</button></a>
-  <button class='submitBtn' type="button" name="button" ng-click='qc.submit()'>SUBMIT</button>
-
 </div>

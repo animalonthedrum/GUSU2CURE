@@ -2,10 +2,6 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-.progress {
-  margin-top: 25px;
-}
-
 h1 {
   text-align: center;
   /*font-family: 'Lato', sans-serif;*/
@@ -19,7 +15,11 @@ h2 {
   color: #333333;
 }
 
-.street, .city {
+.street {
+  width: 225px;
+}
+
+.city {
   width: 225px;
 }
 
@@ -81,7 +81,7 @@ li {
   margin-bottom: 50px;
 }
 
-input, option, select {
+input option select {
   margin-right: 5px;
   margin-left: 5px;
   margin-bottom: 15px;
@@ -161,13 +161,14 @@ hr {
 }
 
 .page {
-  max-width: 95vw;
-  margin-left: 2.5vw;
-  margin-right: 2.5vw;
-  border-radius: 20px;
-  border-color: solid #9a252b;
-  border-width: thin;
-  max-height: 100vw;
+  max-width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  border-top: solid #4F2223;
+  border-bottom: solid #9a252b;
+  background-color: white;
+  border-width: medium;
+  height: 100%;
 }
 
 .state {
@@ -177,6 +178,7 @@ hr {
 
 .setting {
   width: 100%;
+  text-align: center;
 }
 
 .zipInput {
@@ -272,7 +274,13 @@ hr {
 }
 
 .hobbyLabel {
-  margin-right: 600px;
+  text-align: center;
+}
+
+.hobbyDiv {
+  height: 250px;
+  width: 250px;
+  text-align: center;
 }
 
 .active {
@@ -324,7 +332,7 @@ hr {
   font-weight: bold;
 }
 
-.close:hover, .close:focus {
+.close:hover .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
@@ -375,12 +383,16 @@ h4 {
   margin-bottom: 20px;
 }
 
-table, td, th {
+table td th {
   border: 1px solid rgb(195, 194, 194);
 }
 
 p {
   display: inline-grid;
+}
+
+.nextBtn {
+  float: right;
 }
 
 .submitBtn {
@@ -393,7 +405,7 @@ p {
   outline: none;
   box-shadow: 0 9px #999;
   float: right;
-  margin-right: 1.5vw;
+  margin-right: 8vw;
 }
 
 .submitBtn:hover {
@@ -461,4 +473,10 @@ p {
   background-color: transparent;
   margin: 10px;
   display: inline-block;
+}
+
+.sides {
+  height: 100%;
+  background-color: #9a252b;
+  background: linear-gradient( #4F2223, #9a252b);
 }
