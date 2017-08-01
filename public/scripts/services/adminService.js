@@ -17,7 +17,7 @@ myApp.service('adminService', function($http) {
 				}
 			}); //end of loop
 		}).catch(function(err) {
-			window.location.href = '#!/register'
+			window.location.href = '#!/login'
 		}); //end of promise)
 	}; //end of sv.getMentorsMentees
 
@@ -32,17 +32,10 @@ myApp.service('adminService', function($http) {
 	sv.matchingUsers = function(user) {
 		console.log('matchingUsers req:', user);
 		$http.post('/matching', user).then(function(res) {
+			console.log('back from matching:', res);
 		})
 	}
 	// END getMatches
 
-	sv.logout = function() {
-		$http.get('/logout').then(function(res) {
-			console.log('Back from the server with', res);
-			if (res.data === 'OK') {
-				window.location.href = '#!/register'
-			}
-		});
-	}
 
 }); //end of service
