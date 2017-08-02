@@ -1,501 +1,553 @@
-body {
-  font-family: 'Ubuntu', sans-serif;
-}
+  body {
+    font-family: 'Ubuntu', sans-serif;
+  }
 
-h1 {
-  text-align: center;
-  /*font-family: 'Lato', sans-serif;*/
-  font-family: 'Ubuntu', sans-serif;
-}
+  h1 {
+    text-align: center;
+    /*font-family: 'Lato', sans-serif;*/
+    font-family: 'Ubuntu', sans-serif;
+  }
 
-h2 {
-  font-family: Lato, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 29px;
-  color: #333333;
-}
+  h2 {
+    font-family: Lato, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 29px;
+    color: #333333;
+  }
+  /*SIGN UP*/
 
-.street {
-  width: 225px;
-}
+  .street {
+    width: 225px;
+  }
 
-.city {
-  width: 225px;
-}
+  .city {
+    width: 225px;
+  }
 
-.state {
-  text-transform: uppercase;
-}
+  .state {
+    text-transform: uppercase;
+  }
+  /*REG PAGE*/
 
-.inputEmail {
-  width: 300px;
-}
+  .landPage {
+    height: 100vh;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    /*margin-top: 175px;*/
+    background-color: #9a252b;
+    background: linear-gradient( #4F2223, #9a252b);
+    /*opacity: .7;*/
+    color: white;
+  }
 
-.password {
-  width: 120px;
-}
+  .entirePage {
+    height: 100vh;
+    /*width: 100vw;*/
+    /*background-image: url('../images/gusustock/login.jpg');
+    background-size: cover;
+    opacity: 0.6;*/
+  }
 
-
-/*buttons*/
-
-button {
-  background-color: transparent;
-  border-radius: 20px;
-  border-width: thin 3px 3px 3px 3px;
-  border-color: #9a252b;
-  font-size: 24px;
-  color: #9a252b;
-}
-
-.registerBtn {
-  color: #9a252b;
-}
-
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-[placeholder]:focus::-webkit-input-placeholder {
-  transition: opacity 0.1s 0.1s ease;
-  opacity: 0;
-}
-
-li {
-  list-style: none;
-  font-size: 24px;
-  width: 400px;
-}
-
-.landPage {
-  height: 100vh;
-  width: 80vw;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  background-color: #9a252b;
-  opacity: .7;
-  color: white;
-}
-
-.entirePage {
-  height: 100vh;
-  width: 100vw;
-  background-image: url('../images/gusustock/login.jpg');
-  background-size: cover;
-}
-
-
-/*.inputs {
-  margin-bottom: 20px;
-}
-
-.buttons {
-  text-align: center;
-}
-
-.window {
-  margin-left: 15%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  .headerImg.landPage {
+    margin-bottom: none;
+  }
+  /*.window {
+  margin-right: 100px;
+  border-width: thin;
+  border: solid white;
 }*/
 
-input option select {
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-bottom: 25px;
-  padding: 6px 4px;
-  border: 1px solid #999;
-  /*border-radius: 20px;*/
-  /*border-bottom: solid #666666;*/
-  /*border-width: thin;*/
-  display: block;
-  font-size: 14px;
-  font-family: 'Ubuntu', Arial, sans-serif;
-  color: #000000;
-  /*text-indent: 2%;*/
-}
+  .terms {
+    color: white;
+    margin-top: 5px;
+    text-align: center;
+    margin-right: 20px;
+    font-weight: lighter;
+  }
 
-label {
-  font-weight: normal;
-  font-family: 'Helvetica', Arial, sans-serif;
-  font-size: 18px;
-  color: #666666;
-}
+  .checkTerms {
+    text-align: center;
+  }
 
-.relation {
-  width: 160px;
-}
+  .inputs {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    float: right;
+    border: solid white;
+    border-width: thin;
+    margin-right: 100px;
+    padding: 40px;
+    height: 535px;
+    /*background-color: black;*/
+  }
 
-.cause {
-  width: 170px;
-}
+  .regInput {
+    width: 300px;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    margin-top: 5px;
+  }
 
+  .regLabel {
+    display: block;
+    color: white;
+    margin-top: 5px;
+    font-weight: lighter;
+  }
 
-/*navbar*/
+  .regBtn {
+    margin-top: 20px;
+    background-color: white;
+    color: #9a252b;
+  }
 
-.logoImg {
-  height: 225px;
-  width: 225px;
-  float: left;
-  margin-left: 2.5vw;
-}
+  .buttons {
+    text-align: center;
+  }
 
-.navbar {
-  background-color: #bdb9b8;
-  border-bottom: solid #9a252b;
-  border-width: thin;
-  max-height: 80px;
-}
+  .loginBox {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    float: left;
+    border: solid white;
+    border-width: thin;
+    margin-left: 100px;
+    padding: 40px;
+    height: 535px;
+  }
 
-.headerImg {
-  height: 225px;
-  width: 100%;
-  background-size: cover;
-  background-image: url('../images/header3.png');
-  border-bottom: solid #9a252b;
-  border-width: thin;
-  margin-bottom: 100px;
-}
+  .loginInputs {
+    display: block;
+    width: 300px;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    margin-top: 5px;
+  }
 
-select {
-  /*font-family: 'Open Sans', sans-serif;*/
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  color: #000000;
-}
+  .logLabel {
+    color: white;
+    font-weight: lighter;
+    margin-top: 5px;
+    display: block;
+  }
 
-hr {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-color: #9a252b;
-  border-width: thin;
-}
+  .signupLogo {
+    height: 275px;
+    width: 275px;
+  }
+  /*buttons*/
 
+  button {
+    background-color: transparent;
+    border-radius: 20px;
+    border-width: thin 3px 3px 3px 3px;
+    border-color: #9a252b;
+    font-size: 24px;
+    color: #9a252b;
+  }
 
-/*signup*/
+  .registerBtn {
+    /*color: #9a252b;*/
+  }
 
-.role {
-  font-size: 30px;
-}
+  input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-.page {
-  max-width: 80vw;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  border-top: solid #4F2223;
-  border-bottom: solid #9a252b;
-  background-color: white;
-  border-width: medium;
-  height: 100%;
-}
+  [placeholder]:focus::-webkit-input-placeholder {
+    transition: opacity 0.1s 0.1s ease;
+    opacity: 0;
+  }
 
-.state {
-  max-width: 50px;
-  text-align: center;
-}
+  li {
+    list-style: none;
+    font-size: 24px;
+    width: 400px;
+  }
 
-.setting {
-  width: 100%;
-  text-align: center;
-}
+  input option select {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    padding: 6px 4px;
+    border: 1px solid #999;
+    /*border-radius: 20px;*/
+    /*border-bottom: solid #666666;*/
+    /*border-width: thin;*/
+    display: block;
+    font-size: 14px;
+    font-family: 'Ubuntu', Arial, sans-serif;
+    color: #000000;
+    /*text-indent: 2%;*/
+  }
 
-.zipInput {
-  width: 65px;
-  text-align: center;
-}
+  label {
+    font-weight: normal;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 18px;
+    color: #666666;
+  }
 
-#phone {
-  width: 180px;
-}
+  .relation {
+    width: 160px;
+  }
 
-.inputDOB {
-  width: 145px;
-}
+  .cause {
+    width: 170px;
+  }
+  /*navbar*/
 
-.multi-column {
-  list-style-position: inside;
-  column-count: 2;
-  column-fill: balance;
-  column-gap: 5vw;
-}
+  .logoImg {
+    height: 225px;
+    width: 225px;
+    float: left;
+    margin-left: 2.5vw;
+  }
 
-.checks {
-  display: inline;
-  height: 35px;
-  width: 35px;
-}
+  .navbar {
+    background-color: #bdb9b8;
+    border-bottom: solid #9a252b;
+    border-width: thin;
+    max-height: 80px;
+  }
 
+  .headerImg {
+    height: 225px;
+    width: 100%;
+    background-size: cover;
+    background-image: url('../images/header3.png');
+    border-bottom: solid #9a252b;
+    border-width: thin;
+    margin-bottom: 100px;
+  }
 
-/*injuryInfo*/
+  select {
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #000000;
+  }
 
-.pLevel {
-  width: 100%;
-  margin-left: 2.5vw;
-}
+  hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-color: #9a252b;
+    border-width: thin;
+  }
+  /*signup*/
 
-.injuryInfo {
-  display: grid;
-}
+  .role {
+    font-size: 30px;
+  }
 
-.ageInj {
-  width: 40px;
-  text-align: center;
-}
+  .page {
+    max-width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    border-top: solid #4F2223;
+    border-bottom: solid #9a252b;
+    background-color: white;
+    border-width: medium;
+    height: 100vw;
+  }
 
-.multi-column2 {
-  list-style-position: inside;
-  column-count: 3;
-  column-fill: balance;
-  column-gap: 2vw;
-}
+  .state {
+    max-width: 50px;
+    text-align: center;
+  }
 
+  .setting {
+    width: 100%;
+    text-align: center;
+  }
 
-/*bio*/
+  .zipInput {
+    width: 65px;
+    text-align: center;
+  }
 
-.rel {
-  /*display: grid;*/
-  margin-bottom: 40px;
-  /*margin-top: 40px;*/
-}
+  #phone {
+    width: 180px;
+  }
 
+  .inputDOB {
+    width: 145px;
+  }
 
-/*question*/
+  .multi-column {
+    list-style-position: inside;
+    column-count: 2;
+    column-fill: balance;
+    column-gap: 5vw;
+  }
 
-.question1 {
-  margin-top: -150px;
-  margin-bottom: 80px;
-  color: white;
-}
+  .checks {
+    display: inline;
+    height: 35px;
+    width: 35px;
+  }
+  /*injuryInfo*/
 
-.additional {
-  width: 100%;
-}
+  .pLevel {
+    width: 100%;
+    margin-left: 2.5vw;
+  }
 
+  .injuryInfo {
+    display: grid;
+  }
 
-/*hobbies*/
+  .ageInj {
+    width: 40px;
+    text-align: center;
+  }
 
-.stockImg {
-  height: 175px;
-  width: 175px;
-  margin: 20px;
-}
+  .multi-column2 {
+    list-style-position: inside;
+    column-count: 3;
+    column-fill: balance;
+    column-gap: 2vw;
+  }
+  /*bio*/
 
-.multi-column3 {
-  list-style-position: inside;
-  column-count: 4;
-  column-fill: auto;
-  column-gap: 1vw;
-}
+  .rel {
+    /*display: grid;*/
+    margin-bottom: 40px;
+    /*margin-top: 40px;*/
+  }
+  /*question*/
 
-.otherInput {
-  margin-top: 30%;
-}
+  .question1 {
+    margin-top: -150px;
+    margin-bottom: 80px;
+    color: white;
+  }
 
-.hobbyLabel {
-  text-align: center;
-}
+  .additional {
+    width: 100%;
+  }
+  /*hobbies*/
 
-.hobbyDiv {
-  height: 250px;
-  width: 250px;
-  text-align: center;
-}
+  .stockImg {
+    height: 175px;
+    width: 175px;
+    margin: 20px;
+  }
 
-.active {
-  opacity: 0.6;
-  color: #9a252b;
-}
+  .multi-column3 {
+    list-style-position: inside;
+    column-count: 4;
+    column-fill: auto;
+    column-gap: 1vw;
+  }
 
-.threeHobbies {
-  text-align: center;
-  color: #9a252b;
-}
+  .otherInput {
+    margin-top: 30%;
+  }
 
+  .hobbyLabel {
+    text-align: center;
+  }
 
-/* The Modal (background) */
+  .hobbyDiv {
+    height: 250px;
+    width: 250px;
+    text-align: center;
+  }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-}
+  .active {
+    opacity: 0.6;
+    color: #9a252b;
+  }
 
+  .threeHobbies {
+    text-align: center;
+    color: #9a252b;
+  }
+  /* The Modal (background) */
 
-/* Modal Content/Box */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  /* Modal Content/Box */
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  /* Could be more or less, depending on screen size */
-}
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+  }
+  /* The Close Button */
 
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
 
-/* The Close Button */
+  .close:hover .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /*Modal*/
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+  #myModal {
+    max-height: 100vh;
+    max-width: 66%;
+    margin: 0 auto;
+    background-color: transparent;
+    overflow-x: hidden;
+  }
 
-.close:hover .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+  .modal-content {
+    margin-right: -5px;
+  }
 
+  .userContent {
+    max-width: 70%;
+    margin: 0 auto;
+  }
 
-/*Modal*/
+  .userContent {
+    text-align: center;
+  }
 
-#myModal {
-  max-height: 100vh;
-  max-width: 66%;
-  margin: 0 auto;
-  background-color: transparent;
-  overflow-x: hidden;
-}
+  td.userContent {
+    width: 100px;
+  }
 
-.modal-content {
-  margin-right: -5px;
-}
+  .table tbody tr td {
+    vertical-align: middle;
+  }
 
-.userContent {
-  max-width: 70%;
-  margin: 0 auto;
-}
+  h4 {
+    text-align: left;
+  }
 
-.userContent {
-  text-align: center;
-}
-
-td.userContent {
-  width: 100px;
-}
-
-.table tbody tr td {
-  vertical-align: middle;
-}
-
-h4 {
-  text-align: left;
-}
-
-.viewProfile {
-  float: right;
-  /*margin-bottom: 20px;
+  .viewProfile {
+    float: right;
+    /*margin-bottom: 20px;
   border-radius: 20px;
   border-width: thin;*/
-  /*padding: 10px;*/
-  margin-bottom: 20px;
-}
+    /*padding: 10px;*/
+    margin-bottom: 20px;
+  }
 
-table td th {
-  border: 1px solid rgb(195, 194, 194);
-}
+  table td th {
+    border: 1px solid rgb(195, 194, 194);
+  }
 
-p {
-  display: inline-grid;
-}
+  p {
+    display: inline-grid;
+  }
 
-.nextBtn {
-  /*float: right;*/
-  text-align: center;
-}
+  .nextBtn {
+    /*float: right;*/
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 
-.submitBtn {
-  display: inline-block;
-  /*padding: 15px 25px;*/
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  box-shadow: 0 9px #999;
-  /*float: right;
+  .submitBtn {
+    display: inline-block;
+    /*padding: 15px 25px;*/
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 9px #999;
+    /*float: right;
   margin-right: 8vw;*/
-}
+  }
 
-.submitBtn:hover {
-  opacity: 0.7;
-}
+  .submitBtn:hover {
+    opacity: 0.7;
+  }
 
-.submitBtn:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
+  .submitBtn:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 
-.adminSearch {
-  display: inline;
-}
+  .adminSearch {
+    display: inline;
+  }
 
-.userImage {
-  max-height: 10em;
-  max-width: 10em;
-}
+  .userImage {
+    max-height: 10em;
+    max-width: 10em;
+  }
 
-.circles {
-  border-radius: 40px;
-  border-width: thin;
-  height: 40px;
-  width: 40px;
-  border: solid #4d4949;
-  background-color: #716d6d;
-  text-align: center;
-  color: #4d4949;
-  vertical-align: middle;
-  font-size: 24px;
-  font-family: 'Ubuntu', sans-serif;
-  opacity: 0.5;
-  margin: 10px;
-  display: inline-block;
-}
+  .circles {
+    border-radius: 40px;
+    border-width: thin;
+    height: 40px;
+    width: 40px;
+    border: solid #4d4949;
+    background-color: #716d6d;
+    text-align: center;
+    color: #4d4949;
+    vertical-align: middle;
+    font-size: 24px;
+    font-family: 'Ubuntu', sans-serif;
+    opacity: 0.5;
+    margin: 10px;
+    display: inline-block;
+  }
 
-.circlesAct {
-  border-radius: 50px;
-  border-width: thin;
-  height: 50px;
-  width: 50px;
-  border: solid #4d4949;
-  text-align: center;
-  color: #4d4949;
-  vertical-align: middle;
-  font-size: 30px;
-  font-family: 'Ubuntu', sans-serif;
-  background-color: transparent;
-  margin: 10px;
-  display: inline-block;
-}
+  .circlesAct {
+    border-radius: 50px;
+    border-width: thin;
+    height: 50px;
+    width: 50px;
+    border: solid #4d4949;
+    text-align: center;
+    color: #4d4949;
+    vertical-align: middle;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: transparent;
+    margin: 10px;
+    display: inline-block;
+  }
 
-.circlesNon {
-  border-radius: 40px;
-  border-width: thin;
-  height: 40px;
-  width: 40px;
-  border: solid #4d4949;
-  text-align: center;
-  color: #4d4949;
-  vertical-align: middle;
-  font-size: 24px;
-  font-family: 'Ubuntu', sans-serif;
-  background-color: transparent;
-  margin: 10px;
-  display: inline-block;
-}
+  .circlesNon {
+    border-radius: 40px;
+    border-width: thin;
+    height: 40px;
+    width: 40px;
+    border: solid #4d4949;
+    text-align: center;
+    color: #4d4949;
+    vertical-align: middle;
+    font-size: 24px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: transparent;
+    margin: 10px;
+    display: inline-block;
+  }
 
-.sides {
-  height: 100%;
-  background-color: #9a252b;
-  background: linear-gradient( #4F2223, #9a252b);
-}
+  .sides {
+    height: 100%;
+    background-color: #9a252b;
+    background: linear-gradient( #4F2223, #9a252b);
+  }
