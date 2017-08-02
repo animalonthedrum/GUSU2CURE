@@ -1,10 +1,12 @@
 myApp.service('adminService', function($http) {
+
 	var sv = this;
 	sv.admins = [];
 	sv.users = [];
+
+	// START getMentorsMentees
 	sv.getMentorsMentees = function() {
 		return $http.get('/allUsers').then(function(res) {
-			console.log('back with', res);
 			sv.allUsers = res.data;
 			sv.users = [];
 			sv.admins = [];
@@ -18,35 +20,38 @@ myApp.service('adminService', function($http) {
 			}); //end of loop
 		}).catch(function(err) {
 			window.location.href = '#!/register'
-		}); //end of promise)
-	}; //end of sv.getMentorsMentees
+		}); //end of promise
+	};
+	// END getMentorsMentees
 
+
+	// START switchUserEnabled
 	sv.switchUserEnabled = function(user) {
-		console.log(user);
 		return $http.put('/allUsers', user).then(function() {
-			// console.log('back from the server with');
+
 		});
-	}; //end of function
+	};
+	// END switchUserEnabled
+
 
 	// START getMatches
 	sv.matchingUsers = function(user) {
-		console.log('matchingUsers req:', user);
-		$http.post('/matching', user).then(function(res) {
-			console.log('back from matching:', res);
+		return $http.post('/matching', user).then(function(res) {
+			console.log('Matches from db', res.data);
+			sv.matchedUsers = res.data;
 		})
 	}
-
-
 	// END getMatches
 
 
-
+	// START logout
 	sv.logout = function() {
 		$http.put('/').then(function(res) {
-			console.log('Back from the server with', res);
 			window.location.href = '#!/register'
-		} )
-	}//end of logout
+		})
+	}
+	// END of logout
 
 
-}); //end of service
+});
+// END of service

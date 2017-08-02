@@ -2,12 +2,11 @@ function adminController(adminService, UserInfoService) {
 
 	var vm = this;
 	vm.users = [];
+
+	// START mentorsMentees
 	vm.mentorsMentees = function() {
 		adminService.getMentorsMentees().then(function() {
-
 			vm.users = adminService.users;
-
-
 			vm.users.forEach(function(user) {
 				if (user.access_lvl === 1) {
 					user.access_lvl = 'Mentor';
@@ -22,33 +21,39 @@ function adminController(adminService, UserInfoService) {
 			}
 		}); //end of promise
 		return vm.users;
-	}; //end of function
+	};
+	// END mentorsMentees
 
+	// START switchEnabled
 	vm.switchEnabled = function(index) {
 		var enabled = vm.users[index].enabled;
 		enabled = !enabled;
-
 		adminService.switchUserEnabled(vm.users[index]);
-	}; //end of funciton
+	};
+	// END switchEnabled
 
 
+	// START displayUserModal
 	vm.displayUserModal = function(index) {
 		vm.userInModal = vm.users[index];
-	}; //end of funciton
+	};
+	// END displayUserModal
 
+
+	// START goToUserPage
 	vm.goToUserPage = function() {
 		vm.userToLogIn = vm.userInModal;
 		UserInfoService.seeOtherUsersPage(vm.userToLogIn);
 		window.location.href = '#!/visit';
-	}; //end of function
+	};
+	// END goToUserPage
 
 
+	// START searchUser
 	vm.search = function() {
 		adminService.getMentorsMentees().then(function() {
 			vm.typeUserSearch = adminService.users;
-
 			searchDatabase(vm, vm.users);
-
 			vm.users.forEach(function(user) {
 				if (user.access_lvl === 1) {
 					user.access_lvl = 'Mentor';
@@ -59,12 +64,12 @@ function adminController(adminService, UserInfoService) {
 				} //end of conditional statement
 			}); //end of loop
 		}); //end of promise
+	};
+	// END searchUser
 
-	}; //end of searchUser
 
 	// START getMatches
 	vm.getMatches = function(index) {
-		console.log(vm.users[index].age);
 		var userToMatch = {
 			email: vm.users[index].email,
 			type: vm.users[index].access_lvl,
@@ -82,24 +87,23 @@ function adminController(adminService, UserInfoService) {
 			age: vm.users[index].age
 		};
 		adminService.matchingUsers(userToMatch);
-
 	};
 	// END getMatches
 
-  vm.logout = function () {
-      adminService.logout();
-  };//end of logout
+
+	// START logout
+	vm.logout = function() {
+		adminService.logout();
+	};
+	// END logout
 
 
 } //end of controller
 
-// console.log('searching my nigga', vm.searchUserBy.toLowerCase().indexOf("mentor"));
-// console.log(/Moises/i.test(vm.searchUserBy));
-
 function searchDatabase(vm) {
 	var usersFound = [];
 	for (var i = 0; i < vm.typeUserSearch.length; i++) {
-		for(var x in vm.typeUserSearch[i]) {
+		for (var x in vm.typeUserSearch[i]) {
 			if (vm.searchUserBy.toLowerCase().indexOf(String(vm.typeUserSearch[i][x]).toLowerCase()) === 0) {
 				usersFound.push(vm.typeUserSearch[i]);
 				vm.users = usersFound;
@@ -108,26 +112,3 @@ function searchDatabase(vm) {
 	}
 	return vm.users
 }
-
-
-
-
-
-
-
-// function searchDatabase(vm) {
-// 	console.log('searching my nigga', vm.searchUserBy.toLowerCase().indexOf("mentor"));
-// 	console.log(!/Mentor/i.test(vm.searchUserBy));
-// 	var usersFound = [];
-// 	for (var i = 0; i < vm.typeUserSearch.length; i++) {
-// 		for (var x in vm.typeUserSearch[i]) {
-// 			if (vm.typeUserSearch[i].hasOwnProperty(x)) {
-// 				if (vm.searchUserBy === vm.typeUserSearch[i][x]) {
-// 					usersFound.push(vm.typeUserSearch[i]);
-// 					vm.users = usersFound;
-// 				} else if (vm.typeUserSearch[i][x] === 'access_lvl') {}
-// 			} //end of has ownProperty
-// 		} //end of for loop var x
-// 	} //end of for loop
-// 	return vm.users;
-// }

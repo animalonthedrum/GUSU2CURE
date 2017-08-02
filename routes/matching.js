@@ -45,9 +45,10 @@ router.post('/', function(req, res) {
 	var matchSCIAgeMin = parseInt(userSCIAge) - Math.ceil(userSCIAge - ((userSCIAge / 2) + 8));
 	var matchSCIAgeMax = parseInt(userSCIAge) + Math.ceil(userSCIAge - ((userSCIAge / 2) + 8));
 
-
+	// START SELECT matching query
 	pool.connect().then(function(client) {
 		client.query("SELECT * FROM main_matview WHERE access_lvl != '" + userType + "' AND access_lvl != 'Admin' AND age BETWEEN '" + matchAgeMin + "' AND '" + matchAgeMax + "' AND gender = '" + matchGender + "'AND lang = '" + matchLang + "' AND asia_score = '" + matchASIA + "' AND zip LIKE '" + matchZIP + "' AND sci_age BETWEEN '" + matchSCIAgeMin + "' AND '" + matchSCIAgeMax + "' AND matched = 'FALSE' AND email !='" + userEmail + "' LIMIT 3;").then(function(matchData) {
+			// END SELECT matching query
 			client.release();
 			console.log('matchData', matchData.rows);
 			res.send(matchData.rows);

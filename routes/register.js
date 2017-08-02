@@ -34,7 +34,7 @@ router.post('/', function(req, res) {
 			// START salt generation
 			bcrypt.genSalt(12, function(err, salt) {
 				if (err) {
-					console.log('getSalt err:', err);
+
 				} else {
 					// START hash generation
 					bcrypt.hash(req.body.login.password, salt, function(err, hash) {
@@ -82,9 +82,11 @@ router.post('/', function(req, res) {
 
 							// START INSERT query
 							connection.query("INSERT INTO tbl_user (email, date_created, access_lvl, enabled, first_name, last_name, password, dob, gender, phone, phone_type, street, city, state, zip, sci_age, sci_lvl, asia_score, mobility_req, fam_status, ed_lvl, pets, questions, experience, additional, comments, sci_relation, sci_cause, lang, trans_type, rel_status, hobbies) VALUES ('" + email + "','" + dateCreated + "','" + accessLvl + "','" + enabled + "','" + first + "','" + last + "','" + password + "','" + dob + "','" + gender + "','" + phone + "','" + phoneType + "','" + street + "','" + city + "','" + state + "','" + zip + "','" + sci_age + "','" + sci_lvl + "','" + asia + "','" + mobility + "','" + fam_status + "','" + ed_lvl + "', '" + pets + "','" + questions + "','" + experience + "','" + additional + "','" + comments + "','" + sci_rel + "','" + sci_cause + "', '" + lang + "','" + trans_type + "','" + rel_status + "','" + hobbies + "');")
-
-							connection.query("REFRESH MATERIALIZED VIEW main_matview;")
 							// END INSERT query
+
+							// START REFRESH MATERIALIZED VIEW query
+							connection.query("REFRESH MATERIALIZED VIEW main_matview;")
+							// START REFRESH MATERIALIZED VIEW query
 
 							done();
 							res.send('user created');
