@@ -6,8 +6,8 @@ function hobbyController(UserInfoService) {
 
 
   vm.submitHobby = function(index) {
-    vm.hobbiesArr.push(vm.hobbyArr[index].name);
-  };
+      vm.hobbiesArr.push(vm.hobbyArr[index].name);
+};//end of submitHobby function
 
 
 
@@ -127,18 +127,14 @@ function hobbyController(UserInfoService) {
 } //end of controller
 
 
-function checkArr(arr) {
-    console.log(arr);
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = 0; j < arr.length; j++) {
-            if (arr[i] === arr[j]) {
-                console.log('this matches', arr[j]);
-                arr.splice(j, 1);
-                break;
-            }
-        }
-    }
-    return arr;
+function checkArr(array) {
+    var tmp = [];
+   for(var i = 0; i < array.length; i++){
+       if(tmp.indexOf(array[i]) == -1){
+       tmp.push(array[i]);
+       }
+   }
+  return tmp;
 }//end of checkArr
 
 
