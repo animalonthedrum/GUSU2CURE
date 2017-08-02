@@ -86,7 +86,9 @@ function adminController(adminService, UserInfoService) {
 			fam_status: vm.users[index].fam_status,
 			age: vm.users[index].age
 		};
-		adminService.matchingUsers(userToMatch);
+		adminService.matchingUsers(userToMatch).then(function() {
+			console.log(adminService.matchedUsers);
+		});
 	};
 	// END getMatches
 
