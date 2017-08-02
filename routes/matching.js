@@ -45,13 +45,6 @@ router.post('/', function(req, res) {
 	var matchSCIAgeMin = parseInt(userSCIAge) - Math.ceil(userSCIAge - ((userSCIAge / 2) + 8));
 	var matchSCIAgeMax = parseInt(userSCIAge) + Math.ceil(userSCIAge - ((userSCIAge / 2) + 8));
 
-	console.log("User is a", userType);
-	console.log("User is", userAge, 'y.o. matching an age range of:', matchAgeMin, '-', matchAgeMax);
-	console.log("User is a", matchGender, "matched with a", matchGender);
-	console.log("User's primary language is", userLang, "looking to match with someone who speaks", matchLang);
-	console.log("User's ASIA score is", userASIA, 'looking to match with someone with an ASIA score of', matchASIA);
-	console.log("User's SCI age is", userSCIAge, 'SCI age range to match:', matchSCIAgeMin, '-', matchSCIAgeMax);
-	console.log("User's ZIP is", userZIP, 'matching ZIP codes like', matchZIP);
 
 	pool.connect().then(function(client) {
 		client.query("SELECT * FROM main_matview WHERE access_lvl != '" + userType + "' AND access_lvl != 'Admin' AND age BETWEEN '" + matchAgeMin + "' AND '" + matchAgeMax + "' AND gender = '" + matchGender + "'AND lang = '" + matchLang + "' AND asia_score = '" + matchASIA + "' AND zip LIKE '" + matchZIP + "' AND sci_age BETWEEN '" + matchSCIAgeMin + "' AND '" + matchSCIAgeMax + "' AND matched = 'FALSE' AND email !='" + userEmail + "' LIMIT 3;").then(function(matchData) {
