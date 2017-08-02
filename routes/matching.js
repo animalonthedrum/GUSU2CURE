@@ -21,39 +21,40 @@ var config = {
 
 var pool = new pg.Pool(config);
 
-
-
-
-var asia = asia;
-
-
-
-
 // START GET matchingUsers
 router.post('/', function(req, res) {
-	var matchUserEmail = req.body.email;
-	var matchUserType = req.body.type;
+	// User Information
+	var userEmail = req.body.email;
+	var userType = req.body.type;
 	var userAge = req.body.age;
-	var matchAgeMin = userAge - Math.ceil(userAge - ((userAge / 2) + 7));
-	var matchAgeMax = userAge + Math.ceil(userAge - ((userAge / 2) + 7));
-	var matchGender = req.body.gender;
-	var matchSciAge = req.body.sci_age;
-	var matchSciAgeMin = matchSciAge - Math.ceil(matchSciAge - ((matchSciAge / 2) + 7));
-	var matchSciAgeMax = matchSciAge + Math.ceil(matchSciAge - ((matchSciAge / 2) + 7));
-	var matchUserZIP = req.body.zip.slice(0, 2) + '%';
-	console.log('email', matchUserEmail);
-	console.log('matchUserType', matchUserType);
-	console.log('userAge', userAge);
-	console.log('matchAgeMin', matchAgeMin);
-	console.log('matchAgeMax', matchAgeMax);
-	console.log('matchGender', matchGender);
-	console.log('matchSciAge', matchSciAge);
-	console.log('matchSciAgeMin', matchSciAgeMin);
-	console.log('matchSciAgeMax', matchSciAgeMax);
-	console.log('matchUserZIP', matchUserZIP);
+	var userGender = req.body.gender;
+	var userLang = req.body.lang;
+	var userASIA = req.body.asia;
+	var userZIP = req.body.zip;
+	var userSCILvl = req.body.sci_lvl;
+	var userSCIAge = req.body.sci_age;
+
+	// Matching Parameters
+	var matchAgeMin = userAge - Math.ceil(userAge - ((userAge / 2) + 8));
+	var matchAgeMax = userAge + Math.ceil(userAge - ((userAge / 2) + 8));
+	var matchGender = userGender;
+	var matchLang = userLang;
+	var matchASIA = userASIA;
+	var matchZIP = userZIP.slice(0, 3) + '%';
+	var matchSCILvl = userSCILvl;
+	var matchSCIAgeMin = parseInt(userSCIAge) - Math.ceil(userSCIAge - ((userSCIAge / 2) + 8));
+	var matchSCIAgeMax = parseInt(userSCIAge) + Math.ceil(userSCIAge - ((userSCIAge / 2) + 8));
+
+	console.log("User is a", userType);
+	console.log("User is", userAge, 'y.o. matching an age range of:', matchAgeMin, '-', matchAgeMax);
+	console.log("User is a", matchGender, "matched with a", matchGender);
+	console.log("User's primary language is", userLang, "looking to match with someone who speaks", matchLang);
+	console.log("User's ASIA score is", userASIA, 'looking to match with someone with an ASIA score of', matchASIA);
+	console.log("User's SCI age is", userSCIAge, 'SCI age range to match:', matchSCIAgeMin, '-', matchSCIAgeMax);
+	console.log("User's ZIP is", userZIP, 'matching ZIP codes like', matchZIP);
 
 	pool.connect().then(function(client) {
-		client.query("SELECT * FROM main_matview WHERE access_lvl != '" + matchUserType + "' AND access_lvl != 'Admin' AND age BETWEEN '" + matchAgeMin + "' AND '" + matchAgeMax + "' AND sci_age BETWEEN '" + matchSciAgeMin + "' AND '" + matchSciAgeMax + "' AND zip LIKE '" + matchUserZIP + "' AND matched = 'FALSE' AND email !='" + matchUserEmail + "' LIMIT 3;").then(function(matchData) {
+		client.query("SELECT * FROM main_matview WHERE access_lvl != '" + userType + "' AND access_lvl != 'Admin' AND age BETWEEN '" + matchAgeMin + "' AND '" + matchAgeMax + "' AND gender = '" + matchGender + "'AND lang = '" + matchLang + "' AND asia_score = '" + matchASIA + "' AND zip LIKE '" + matchZIP + "' AND sci_age BETWEEN '" + matchSCIAgeMin + "' AND '" + matchSCIAgeMax + "' AND matched = 'FALSE' AND email !='" + userEmail + "' LIMIT 3;").then(function(matchData) {
 			client.release();
 			console.log('matchData', matchData.rows);
 			res.send(matchData.rows);
