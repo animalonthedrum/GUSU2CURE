@@ -23,7 +23,7 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-md-8">
 
           <input type="radio" name="mentor" value="1" ng-model='sc.radioValue'>
           <label class='role' for="mentor">Mentor</label>
@@ -50,16 +50,18 @@
     <hr>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 address">
+        <div class="col-md-8 address">
           <label for="address">Street</label><input type="text" class="street" name="street" ng-model='sc.address'>
           <label for="city">City</label><input type="text" class="city" name="city" ng-model='sc.city'>
-          <label for="state">State</label><input type="text" class="state" name="state" value="" maxlength='2' ng-model='sc.state' class='state'>
         </div>
+        <div class='col-md-6 address'>
+          <label for="state">State</label><input type="text" class="state" name="state" value="" maxlength='2' ng-model='sc.state' class='state'>
 
-        <div class="col-md-6 zip">
+
           <label for="zip">ZIP Code</label>
           <input type="number" name="zip" maxlength="5" ng-model='sc.zipcode' class='zipInput'>
-
+        </div>
+        <div class='col-md-8 phone'>
           <label for="phone_type">Phone</label>
           <input type="tel" id='phone' name="phone" minlength="10" ng-model='sc.phone'>
 
@@ -73,6 +75,7 @@
         </div>
       </div>
     </div>
+
     <hr>
     <div class='setting'><label for="visit">What setting(s) are you willing to visit?</label> </div>
     <div class="container">
@@ -110,4 +113,5 @@
 
 
   </div>
+</div>
 </div>
