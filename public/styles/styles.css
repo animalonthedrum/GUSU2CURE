@@ -14,6 +14,10 @@
     line-height: 29px;
     color: #333333;
   }
+
+  .row {
+    max-width: 80vw;
+  }
   /*SIGN UP*/
 
   .street {
@@ -245,7 +249,7 @@
   }
 
   .page {
-    max-width: 80vw;
+    /*max-width: 80vw;*/
     margin-left: 10vw;
     margin-right: 10vw;
     border-top: solid #4F2223;
@@ -328,7 +332,7 @@
   }
 
   .additional {
-    width: 100%;
+    width: 90%;
   }
   /*hobbies*/
 
@@ -550,4 +554,43 @@
     height: 100%;
     background-color: #9a252b;
     background: linear-gradient( #4F2223, #9a252b);
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]+label {
+    color: black;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  input[type="radio"]+label span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  input[type="radio"]+label span {
+    background-color: #989898;
+    opacity: 0.4;
+    text-align: center;
+  }
+
+  input[type="radio"]:checked+label span {
+    background-color: #9a252b;
+    opacity: 1;
+  }
+
+  input[type="radio"]+label span, input[type="radio"]:checked+label span {
+    -webkit-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
+    -moz-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear;
   }
