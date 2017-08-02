@@ -23,12 +23,22 @@
       <div class="row">
         <div class="col-md-6">
 
+
+
           <label for="questions">Do you have a problem with answering uncomfortable questions? <br> (Going to the bathroom, sex, ...)</label>
+          <select class="" name="questions" value="Yes" ng-model='qc.question'>
+            <option selected disabled value="">?</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+  </select>
+
+
+          <!-- <label for="questions">Do you have a problem with answering uncomfortable questions? <br> (Going to the bathroom, sex, ...)</label>
           <input type="radio" name="questions" value="Yes" ng-model='qc.question'>
           <label for="Yes">Yes</label>
 
           <input type="radio" name="questions" value="No" ng-model='qc.question'>
-          <label for="No">No</label>
+          <label for="No">No</label> -->
         </div>
         <div class="col-md-6">
           <div class="exp">

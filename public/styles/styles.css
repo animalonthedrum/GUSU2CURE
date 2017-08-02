@@ -20,6 +20,11 @@
   }
   /*SIGN UP*/
 
+  .radioB {
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
   .street {
     width: 225px;
   }
@@ -241,6 +246,11 @@
     margin-bottom: 5px;
     border-color: #9a252b;
     border-width: thin;
+    display: none;
+  }
+
+  .container {
+    max-width: 80vw;
   }
   /*signup*/
 
@@ -249,7 +259,7 @@
   }
 
   .page {
-    /*max-width: 80vw;*/
+    max-width: 80vw;
     margin-left: 10vw;
     margin-right: 10vw;
     border-top: solid #4F2223;
@@ -343,10 +353,13 @@
   }
 
   .multi-column3 {
-    list-style-position: inside;
+    list-style-position: inherit;
     column-count: 4;
+    margin-right: 20px;
     column-fill: auto;
-    column-gap: 1vw;
+    column-gap: 40px;
+    max-width: 75vw;
+    ;
   }
 
   .otherInput {
@@ -361,6 +374,7 @@
     height: 250px;
     width: 250px;
     text-align: center;
+    margin: 5px;
   }
 
   .active {
@@ -563,14 +577,14 @@
   input[type="radio"]+label {
     color: black;
     font-size: 30px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 
   input[type="radio"]+label span {
     display: inline-block;
     width: 25px;
     height: 25px;
-    margin: -1px 4px 0 0;
+    margin: -1px 20px 0 0;
     vertical-align: middle;
     cursor: pointer;
     -moz-border-radius: 50%;
