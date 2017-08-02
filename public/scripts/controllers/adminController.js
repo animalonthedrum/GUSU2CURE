@@ -93,17 +93,41 @@ function adminController(adminService, UserInfoService) {
 
 } //end of controller
 
+// console.log('searching my nigga', vm.searchUserBy.toLowerCase().indexOf("mentor"));
+// console.log(/Moises/i.test(vm.searchUserBy));
+
 function searchDatabase(vm) {
 	var usersFound = [];
 	for (var i = 0; i < vm.typeUserSearch.length; i++) {
-		for (var x in vm.typeUserSearch[i]) {
-			if (vm.typeUserSearch[i].hasOwnProperty(x)) {
-				if (vm.searchUserBy === vm.typeUserSearch[i][x]) {
-					usersFound.push(vm.typeUserSearch[i]);
-					vm.users = usersFound;
-				} else if (vm.typeUserSearch[i][x] === 'access_lvl') {}
-			} //end of has ownProperty
-		} //end of for loop var x
-	} //end of for loop
-	return vm.users;
+		for(var x in vm.typeUserSearch[i]) {
+			if (vm.searchUserBy.toLowerCase().indexOf(String(vm.typeUserSearch[i][x]).toLowerCase()) === 0) {
+				usersFound.push(vm.typeUserSearch[i]);
+				vm.users = usersFound;
+			}
+		}
+	}
+	return vm.users
 }
+
+
+
+
+
+
+
+// function searchDatabase(vm) {
+// 	console.log('searching my nigga', vm.searchUserBy.toLowerCase().indexOf("mentor"));
+// 	console.log(!/Mentor/i.test(vm.searchUserBy));
+// 	var usersFound = [];
+// 	for (var i = 0; i < vm.typeUserSearch.length; i++) {
+// 		for (var x in vm.typeUserSearch[i]) {
+// 			if (vm.typeUserSearch[i].hasOwnProperty(x)) {
+// 				if (vm.searchUserBy === vm.typeUserSearch[i][x]) {
+// 					usersFound.push(vm.typeUserSearch[i]);
+// 					vm.users = usersFound;
+// 				} else if (vm.typeUserSearch[i][x] === 'access_lvl') {}
+// 			} //end of has ownProperty
+// 		} //end of for loop var x
+// 	} //end of for loop
+// 	return vm.users;
+// }

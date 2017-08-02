@@ -52,7 +52,17 @@ function registerController(UserInfoService, userPageService) {
 
 		//will only run if everything is filled out correctly
 		if (count === 0) {
+			 userLoginObject = {
+				id: 'login',
+				firstName: vm.firstName.toLowerCase(),
+				lastName: vm.lastName.toLowerCase(),
+				email: vm.email,
+				password: vm.password,
+				confirmPassword: vm.confirmPassword,
+				terms: vm.termsAndConditions
+			}; //end of userLoginObject
 			UserInfoService.getUserInfo(userLoginObject);
+			console.log(userLoginObject);
 			window.location.href = '#!/signup';
 		} //end of conditional statement
 	}; //end of submitLogin
