@@ -460,6 +460,17 @@
     text-align: left;
   }
 
+  .logout {
+    color: white;
+    float: right;
+    margin-top: -175px;
+    font-size: 18px;
+    margin-right: 20px;
+    border-bottom: solid white;
+    border-width: thin;
+    cursor: pointer;
+  }
+
   .viewProfile {
     float: right;
     /*margin-bottom: 20px;
@@ -469,12 +480,16 @@
     margin-bottom: 20px;
   }
 
-  table td th {
+  table, td, th {
     border: 1px solid rgb(195, 194, 194);
   }
 
   p {
     display: inline-grid;
+  }
+
+  .adminBtn {
+    margin-bottom: 20px;
   }
 
   .nextBtn {
@@ -508,6 +523,11 @@
 
   .adminSearch {
     display: inline;
+  }
+
+  .searchBar {
+    font-family: 'Lato', sans-serif;
+    display: block;
   }
 
   .userImage {
@@ -569,6 +589,7 @@
     background-color: #9a252b;
     background: linear-gradient( #4F2223, #9a252b);
   }
+  /*RADIO BUTTONS*/
 
   input[type="radio"] {
     display: none;

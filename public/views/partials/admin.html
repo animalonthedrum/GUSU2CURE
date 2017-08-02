@@ -1,12 +1,12 @@
 <div class="question1">
   <h1>WELCOME</h1></div>
-  <p ng-click='ac.logout()'>Logout</p>
+<p class='logout' ng-click='ac.logout()'>LOGOUT</p>
 <div class="container " ng-init='ac.mentorsMentees()'>
   <div class="row adminBtn">
-
-    <i class="fa fa-search fa-2x adminSearch" aria-hidden="true"><input class='adminSearch' type="text" name="" value="" ng-model='ac.searchUserBy' placeholder="Search"></i>
-    <button type="button" name="button" ng-click='ac.search()'>Search</button>
-    <button type="button" name="button" ng-click='ac.mentorsMentees()'>All users</button>
+    <label class='searchBar' for="search">Search</label>
+    <i class="fa fa-search fa-2x adminSearch" aria-hidden="true"><input class='adminSearch' type="text" name="search" value="" ng-model='ac.searchUserBy' placeholder='Name, City, E-mail...' style="font-family:'Lato', sans-serif; font-size:20px;"></i>
+    <button type="button" name="button" ng-click='ac.search()'>SEARCH</button>
+    <button type="button" name="button" ng-click='ac.mentorsMentees()'>ALL USERS</button>
   </div>
   <table class="table table-striped">
     <thead>
@@ -14,7 +14,7 @@
         <th>Role</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Enabled</th>
+        <!-- <th>Enabled</th> -->
         <th>Info</th>
         <th>Match</th>
 
@@ -25,9 +25,9 @@
         <td>{{users.access_lvl | uppercase}}</td>
         <td>{{users.first_name |uppercase}} {{users.last_name |uppercase}}</td>
         <td><a href="mailto:{{users.email}}">{{users.email}}</a></td>
-        <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td>
-        <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> Show Info </button></td>
-        <td><button type="button" name="button" ng-click='ac.getMatches($index)'>Get Matches</button></td>
+        <!-- <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td> -->
+        <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> INFO </button></td>
+        <td><button type="button" name="button" ng-click='ac.getMatches($index)'>VIEW</button></td>
 
       </tr>
     </tbody>
@@ -69,8 +69,8 @@
             </tr>
             <tr>
               <td>
-                <h4>Phone</h4></td>
-              <td>{{ac.userInModal.phone}} Type: {{ac.userInModal.phone_type}} </td>
+                <h4>{{ac.userInModal.phone_type}} Phone</h4></td>
+              <td>{{ac.userInModal.phone}}</td>
             </tr>
             <tr>
               <td>
