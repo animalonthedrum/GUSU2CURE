@@ -12,9 +12,7 @@
   </div>
   <p>*All Fields Required</p>
 </div>
-<div class="nextBtn">
-  <button class='submitBtn' type="button" name="button" ng-click='ic.submit()'>NEXT</button>
-</div>
+
 <div class='sides'>
 
 
@@ -56,12 +54,6 @@
         <!-- <label for="sci_lvl">Injury Level:</label></div> -->
         <label for="sci_lvl">Injury Level: </label>
         <select class="" name="sci_lvl" ng-model='ic.injLevel'>
-    <div>
-      <div class='pLevel'>
-        <!-- <label for="sci_lvl">Injury Level:</label></div> -->
-        <label for="sci_lvl">Injury Level: </label>
-        <select class="" name="sci_lvl">
-        <option value=""></option>
         <option value="C1-C3">Upper-Cervical (C1-C3)</option>
         <option value="C4-C5">Mid-Cervical (C4-C5)</option>
         <option value="C6-C8">Lower-Cervical (C6-C8)</option>
@@ -133,7 +125,9 @@
 
       <a href="#!/signup"><button type="button" name="button">Previous</button></a>
       <a href="#!/bio"><button type="button" name="button">Next</button></a>
-
+      <div class="nextBtn">
+        <button class='submitBtn' type="button" name="button" ng-click='ic.submit()'>NEXT</button>
+      </div>
 
     </div>
   </div>

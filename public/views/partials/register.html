@@ -1,44 +1,45 @@
-<div class='question1'>
-  <h1>LOGIN</h1>
-
-<input type="email" name="" value="" placeholder="Email" ng-model='lc.Lemail' style="color:black">
-<input type="password" name="" value="" placeholder="Password" ng-model='lc.Lpassword' style="color:black">
-<button type="button" name="button" ng-click='lc.login()'>LOGIN</button>
-<a href="#!/register"><button type="button" name="button">REGISTER</button></a>
-</div>
+<div class="entirePage">
 
 
+  <div class="landPage">
 
-<div class='question1'>
-  <h1>REGISTER</h1></div>
-<div class="window">
+    <input type="email" name="" value="" placeholder="Email" ng-model='lc.Lemail' style="color:black">
 
-  <div class="inputs">
-    <label for="firstName">First name</label>
-      <input type="text" name="firstName" ng-model='lc.firstName'>
+    <input type="password" name="" value="" placeholder="Password" ng-model='lc.Lpassword' style="color:black">
+    <button type="button" name="button" ng-click='lc.login()'>LOGIN</button>
+    <a href="#!/register"><button type="button" name="button">REGISTER</button></a>
 
-    <label for="lastname">Last name</label>
-      <input type="text" name="lastName" ng-model='lc.lastName'>
 
-    <label for="email">Email address</label>
-      <input type="email" class="inputEmail" name="email" ng-model='lc.email'>
 
-  </div>
-  <label for="password">Password</label>
-    <input type="password" class="password" name="password" ng-model='lc.password'>
 
-  <label for="confirmPassword">Confirm password</label>
-    <input type="password" class="password" name="confirmPassword" ng-model='lc.confirmPassword'>
+    <div class='question1'>
+      <h1>REGISTER</h1></div>
+    <div class="window">
 
-  <label for="Terms">Terms and Conditions</label>
-    <input type="checkbox" name="Terms" value="Terms and Conditions" ng-model='lc.termsAndConditions'>
-  <div class="buttons">
-    <a href="#!/signup"><button type="button" name="button">Next</button></a >
+      <div class="inputs">
+        <label for="firstName">First name</label>
+        <input type="text" name="firstName" ng-model='lc.firstName'>
+
+        <label for="lastname">Last name</label>
+        <input type="text" name="lastName" ng-model='lc.lastName'>
+
+        <label for="email">Email address</label>
+        <input type="email" class="inputEmail" name="email" ng-model='lc.email'>
+
+      </div>
+      <label for="password">Password</label>
+      <input type="password" class="password" name="password" ng-model='lc.password'>
+
+      <label for="confirmPassword">Confirm password</label>
+      <input type="password" class="password" name="confirmPassword" ng-model='lc.confirmPassword'>
+
+      <label for="Terms">Terms and Conditions</label>
+      <input type="checkbox" name="Terms" value="Terms and Conditions" ng-model='lc.termsAndConditions'>
+      <div class="buttons">
+        <a href="#!/signup"><button type="button" name="button">Next</button></a >
 <button type="button" name="button" ng-click='lc.submitLogin()'>SUBMIT</button>
 </div>
 </div>
-<!-- <div class="progress">
-  <div class="progress-bar progress-bar-stripped progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-    <span class="sr-only">10% Complete</span>
-  </div>
-</div> -->
+
+</div>
+</div>

@@ -67,7 +67,25 @@ li {
   width: 400px;
 }
 
-.inputs {
+.landPage {
+  height: 100vh;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  background-color: #9a252b;
+  opacity: .7;
+  color: white;
+}
+
+.entirePage {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../images/gusustock/login.jpg');
+  background-size: cover;
+}
+
+
+/*.inputs {
   margin-bottom: 20px;
 }
 
@@ -79,12 +97,12 @@ li {
   margin-left: 15%;
   margin-top: 50px;
   margin-bottom: 50px;
-}
+}*/
 
 input option select {
-  margin-right: 5px;
-  margin-left: 5px;
-  margin-bottom: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 25px;
   padding: 6px 4px;
   border: 1px solid #999;
   /*border-radius: 20px;*/
@@ -100,7 +118,7 @@ input option select {
 label {
   font-weight: normal;
   font-family: 'Helvetica', Arial, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   color: #666666;
 }
 
@@ -130,7 +148,7 @@ label {
 }
 
 .headerImg {
-  height: 30vh;
+  height: 225px;
   width: 100%;
   background-size: cover;
   background-image: url('../images/header3.png');
@@ -161,9 +179,9 @@ hr {
 }
 
 .page {
-  max-width: 90vw;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  max-width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
   border-top: solid #4F2223;
   border-bottom: solid #9a252b;
   background-color: white;
@@ -244,8 +262,8 @@ hr {
 /*question*/
 
 .question1 {
-  margin-top: -20vh;
-  margin-bottom: 8vh;
+  margin-top: -150px;
+  margin-bottom: 80px;
   color: white;
 }
 
@@ -392,7 +410,8 @@ p {
 }
 
 .nextBtn {
-  float: right;
+  /*float: right;*/
+  text-align: center;
 }
 
 .submitBtn {
@@ -404,8 +423,8 @@ p {
   text-decoration: none;
   outline: none;
   box-shadow: 0 9px #999;
-  float: right;
-  margin-right: 8vw;
+  /*float: right;
+  margin-right: 8vw;*/
 }
 
 .submitBtn:hover {
