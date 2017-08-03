@@ -5,11 +5,11 @@ function userController(UserInfoService, userPageService, adminService) {
 
 
   vm.getUserInfo = function() {
-      userPageService.getUserInfo().then(function() {
-          vm.thisUser = userPageService.userLoggedInInfo;
-      });
+    userPageService.getUserInfo().then(function() {
+      vm.thisUser = userPageService.userLoggedInInfo;
+    });
 
-  };//end of getUserInfo
+  }; //end of getUserInfo
 
   vm.uploadImg = filestack.init('Ad5IIaaqyTY60IGIwPCg9z');
   vm.showPicker = function() {
@@ -19,10 +19,10 @@ function userController(UserInfoService, userPageService, adminService) {
 
       });
     }); //end uploadImg
-};//end of showPicker
+  }; //end of showPicker
 
 
-vm.logout = function () {
+  vm.logout = function() {
     adminService.logout();
-};//end of logout
-}//end of controller
+  }; //end of logout
+} //end of controller

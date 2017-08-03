@@ -490,7 +490,7 @@
   }
 
   .userContent2 {
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -514,6 +514,17 @@
     color: white;
     float: right;
     margin-top: -175px;
+    font-size: 18px;
+    margin-right: 20px;
+    border-bottom: solid white;
+    border-width: thin;
+    cursor: pointer;
+  }
+
+  .logout1 {
+    color: white;
+    float: right;
+    margin-top: -75px;
     font-size: 18px;
     margin-right: 20px;
     border-bottom: solid white;
@@ -683,4 +694,16 @@
     -o-transition: background-color 0.4s linear;
     -moz-transition: background-color 0.4s linear;
     transition: background-color 0.4s linear;
+  }
+  /*User Page*/
+
+  .profImg {
+    border: solid black;
+    border-radius: 200px;
+    height: 200px;
+    width: 200px;
+  }
+
+  .upload {
+    border: none;
   }

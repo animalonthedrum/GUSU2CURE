@@ -1,13 +1,21 @@
 <div class="user" ng-init=uc.getUserInfo()>
-    <p ng-click='uc.logout()'>Logout</p>
-    <h1>Welcome {{uc.thisUser.first_name | uppercase}}</h1>
 
-    <div id="placeholder-rr"></div>
-    <div >
-        <img   class="userImage" ng-src="{{uc.thisUser.image}}" alt="" >
-    </div>
+  <p class='logout1' ng-click='uc.logout()'>Logout</p>
+  <h1 class='question1'>Welcome {{uc.thisUser.first_name | uppercase}}</h1>
+  <div class="imgBox">
+  </div>
 
-    <button class="upload" ng-click="uc.showPicker()"><i class="fa fa-picture-o" aria-hidden="true"></i> <u>Upload</u></button>
+  <div class="">
+
+
+    <button class="upload" ng-click="uc.showPicker()"><i class="fa fa-picture-o fa-2x profImg" aria-hidden="true"></i></button>
+  </div>
+  <div id="placeholder-rr"></div>
+  <div>
+    <img class="userImage" ng-src="{{uc.thisUser.image}}" alt="">
+  </div>
+
+
 
 </div>
 
@@ -17,6 +25,4 @@
     'render': 'createhangout',
     'widget_size': 150
   });
-
-
 </script>
