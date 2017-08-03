@@ -2,8 +2,7 @@
 
   <p class='logout1' ng-click='uc.logout()'>Logout</p>
   <h1 class='question1'>Welcome {{uc.thisUser.first_name | uppercase}}</h1>
-  <div class="imgBox">
-  </div>
+        <img class="img-circle userImage" ng-src="{{uc.thisUser.image}}" alt="">
 
   <div class="">
 
@@ -11,13 +10,14 @@
     <button class="upload" ng-click="uc.showPicker()"><i class="fa fa-picture-o fa-2x profImg" aria-hidden="true"></i></button>
   </div>
   <div id="placeholder-rr"></div>
-  <div>
-    <img class="userImage" ng-src="{{uc.thisUser.image}}" alt="">
-  </div>
+
+  <textarea name="name" rows="8" cols="80" ng-model='uc.userBio'></textarea>
+  <button type="button" name="button" ng-click='uc.submitUserBio'>Submit</button>
+
+  <button type="button" name="button" ng-click='uc.matchToMentorMentee'>Show Match</button>
+  butt
 
 
-
-</div>
 
 
 <script>
