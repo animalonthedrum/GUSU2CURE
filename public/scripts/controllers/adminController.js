@@ -100,7 +100,15 @@ function adminController(adminService, UserInfoService) {
   };
   // END logout
 
+  vm.showMatchUser = function(index) {
+      console.log('index', vm.matchContent[index]);
+      vm.showMatchedUserInfo = vm.matchContent[index];
 
+        UserInfoService.seeOtherUsersPage(vm.showMatchedUserInfo);
+        window.location.href = '#!/visit';
+
+
+  };//showMatchUser
 
 } //end of controller
 

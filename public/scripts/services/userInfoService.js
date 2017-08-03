@@ -50,7 +50,7 @@
 	    if (user === undefined) {
 	      var userSearchEmail = JSON.parse(localStorage.getItem('userSearched')).email
 	      return $http.get('/userSearch/' + userSearchEmail).then(function(res) {
-	        console.log('back from the server with', res);
+	        console.log('back from the server with from visit', res);
 	      })
 	    } else {
 	      localStorage.setItem('userSearched', JSON.stringify(user))
