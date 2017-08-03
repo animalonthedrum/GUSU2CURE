@@ -72,16 +72,18 @@ router.post('/', function(req, res) {
 							var lang = req.body.bio.lang.id;
 							var pets = req.body.bio.pets;
 							var hobbies = req.body.hobbies.hobbies;
+							var img = req.body.hobbies.img
 							var questions = req.body.question.question;
 							var experience = req.body.question.experience;
 							var additional = req.body.question.additional;
 							var comments = req.body.question.comment;
 							var heardAbout = req.body.question.heardAbout;
 							var password = hash;
+
 							// END query variables
 
 							// START INSERT query
-							connection.query("INSERT INTO tbl_user (email, date_created, access_lvl, enabled, first_name, last_name, password, dob, gender, phone, phone_type, street, city, state, zip, sci_age, sci_lvl, asia_score, mobility_req, fam_status, ed_lvl, pets, questions, experience, additional, comments, sci_relation, sci_cause, lang, trans_type, rel_status, hobbies) VALUES ('" + email + "','" + dateCreated + "','" + accessLvl + "','" + enabled + "','" + first + "','" + last + "','" + password + "','" + dob + "','" + gender + "','" + phone + "','" + phoneType + "','" + street + "','" + city + "','" + state + "','" + zip + "','" + sci_age + "','" + sci_lvl + "','" + asia + "','" + mobility + "','" + fam_status + "','" + ed_lvl + "', '" + pets + "','" + questions + "','" + experience + "','" + additional + "','" + comments + "','" + sci_rel + "','" + sci_cause + "', '" + lang + "','" + trans_type + "','" + rel_status + "','" + hobbies + "');")
+							connection.query("INSERT INTO tbl_user (email, date_created, access_lvl, enabled, first_name, last_name, password, dob, gender, phone, phone_type, street, city, state, zip, sci_age, sci_lvl, asia_score, mobility_req, fam_status, ed_lvl, pets, questions, experience, additional, comments, sci_relation, sci_cause, lang, trans_type, rel_status, hobbies, image) VALUES ('" + email + "','" + dateCreated + "','" + accessLvl + "','" + enabled + "','" + first + "','" + last + "','" + password + "','" + dob + "','" + gender + "','" + phone + "','" + phoneType + "','" + street + "','" + city + "','" + state + "','" + zip + "','" + sci_age + "','" + sci_lvl + "','" + asia + "','" + mobility + "','" + fam_status + "','" + ed_lvl + "', '" + pets + "','" + questions + "','" + experience + "','" + additional + "','" + comments + "','" + sci_rel + "','" + sci_cause + "', '" + lang + "','" + trans_type + "','" + rel_status + "','" + hobbies +  "','" + img +  "');")
 							// END INSERT query
 
 							// START REFRESH MATERIALIZED VIEW query

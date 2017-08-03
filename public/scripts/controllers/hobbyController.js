@@ -33,7 +33,8 @@ function hobbyController(UserInfoService) {
     var hobbiesObject = {
       id: 'hobbies',
       hobbies: vm.hobbiesArr,
-      dateStamp: new Date()
+      dateStamp: new Date(),
+      img:"images/gusu-SIGNUP.png"
     }; //end of hobbiesArr
     count = checkObjectArr(hobbiesObject);
 
