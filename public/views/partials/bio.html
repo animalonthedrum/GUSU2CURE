@@ -27,6 +27,7 @@
         <div class="col-md-4 rel">
           <label for="rel_status">Relationship status:</label>
           <select class='relation' ng-options="item as item.rel_status for item in bc.rel_status track by item.id" ng-model="bc.relationshipStatus" ng-init="bc.getRelStatusMenu()" name="rel_status">
+<option disabled selected value="">?</option>
           </select>
           <!-- END rel_status -->
 
