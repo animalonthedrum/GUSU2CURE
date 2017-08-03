@@ -100,9 +100,6 @@ function adminController(adminService, UserInfoService) {
   };
   // END logout
 
-  vm.matchName = function(index) {
-
-  }
 
 
 } //end of controller

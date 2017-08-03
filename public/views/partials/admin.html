@@ -196,17 +196,18 @@
             <div class="col-md-4">
 
 
-              <div class="matchPic" ng-repeat='match in ac.matchContent'>
+              <div class="matchPic">
                 <img class='matchImg' src="" alt="images/gusu-SIGNUP.png">
               </div>
               <div class="matchContent">
-                <h3>{{match.first_name}} {{match.last_name}}</h3>
-                <h4 class='match3'>{{match.email}}</h4>
-                <h4 class='match3'>{{match.access_lvl}}</h4>
+                <h3>{{ac.matchContent[0].first_name}} {{ac.matchContent[0].last_name}}</h3>
+                <h4 class='match3'>{{ac.matchContent[0].email}}</h4>
+                <h4 class='match3'>{{ac.matchContent[0].access_lvl}}</h4>
+                <h4 class='match3'>Matched: {{ac.matchContent[0].matched}}</h4>
                 <button type="button" name="button">SELECT</button>
               </div>
             </div>
-            <!-- <div class="col-md-4">
+            <div class="col-md-4">
               <div class="matchPic">
                 <img class='matchImg' src="" alt="images/gusu-SIGNUP.png">
               </div>
@@ -214,6 +215,7 @@
                 <h3>{{ac.matchContent[1].first_name}} {{ac.matchContent[1].last_name}}</h3>
                 <h4 class='match3'>{{ac.matchContent[1].email}}</h4>
                 <h4 class='match3'>{{ac.matchContent[1].access_lvl}}</h4>
+                <h4 class='match3'>Matched: {{ac.matchContent[1].matched}}</h4>
                 <button type="button" name="button">SELECT</button>
               </div>
             </div>
@@ -225,12 +227,13 @@
                 <h3>{{ac.matchContent[2].first_name}} {{ac.matchContent[2].last_name}}</h3>
                 <h4 class='match3'>{{ac.matchContent[2].email}}</h4>
                 <h4 class='match3'>{{ac.matchContent[2].access_lvl}}</h4>
+                <h4 class='match3'>Matched: {{ac.matchContent[2].matched}}</h4>
                 <button type="button" name="button">SELECT</button>
-              </div> -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
