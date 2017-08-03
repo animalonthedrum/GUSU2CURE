@@ -437,7 +437,7 @@
 
   #myModal2 {
     max-height: 100vh;
-    max-width: 66%;
+    max-width: 80%;
     margin: 0 auto;
     background-color: transparent;
     overflow-x: hidden;
@@ -467,6 +467,11 @@
     /* Could be more or less, depending on screen size */
   }
 
+  .matchRow {
+    max-width: 80%;
+    text-align: center;
+  }
+
   .modal-content {
     margin-right: -5px;
   }
@@ -477,6 +482,15 @@
   }
 
   .userContent {
+    text-align: center;
+  }
+
+  .userContent2 {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .userContent2 {
     text-align: center;
   }
 
