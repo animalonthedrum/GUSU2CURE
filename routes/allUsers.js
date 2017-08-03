@@ -25,17 +25,14 @@ router.get('/', function(req, res) {
 	console.log('allUsers url hit ', req.isAuthenticated());
 	if (req.isAuthenticated()) {
 		pool.connect().then(function(client) {
-				client.query("SELECT * FROM main_matview")
-
 				// START REFRESH MATERIALIZED VIEW query
-				connection.query("REFRESH MATERIALIZED VIEW main_matview;")
-					// START REFRESH MATERIALIZED VIEW query
-
-					.then(function(userData) {
-						client.release();
-						console.log(userData.rows.age);
-						res.send(userData.rows);
-					});
+				client.query("REFRESH MATERIALIZED VIEW main_matview;")
+				// START REFRESH MATERIALIZED VIEW query
+				client.query("SELECT * FROM main_matview").then(function(userData) {
+					client.release();
+					console.log(userData.rows.age);
+					res.send(userData.rows);
+				});
 			})
 			.catch(function(err) {
 				client.release();
