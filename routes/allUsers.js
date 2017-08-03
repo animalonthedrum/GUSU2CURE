@@ -22,9 +22,13 @@ var config = {
 var pool = new pg.Pool(config);
 
 router.get('/', function(req, res) {
+
   console.log('allUsers url hit ', req.isAuthenticated());
   if (req.isAuthenticated()) {
     pool.connect().then(function(client) {
+        // START REFRESH MATERIALIZED VIEW query
+        client.query("REFRESH MATERIALIZED VIEW main_matview;")
+        // START REFRESH MATERIALIZED VIEW query
         client.query("SELECT * FROM main_matview").then(function(userData) {
           client.release();
           console.log(userData.rows.age);
@@ -39,6 +43,7 @@ router.get('/', function(req, res) {
     console.log('not authenticated');
     res.sendStatus(403)
   }
+
 
 
 }); //end of get
