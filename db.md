@@ -124,6 +124,9 @@ SELECT tbl_user.email,
     tbl_user.additional,
     tbl_user.heard_about,
     tbl_user.matched,
+    tbl_user.id,
+    tbl_user.matched_with,
+    tbl_user.image,
     date_part('year'::text, age(tbl_user.dob::timestamp with time zone)) AS age
    FROM tbl_user
      LEFT JOIN tbl_access_lvl ON tbl_access_lvl.id = tbl_user.access_lvl
