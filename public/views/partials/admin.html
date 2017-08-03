@@ -27,7 +27,7 @@
         <td><a href="mailto:{{users.email}}">{{users.email}}</a></td>
         <!-- <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td> -->
         <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> INFO </button></td>
-        <td><button type="button" name="button" ng-click='ac.getMatches($index)'>VIEW</button></td>
+        <td><button type="button" onclick="document.getElementById('myModal2').style.display='block'" name="button" ng-click='ac.getMatches($index)'>VIEW</button></td>
 
       </tr>
     </tbody>
@@ -181,5 +181,27 @@
       <!-- END of userContentdiv -->
     </div>
 
+  </div>
+  <!-- The Modal -->
+  <div id="myModal2" class="modal2">
+
+    <!-- Modal content -->
+    <div class="modal-content2">
+      <span class="close" onclick="document.getElementById('myModal2').style.display='none'">&times;</span>
+      <div class="userContent2">
+        <p>Match Modal</p>
+        <div class="container">
+
+          <div class="matchPic">
+            <img class='matchImg' src="images/gusu-SIGNUP.png" alt="images/gusu-SIGNUP.png">
+          </div>
+          <div class="matchContent">
+            <h3>{{ac.matchContent[0].first_name}} {{ac.matchContent[0].last_name}}</h3>
+            <h4>{{ac.matchContent[0].email}}</h4>
+            <h4>{{ac.matchContent[0].access_lvl}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
