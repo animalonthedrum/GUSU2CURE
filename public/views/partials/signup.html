@@ -19,11 +19,13 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-8">
+        <div class="radioBtn">
           <div class='radioB'>
+            <h5>I am a </h5>
             <input type="radio" id="radio01" name="radio" value="1" ng-model='sc.radioValue' />
             <label for="radio01"><span></span>Mentor</label>
             <br>
+            <h5>I am a </h5>
             <input type="radio" id="radio02" name="radio" value="2" ng-model='sc.radioValue' />
             <label for="radio02"><span></span>Mentee</label>
           </div>
@@ -37,7 +39,8 @@
         <div class="col-md-6">
           <label for="dob">Date of Birth</label>
           <input type="date" name="dob" class="inputDOB" ng-model='sc.dateBirth'>
-
+        </div>
+        <div class='col-md-6'>
           <select class="Gender" name="gender" ng-model='sc.gender'>
           <option value="" disabled selected>Gender</option>
           <option value="Male">Male</option>
@@ -52,7 +55,7 @@
     <hr>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 address">
+        <div class="col-md-6 address">
           <label for="address">Street</label><input type="text" class="street" name="street" ng-model='sc.address'>
           <label for="city">City</label><input type="text" class="city" name="city" ng-model='sc.city'>
         </div>
@@ -63,17 +66,18 @@
           <label for="zip">ZIP Code</label>
           <input type="number" name="zip" maxlength="5" ng-model='sc.zipcode' class='zipInput'>
         </div>
-        <div class='col-md-8 phone'>
+        <div class='col-md-6 phone'>
           <label for="phone_type">Phone</label>
           <input type="tel" id='phone' name="phone" minlength="10" ng-model='sc.phone'>
-
+        </div>
+        <div class='col-md-6 phone'>
           <select class="" name="phone_type" ng-model='sc.phoneType'>
           <option value="" disabled selected>Phone Type</option>
           <option value="Mobile">Mobile</option>
           <option value="Home">Home</option>
           <option value="Work">Work</option>
           <option value="Other">Other</option>
-        </select>
+          </select>
         </div>
       </div>
     </div>
@@ -85,9 +89,12 @@
 
         <div class="">
           <ul class='multi-column'>
-            <li><input class='checks' type='checkbox' name='visit' value="Hospital">Hospital</input></li>
-            <li><input class='checks' type='checkbox' name='visit' value="Rehab Center">Rehabilitation Center</input></li>
-            <li><input class='checks' type='checkbox' name='visit' value="At home">At their home</input></li>
+            <li><input class='checks' type='checkbox' name='visit' value="Hospital">Hospital</input>
+            </li>
+            <li><input class='checks' type='checkbox' name='visit' value="Rehab Center">Rehabilitation Center</input>
+            </li>
+            <li><input class='checks' type='checkbox' name='visit' value="At home">At their home</input>
+            </li>
             <li><input class='checks' type='checkbox' name='visit' value="Online">Online (e.g. Skype)</input>
             </li>
             <li><input class='checks' type='checkbox' name='visit' value="Phone">Phone Calls</input>
