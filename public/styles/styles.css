@@ -9,7 +9,7 @@
   }
 
   h2 {
-    font-family: Lato, Arial, sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     font-size: 16px;
     line-height: 29px;
     color: #333333;
@@ -36,6 +36,11 @@
   .state {
     text-transform: uppercase;
   }
+
+  .radioBtn {
+    text-align: center;
+    margin-top: 20px;
+  }
   /*REG PAGE*/
 
   .landPage {
@@ -44,35 +49,32 @@
     margin-left: 10vw;
     margin-right: 10vw;
     /*margin-top: 175px;*/
-    background-color: #9a252b;
-    background: linear-gradient( #4F2223, #9a252b);
+    /*background-color: #9a252b;
+    background: linear-gradient( #4F2223, #9a252b);*/
     /*opacity: .7;*/
     color: white;
+    font-family: 'Lato', sans-serif;
   }
 
   .entirePage {
+    margin-top: -50px;
     height: 100vh;
     /*width: 100vw;*/
-    /*background-image: url('../images/gusustock/login.jpg');
     background-size: cover;
-    opacity: 0.6;*/
+    background-image: url('../images/sides1.png');
   }
 
   .headerImg.landPage {
     margin-bottom: none;
   }
-  /*.window {
-  margin-right: 100px;
-  border-width: thin;
-  border: solid white;
-}*/
 
   .terms {
-    color: white;
+    color: #494747;
     margin-top: 5px;
     text-align: center;
     margin-right: 20px;
     font-weight: lighter;
+    display: inline-block;
   }
 
   .checkTerms {
@@ -87,7 +89,7 @@
     border-width: thin;
     margin-right: 100px;
     padding: 40px;
-    height: 535px;
+    max-height: 800px;
     /*background-color: black;*/
   }
 
@@ -97,19 +99,39 @@
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     margin-top: 5px;
+    background-color: transparent;
   }
-
+  /*
   .regLabel {
     display: block;
     color: white;
     margin-top: 5px;
     font-weight: lighter;
-  }
+  }*/
 
   .regBtn {
     margin-top: 20px;
     background-color: white;
     color: #9a252b;
+    border-radius: 20px;
+    border-bottom: solid black;
+    border-width: thin;
+    border-left: none;
+    border-right: none;
+    height: 50px;
+    width: 150px;
+    font-size: 24px;
+    box-shadow: 0 9px #999;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .regBtn:hover {
+    opacity: 0.7;
+  }
+
+  .regBtn:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
   }
 
   .buttons {
@@ -124,7 +146,7 @@
     border-width: thin;
     margin-left: 100px;
     padding: 40px;
-    height: 535px;
+    max-height: 800px;
   }
 
   .loginInputs {
@@ -134,14 +156,15 @@
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     margin-top: 5px;
+    background-color: transparent;
   }
-
-  .logLabel {
-    color: white;
+  /*.logLabel {
+    color: #666;
     font-weight: lighter;
     margin-top: 5px;
     display: block;
-  }
+    font-family: 'Lato', sans-serif;
+  }*/
 
   .signupLogo {
     height: 275px;
@@ -151,11 +174,22 @@
 
   button {
     background-color: transparent;
-    border-radius: 20px;
-    border-width: thin 3px 3px 3px 3px;
-    border-color: #9a252b;
-    font-size: 24px;
-    color: #9a252b;
+    /*background-color: #9a252b;*/
+    /*border-radius: 100px;
+    height: 150px;
+    width: 150px;*/
+    /*border-width: 3px 3px 3px 3px;*/
+    /*border-right: none;
+    border-left: none;*/
+    /*border-color: #9a252b;*/
+    /*border-color: transparent;
+    font-size: 24px;*/
+    /*color: #9a252b;*/
+    /*color: white;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px 20px;
+    border-width: thick;
+    text-align: center;*/
   }
 
   .registerBtn {
@@ -178,7 +212,7 @@
     width: 400px;
   }
 
-  input option select {
+  input, option, select {
     margin-right: 20px;
     margin-left: 20px;
     margin-bottom: 25px;
@@ -188,17 +222,36 @@
     /*border-bottom: solid #666666;*/
     /*border-width: thin;*/
     display: block;
-    font-size: 14px;
-    font-family: 'Ubuntu', Arial, sans-serif;
+    font-size: 24px;
+    font-family: 'Lato', Arial, sans-serif;
     color: #000000;
     /*text-indent: 2%;*/
   }
 
+  input {
+    border-top: 1px solid #999;
+    border-radius: 5px;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid black;
+    border-width: thin;
+    font-size: 24px;
+  }
+
   label {
     font-weight: normal;
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-size: 18px;
-    color: #666666;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 20px;
+    color: #3d3c3c;
+  }
+
+  textarea {
+    font-weight: normal;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 25px;
+    margin-top: 25px;
   }
 
   .relation {
@@ -225,20 +278,30 @@
   }
 
   .headerImg {
-    height: 225px;
+    height: 375px;
     width: 100%;
     background-size: cover;
     background-image: url('../images/header3.png');
     border-bottom: solid #9a252b;
     border-width: thin;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 
   select {
     /*font-family: 'Open Sans', sans-serif;*/
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 20px;
     color: #000000;
+    /*margin-top: 5px;*/
+    border-bottom: solid black;
+    border-width: thin;
+    border-right: none;
+    border-left: none;
+    background-color: transparent;
+  }
+
+  select::-ms-expand {
+    display: none;
   }
 
   hr {
@@ -264,9 +327,12 @@
     margin-right: 10vw;
     border-top: solid #4F2223;
     border-bottom: solid #9a252b;
+    border-left: 1px solid #ECE5E5;
+    border-right: 1px solid #ECE5E5;
     background-color: white;
+    opacity: 0.7;
     border-width: medium;
-    height: 100vw;
+    height: 100%;
   }
 
   .state {
@@ -289,7 +355,10 @@
   }
 
   .inputDOB {
-    width: 145px;
+    width: 175px;
+    border-bottom: solid black;
+    border-width: thin;
+    color: transparent;
   }
 
   .multi-column {
@@ -339,6 +408,7 @@
     margin-top: -150px;
     margin-bottom: 80px;
     color: white;
+    text-align: center;
   }
 
   .additional {
@@ -363,7 +433,10 @@
   }
 
   .otherInput {
-    margin-top: 30%;
+    margin-top: 90%;
+    margin-left: 100px;
+    /*color: #3d3c3c;*/
+    color: black;
   }
 
   .hobbyLabel {
@@ -386,6 +459,7 @@
     text-align: center;
     color: #9a252b;
   }
+  /* QUESTIONPAGE*/
   /* The Modal (background) */
 
   .modal {
@@ -437,7 +511,7 @@
 
   #myModal2 {
     max-height: 100vh;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     background-color: transparent;
     overflow-x: hidden;
@@ -547,6 +621,7 @@
 
   p {
     display: inline-grid;
+    font-size: 16px;
   }
 
   .adminBtn {
@@ -561,16 +636,29 @@
   }
 
   .submitBtn {
-    display: inline-block;
+    /*display: inline-block;*/
     /*padding: 15px 25px;*/
     font-size: 24px;
     cursor: pointer;
     text-align: center;
-    text-decoration: none;
     outline: none;
     box-shadow: 0 9px #999;
     /*float: right;
   margin-right: 8vw;*/
+    /*background-color: #9a252b;*/
+    border-radius: 100px;
+    height: 150px;
+    width: 150px;
+    /*border-width: 3px 3px 3px 3px;*/
+    /*border-right: none;
+  border-left: none;*/
+    /*border-color: #9a252b;*/
+    border-color: transparent;
+    /*color: #9a252b;*/
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px 20px;
+    border-width: thick;
   }
 
   .submitBtn:hover {
@@ -580,6 +668,23 @@
   .submitBtn:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+  }
+
+  .fa-arrow-circle-o-right {
+    color: #999;
+    text-align: center;
+    position: cover;
+    display: run-in;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: baseline;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+  }
+
+  .fa-arrow-circle-o-right:hover {
+    color: black;
   }
 
   .adminSearch {
@@ -623,9 +728,9 @@
     border-width: thin;
     height: 50px;
     width: 50px;
-    border: solid #4d4949;
+    border: solid #9a252b;
     text-align: center;
-    color: #4d4949;
+    color: #9a252b;
     vertical-align: middle;
     font-size: 30px;
     font-family: 'Ubuntu', sans-serif;
@@ -652,8 +757,10 @@
 
   .sides {
     height: 100%;
-    background-color: #9a252b;
-    background: linear-gradient( #4F2223, #9a252b);
+    /*background-color: #9a252b;
+    background: linear-gradient( #4F2223, #9a252b);*/
+    background-image: url('../images/sides1.png');
+    background-size: cover;
   }
   /*RADIO BUTTONS*/
 

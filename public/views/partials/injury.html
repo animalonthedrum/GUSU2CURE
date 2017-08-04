@@ -1,5 +1,7 @@
 <div class='question1'>
-  <h1>INJURY INFORMATION</h1></div>
+  <h1>INJURY INFORMATION</h1>
+
+</div>
 <div class='threeHobbies'>
 
   <div class='currentPage'>
@@ -10,6 +12,7 @@
     <p class='circlesNon'>5</p>
 
   </div>
+  <p>The following questions regard the details of the SCI. </p><br>
   <p>*All Fields Required</p>
 </div>
 
@@ -20,11 +23,11 @@
     <div class='container'>
       <div class='row'>
         <div class='col-md-4 injuryInfo'>
-          <p>The following questions are about the details regarding the SCI.</p>
+          <!-- <p>The following questions are about the details regarding the SCI.</p> -->
 
           <!-- START sci_rel -->
           <label for='sci_rel'>Patient</label>
-            <select class='relation' ng-options='item as item.sci_rel for item in ic.sci_rel track by item.id' ng-model='ic.sciRelation' ng-init='ic.getSciRelMenu()' name='sci_rel'></select>
+          <select class='relation' ng-options='item as item.sci_rel for item in ic.sci_rel track by item.id' ng-model='ic.sciRelation' ng-init='ic.getSciRelMenu()' name='sci_rel'></select>
           <!-- END sci_rel -->
           <br>
         </div>
@@ -34,82 +37,96 @@
           <label for='sci_cause'>Cause</label>
           <select class='cause' ng-options='item as item.sci_cause for item in ic.sci_cause track by item.id' ng-model='ic.cause' ng-init='ic.getSciCauseMenu()' name='sci_cause'></select>
         </div>
-        <!-- END sci_cause -->
+      </div>
+      <!-- END sci_cause -->
+      <div class="row">
 
-        <br>
 
         <!-- START sci_age -->
         <div class='col-md-4 injuryInfo'>
-          <label for='year'>Age SCI occured</label>
+          <label for='year'>Age SCI Occured</label>
           <input class='ageInj' type='text' name='year' pattern='\d*' min='0' max='99' maxlength='2' ng-model='ic.injAge'>
         </div>
         <!-- END sci_age -->
 
-      </div>
-    </div>
 
-    <hr>
 
-    <div>
 
-      <!-- START sci_lvl -->
-      <div class='pLevel'>
-        <label for='sci_lvl'>Injury Level: </label>
+
+
+
+
+        <!-- START sci_lvl -->
+        <div class='pLevel'>
+          <label for='sci_lvl'>Injury Level: </label>
           <select class='' name='sci_lvl' ng-model='ic.injLevel'>
             <option value='C1-C3'>Upper-Cervical (C1-C3)</option>
             <option value='C4-C5'>Mid-Cervical (C4-C5)</option>
             <option value='C6-C8'>Lower-Cervical (C6-C8)</option>
             <option value='T1-S5'>Lower Spine (T1-S5)</option>
           </select>
+        </div>
       </div>
       <!-- END sci_lvl -->
 
 
-      <div class='container'>
-        <div class='row'>
 
-          <!-- START asia -->
-          <div class='col-md-4 asia'>
-            <label for='asia'>ASIA Score: </label>
-              <select class='asia' name='' ng-model='ic.asia'>
+      <div class='row'>
+
+        <!-- START asia -->
+        <div class='col-md-4 asia'>
+          <label for='asia'>ASIA Score: </label>
+          <select class='asia' name='' ng-model='ic.asia'>
                 <option value='A'>A: No Motor Function / No Sensory Function</option>
                 <option value='B'>B: No Motor Function / Some Sensory Function</option>
                 <option value='C'>C: Some Motor Function / Some Sensory Function</option>
                 <option value='D'>D: Most Motor Function / Most Sensory Function</option>
               </select>
-          </div>
-          <!-- END asia -->
+        </div>
+      </div>
+      <!-- END asia -->
 
-          <!-- START mobility_req -->
-          <div class='col-md-4'>
-            <label for='mobility_req'>Mobility Requirement: </label>
-              <select class='movement' name='mobility_req' ng-model='ic.mobility'>
+      <!-- START mobility_req -->
+      <div class="row">
+
+
+        <div class='col-md-4'>
+          <label for='mobility_req'>Mobility Requirement: </label>
+          <select class='movement' name='mobility_req' ng-model='ic.mobility'>
                 <option value='Wheelchair (powered)'>Wheelchair (powered)</option>
                 <option value='Wheelchair (manual)'>Wheelchair (manual)</option>
                 <option value='Walker/Cane'>Walker/Cane</option>
                 <option value='Nothing'>Nothing</option>
                 <option value='Other'>Other</option>
               </select>
-          </div>
-          <!-- END mobility_req -->
+        </div>
+        <!-- END mobility_req -->
 
-          <!-- START trans_type -->
-          <div class='col-md-4 asia' ng-init='ic.getTransTypeMenu()'>
-            <label for='trans_type'>Primary transportation:</label>
-              <select class='relation' ng-options='item as item.trans_type for item in ic.trans_type track by item.id' ng-model='ic.trans' name='trans_type'></select>
-          </div>
-          <!-- END trans_type -->
-
-
+        <!-- START trans_type -->
+        <div class='col-md-4 asia' ng-init='ic.getTransTypeMenu()'>
+          <label for='trans_type'>Primary transportation:</label>
+          <select class='relation' ng-options='item as item.trans_type for item in ic.trans_type track by item.id' ng-model='ic.trans' name='trans_type'></select>
         </div>
       </div>
-      <hr>
+      <!-- END trans_type -->
 
-      <a href='#!/signup'><button type='button' name='button'>Previous</button></a>
-      <a href='#!/bio'><button type='button' name='button'>Next</button></a>
-      <div class='nextBtn'>
-        <button class='submitBtn' type='button' name='button' ng-click='ic.submit()'>NEXT</button>
-      </div>
 
     </div>
+
+    <div>
+      <a href='#!/signup'><button type='button' name='button'>Previous</button></a>
+      <a href="#!/injury"><button type="button" name="button">next</button></a>
+      <div class="nextBtn">
+        <button class='submitBtn' type="button" name="button" ng-click='ic.submit()'><i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+
+    <!-- <a href='#!/bio'><button type='button' name='button'>Next</button></a>
+    <div class='nextBtn'>
+      <button class='submitBtn' type='button' name='button' ng-click='ic.submit()'>NEXT</button>
+    </div> -->
   </div>
+
+
+</div>
