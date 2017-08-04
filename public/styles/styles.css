@@ -90,7 +90,8 @@
     margin-right: 100px;
     padding: 40px;
     max-height: 800px;
-    /*background-color: black;*/
+    background-color: white;
+    opacity: 0.7;
   }
 
   .regInput {
@@ -147,6 +148,8 @@
     margin-left: 100px;
     padding: 40px;
     max-height: 800px;
+    background-color: white;
+    opacity: 0.7;
   }
 
   .loginInputs {
@@ -278,7 +281,7 @@
   }
 
   .headerImg {
-    height: 375px;
+    height: 20vw;
     width: 100%;
     background-size: cover;
     background-image: url('../images/header3.png');
