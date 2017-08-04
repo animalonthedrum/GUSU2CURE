@@ -1,48 +1,58 @@
 <div class="user" ng-init=uc.getUserInfo()>
-  <div class='editP'>
-    <p class='logout1' ng-click='uc.logout()'><u>LOG OUT</u></p>
 
-    <h1>WELCOME {{uc.thisUser.first_name | uppercase}}</h1>
+  <p class='logout1' ng-click='uc.logout()'><u>LOG OUT</u></p>
 
-    <h3>Edit Profile</h3>
-    <!-- <div id="placeholder-rr"></div> -->
-  </div>
+  <h2>WELCOME {{uc.thisUser.first_name | uppercase}}</h2>
   <div class="imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
     <!-- <img class="img-circle userImage" alt="" ><br> -->
-    <button class="upload" ng-click="uc.showPicker()">ADD AN IMAGE</button>
+    <button class="upload" ng-click="uc.showPicker()">    <i class="fa fa-file-image-o fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button>
   </div>
-
-
-
-
   <div class="container">
-    <label for="bio">Bio</label>
-    <div class="row">
-      <div class="col-md-8">
+    <div class='editP'>
+      <h3>Edit Profile</h3>
+      <div class="userInfo">
+        <!-- <p>{{uc.thisUser.access_lvl}}</p> -->
+        <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+        <p><u>City</u> {{uc.thisUser.city}}</p>
+        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+        <p><u>E-Mail</u> {{uc.thisUser.email}}</p>
 
-
-        <textarea name="bio" rows="8" cols="50" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
-        <button type="button" name="button" ng-click='uc.submitUserBio()'>Submit bio</button>
+        <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+        <p><u>Hobbies/Interests</u> {{uc.thisUser.hobbies}}</p>
+        <i class="fa fa-wheelchair fa-2x" aria-hidden="true"></i>
+        <p><u>Mobility Requirements</u> {{uc.thisUser.mobility_req}}</p>
       </div>
+
+      <!-- <div id="placeholder-rr"></div> -->
+    </div>
+
+    <div class="row">
+      <div class="bio">
+        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+        <label for="bio">Bio</label>
+        <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'>Submit bio</button>
+      </div>
+
+
+      <textarea ng-init='uc.getUserInfo()' name="bio" rows="5" cols="100" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
+
+
     </div>
   </div>
+</div>
 
 
 
 
 
-  <h2>{{uc.thisUser.access_lvl}}</h2>
-  <h2>City: {{uc.thisUser.city}}</h2>
-  <h2>E-Mail: {{uc.thisUser.email}}</h2>
-  <h2>Hobbies/Interests: {{uc.thisUser.hobbies}}</h2>
-  <h2>Mobility Requirements: {{uc.thisUser.mobility_req}}</h2>
 
-  <button type="button" name="button">Match</button>
-  <button type="button" name="button">Unmatch</button>
 
-  <script>
-    gapi.hangout.render('placeholder-rr', {
-      'render': 'createhangout',
-      'widget_size': 150
-    });
-  </script>
+<button type="button" name="button">Match</button>
+<button type="button" name="button">Unmatch</button>
+
+<script>
+  gapi.hangout.render('placeholder-rr', {
+    'render': 'createhangout',
+    'widget_size': 150
+  });
+</script>

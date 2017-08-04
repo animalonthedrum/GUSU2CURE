@@ -819,7 +819,10 @@
   /*User Page*/
 
   .imageUp {
+    display: inline-block;
+    float: left;
     text-align: center;
+    margin-right: 100px;
   }
 
   .profImg {
@@ -827,10 +830,36 @@
     border-radius: 200px;
     height: 200px;
     width: 200px;
+    margin-top: -100em;
+  }
+
+  .bio {
+    text-align: left;
+  }
+
+  .submitBio {
+    float: right;
   }
 
   .upload {
     margin-top: 100%;
+    border-radius: 20px;
+    border-bottom: solid black;
+    border-width: thin;
+    border-left: none;
+    border-right: none;
   }
 
-  .editP {}
+  .editP {
+    text-align: center;
+  }
+
+  .userInfo {
+    display: inline;
+    text-align: center;
+  }
+
+  u {
+    font-size: 24px;
+    margin: 10px;
+  }
