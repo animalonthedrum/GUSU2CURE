@@ -41,8 +41,9 @@
           <input type="date" name="dob" class="inputDOB" ng-model='sc.dateBirth'>
         </div>
         <div class='col-md-6'>
+          <label for="gender">Gender</label>
           <select class="Gender" name="gender" ng-model='sc.gender'>
-          <option value="" disabled selected>Gender</option>
+          <!-- <option value="" disabled selected>?</option> -->
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Other">Other</option>
@@ -71,8 +72,9 @@
           <input type="tel" id='phone' name="phone" minlength="10" ng-model='sc.phone'>
         </div>
         <div class='col-md-6 phone'>
+          <label for="phone_type">Phone Type</label>
           <select class="" name="phone_type" ng-model='sc.phoneType'>
-          <option value="" disabled selected>Phone Type</option>
+          <!-- <option value="" disabled selected>?</option> -->
           <option value="Mobile">Mobile</option>
           <option value="Home">Home</option>
           <option value="Work">Work</option>
@@ -95,7 +97,7 @@
             </li>
             <li><input class='checks' type='checkbox' name='visit' value="At home">At their home</input>
             </li>
-            <li><input class='checks' type='checkbox' name='visit' value="Online">Online (e.g. Skype)</input>
+            <li><input class='checks' type='checkbox' name='visit' value="Online">Video Call (Google Hangout)</input>
             </li>
             <li><input class='checks' type='checkbox' name='visit' value="Phone">Phone Calls</input>
             </li>
@@ -115,7 +117,7 @@
     <div>
       <a href="#!/injury"><button type="button" name="button">next</button></a>
       <div class="nextBtn">
-        <button class='submitBtn' type="button" name="button" ng-click='sc.submit()'>NEXT</button>
+        <button class='submitBtn' type="button" name="button" ng-click='sc.submit()'><i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i></button>
       </div>
     </div>
 

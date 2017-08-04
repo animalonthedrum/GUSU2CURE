@@ -24,26 +24,29 @@
       <div class="row">
 
 
-        <div class="col-md-4 rel">
-          <label for="rel_status">Relationship status:</label>
+        <div class="col-md-6 rel">
+          <label for="rel_status">Relationship Status:</label>
           <select class='relation' ng-options="item as item.rel_status for item in bc.rel_status track by item.id" ng-model="bc.relationshipStatus" ng-init="bc.getRelStatusMenu()" name="rel_status">
-<option disabled selected value="">?</option>
+<!-- <option disabled selected value="">?</option> -->
           </select>
           <!-- END rel_status -->
 
         </div>
-        <div class="col-md-4 rel">
+        <div class="col-md-6 rel">
           <label for="fam_status">Family Status</label>
           <select class="" name="fam_status" ng-model='bc.familyStatus'>
+            <!-- <option disabled selected value="">?</option> -->
             <option value="Children at Home">Children at Home</option>
             <option value="Children grown, out of home">Children grown, out of home</option>
             <option value="No children">No children</option>
           </select>
         </div>
-
-        <div class='col-md-4 rel'>
+      </div>
+      <div class='row'>
+        <div class='col-md-6 rel'>
           <label for="ed_lvl">Education Level</label>
           <select class="" name="ed_lvl" ng-model='bc.educationLevel'>
+            <!-- <option disabled selected value="">?</option> -->
             <option value="Elementry">Elementary</option>
             <option value="Some High School">Some High School</option>
             <option value="HS Grad/GED">HS Grad/GED</option>
@@ -54,7 +57,12 @@
             <option value="None/NA">None/NA</option>
           </select>
         </div>
+        <div class="col-md-6 rel">
+          <label for="work">Occupation</label>
+          <input type="text" name="" value="" ng-model="bc.work">
+        </div>
       </div>
+
     </div>
     <hr>
     <!-- <br> -->
@@ -63,37 +71,41 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 rel">
-          <label for="lang">Language preference:</label>
+          <label for="lang">Language Preference:</label>
           <select class='relation' ng-options="item as item.lang for item in bc.lang track by item.id" ng-model="bc.language" ng-init="bc.getLangMenu()" name="lang">
+<!-- <option disabled selected value="">?</option> -->
           </select>
         </div>
 
 
         <!-- END lang -->
 
-
-        <div class="col-md-6 rel">
-
-
-          <label for="work">Occupation</label>
-          <input type="text" name="" value="" ng-model="bc.work">
-        </div>
       </div>
       <div class="pets">
         <label for="animals">Do you have a problem with household animals? (Pets, Service Dogs, Allergies)</label>
         <select class="" name="animals" ng-model='bc.pets'>
+          <!-- <option disabled selected value="">?</option> -->
           <option value="false">No</option>
           <option value="true">Yes</option>
         </select>
       </div>
 
     </div>
-    <hr>
+    <div>
+      <a href="#!/injury"><button type="button" name="button">Previous</button></a>
+      <a href="#!/hobby"><button type="button" name="button">Next</button></a>
+      <div class="nextBtn">
+        <button class='submitBtn' type="button" name="button" ng-click='bc.submit()'><i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+
+    <!-- 
     <div class="nextBtn">
       <button class='submitBtn' type="button" name="button" ng-click='bc.submit()'>NEXT</button>
     </div>
     <a href="#!/injury"><button type="button" name="button">Previous</button></a>
-    <a href="#!/hobby"><button type="button" name="button">Next</button></a>
+    <a href="#!/hobby"><button type="button" name="button">Next</button></a> -->
 
 
     <!-- <div class="progress">
