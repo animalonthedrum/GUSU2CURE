@@ -42,38 +42,26 @@
 </div>
 
 
+<button type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'>Match</button>
+<div id="myModal3" class="modal3">
 
+  <!-- Modal content -->
+  <div class="modal-content3">
+    <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
+    <div class="userContent3">
 
-
-<<<<<<< HEAD
-  <h2>{{uc.thisUser.access_lvl}}</h2>
-  <h2>City: {{uc.thisUser.city}}</h2>
-  <h2>E-Mail: {{uc.thisUser.email}}</h2>
-  <h2>Hobbies/Interests: {{uc.thisUser.hobbies}}</h2>
-  <h2>Mobility Requirements: {{uc.thisUser.mobility_req}}</h2>
-
-  <button type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'>Match</button>
-  <div id="myModal3" class="modal3">
-
-    <!-- Modal content -->
-    <div class="modal-content3">
-      <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
-      <div class="userContent3">
-
-        <p>Hello world</p>
-        </div>
-      </div>
+      <p>Hello world</p>
     </div>
   </div>
+</div>
+</div>
 
 
-  <button type="button" name="button">Unmatch</button>
-=======
-
-
-<button type="button" name="button">Match</button>
 <button type="button" name="button">Unmatch</button>
->>>>>>> userPage
+
+
+
+
 
 <script>
   gapi.hangout.render('placeholder-rr', {
