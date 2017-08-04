@@ -1,23 +1,44 @@
 <div class="user" ng-init=uc.getUserInfo()>
+  <div class='editP'>
+    <p class='logout1' ng-click='uc.logout()'><u>LOG OUT</u></p>
 
-  <p class='logout1' ng-click='uc.logout()'><u>LOG OUT</u></p>
-  <h1 class='question1'>Welcome {{uc.thisUser.first_name | uppercase}}</h1>
-  <img class="img-circle userImage" ng-src="{{uc.thisUser.image}}" alt="">
+    <h1>WELCOME {{uc.thisUser.first_name | uppercase}}</h1>
 
-  <div class="">
-
-
-    <button class="upload" ng-click="uc.showPicker()"><i class="fa fa-picture-o fa-2x profImg" aria-hidden="true"></i></button>
+    <h3>Edit Profile</h3>
+    <!-- <div id="placeholder-rr"></div> -->
   </div>
-  <div id="placeholder-rr"></div>
-
-  <textarea name="name" rows="8" cols="80" ng-model='uc.userBio'></textarea>
-  <button type="button" name="button" ng-click='uc.submitUserBio()'>Submit bio</button>
-
-
+  <div class="imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
+    <!-- <img class="img-circle userImage" alt="" ><br> -->
+    <button class="upload" ng-click="uc.showPicker()">ADD AN IMAGE</button>
+  </div>
 
 
 
+
+  <div class="container">
+    <label for="bio">Bio</label>
+    <div class="row">
+      <div class="col-md-8">
+
+
+        <textarea name="bio" rows="8" cols="50" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
+        <button type="button" name="button" ng-click='uc.submitUserBio()'>Submit bio</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <h2>{{uc.thisUser.access_lvl}}</h2>
+  <h2>City: {{uc.thisUser.city}}</h2>
+  <h2>E-Mail: {{uc.thisUser.email}}</h2>
+  <h2>Hobbies/Interests: {{uc.thisUser.hobbies}}</h2>
+  <h2>Mobility Requirements: {{uc.thisUser.mobility_req}}</h2>
+
+  <button type="button" name="button">Match</button>
+  <button type="button" name="button">Unmatch</button>
 
   <script>
     gapi.hangout.render('placeholder-rr', {

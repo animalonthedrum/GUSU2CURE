@@ -716,8 +716,8 @@
   }
 
   .userImage {
-    max-height: 10em;
-    max-width: 10em;
+    max-height: 20em;
+    max-width: 20em;
   }
 
   .circles {
@@ -818,6 +818,10 @@
   }
   /*User Page*/
 
+  .imageUp {
+    text-align: center;
+  }
+
   .profImg {
     border: solid black;
     border-radius: 200px;
@@ -826,5 +830,7 @@
   }
 
   .upload {
-    border: none;
+    margin-top: 100%;
   }
+
+  .editP {}
