@@ -49,35 +49,32 @@
     margin-left: 10vw;
     margin-right: 10vw;
     /*margin-top: 175px;*/
-    background-color: #9a252b;
-    background: linear-gradient( #4F2223, #9a252b);
+    /*background-color: #9a252b;
+    background: linear-gradient( #4F2223, #9a252b);*/
     /*opacity: .7;*/
     color: white;
+    font-family: 'Lato', sans-serif;
   }
 
   .entirePage {
+    margin-top: -50px;
     height: 100vh;
     /*width: 100vw;*/
-    /*background-image: url('../images/gusustock/login.jpg');
     background-size: cover;
-    opacity: 0.6;*/
+    background-image: url('../images/sides1.png');
   }
 
   .headerImg.landPage {
     margin-bottom: none;
   }
-  /*.window {
-  margin-right: 100px;
-  border-width: thin;
-  border: solid white;
-}*/
 
   .terms {
-    color: white;
+    color: #494747;
     margin-top: 5px;
     text-align: center;
     margin-right: 20px;
     font-weight: lighter;
+    display: inline-block;
   }
 
   .checkTerms {
@@ -92,7 +89,7 @@
     border-width: thin;
     margin-right: 100px;
     padding: 40px;
-    height: 535px;
+    max-height: 800px;
     /*background-color: black;*/
   }
 
@@ -102,19 +99,39 @@
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     margin-top: 5px;
+    background-color: transparent;
   }
-
+  /*
   .regLabel {
     display: block;
     color: white;
     margin-top: 5px;
     font-weight: lighter;
-  }
+  }*/
 
   .regBtn {
     margin-top: 20px;
     background-color: white;
     color: #9a252b;
+    border-radius: 20px;
+    border-bottom: solid black;
+    border-width: thin;
+    border-left: none;
+    border-right: none;
+    height: 50px;
+    width: 150px;
+    font-size: 24px;
+    box-shadow: 0 9px #999;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .regBtn:hover {
+    opacity: 0.7;
+  }
+
+  .regBtn:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
   }
 
   .buttons {
@@ -129,7 +146,7 @@
     border-width: thin;
     margin-left: 100px;
     padding: 40px;
-    height: 535px;
+    max-height: 800px;
   }
 
   .loginInputs {
@@ -139,14 +156,15 @@
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     margin-top: 5px;
+    background-color: transparent;
   }
-
-  .logLabel {
-    color: white;
+  /*.logLabel {
+    color: #666;
     font-weight: lighter;
     margin-top: 5px;
     display: block;
-  }
+    font-family: 'Lato', sans-serif;
+  }*/
 
   .signupLogo {
     height: 275px;
@@ -157,21 +175,21 @@
   button {
     background-color: transparent;
     /*background-color: #9a252b;*/
-    border-radius: 100px;
+    /*border-radius: 100px;
     height: 150px;
-    width: 150px;
+    width: 150px;*/
     /*border-width: 3px 3px 3px 3px;*/
     /*border-right: none;
     border-left: none;*/
     /*border-color: #9a252b;*/
-    border-color: transparent;
-    font-size: 24px;
+    /*border-color: transparent;
+    font-size: 24px;*/
     /*color: #9a252b;*/
-    color: white;
+    /*color: white;
     font-family: 'Ubuntu', sans-serif;
     padding: 10px 20px;
     border-width: thick;
-    text-align: center;
+    text-align: center;*/
   }
 
   .registerBtn {
@@ -627,6 +645,20 @@
     box-shadow: 0 9px #999;
     /*float: right;
   margin-right: 8vw;*/
+    /*background-color: #9a252b;*/
+    border-radius: 100px;
+    height: 150px;
+    width: 150px;
+    /*border-width: 3px 3px 3px 3px;*/
+    /*border-right: none;
+  border-left: none;*/
+    /*border-color: #9a252b;*/
+    border-color: transparent;
+    /*color: #9a252b;*/
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px 20px;
+    border-width: thick;
   }
 
   .submitBtn:hover {
