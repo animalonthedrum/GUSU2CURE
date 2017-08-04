@@ -56,7 +56,15 @@ myApp.service('userPageService', function($http) {
 	}
 
 
-
+	sv.submitBio = function(bio) {
+		console.log('bio', bio);
+		var user = {
+			Bio:bio
+		}
+		return $http.put('/userBio', user).then(function(res){
+			console.log('back from the server with', res);
+		})
+	}
 
 
 

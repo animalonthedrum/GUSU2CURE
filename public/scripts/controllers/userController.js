@@ -25,4 +25,10 @@ function userController(UserInfoService, userPageService, adminService) {
   vm.logout = function() {
     adminService.logout();
   }; //end of logout
+
+  vm.submitUserBio = function() {
+      userPageService.submitBio(vm.userBio);
+  };//end of submitUserBio
+
+
 } //end of controller

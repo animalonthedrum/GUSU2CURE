@@ -20,6 +20,7 @@ var logout = require('./routes/logout');
 var bodyparser = require('body-parser');
 var passport = require('./strategies/user.strategy');
 var session = require('express-session');
+var userBio = require('./routes/userBio.js');
 //uses
 app.use(express.static('public'));
 
@@ -59,6 +60,7 @@ app.use('/allUsers', allUsers);
 app.use('/userSearch', userSearched);
 app.use('/', index);
 app.use('/logout', logout);
+app.use('/userBio', userBio);
 
 app.listen(port, function() {
 	console.log('Listening on port:', port);
