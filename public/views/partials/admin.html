@@ -13,7 +13,7 @@
       <tr>
         <th>Role</th>
         <th>Name</th>
-        <th>Email</th>
+        <th>E-Mail</th>
         <!-- <th>Enabled</th> -->
         <th>Info</th>
         <th>Match</th>
@@ -193,7 +193,7 @@
         <div class="container">
           <div class="row matchRow">
 
-            <div class="col-md-4" ng-repeat = 'match in ac.matchContent'>
+            <div class="col-md-4" ng-repeat='match in ac.matchContent'>
 
 
               <div class="matchPic">
@@ -204,13 +204,13 @@
                 <h4 class='match3'>{{match.email}}</h4>
                 <h4 class='match3'>{{match.access_lvl}}</h4>
                 <h4 class='match3'>Matched: {{match.matched}}</h4>
-                <button type="button" name="button" ng-click='ac.showMatchUser($index)' >INFO</button>
+                <button type="button" name="button" ng-click='ac.showMatchUser($index)'>INFO</button>
               </div>
             </div>
 
-            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

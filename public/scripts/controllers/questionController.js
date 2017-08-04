@@ -32,7 +32,7 @@ function questionController(UserInfoService, $window) {
     if (count === 0) {
       UserInfoService.getUserInfo(questionToSend);
       UserInfoService.sendRegistration();
-      window.location.href = '#!/login';
+      window.location.href = '#!/register';
 
     }
   };

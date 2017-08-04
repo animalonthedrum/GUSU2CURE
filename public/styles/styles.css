@@ -355,10 +355,10 @@
   }
 
   .inputDOB {
-    width: 175px;
+    width: 250px;
     border-bottom: solid black;
     border-width: thin;
-    color: transparent;
+    color: black;
   }
 
   .multi-column {
