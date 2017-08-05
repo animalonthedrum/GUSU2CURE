@@ -108,19 +108,26 @@ function adminController(adminService, UserInfoService) {
 
   };//showMatchUser
 
- 
+
 
 } //end of controller
 
 function searchDatabase(vm) {
+
   var usersFound = [];
   for (var i = 0; i < vm.typeUserSearch.length; i++) {
     for (var x in vm.typeUserSearch[i]) {
-      if (vm.searchUserBy.toLowerCase().indexOf(String(vm.typeUserSearch[i][x]).toLowerCase()) === 0) {
+      if (vm.searchUserBy.toLowerCase() === String(vm.typeUserSearch[i][x]).toLowerCase()) {
+
         usersFound.push(vm.typeUserSearch[i]);
         vm.users = usersFound;
       }
     }
   }
+
   return vm.users;
 }
+
+
+
+// vm.searchUserBy.toLowerCase().indexOf(String(vm.typeUserSearch[i][x]).toLowerCase()
