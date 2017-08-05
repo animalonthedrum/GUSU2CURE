@@ -87,7 +87,6 @@ function adminController(adminService, UserInfoService) {
       age: vm.users[index].age
     };
     adminService.matchingUsers(userToMatch).then(function() {
-      console.log(adminService.matchedUsers);
       vm.matchContent = adminService.matchedUsers;
     });
   };
@@ -101,7 +100,6 @@ function adminController(adminService, UserInfoService) {
   // END logout
 
   vm.showMatchUser = function(index) {
-      console.log('index', vm.matchContent[index]);
       vm.showMatchedUserInfo = vm.matchContent[index];
 
         UserInfoService.seeOtherUsersPage(vm.showMatchedUserInfo);
@@ -109,6 +107,8 @@ function adminController(adminService, UserInfoService) {
 
 
   };//showMatchUser
+
+ 
 
 } //end of controller
 
@@ -122,5 +122,5 @@ function searchDatabase(vm) {
       }
     }
   }
-  return vm.users
+  return vm.users;
 }

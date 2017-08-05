@@ -40,5 +40,29 @@ router.get('/', function(req, res) {
 });
 // END GET viewMatchNonMatched
 
+
+router.put('/',  function(req, res){
+	console.log('this is the email', req.user.rows[0].email);
+	var userEmail = req.user.rows[0].email;
+	var email = req.body.Email
+
+	pool.connect().then(function(client) {
+			// client.query("UPDATE tbl_user SET matched_with = $1 WHERE email = $2;",[email ,userEmail]);
+			client.query("UPDATE tbl_user SET matched_with = $1 WHERE email = $2;",[userEmail ,user]).then(function(userData) {
+				client.release();
+				res.sendStatus(200);
+			});
+
+
+
+
+		})
+		.catch(function(err) {
+			client.release();
+			res.sendStatus(500);
+		});
+
+});//
+
 /* Exports for viewMatchNonMatched */
 module.exports = router;

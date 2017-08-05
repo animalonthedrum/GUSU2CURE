@@ -72,14 +72,17 @@
     <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
     <div class="userContent3">
 
-      <div class='usersMatchedWithUser' ng-repeat='x in uc.matchContent'>
-        <div class="matchPic">
-          <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
-        </div>
-        <div class="matchContent">
-          <h3>{{x.first_name}} {{x.last_name}}</h3>
-          <h4 class='match3'>{{x.email}}</h4>
-          <h4 class='match3'>{{x.access_lvl}}</h4>
+        <div class='usersMatchedWithUser' ng-repeat='x in uc.matchContent'>
+            <div class="matchPic">
+              <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
+            </div>
+            <div class="matchContent">
+              <h3>{{x.first_name}} {{x.last_name}}</h3>
+              <h4 class='match3'>{{x.email}}</h4>
+              <h4 class='match3'>{{x.access_lvl}}</h4>
+            </div>
+            <button type="button" name="button" ng-click='uc.matchMeWithThisUser($index)'>Match</button>
+            <button type="button" name="button" ng-click='uc.showMatchUser($index)'>INFO</button>
         </div>
       </div>
     </div>
