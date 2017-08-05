@@ -871,7 +871,7 @@
   }
 
   .bio {
-    text-align: left;
+    /*text-align: left;*/
   }
 
   .submitBio {
@@ -895,7 +895,9 @@
     /*display: list-item;*/
     /*text-align: center;*/
     width: 40em;
-    height: 120em;
+    height: 100%;
+    border-left: 1px solid black;
+    padding-left: 20px;
     /*background-color: red;*/
     float: right;
     margin-right: 30em;
@@ -905,6 +907,7 @@
     font-size: 20px;
     font-family: 'lato', sans-serif;
     margin-left: 15px;
+    text-decoration: none;
   }
 
   .hangout {
@@ -914,4 +917,10 @@
   .currentPage {
     text-align: center;
     margin-right: 20em;
+  }
+
+  .acLvl {
+    font-size: 28px;
+    font-family: 'lato', sans-serif;
+    text-align: center;
   }
