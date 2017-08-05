@@ -1,45 +1,67 @@
 <div class="user" ng-init=uc.getUserInfo()>
 
-  <p class='logout1' ng-click='uc.logout()'><u>LOG OUT</u></p>
+  <p class='logout1' ng-click='uc.logout()'>LOG OUT</p>
 
   <h2>WELCOME {{uc.thisUser.first_name | uppercase}}</h2>
   <div class="imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
     <!-- <img class="img-circle userImage" alt="" ><br> -->
-    <button class="upload" ng-click="uc.showPicker()">    <i class="fa fa-file-image-o fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button>
+    <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button>
   </div>
+
   <div class="container">
-    <div class='editP'>
-      <h3>Edit Profile</h3>
-      <div class="userInfo">
-        <!-- <p>{{uc.thisUser.access_lvl}}</p> -->
-        <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-        <p><u>City</u> {{uc.thisUser.city}}</p>
-        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-        <p><u>E-Mail</u> {{uc.thisUser.email}}</p>
 
-        <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
-        <p><u>Hobbies/Interests</u> {{uc.thisUser.hobbies}}</p>
-        <i class="fa fa-wheelchair fa-2x" aria-hidden="true"></i>
-        <p><u>Mobility Requirements</u> {{uc.thisUser.mobility_req}}</p>
+    <div class="">
+      <div class="acLvl">
+
+
+        <i class="fa fa-star" aria-hidden="true"></i>{{uc.thisUser.access_lvl}}</i>
       </div>
 
-      <!-- <div id="placeholder-rr"></div> -->
+      <div class='editP'>
+        <h3>Edit Profile</h3>
+        <div class="userInfo">
+
+          <i class="fa fa-map-marker fa-2x" aria-hidden="true"><u>City</u></i>
+          <h4> {{uc.thisUser.city}}, {{uc.thisUser.state | uppercase}}</h4>
+          <i class="fa fa-phone fa-2x" aria-hidden="true"><u>{{uc.thisUser.phone_type}}</u></i>
+          <h4> {{uc.thisUser.phone}}</h4>
+          <i class="fa fa-envelope fa-2x" aria-hidden="true"><u>E-Mail</u></i>
+          <h4><a href="mailto:{{users.email}}">{{uc.thisUser.email}}</a></h4>
+
+          <i class="fa fa-heart fa-2x" aria-hidden="true"><u>Hobbies/Interests</u></i>
+          <h4> {{uc.thisUser.hobbies}}</h4>
+          <i class="fa fa-wheelchair fa-2x" aria-hidden="true"><u>Mobility Requirements</u></i>
+          <h4> {{uc.thisUser.mobility_req}}</h4>
+          <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>SCI Age | Cause | Level</u></i>
+          <h4> {{uc.thisUser.sci_age}} | {{uc.thisUser.sci_cause}} | {{uc.thisUser.sci_lvl}}</h4>
+
+
+        </div>
+
+
+      </div>
+
+
     </div>
+    <br>
 
-    <div class="row">
-      <div class="bio">
-        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-        <label for="bio">Bio</label>
-        <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'>Submit bio</button>
-      </div>
-
-
+    <div class="bio">
+      <i class="fa fa-user fa-2x" aria-hidden="true"><u>Bio</u></i>
       <textarea name="bio" rows="5" cols="100" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
 
-
+      <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'>Submit Bio</button>
     </div>
+
+
+
+
   </div>
+
+
+
+
 </div>
+
 
 
 <button type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'>Match</button>
@@ -50,16 +72,16 @@
     <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
     <div class="userContent3">
 
-        <div class='usersMatchedWithUser' ng-repeat='x in uc.matchContent'>
-            <div class="matchPic">
-              <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
-            </div>
-            <div class="matchContent">
-              <h3>{{x.first_name}} {{x.last_name}}</h3>
-              <h4 class='match3'>{{x.email}}</h4>
-              <h4 class='match3'>{{x.access_lvl}}</h4>
-            </div>
+      <div class='usersMatchedWithUser' ng-repeat='x in uc.matchContent'>
+        <div class="matchPic">
+          <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
         </div>
+        <div class="matchContent">
+          <h3>{{x.first_name}} {{x.last_name}}</h3>
+          <h4 class='match3'>{{x.email}}</h4>
+          <h4 class='match3'>{{x.access_lvl}}</h4>
+        </div>
+      </div>
     </div>
   </div>
 </div>
