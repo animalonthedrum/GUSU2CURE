@@ -49,8 +49,21 @@
   <div class="modal-content3">
     <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
     <div class="userContent3">
+            <p>Hello</p>
+        <div class="col-md-4" ng-repeat='match in ac.backWithTheseMatches'>
 
-      <p>Hello world</p>
+
+          <div class="matchPic">
+            <img class='img-circle matchImg' ng-src="{{match.image}}" alt="images/gusu-SIGNUP.png">
+          </div>
+          <div class="matchContent">
+            <h3>{{match.first_name}} {{match.last_name}}</h3>
+            <h4 class='match3'>{{match.email}}</h4>
+            <h4 class='match3'>{{match.access_lvl}}</h4>
+            <!-- <h4 class='match3'>Matched: {{match.matched}}</h4> -->
+            <button type="button" name="button" ng-click='ac.showMatchUser($index)'>INFO</button>
+          </div>
+        </div>
     </div>
   </div>
 </div>

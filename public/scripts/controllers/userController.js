@@ -51,7 +51,7 @@ function userController(UserInfoService, userPageService, adminService) {
           age: vm.thisUser.age
         };
         adminService.matchingUsers(userToMatch).then(function() {
-          vm.matchContent = adminService.matchedUsers;
+          vm.backWithTheseMatches = adminService.matchedUsers;
         });
     };
 } //end of controller
