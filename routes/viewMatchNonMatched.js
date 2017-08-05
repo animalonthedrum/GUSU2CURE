@@ -41,28 +41,27 @@ router.get('/', function(req, res) {
 // END GET viewMatchNonMatched
 
 
-router.put('/',  function(req, res){
+router.put('/', function(req, res) {
 	console.log('this is the email', req.user.rows[0].email);
-	var userEmail = req.user.rows[0].email;
-	var email = req.body.Email
+	var userEmail = req.user.rows[0].email; // logged-in user email
+	var email = req.body.Email // email of person user matched with
 
 	pool.connect().then(function(client) {
 			// client.query("UPDATE tbl_user SET matched_with = $1 WHERE email = $2;",[email ,userEmail]);
-			client.query("UPDATE tbl_user SET matched_with = $1 WHERE email = $2;",[userEmail ,user]).then(function(userData) {
+			client.query("UPDATE tbl_user SET matched_with = $1, matched = TRUE WHERE email = $2;", [email, userEmail])
+			client.query("UPDATE tbl_user SET matched_with = $1, matched = TRUE WHERE email = $2;", [userEmail, email])
+			// START REFRESH MATERIALIZED VIEW query
+			client.query("REFRESH MATERIALIZED VIEW main_matview;").then(function(userData) {
 				client.release();
 				res.sendStatus(200);
 			});
-
-
-
-
 		})
 		.catch(function(err) {
 			client.release();
 			res.sendStatus(500);
 		});
 
-});//
+}); //
 
 /* Exports for viewMatchNonMatched */
 module.exports = router;
