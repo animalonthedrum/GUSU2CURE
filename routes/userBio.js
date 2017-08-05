@@ -28,6 +28,7 @@ router.put('/', function(req, res) {
               client.release();
               res.send(userData.rows);
             });
+            
           })
           .catch(function(err) {
             client.release();
