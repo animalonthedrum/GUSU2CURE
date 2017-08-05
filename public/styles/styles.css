@@ -259,8 +259,8 @@
     font-family: 'Lato', Arial, sans-serif;
     font-size: 20px;
     color: black;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    /*margin-bottom: 25px;
+    margin-top: 25px;*/
   }
 
   .relation {
@@ -356,7 +356,7 @@
   }
 
   .zipInput {
-    width: 65px;
+    width: 200px;
     text-align: center;
   }
 
@@ -382,6 +382,10 @@
     display: inline;
     height: 35px;
     width: 35px;
+  }
+
+  .checksDiv {
+    margin-bottom: 100px;
   }
   /*injuryInfo*/
 
@@ -578,7 +582,6 @@
     width: 80%;
     /* Could be more or less, depending on screen size */
   }
-
 
   .matchRow {
     max-width: 80%;
@@ -885,15 +888,30 @@
   }
 
   .editP {
-    text-align: center;
+    /*text-align: center;*/
   }
 
   .userInfo {
-    display: inline;
-    text-align: center;
+    /*display: list-item;*/
+    /*text-align: center;*/
+    width: 40em;
+    height: 120em;
+    /*background-color: red;*/
+    float: right;
+    margin-right: 30em;
   }
 
   u {
-    font-size: 24px;
-    margin: 10px;
+    font-size: 20px;
+    font-family: 'lato', sans-serif;
+    margin-left: 15px;
+  }
+
+  .hangout {
+    margin: auto auto;
+  }
+
+  .currentPage {
+    text-align: center;
+    margin-right: 20em;
   }
