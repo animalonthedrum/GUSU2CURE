@@ -48,6 +48,8 @@
 	    if (user === undefined) {
 	      var userSearchEmail = JSON.parse(localStorage.getItem('userSearched')).email
 	      return $http.get('/userSearch/' + userSearchEmail).then(function(res) {
+			  console.log('back from the service from ', res.data[0]);
+			  sv.thisUserSaved = res.data[0]
 	      })
 	    } else {
 	      localStorage.setItem('userSearched', JSON.stringify(user))

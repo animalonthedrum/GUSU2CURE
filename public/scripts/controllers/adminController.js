@@ -107,9 +107,6 @@ function adminController(adminService, UserInfoService) {
 
 
   };//showMatchUser
-
-
-
 } //end of controller
 
 function searchDatabase(vm) {
