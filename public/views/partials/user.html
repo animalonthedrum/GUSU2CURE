@@ -5,7 +5,9 @@
   <h2>WELCOME {{uc.thisUser.first_name | uppercase}}</h2>
   <div class="imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
     <!-- <img class="img-circle userImage" alt="" ><br> -->
-    <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button>
+    <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button><br>
+    <button class='matchBtn' type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'><i class="fa fa-users" aria-hidden="true"></i>Match</button><br>
+    <button class='matchBtn2' type="button" name="button"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Unmatch</button>
   </div>
 
   <div class="container">
@@ -18,7 +20,7 @@
       </div>
 
       <div class='editP'>
-        <h3>Edit Profile</h3>
+        <!-- <h3>Edit Profile</h3> -->
         <div class="userInfo">
 
           <i class="fa fa-map-marker fa-2x" aria-hidden="true"><u>City</u></i>
@@ -34,23 +36,25 @@
           <h4> {{uc.thisUser.mobility_req}}</h4>
           <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>SCI Age | Cause | Level</u></i>
           <h4> {{uc.thisUser.sci_age}} | {{uc.thisUser.sci_cause}} | {{uc.thisUser.sci_lvl}}</h4>
-
+          <i class="fa fa-calendar fa-2x" aria-hidden="true"><u>Date of Birth</u></i>
+          <h4>{{uc.thisUser.dob | date : "MMMM dd"}}</h4>
 
         </div>
 
 
       </div>
+      <div class="col-md-6 bio">
+        <i class="fa fa-user fa-2x" aria-hidden="true"><u>Bio</u></i>
+        <textarea name="bio" rows="5" cols="70" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
+
+        <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD BIO</button>
+      </div>
 
 
     </div>
-    <br>
 
-    <div class="bio">
-      <i class="fa fa-user fa-2x" aria-hidden="true"><u>Bio</u></i>
-      <textarea name="bio" rows="5" cols="100" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
 
-      <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'>Submit Bio</button>
-    </div>
+
 
 
 
@@ -64,7 +68,7 @@
 
 
 
-<button type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'>Match</button>
+
 <div id="myModal3" class="modal3">
 
   <!-- Modal content -->
@@ -88,7 +92,7 @@
 </div>
 
 
-<button type="button" name="button">Unmatch</button>
+
 
 
 
