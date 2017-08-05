@@ -23,7 +23,7 @@ myApp.service('userPageService', function($http) {
 
 		return $http.post('/userInfo', sendEmail).then(function(res) {
 			sv.userLoggedInInfo = res.data.rows[0];
-			console.log('back from the server with', res.data.rows[0]);
+			console.log('back from the server with user info', res.data.rows[0]);
 		}).catch(function(err) {
 			window.location.href = '#!/register'
 		});
