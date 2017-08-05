@@ -4,13 +4,7 @@ var passport = require('passport');
 var pg = require('pg');
 var session = require('express-session');
 
-// passport.use(session({
-//    secret: 'secret',
-//    key: 'user', // this is the name of the req.variable. 'user' is convention, but not required
-//    resave: 'true',
-//    saveUninitialized: false,
-//    cookie: { maxage: 60000, secure: false }
-// }));
+
 
 
 var config = {
@@ -29,9 +23,7 @@ passport.use('local', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password'
 }, function(req, email, password, done) {
-	console.log('djfhasldfjhalskdjfhals');
   pool.connect(function(err, client, release) {
-    console.log('called local - pg');
 
     // assumes the username will be unique, thus returning 1 or 0 results
     client.query("SELECT * FROM tbl_user WHERE email='" + email + "';",
@@ -49,7 +41,6 @@ passport.use('local', new LocalStrategy({
 
         if (result.rows[0] != undefined) {
           user = result.rows[0];
-          console.log('User obj', user);
 
           // Hash and compare
           var firstName = result.rows[0].first_name;
@@ -79,7 +70,6 @@ passport.use('local', new LocalStrategy({
             });
 
         } else {
-          console.log('no user');
           done(null, false);
         }
 
