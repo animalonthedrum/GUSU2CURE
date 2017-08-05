@@ -15,12 +15,11 @@ myApp.service('userPageService', function($http) {
 
 	// START getUserInfo
 	sv.getUserInfo = function() {
-		sv.user = JSON.parse(localStorage.getItem('userData'));
-		sv.email = sv.user.email;
+		sv.user = JSON.parse(localStorage.getItem('userData')).data.email
 		var sendEmail = {
-			email: sv.email
+			email: sv.user
 		}
-
+		console.log(sendEmail);
 		return $http.post('/userInfo', sendEmail).then(function(res) {
 			sv.userLoggedInInfo = res.data.rows[0];
 			console.log('back from the server with user info', res.data.rows[0]);
