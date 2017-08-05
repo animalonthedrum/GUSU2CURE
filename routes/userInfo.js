@@ -37,7 +37,6 @@ router.post('/', function(req, res) {
 
 				client.query("SELECT * FROM main_matview where email = $1;",[email]).then(function(userData) {
 				  client.release();
-				  console.log(userData.rows[0]);
 				  res.send(userData);
 				})
 			})

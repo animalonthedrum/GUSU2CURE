@@ -52,6 +52,14 @@ myApp.service('adminService', function($http) {
 		})
 	}
 	// END of logout
+	sv.matchMeNow = function(email) {
+		var user = {
+			Email:email
+		};//end of user
+		$http.put('/viewMatchNonMatched', user).then(function(res){
+			console.log('back from the server with', res);
+		});//end of promise
+	};//enf of matchMeNow
 
 
 });
