@@ -260,6 +260,8 @@
     font-size: 20px;
     color: black;
     resize: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
     /*margin-bottom: 25px;
     margin-top: 25px;*/
   }
@@ -317,14 +319,15 @@
   hr {
     margin-top: 5px;
     margin-bottom: 5px;
-    border-color: #9a252b;
+    border-color: black;
     border-width: thin;
-    display: none;
+    /*display: none;*/
   }
 
   .container {
+    /*max-width: 100%;*/
+    /*max-height: 100vh;*/
     max-width: 80vw;
-    max-height: 100%;
   }
   /*signup*/
 
@@ -343,7 +346,7 @@
     background-color: white;
     opacity: 0.8;
     border-width: medium;
-    height: 100vh;
+    height: 100%;
   }
 
   .state {
@@ -441,19 +444,19 @@
   .multi-column3 {
     list-style-position: inherit;
     column-count: 4;
-    /*margin-right: 20px;*/
-    column-fill: auto;
-    column-gap: auto;
-    max-width: 100%;
-    max-height: 100%;
-    ;
+    margin-right: 20px;
+    column-fill: 3;
+    /*column-gap: auto;
+    /*max-width: 100%;
+    max-height: 100%;*/
   }
 
   .otherInput {
-    margin-top: 90%;
     margin-left: 100px;
     /*color: #3d3c3c;*/
     color: black;
+    float: right;
+    /*margin-top: -6em;*/
   }
 
   .hobbyLabel {
@@ -479,6 +482,11 @@
     /*margin-right: 12%;*/
   }
   /* QUESTIONPAGE*/
+
+  .exp {
+    max-width: 100%;
+    /*margin-bottom: 2em;*/
+  }
   /* The Modal (background) */
 
   .modal {
@@ -642,12 +650,12 @@
     margin-top: -175px;
     font-size: 18px;
     margin-right: 20px;
+    /*margin-left: -20px;*/
     border-bottom: solid white;
     border-width: thin;
     cursor: pointer;
   }
-
-  .logout1 {
+  /*.logout1 {
     color: white;
     float: right;
     margin-top: -75px;
@@ -656,7 +664,7 @@
     border-bottom: solid white;
     border-width: thin;
     cursor: pointer;
-  }
+  }*/
 
   .viewProfile {
     float: right;
@@ -789,6 +797,7 @@
     background-color: transparent;
     margin: 10px;
     display: inline-block;
+    box-shadow: 0 5px #666;
   }
 
   .circlesNon {
@@ -933,19 +942,19 @@
   .userInfo {
     /*display: list-item;*/
     /*text-align: center;*/
-    width: 40em;
+    width: 20em;
     height: 100%;
     border-left: 1px solid black;
     padding-left: 20px;
     /*background-color: red;*/
     float: right;
-    margin-right: 30em;
+    margin-right: 50em;
     margin-top: -15em;
   }
 
   u {
     font-size: 20px;
-    font-family: 'lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     margin-left: 15px;
     text-decoration: none;
   }
@@ -964,22 +973,6 @@
     font-family: 'lato', sans-serif;
     text-align: center;
   }
-  /*.matchBtn {
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    outline: none;
-    box-shadow: 0 9px #999;
-    border-radius: 100px;
-    height: 150px;
-    width: 150px;
-
-    border-color: #9a252b;
-    color: #9a252b;
-    font-family: 'Ubuntu', sans-serif;
-    padding: 10px 20px;
-    border-width: thick;
-  }*/
 
   .matchBtn {
     border-radius: 20px;

@@ -11,11 +11,7 @@ function questionController(UserInfoService, $window) {
         vm.heardType = h[i].defaultValue;
         vm.heardArray.push(vm.heardType);
       }
-      swal(
-        'Thank You For Signing Up!',
-        'Login to create a profile',
-        'success'
-      );
+
     } //end of loop
 
     var questionToSend = {
