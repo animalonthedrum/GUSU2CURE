@@ -127,7 +127,3 @@ function searchDatabase(vm) {
 
   return vm.users;
 }
-
-
-
-// vm.searchUserBy.toLowerCase().indexOf(String(vm.typeUserSearch[i][x]).toLowerCase()

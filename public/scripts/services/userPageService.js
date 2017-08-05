@@ -29,12 +29,6 @@ myApp.service('userPageService', function($http) {
 		return $http.get('/userInfo').then(function(res) {
 		});
 	};
-	// END getAllUserInfo
-
-	// START updateUserInfo
-
-	// END of updateUserInfo
-
 
 	sv.updateImage = function(img) {
 		var image = {

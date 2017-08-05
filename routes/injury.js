@@ -35,7 +35,7 @@ router.get('/', function(req, res) {
 			res.send('retrieved sci_cause')
 		}
 	})
-})
+});
 
 // END POST newUserReg registration
 

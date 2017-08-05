@@ -4,7 +4,6 @@ myApp.service('menuService', function($http) {
 	// START getSciRelMenu
 	sv.getSciRelMenu = function() {
 		return $http.get('/menuSciRel').then(function(resultSet) {
-			console.log('Back from dB with:', resultSet.data);
 			sv.sci_rel = resultSet.data;
 		});
 	};
@@ -13,7 +12,6 @@ myApp.service('menuService', function($http) {
 	// START getSciCauseMenu
 	sv.getSciCauseMenu = function() {
 		return $http.get('/menuSciCause').then(function(resultSet) {
-			console.log('Back from dB with:', resultSet.data);
 			sv.sci_cause = resultSet.data;
 		});
 	};
@@ -22,7 +20,6 @@ myApp.service('menuService', function($http) {
 	// START getTransTypeMenu
 	sv.getTransTypeMenu = function() {
 		return $http.get('/menuTransType').then(function(resultSet) {
-			console.log('Back from dB with:', resultSet.data);
 			sv.trans_type = resultSet.data;
 		});
 	};
@@ -31,7 +28,6 @@ myApp.service('menuService', function($http) {
 	// START sv.getRelStatusMenu
 	sv.getRelStatusMenu = function() {
 		return $http.get('/menuRelStatus').then(function(resultSet) {
-			console.log('Back from dB with:', resultSet.data);
 			sv.rel_status = resultSet.data;
 		});
 	};
@@ -40,7 +36,6 @@ myApp.service('menuService', function($http) {
 	// START sv.getLangMenu
 	sv.getLangMenu = function() {
 		return $http.get('/menuLang').then(function(resultSet) {
-			console.log('Back from dB with:', resultSet.data);
 			sv.lang = resultSet.data;
 		});
 	};

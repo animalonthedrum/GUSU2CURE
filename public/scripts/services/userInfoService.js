@@ -31,7 +31,6 @@
 
 	  sv.loginUser = function(user) {
 	    return $http.post('/', user).then(function(res) {
-	      console.log('back from the server with', res);
 	      sv.backFromServer = res
 	    }).catch(function(err) {
 	      sv.backFromServer = err
@@ -41,7 +40,6 @@
 	  // START sv.getSciRelMenu
 	  sv.getSciRelMenu = function() {
 	    return $http.get('/sciMenu').then(function(res) {
-	      console.log('Back from dB with:', res);
 	    });
 	  };
 	  // END sv.getSciRelMenu
@@ -50,7 +48,6 @@
 	    if (user === undefined) {
 	      var userSearchEmail = JSON.parse(localStorage.getItem('userSearched')).email
 	      return $http.get('/userSearch/' + userSearchEmail).then(function(res) {
-	        console.log('back from the server with from visit', res);
 	      })
 	    } else {
 	      localStorage.setItem('userSearched', JSON.stringify(user))

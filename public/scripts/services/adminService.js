@@ -36,9 +36,7 @@ myApp.service('adminService', function($http) {
 
 	// START getMatches
 	sv.matchingUsers = function(user) {
-		console.log('this is the user', user);
 		return $http.post('/matching', user).then(function(res) {
-			console.log('back from the server with', res);
 			sv.matchedUsers = res.data;
 		})
 	}
