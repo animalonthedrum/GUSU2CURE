@@ -7,7 +7,7 @@
     <p class='circles'>2</p>
     <p class='circles'>3</p>
     <p class='circlesAct'>4</p>
-    <p class='circlesNon'>5</p>
+    <!-- <p class='circlesNon'>5</p> -->
 
   </div>
   <p>*Select at least three hobbies</p>
@@ -27,10 +27,14 @@
 
         <li class='hobbyDiv' ng-repeat='hobby in hc.hobbyArr' ng-click='hc.submitHobby($index)' ng-class="{active : active}"><img ng-src='{{hobby.url}}' alt="" class='img-circle stockImg' ng-click="active = !active"><label for="hobby" class='hobbyLabel'>{{hobby.name}}</label></li>
 
+      </ul>
+      <div class="inputOther">
+
 
         <input class='otherInput' type="text" name="hobby" value="" placeholder="Other" ng-model='hc.otherHobby'>
+      </div>
 
-      </ul>
+
 
       <div class="nextBtn">
         <button class='submitBtn' type="button" name="button" ng-click='hc.submit()'><i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i></button>

@@ -6,8 +6,8 @@ function hobbyController(UserInfoService) {
 
 
   vm.submitHobby = function(index) {
-      vm.hobbiesArr.push(vm.hobbyArr[index].name);
-};//end of submitHobby function
+    vm.hobbiesArr.push(vm.hobbyArr[index].name);
+  }; //end of submitHobby function
 
 
 
@@ -24,7 +24,11 @@ function hobbyController(UserInfoService) {
       if (hobbies[i].checked) {
         vm.hobbiesArr.push(hobbies[i].defaultValue);
       }
-
+      swal(
+        'Thank You For Signing Up!',
+        'Login to create a profile',
+        'success'
+      );
     } //end of for loop
 
     vm.hobbiesArr = checkArr(vm.hobbiesArr);
@@ -34,14 +38,14 @@ function hobbyController(UserInfoService) {
       id: 'hobbies',
       hobbies: vm.hobbiesArr,
       dateStamp: new Date(),
-      img:"images/gusu-SIGNUP.png"
+      img: "images/gusu-SIGNUP.png"
     }; //end of hobbiesArr
     count = checkObjectArr(hobbiesObject);
 
     //only runs if array has 3 or more items
     if (count === 0) {
       UserInfoService.getUserInfo(hobbiesObject);
-      window.location.href = '#!/question';
+      window.location.href = '#!/register';
     } //end of conditional statement
   }; //end of submit
 
@@ -129,14 +133,14 @@ function hobbyController(UserInfoService) {
 
 
 function checkArr(array) {
-    var tmp = [];
-   for(var i = 0; i < array.length; i++){
-       if(tmp.indexOf(array[i]) == -1){
-       tmp.push(array[i]);
-       }
-   }
+  var tmp = [];
+  for (var i = 0; i < array.length; i++) {
+    if (tmp.indexOf(array[i]) == -1) {
+      tmp.push(array[i]);
+    }
+  }
   return tmp;
-}//end of checkArr
+} //end of checkArr
 
 
 

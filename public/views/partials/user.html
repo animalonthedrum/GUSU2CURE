@@ -1,6 +1,6 @@
 <div class="user" ng-init=uc.getUserInfo()>
 
-  <p class='logout1' ng-click='uc.logout()'>LOG OUT</p>
+  <p class='logout' ng-click='uc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
 
   <h2>WELCOME {{uc.thisUser.first_name | uppercase}}</h2>
   <div class="imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
@@ -22,16 +22,18 @@
       <div class='editP'>
         <!-- <h3>Edit Profile</h3> -->
         <div class="userInfo">
-
-          <i class="fa fa-map-marker fa-2x" aria-hidden="true"><u>City</u></i>
+          <!-- <u>City</u> -->
+          <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
           <h4> {{uc.thisUser.city}}, {{uc.thisUser.state | uppercase}}</h4>
-          <i class="fa fa-phone fa-2x" aria-hidden="true"><u>{{uc.thisUser.phone_type}}</u></i>
-          <h4> {{uc.thisUser.phone}}</h4>
-          <i class="fa fa-envelope fa-2x" aria-hidden="true"><u>E-Mail</u></i>
+          <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+          <h4>{{uc.thisUser.phone_type}} {{uc.thisUser.phone}}</h4>
+          <!-- <u>E-Mail</u> -->
+          <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
           <h4><a href="mailto:{{users.email}}">{{uc.thisUser.email}}</a></h4>
-
-          <i class="fa fa-heart fa-2x" aria-hidden="true"><u>Hobbies/Interests</u></i>
+          <!-- <u>Hobbies/Interests</u> -->
+          <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
           <h4> {{uc.thisUser.hobbies}}</h4>
+
           <i class="fa fa-wheelchair fa-2x" aria-hidden="true"><u>Mobility Requirements</u></i>
           <h4> {{uc.thisUser.mobility_req}}</h4>
           <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>SCI Age | Cause | Level</u></i>
@@ -76,21 +78,21 @@
     <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
     <div class="userContent3">
 
-        <div class='usersMatchedWithUser' ng-repeat='x in uc.matchContent'>
-            <div class="matchPic">
-              <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
-            </div>
-            <div class="matchContent">
-              <h3>{{x.first_name}} {{x.last_name}}</h3>
-              <h4 class='match3'>{{x.email}}</h4>
-              <h4 class='match3'>{{x.access_lvl}}</h4>
-            </div>
-            <button type="button" name="button" ng-click='uc.matchMeWithThisUser($index)'>Match</button>
-            <button type="button" name="button" ng-click='uc.showMatchUser($index)'>INFO</button>
+      <div class='usersMatchedWithUser' ng-repeat='x in uc.matchContent'>
+        <div class="matchPic">
+          <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
         </div>
+        <div class="matchContent">
+          <h3>{{x.first_name}} {{x.last_name}}</h3>
+          <h4 class='match3'>{{x.email}}</h4>
+          <h4 class='match3'>{{x.access_lvl}}</h4>
+        </div>
+        <button type="button" name="button" ng-click='uc.matchMeWithThisUser($index)'>Match</button>
+        <button type="button" name="button" ng-click='uc.showMatchUser($index)'>INFO</button>
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 
