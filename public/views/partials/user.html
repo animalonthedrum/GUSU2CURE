@@ -1,27 +1,30 @@
 <div class="user" ng-init=uc.getUserInfo()>
 
   <p class='logout' ng-click='uc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
-
-  <h2>WELCOME {{uc.thisUser.first_name | uppercase}}</h2>
-  <div class="imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
-    <!-- <img class="img-circle userImage" alt="" ><br> -->
-    <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button><br>
-    <button class='matchBtn' type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'><i class="fa fa-users" aria-hidden="true"></i>Match</button><br>
-    <button class='matchBtn2' type="button" name="button" ng-click='uc.unmatchMe()'><i class="fa fa-exclamation-triangle" aria-hidden="true" ></i>Unmatch</button>
-  </div>
-
-  <div class="container">
-
-    <div class="">
-      <div class="acLvl">
+  <div class="userPage">
+    <div class="acLvl">
+      <h1><i class="fa fa-star" aria-hidden="true"></i>{{uc.thisUser.access_lvl}}</h1>
+    </div>
 
 
-        <i class="fa fa-star" aria-hidden="true"></i>{{uc.thisUser.access_lvl}}</i>
+
+
+    <div class="row">
+      <div class="col-md-6 imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
+        <!-- <img class="img-circle userImage" alt="" ><br> --><br>
+        <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button><br>
+        <button class='matchBtn' type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'><i class="fa fa-users" aria-hidden="true"></i>Match</button><br>
+        <button class='matchBtn2' type="button" name="button" ng-click='uc.unmatchMe()'><i class="fa fa-exclamation-triangle" aria-hidden="true" ></i>Unmatch</button>
       </div>
 
-      <div class='editP'>
+
+
+
+
+      <div class='col-md-6 col-xs-4 editP'>
         <!-- <h3>Edit Profile</h3> -->
         <div class="userInfo">
+          <h2 class='profName'>{{uc.thisUser.first_name | uppercase}} {{uc.thisUser.last_name | uppercase}}</h2>
           <!-- <u>City</u> -->
           <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
           <h4> {{uc.thisUser.city}}, {{uc.thisUser.state | uppercase}}</h4>
@@ -33,7 +36,7 @@
           <!-- <u>Hobbies/Interests</u> -->
           <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
           <h4> {{uc.thisUser.hobbies}}</h4>
-
+          <hr>
           <i class="fa fa-wheelchair fa-2x" aria-hidden="true"><u>Mobility Requirements</u></i>
           <h4> {{uc.thisUser.mobility_req}}</h4>
           <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>SCI Age | Cause | Level</u></i>
@@ -41,20 +44,21 @@
           <i class="fa fa-calendar fa-2x" aria-hidden="true"><u>Date of Birth</u></i>
           <h4>{{uc.thisUser.dob | date : "MMMM dd"}}</h4>
           <p>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p>
+          <div class="bio">
 
+            <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea class='col-md-8 ta' name="bio" rows="5" cols="40" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
+
+            <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD BIO</button>
+          </div>
         </div>
 
 
       </div>
-      <div class="col-md-6 bio">
-        <i class="fa fa-user fa-2x" aria-hidden="true"><u>Bio</u></i>
-        <textarea name="bio" rows="5" cols="70" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
-
-        <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD BIO</button>
-      </div>
 
 
     </div>
+
+
 
 
 
@@ -98,7 +102,7 @@
 </div>
 
 
-
+</div>
 
 
 

@@ -1,10 +1,10 @@
 <div class="user" ng-init=vc.checkForUserSearched()>
 
-  <p class='logout1' ng-click='vc.logout()'>LOG OUT</p>
+  <p class='logout' ng-click='vc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
 
-  <h2>WELCOME {{vc.thisUser.first_name | uppercase}}</h2>
+  <!-- <h2>WELCOME {{vc.thisUser.first_name | uppercase}}</h2>
   <div class="imageUp" style='background-image:url({{vc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
-    <!-- <img class="img-circle userImage" alt="" ><br> -->
+
   </div>
 
   <div class="container">
@@ -17,7 +17,7 @@
       </div>
 
       <div class='editP'>
-        <!-- <h3>Edit Profile</h3> -->
+
         <div class="userInfo">
 
           <i class="fa fa-map-marker fa-2x" aria-hidden="true"><u>City</u></i>
@@ -62,26 +62,105 @@
 
 
 </div>
+ -->
+
+  <div class="userPage">
+    <div class="acLvl">
+      <h1><i class="fa fa-star" aria-hidden="true"></i>{{vc.thisUser.access_lvl}}</h1>
+    </div>
 
 
 
 
-<div id="myModal3" class="modal3">
+    <div class="row">
+      <div class="col-md-6 imageUp" style='background-image:url({{vc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
+        <!-- <img class="img-circle userImage" alt="" ><br> --><br>
+        <!-- <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button><br> -->
+        <!-- <button class='matchBtn' type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'><i class="fa fa-users" aria-hidden="true"></i>Match</button><br>
+        <button class='matchBtn2' type="button" name="button" ng-click='uc.unmatchMe()'><i class="fa fa-exclamation-triangle" aria-hidden="true" ></i>Unmatch</button>
+      </div> -->
 
-  <!-- Modal content -->
-  <div class="modal-content3">
-    <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
-    <div class="userContent3">
+
+
+
+
+        <div class='col-md-6 col-xs-4 editP'>
+          <!-- <h3>Edit Profile</h3> -->
+          <div class="userInfo">
+            <h2 class='profName'>{{vc.thisUser.first_name | uppercase}} {{vc.thisUser.last_name | uppercase}}</h2>
+            <!-- <u>City</u> -->
+            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+            <h4> {{vc.thisUser.city}}, {{vc.thisUser.state | uppercase}}</h4>
+            <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+            <h4>{{vc.thisUser.phone_type}} {{vc.thisUser.phone}}</h4>
+            <!-- <u>E-Mail</u> -->
+            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+            <h4><a href="mailto:{{users.email}}">{{vc.thisUser.email}}</a></h4>
+            <!-- <u>Hobbies/Interests</u> -->
+            <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+            <h4> {{vc.thisUser.hobbies}}</h4>
+            <hr>
+            <i class="fa fa-wheelchair fa-2x" aria-hidden="true"><u>Mobility Requirements</u></i>
+            <h4> {{vc.thisUser.mobility_req}}</h4>
+            <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>SCI Age | Cause | Level</u></i>
+            <h4> {{vc.thisUser.sci_age}} | {{uc.thisUser.sci_cause}} | {{vc.thisUser.sci_lvl}}</h4>
+            <i class="fa fa-calendar fa-2x" aria-hidden="true"><u>Date of Birth</u></i>
+            <h4>{{vc.thisUser.dob | date : "MMMM dd"}}</h4>
+            <p>Matched with: <a href="mailto:{{vc.thisUser.matched_with}}">{{vc.thisUser.matched_with}}</a></p>
+            <div class="bio">
+
+              <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea class='col-md-8 ta' name="bio" rows="5" cols="40" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
+
+              <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD BIO</button>
+            </div>
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div id="myModal3" class="modal3">
+
+
+    <div class="modal-content3">
+      <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
+      <div class="userContent3">
 
         <div class='usersMatchedWithUser' ng-repeat='x in vc.matchContent'>
-            <div class="matchPic">
-              <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
-            </div>
-            <div class="matchContent">
-              <h3>{{x.first_name}} {{x.last_name}}</h3>
-              <h4 class='match3'>{{x.email}}</h4>
-              <h4 class='match3'>{{x.access_lvl}}</h4>
-            </div>
+          <div class="matchPic">
+            <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
+          </div>
+          <div class="matchContent">
+            <h3>{{x.first_name}} {{x.last_name}}</h3>
+            <h4 class='match3'>{{x.email}}</h4>
+            <h4 class='match3'>{{x.access_lvl}}</h4>
+          </div>
         </div>
       </div>
     </div>
