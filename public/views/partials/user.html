@@ -5,18 +5,31 @@
     <div class="acLvl">
       <h1><i class="fa fa-star" aria-hidden="true"></i>{{uc.thisUser.access_lvl}}</h1>
     </div>
-
+    <p>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p>
 
 
 
     <div class="row">
+
       <div class="col-md-6 imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
         <!-- <img class="img-circle userImage" alt="" ><br> --><br>
         <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button><br>
         <button class='matchBtn' type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'><i class="fa fa-users" aria-hidden="true"></i>Match</button><br>
         <button class='matchBtn2' type="button" name="button" ng-click='uc.unmatchMe()'><i class="fa fa-exclamation-triangle" aria-hidden="true" ></i>Unmatch</button>
+
       </div>
 
+
+
+      <div class="bio">
+
+
+        <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea class='col-md-8' name="bio" rows="5" cols="60" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
+
+      </div>
+      <div class="addBio">
+        <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD</button>
+      </div>
 
 
 
@@ -45,19 +58,12 @@
           <h4>{{uc.thisUser.dob | date : "MMMM dd"}}</h4>
 
           <!-- <p ng-init='uc.getUserInfo()'>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p> -->
-          <p>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p>
-          <div class="bio">
 
 
-            <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea class='col-md-8 ta' name="bio" rows="5" cols="40" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
-
-            <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD BIO</button>
-          </div>
         </div>
 
 
       </div>
-
 
     </div>
 
