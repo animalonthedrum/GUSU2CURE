@@ -17,6 +17,7 @@
         <!-- <th>Enabled</th> -->
         <th>Info</th>
         <th>Match</th>
+        <th>Delete</th>
 
       </tr>
     </thead>
@@ -28,6 +29,7 @@
         <!-- <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td> -->
         <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> INFO </button></td>
         <td><button type="button" onclick="document.getElementById('myModal2').style.display='block'" name="button" ng-click='ac.getMatches($index)'>VIEW</button></td>
+        <td><button type="button" name="button" ng-click='ac.deleteThisUser($index)'>Delete</button></td>
 
       </tr>
     </tbody>

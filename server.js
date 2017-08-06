@@ -21,6 +21,7 @@ var bodyparser = require('body-parser');
 var passport = require('./strategies/user.strategy');
 var session = require('express-session');
 var userBio = require('./routes/userBio.js');
+var deleteUser = require('./routes/delete.js');
 //uses
 app.use(express.static('public'));
 
@@ -61,6 +62,7 @@ app.use('/userSearch', userSearched);
 app.use('/', index);
 app.use('/logout', logout);
 app.use('/userBio', userBio);
+app.use('/delete', deleteUser);
 
 app.listen(port, function() {
 	console.log('Listening on port:', port);

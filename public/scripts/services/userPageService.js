@@ -55,6 +55,15 @@ myApp.service('userPageService', function($http) {
 		})
 	}
 
+	sv.deleteUser = function(user) {
+		console.log('delete this user', user);
+		var userToDelete = {
+			email:user
+		};//end of user to delete
+		return $http.post('/delete', userToDelete).then(function(res) {
+			console.log('back from the server with', res);
+		})
+	}
 
 
 }); //end of service
