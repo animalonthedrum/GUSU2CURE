@@ -164,3 +164,24 @@ u {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+
+/*VISIT*/
+
+.hangOut {
+  display: grid;
+  float: right;
+}
+
+.userInfo2 {
+  /*display: list-item;*/
+  /*text-align: center;*/
+  width: 20em;
+  margin-top: -20em;
+  max-height: 100%;
+  border-left: 1px solid black;
+  padding-left: 20px;
+  /*background-color: red;*/
+  float: left;
+  /*margin-right: 40%;*/
+}
