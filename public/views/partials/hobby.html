@@ -22,26 +22,31 @@
     <div class="container">
 
 
-      <ul class='multi-column3'>
+      <!-- <ul class='multi-column3'>
 
 
         <li class='hobbyDiv' ng-repeat='hobby in hc.hobbyArr' ng-click='hc.submitHobby($index)' ng-class="{active : active}"><img ng-src='{{hobby.url}}' alt="" class='img-circle stockImg' ng-click="active = !active"><label for="hobby" class='hobbyLabel'>{{hobby.name}}</label></li>
 
-      </ul>
+      </ul> -->
+
+      <div>
+        <span class='hobbyDiv' ng-repeat='hobby in hc.hobbyArr' ng-click='hc.submitHobby($index)' ng-class="{active : active}"><img ng-src='{{hobby.url}}' alt="" class='img-circle stockImg' ng-click="active = !active">{{hobby.name}}</span>
+        <label for="hobby" class='hobbyLabel'>{{hobby.name}}</label>
+      </div>
 
       <input class='otherInput' type="text" name="hobby" value="" placeholder="Other" ng-model='hc.otherHobby'>
 
+      <div class="hobbySubmit">
 
+
+        <!-- <div class="nextBtn"> -->
+        <span><button class='submitBtn' type="button" name="final" ng-click='hc.submit()'><i class="fa fa-check-circle fa-4x" aria-hidden="true"></i></button>
+        <label class='submitLabel' for="final">COMPLETE</label></span>
+        <!-- </div> -->
+      </div>
     </div>
 
-    <div class="hobbySubmit">
 
-
-      <!-- <div class="nextBtn"> -->
-      <span><button class='submitBtn' type="button" name="final" ng-click='hc.submit()'><i class="fa fa-check-circle fa-4x" aria-hidden="true"></i></i></button>
-      <label class='submitLabel' for="final">COMPLETE</label></span>
-      <!-- </div> -->
-    </div>
 
 
 
