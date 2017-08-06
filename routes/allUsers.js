@@ -59,14 +59,14 @@ router.put('/', function(req, res) {
         client.query("UPDATE tbl_user SET enabled = true WHERE email = '" + email + "';").then(function() {
           client.release();
           res.sendStatus(200);
-        })
-      })
+      });
+    });
     } else if (enabled == false) {
       pool.connect().then(function(client) {
           client.query("UPDATE tbl_user SET enabled = false WHERE email = '" + email + "';").then(function() {
             client.release();
             res.sendStatus(200);
-          })
+        });
         })
         .catch(function(err) {
           client.release();
@@ -75,7 +75,7 @@ router.put('/', function(req, res) {
     }
   } else if (req.isAuthenticated() === false) {
     console.log('not authenticated');
-    res.sendStatus(403)
+    res.sendStatus(403);
   }
 
 });

@@ -49,6 +49,12 @@ myApp.service('userPageService', function($http) {
 		})
 	}
 
+	sv.unmatchMe = function() {
+		return $http.delete('/userInfo').then(function(res){
+			console.log('back from the server with', res);
+		})
+	}
+
 
 
 }); //end of service
