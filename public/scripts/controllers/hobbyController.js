@@ -104,7 +104,7 @@ function hobbyController(UserInfoService) {
     },
     {
       name: 'Sports/Recreation',
-      url: 'images/gusustock/sports.jpg'
+      url: 'images/gusustock/hockey.png'
     },
     {
       name: 'Gardening',

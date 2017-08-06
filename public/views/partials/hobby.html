@@ -28,21 +28,28 @@
         <li class='hobbyDiv' ng-repeat='hobby in hc.hobbyArr' ng-click='hc.submitHobby($index)' ng-class="{active : active}"><img ng-src='{{hobby.url}}' alt="" class='img-circle stockImg' ng-click="active = !active"><label for="hobby" class='hobbyLabel'>{{hobby.name}}</label></li>
 
       </ul>
-      <div class="inputOther">
 
-
-        <input class='otherInput' type="text" name="hobby" value="" placeholder="Other" ng-model='hc.otherHobby'>
-      </div>
-
-
-
-      <div class="nextBtn">
-        <button class='submitBtn' type="button" name="button" ng-click='hc.submit()'><i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i></button>
-      </div>
-      <!-- <a href="#!/bio"><button type="button" name="button">Previous</button></a>
-      <a href="#!/question"><button type="button" name="button">Next</button></a> -->
+      <input class='otherInput' type="text" name="hobby" value="" placeholder="Other" ng-model='hc.otherHobby'>
 
 
     </div>
+
+    <div class="hobbySubmit">
+
+
+      <!-- <div class="nextBtn"> -->
+      <span><button class='submitBtn' type="button" name="final" ng-click='hc.submit()'><i class="fa fa-check-circle fa-4x" aria-hidden="true"></i></i></button>
+      <label class='submitLabel' for="final">COMPLETE</label></span>
+      <!-- </div> -->
+    </div>
+
+
+
+
+    <!-- <a href="#!/bio"><button type="button" name="button">Previous</button></a>
+      <a href="#!/question"><button type="button" name="button">Next</button></a> -->
+
+
   </div>
+</div>
 </div>
