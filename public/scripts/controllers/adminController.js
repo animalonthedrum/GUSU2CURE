@@ -7,7 +7,7 @@ function adminController(adminService, UserInfoService, userPageService) {
 
   vm.toggleStats = function() {
       vm.show = !vm.show;
-      vm.stats = !vm.stats;
+      vm.stats = false;
   };
   // START mentorsMentees
   vm.mentorsMentees = function() {
@@ -123,15 +123,6 @@ function adminController(adminService, UserInfoService, userPageService) {
   var barChart = document.getElementById('barChart').getContext('2d');
   var radarChart = document.getElementById('radarChart').getContext('2d');
 
-  Chart.defaults.global.colors = [
-  {
-    backgroundColor: 'rgba(78, 180, 189, 1)',
-    pointBackgroundColor: 'rgba(78, 180, 189, 1)',
-    pointHoverBackgroundColor: 'rgba(151,187,205,1)',
-    borderColor: 'rgba(0,0,0,0',
-    pointBorderColor: '#fff',
-    pointHoverBorderColor: 'rgba(151,187,205,1)'
-}];
 
 
   //global optionsch
@@ -144,7 +135,9 @@ function adminController(adminService, UserInfoService, userPageService) {
           datasets:[{
               label:'populations',
               data:[ 250, 310],
-
+              backgroundColor: ['#9a252b'], //Only the first bar gets set
+                borderColor: [],
+                borderWidth: 1
 
           }]
       },
@@ -160,6 +153,9 @@ function adminController(adminService, UserInfoService, userPageService) {
           datasets:[{
               label:'Gender',
               data:[ 178, 280],
+              backgroundColor: ['#999',"#9a252b" ], //Only the first bar gets set
+                borderColor: [],
+                borderWidth: 1
 
           }]
       },
@@ -167,14 +163,16 @@ function adminController(adminService, UserInfoService, userPageService) {
 
   });
   var matchedAndUnmatchedChart = new Chart(radarChart, {
-      type:'pie', //bar horizantal, pie, line, dougnut, radar, polarArea
+      type:'doughnut', //bar horizantal, pie, line, dougnut, radar, polarArea
       data:{
           labels:['Mentors', 'Mentess'],
 
           datasets:[{
               label:'Matched/Unmatched',
               data:[ 178, 90],
-
+              backgroundColor: ["#9a252b" ], //Only the first bar gets set
+                borderColor: [],
+                borderWidth: 1
 
           }]
       },

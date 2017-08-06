@@ -1,4 +1,4 @@
-<div class="question1" ng-init='ac.toggleStats()'>
+<div class="question1" >
   <h1>WELCOME</h1></div>
 <p class='logout' ng-click='ac.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
 <div class="container " ng-init='ac.mentorsMentees()'>
@@ -224,11 +224,19 @@
   </div>
 
 
-  <div class="someone" ng-show='ac.stats' >
+  <div class="someone" ng-hide='ac.stats'>
+      <div class="" style="height:300px; width:400px; margin:9em; display:inline-block;">
+          <canvas id="myChart" width="50px" height="50px"></canvas>
+      </div>
 
-      <canvas id="myChart" width="100" height="100"></canvas>
-      <canvas id="barChart" width="100" height="100"></canvas>
-      <canvas id="radarChart" width="100" height="100"></canvas>
+
+      <div class="" style="height:300px; width:400px; margin:9em; display:inline-block;">
+          <canvas id="barChart" width="100px" height="100px"></canvas>
+      </div>
+      <div class="" style="height:300px; width:400px;  margin:9em; display:inline-block;">
+          <canvas id="radarChart" width="100px" height="100px"></canvas>
+      </div>
+
 
 
   </div>
