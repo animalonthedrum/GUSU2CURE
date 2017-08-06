@@ -120,10 +120,23 @@ function adminController(adminService, UserInfoService, userPageService) {
   };//end of delete THis user
 
   var myChart = document.getElementById('myChart').getContext('2d');
+  var barChart = document.getElementById('barChart').getContext('2d');
+  var radarChart = document.getElementById('radarChart').getContext('2d');
+
+  Chart.defaults.global.colors = [
+  {
+    backgroundColor: 'rgba(78, 180, 189, 1)',
+    pointBackgroundColor: 'rgba(78, 180, 189, 1)',
+    pointHoverBackgroundColor: 'rgba(151,187,205,1)',
+    borderColor: 'rgba(0,0,0,0',
+    pointBorderColor: '#fff',
+    pointHoverBorderColor: 'rgba(151,187,205,1)'
+}];
+
 
   //global optionsch
 
-  var massPopChart = new Chart(myChart, {
+  var mentorMenteeChart = new Chart(myChart, {
       type:'pie', //bar horizantal, pie, line, dougnut, radar, polarArea
       data:{
           labels:['Mentors', 'Mentess'],
@@ -131,6 +144,37 @@ function adminController(adminService, UserInfoService, userPageService) {
           datasets:[{
               label:'populations',
               data:[ 250, 310],
+
+
+          }]
+      },
+      options:{}
+
+  });
+
+  var genderChart = new Chart(barChart, {
+      type:'bar', //bar horizantal, pie, line, dougnut, radar, polarArea
+      data:{
+          labels:['Men', 'Women'],
+
+          datasets:[{
+              label:'Gender',
+              data:[ 178, 280],
+
+          }]
+      },
+      options:{}
+
+  });
+  var matchedAndUnmatchedChart = new Chart(radarChart, {
+      type:'pie', //bar horizantal, pie, line, dougnut, radar, polarArea
+      data:{
+          labels:['Mentors', 'Mentess'],
+
+          datasets:[{
+              label:'Matched/Unmatched',
+              data:[ 178, 90],
+
 
           }]
       },

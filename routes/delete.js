@@ -11,7 +11,6 @@ router.use(bodyParser.urlencoded({
 
 router.use(bodyParser.json());
 
-
 var config = {
   database: 'db_gusu',
   host: 'localhost',
