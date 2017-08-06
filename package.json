@@ -24,6 +24,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pg": "^7.0.2",
-    "twilio": "^3.6.1"
+    "twilio": "^3.6.1",
+    "zingchart-angularjs": "^1.2.0"
   }
 }

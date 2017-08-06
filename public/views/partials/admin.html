@@ -1,4 +1,4 @@
-<div class="question1">
+<div class="question1" ng-init='ac.toggleStats()'>
   <h1>WELCOME</h1></div>
 <p class='logout' ng-click='ac.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
 <div class="container " ng-init='ac.mentorsMentees()'>
@@ -7,7 +7,11 @@
     <i class="fa fa-search fa-2x adminSearch" aria-hidden="true"><input class='adminSearch' type="text" name="search" value="" ng-model='ac.searchUserBy' placeholder='Name, City, E-mail...' style="font-family:'Lato', sans-serif; font-size:20px;"></i>
     <button type="button" name="button" ng-click='ac.search()'>SEARCH</button>
     <button type="button" name="button" ng-click='ac.mentorsMentees()'>ALL USERS</button>
+    <button type="button" name="button" ng-click='ac.toggleStats()' >STATS</button>
   </div>
+  <div class="everything" ng-if='ac.show'>
+
+
   <table class="table table-striped">
     <thead>
       <tr>
@@ -213,5 +217,16 @@
           </div>
         </div>
       </div>
+
     </div>
+
+  </div>
+  </div>
+
+
+  <div class="someone" ng-show='ac.stats' >
+      <p>container </p>
+      <canvas id="myChart" width="300" height="300"></canvas>
+
+
   </div>

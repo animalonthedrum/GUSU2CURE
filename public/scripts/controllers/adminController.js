@@ -2,7 +2,13 @@ function adminController(adminService, UserInfoService, userPageService) {
 
   var vm = this;
   vm.users = [];
+  vm.show = true;
+  vm.stats = false;
 
+  vm.toggleStats = function() {
+      vm.show = !vm.show;
+      vm.stats = !vm.stats;
+  };
   // START mentorsMentees
   vm.mentorsMentees = function() {
     adminService.getMentorsMentees().then(function() {
@@ -20,10 +26,8 @@ function adminController(adminService, UserInfoService, userPageService) {
         vm.enabled = vm.users[i].enabled;
       }
     }); //end of promise
-    return vm.users;
   };
   // END mentorsMentees
-
   // START switchEnabled
   vm.switchEnabled = function(index) {
     var enabled = vm.users[index].enabled;
@@ -114,6 +118,25 @@ function adminController(adminService, UserInfoService, userPageService) {
 
 
   };//end of delete THis user
+
+  var myChart = document.getElementById('myChart').getContext('2d');
+
+  //global optionsch
+
+  var massPopChart = new Chart(myChart, {
+      type:'pie', //bar horizantal, pie, line, dougnut, radar, polarArea
+      data:{
+          labels:['Mentors', 'Mentess'],
+
+          datasets:[{
+              label:'populations',
+              data:[ 250, 310],
+
+          }]
+      },
+      options:{}
+
+  });
 
 } //end of controller
 
