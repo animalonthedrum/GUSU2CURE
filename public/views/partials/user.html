@@ -40,7 +40,7 @@
           <h4> {{uc.thisUser.sci_age}} | {{uc.thisUser.sci_cause}} | {{uc.thisUser.sci_lvl}}</h4>
           <i class="fa fa-calendar fa-2x" aria-hidden="true"><u>Date of Birth</u></i>
           <h4>{{uc.thisUser.dob | date : "MMMM dd"}}</h4>
-          <p>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p>
+          <p ng-init='uc.getUserInfo()'>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p>
 
         </div>
 

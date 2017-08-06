@@ -4,6 +4,11 @@ var path = require('path');
 var router = express.Router();
 var pg = require('pg');
 var bodyParser = require('body-parser');
+var TWILIO_TOKEN = "0e078ee55b6ada27500c2bce22538151";
+var TWILIO_ACCOUNT_SID = "ACca17151f562d1267bb4488f2d9370567";
+
+var twilio = require('twilio');
+var client = new twilio(TWILIO_ACCOUNT_SID, TWILIO_TOKEN);
 
 router.use(bodyParser.urlencoded({
 	extended: true
@@ -44,7 +49,18 @@ router.get('/', function(req, res) {
 router.put('/', function(req, res) {
 	console.log('this is the email', req.user.rows[0].email);
 	var userEmail = req.user.rows[0].email; // logged-in user email
-	var email = req.body.Email // email of person user matched with
+	var email = req.body.Email; // email of person user matched with
+
+	client.messages.create({
+        to:'9522209630',
+        from:'612-400-9074 ',
+        body:"You Have Been Matched. Login For More Information."
+    }, function(err, data) {
+        if (err) {
+            console.log('err', err);
+            console.log('data', data);
+        }
+    });//en d of sendMessage
 
 	pool.connect().then(function(client) {
 			// client.query("UPDATE tbl_user SET matched_with = $1 WHERE email = $2;",[email ,userEmail]);

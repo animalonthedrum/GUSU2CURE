@@ -60,6 +60,11 @@ function userController(UserInfoService, userPageService, adminService) {
     vm.matchMeWithThisUser = function(index) {
         console.log('index', vm.matchContent[index].first_name + " "+vm.matchContent[index].last);
         adminService.matchMeNow(vm.matchContent[index].email);
+        sweetAlert({
+            title: "Success!",
+            text: "You Have Been Successfully Matched!",
+            type: "success"
+        }); //end of sweetAlert
 
     };//end of matchMeWithThisUser
 
@@ -70,9 +75,13 @@ function userController(UserInfoService, userPageService, adminService) {
     };//showMatchUser
 
     vm.unmatchMe = function() {
-        userPageService.unmatchMe();
+        userPageService.unmatchMe();sweetAlert({
+            title: "Success!",
+            text: "You Have Been Successfully Unmatched!",
+            type: "success"
+        }); //end of sweetAlert
     };//end of unmatchMe
 
-    
+
 
 } //end of controller
