@@ -7,7 +7,7 @@
     <!-- <img class="img-circle userImage" alt="" ><br> -->
     <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button><br>
     <button class='matchBtn' type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'><i class="fa fa-users" aria-hidden="true"></i>Match</button><br>
-    <button class='matchBtn2' type="button" name="button"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Unmatch</button>
+    <button class='matchBtn2' type="button" name="button" ng-click='uc.unmatchMe()'><i class="fa fa-exclamation-triangle" aria-hidden="true" ></i>Unmatch</button>
   </div>
 
   <div class="container">
@@ -40,6 +40,7 @@
           <h4> {{uc.thisUser.sci_age}} | {{uc.thisUser.sci_cause}} | {{uc.thisUser.sci_lvl}}</h4>
           <i class="fa fa-calendar fa-2x" aria-hidden="true"><u>Date of Birth</u></i>
           <h4>{{uc.thisUser.dob | date : "MMMM dd"}}</h4>
+          <p>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p>
 
         </div>
 

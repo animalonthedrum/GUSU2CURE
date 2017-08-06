@@ -108,6 +108,23 @@ router.put('/', function(req, res) {
 });
 // END getAllUserInfo
 
+router.delete('/', function(req, res) {
+	console.log('deleting this user', req.user.rows[0].email);
+	pool.connect().then(function(client) {
+		client.query("UPDATE tbl_user set matched_with = null where email = $1;",[req.user.rows[0].email]);
+		client.query("UPDATE tbl_user set matched = false where email = $1",[req.user.rows[0].email])
+		client.query("REFRESH MATERIALIZED VIEW main_matview;").then(function(userdata){
+			client.release();
+			res.send(req.user)
+		})
+
+
+	}).catch(function(err) {
+		client.release();
+		res.sendStatus(500);
+	})
+});//dnf of delete
+
 
 /* EXPORTS for userInfo.js */
 module.exports = router;

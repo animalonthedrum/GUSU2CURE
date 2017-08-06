@@ -1,4 +1,4 @@
-function adminController(adminService, UserInfoService) {
+function adminController(adminService, UserInfoService, userPageService) {
 
   var vm = this;
   vm.users = [];
@@ -107,6 +107,14 @@ function adminController(adminService, UserInfoService) {
 
 
   };//showMatchUser
+
+  vm.deleteThisUser = function(index) {
+      var userToErase = vm.users[index].email;
+      userPageService.deleteUser(userToErase);
+
+
+  };//end of delete THis user
+
 } //end of controller
 
 function searchDatabase(vm) {

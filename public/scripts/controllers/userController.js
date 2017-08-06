@@ -7,6 +7,7 @@ function userController(UserInfoService, userPageService, adminService) {
   vm.getUserInfo = function() {
     userPageService.getUserInfo().then(function() {
       vm.thisUser = userPageService.userLoggedInInfo;
+      console.log('this is the user', vm.thisUser);
     });
 
   }; //end of getUserInfo
@@ -67,5 +68,11 @@ function userController(UserInfoService, userPageService, adminService) {
           UserInfoService.seeOtherUsersPage(vm.showMatchedUserInfo);
           window.location.href = '#!/visit';
     };//showMatchUser
+
+    vm.unmatchMe = function() {
+        userPageService.unmatchMe();
+    };//end of unmatchMe
+
+    
 
 } //end of controller
