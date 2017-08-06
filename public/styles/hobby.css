@@ -1,0 +1,75 @@
+/*hobbies*/
+
+.stockImg {
+  height: 150px;
+  width: 150px;
+  margin: 50px;
+}
+
+
+/*.multi-column3 {
+  list-style-position: inside;
+  column-count: 5;
+
+  column-fill: auto;
+  column-gap: 5em;
+  text-align: center;
+
+}*/
+
+.otherInput {
+  /*margin-left: 100px;*/
+  /*color: #3d3c3c;*/
+  margin-top: 2em;
+  color: black;
+  /*float: right;*/
+}
+
+
+/*margin-top: -6em;*/
+
+.hobbyLabel {
+  /*text-align: center;*/
+  display: inline-block;
+}
+
+.hobbyDiv {
+  height: 200px;
+  width: 200px;
+  /*text-align: center;*/
+  /*margin: 5px;*/
+  display: inline-block;
+}
+
+.hobbySubmit {
+  float: right;
+  margin-top: -25em;
+  margin-right: 4em;
+  display: inline-block;
+}
+
+.submitLabel {
+  /*margin-right: 40px;*/
+  text-align: center;
+  display: grid;
+  margin-top: 40px;
+  color: #9a252b;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+}
+
+.active {
+  opacity: 0.6;
+  color: #9a252b;
+}
+
+.threeHobbies {
+  text-align: center;
+  color: #9a252b;
+  /*margin-right: 12%;*/
+}
+
+span {
+  text-align: center;
+  font-size: 16px;
+}
