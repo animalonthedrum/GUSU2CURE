@@ -273,14 +273,6 @@ textarea {
     margin-top: 25px;*/
 }
 
-.relation {
-  width: 160px;
-}
-
-.cause {
-  width: 170px;
-}
-
 
 /*navbar*/
 
@@ -426,6 +418,8 @@ hr {
   column-fill: balance;
   column-gap: 2vw;
 }
+
+.cause {}
 
 
 /*bio*/
