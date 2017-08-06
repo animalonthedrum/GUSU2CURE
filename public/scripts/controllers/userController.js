@@ -62,7 +62,7 @@ function userController(UserInfoService, userPageService, adminService) {
         adminService.matchMeNow(vm.matchContent[index].email);
         sweetAlert({
             title: "Success!",
-            text: "You Have Been Successfully Matched!",
+            text: vm.matchContent[index].first_name + " Has Been Notified Via Text Message",
             type: "success"
         }); //end of sweetAlert
 
