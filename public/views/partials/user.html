@@ -7,9 +7,11 @@
 
 
 
+<div ng-if="uc.everything">
 
 
-<div class="user" ng-init=uc.getUserInfo()>
+
+<div class="user" ng-init="uc.getUserInfo()" >
 
   <p class='logout' ng-click='uc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
   <div class="userPage">
@@ -124,7 +126,7 @@
 
 
 </div>
-
+</div>
 
 
 

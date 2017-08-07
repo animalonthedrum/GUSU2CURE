@@ -4,6 +4,7 @@ function adminController(adminService, UserInfoService, userPageService) {
 	vm.users = [];
 	vm.show = true;
 	vm.stats = false;
+    
 
 	vm.toggleStats = function() {
 		vm.show = !vm.show;

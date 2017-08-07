@@ -1,13 +1,12 @@
 function userController(UserInfoService, userPageService, adminService) {
   var vm = this;
-
+  vm.everything = true;
   //globals
 
 
   vm.getUserInfo = function() {
     userPageService.getUserInfo().then(function() {
       vm.thisUser = userPageService.userLoggedInInfo;
-      console.log('this is the user', vm.thisUser);
     });
 
   }; //end of getUserInfo
@@ -17,9 +16,10 @@ function userController(UserInfoService, userPageService, adminService) {
     vm.uploadImg.pick({}).then(function(response) {
       vm.img = response.filesUploaded[0].url;
       userPageService.updateImage(vm.img).then(function() {
-
+          window.location.reload();
       });
     }); //end uploadImg
+
   }; //end of showPicker
 
 
@@ -32,6 +32,7 @@ function userController(UserInfoService, userPageService, adminService) {
 
   vm.submitUserBio = function() {
     userPageService.submitBio(vm.userBio);
+    vm.getUserInfo();
   }; //end of submitUserBio
 
   vm.showMatches = function() {
@@ -55,6 +56,7 @@ function userController(UserInfoService, userPageService, adminService) {
         adminService.matchingUsers(userToMatch).then(function() {
           vm.matchContent = adminService.matchedUsers;
         });
+
     };//end of showMathces
 
     vm.matchMeWithThisUser = function(index) {
@@ -65,7 +67,6 @@ function userController(UserInfoService, userPageService, adminService) {
             text: vm.matchContent[index].first_name + " Has Been Notified Via Text Message",
             type: "success"
         }); //end of sweetAlert
-
     };//end of matchMeWithThisUser
 
     vm.showMatchUser = function(index) {
