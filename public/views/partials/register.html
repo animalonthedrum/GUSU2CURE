@@ -1,70 +1,68 @@
-<div class="entirePage">
+<div class="landPage">
+  <div class="headerImg">
+    <a href="#!/user"><img class='logoImg' src="images/gusu-logo.png" alt="" ></a>
+    <a href="http://www.mnscia.org/"><img class='logoImgR' src="images/MN_SCIA_Stacked.png" alt="" ></a>
+  </div>
+  <!-- LOGIN INPUTS -->
+
+  <div class="container">
+
+    <div class="row">
 
 
-  <div class="landPage">
-    <!-- LOGIN INPUTS -->
+      <div class="loginBox col-md-4">
+        <div class="signUpLogo">
+          <img class='signupLogo' src="images/gusu-SIGNUP3.png" alt="">
 
-    <div class="container">
-
-      <div class="row">
-
-
-        <div class="loginBox col-md-4">
-          <div class="signUpLogo">
-            <img class='signupLogo' src="images/gusu-SIGNUP2.png" alt="">
-
-          </div>
-          <label class='logLabel' for="emailLog">E-mail Address</label>
-          <input class='loginInputs' type="email" name="emailLog" value="" ng-model='lc.Lemail' style="color:black">
-          <label class='logLabel' for="passwordLog">Password</label>
-          <input class='loginInputs' type="password" name="passwordLog" value="" ng-model='lc.Lpassword' style="color:black">
-          <div class="buttons">
-            <button class='regBtn' type="button" name="button" ng-click='lc.login()'>LOGIN</button>
-          </div>
-          <!-- <a href="#!/register"><button type="button" name="button">REGISTER</button></a> -->
         </div>
+        <label class='logLabel' for="emailLog">E-mail Address</label>
+        <input class='loginInputs' type="email" name="emailLog" value="" ng-model='lc.Lemail' style="color:black">
+        <label class='logLabel' for="passwordLog">Password</label>
+        <input class='loginInputs' type="password" name="passwordLog" value="" ng-model='lc.Lpassword' style="color:black">
+        <div class="buttons">
+          <button class='regBtn' type="button" name="button" ng-click='lc.login()'>LOGIN</button>
+        </div>
+        <!-- <a href="#!/register"><button type="button" name="button">REGISTER</button></a> -->
+      </div>
 
 
 
-        <!-- <div class='question1'>
+      <!-- <div class='question1'>
       <h1>REGISTER</h1></div> -->
 
 
+      <div class="inputs col-md-4">
+        <label for="firstName" class='regLabel'>First Name</label>
+        <input type="text" name="firstName" ng-model='lc.firstName' class='regInput'>
+        <br>
 
-        <div class="window">
+        <label for="lastname" class='regLabel'>Last Name</label>
+        <input type="text" name="lastName" ng-model='lc.lastName' class='regInput'>
+        <br>
+        <label for="email" class='regLabel'>E-mail Address</label>
+        <input type="email" name="email" ng-model='lc.email' class='regInput'>
+        <br>
 
-          <div class="inputs col-md-4">
-            <label for="firstName" class='regLabel'>First Name</label>
-            <input type="text" name="firstName" ng-model='lc.firstName' class='regInput'>
-            <br>
+        <label for="password" class='regLabel'>Password</label>
+        <input type="password" name="password" ng-model='lc.password' class='regInput'>
+        <br>
+        <label for="confirmPassword" class='regLabel'>Confirm Password</label>
+        <input type="password" name="confirmPassword" ng-model='lc.confirmPassword' class='regInput'>
+        <br>
+        <div class="checkTerms">
+          <label class='terms' for="Terms">Terms and Conditions</label>
+          <input type="checkbox" name="Terms" value="Terms and Conditions" ng-model='lc.termsAndConditions'>
+        </div>
+        <div class="buttons">
 
-            <label for="lastname" class='regLabel'>Last Name</label>
-            <input type="text" name="lastName" ng-model='lc.lastName' class='regInput'>
-            <br>
-            <label for="email" class='regLabel'>E-mail Address</label>
-            <input type="email" name="email" ng-model='lc.email' class='regInput'>
-            <br>
-
-            <label for="password" class='regLabel'>Password</label>
-            <input type="password" name="password" ng-model='lc.password' class='regInput'>
-            <br>
-            <label for="confirmPassword" class='regLabel'>Confirm Password</label>
-            <input type="password" name="confirmPassword" ng-model='lc.confirmPassword' class='regInput'>
-            <br>
-            <div class="checkTerms">
-              <label class='terms' for="Terms">Terms and Conditions</label>
-              <input type="checkbox" name="Terms" value="Terms and Conditions" ng-model='lc.termsAndConditions'>
-            </div>
-            <div class="buttons">
-
-              <button class='regBtn' type="button" name="button" ng-click='lc.submitLogin()'>REGISTER</button>
-            </div>
-          </div>
+          <button class='regBtn' type="button" name="button" ng-click='lc.submitLogin()'>REGISTER</button>
         </div>
       </div>
 
     </div>
+
   </div>
 </div>
-<!-- 
+
+<!--
 <a href="#!/signup"><button type="button" name="button">Next</button></a > -->

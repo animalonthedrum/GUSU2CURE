@@ -1,5 +1,11 @@
-<div class="question1" >
-  <h1>WELCOME</h1></div>
+<div class="headerImg">
+  <a href="#!/user"><img class='logoImg' src="images/gusu-SIGNUP!.png" alt="" ></a>
+  <a href="http://www.mnscia.org/"><img class='logoImgR' src="images/MN_SCIA_Stacked.png" alt="" ></a>
+</div>
+
+
+<div class="adminHead">
+  <h1>MENTOR MATCH ADMIN</h1></div>
 <p class='logout' ng-click='ac.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
 <div class="container " ng-init='ac.mentorsMentees()'>
   <div class="row adminBtn">
@@ -7,240 +13,240 @@
     <i class="fa fa-search fa-2x adminSearch" aria-hidden="true"><input class='adminSearch' type="text" name="search" value="" ng-model='ac.searchUserBy' placeholder='Name, City, E-mail...' style="font-family:'Lato', sans-serif; font-size:20px;"></i>
     <button type="button" name="button" ng-click='ac.search()'>SEARCH</button>
     <button type="button" name="button" ng-click='ac.mentorsMentees()'>ALL USERS</button>
-    <button type="button" name="button" ng-click='ac.toggleStats()' >STATS</button>
+    <button type="button" name="button" ng-click='ac.toggleStats()'>STATS</button>
   </div>
   <div class="everything" ng-if='ac.show'>
 
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Role</th>
-        <th>Name</th>
-        <th>E-Mail</th>
-        <!-- <th>Enabled</th> -->
-        <th>Info</th>
-        <th>Match</th>
-        <th>Delete</th>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Name</th>
+          <th>E-Mail</th>
+          <!-- <th>Enabled</th> -->
+          <th>Info</th>
+          <th>Match</th>
+          <th>Delete</th>
 
-      </tr>
-    </thead>
-    <tbody class='table-striped'>
-      <tr ng-repeat='users in ac.users'>
-        <td>{{users.access_lvl | uppercase}}</td>
-        <td>{{users.first_name |uppercase}} {{users.last_name |uppercase}}</td>
-        <td><a href="mailto:{{users.email}}">{{users.email}}</a></td>
-        <!-- <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td> -->
-        <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> INFO </button></td>
-        <td><button type="button" onclick="document.getElementById('myModal2').style.display='block'" name="button" ng-click='ac.getMatches($index)'>VIEW</button></td>
-        <td><button type="button" name="button" ng-click='ac.deleteThisUser($index)'>Delete</button></td>
+        </tr>
+      </thead>
+      <tbody class='table-striped'>
+        <tr ng-repeat='users in ac.users'>
+          <td>{{users.access_lvl | uppercase}}</td>
+          <td>{{users.first_name |uppercase}} {{users.last_name |uppercase}}</td>
+          <td><a href="mailto:{{users.email}}">{{users.email}}</a></td>
+          <!-- <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td> -->
+          <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> INFO </button></td>
+          <td><button type="button" onclick="document.getElementById('myModal2').style.display='block'" name="button" ng-click='ac.getMatches($index)'>VIEW</button></td>
+          <td><button type="button" name="button" ng-click='ac.deleteThisUser($index)'>Delete</button></td>
 
-      </tr>
-    </tbody>
-  </table>
+        </tr>
+      </tbody>
+    </table>
 
 
 
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-      <div class="userContent">
-        <!-- <h1>{{ac.userInModal.first_name}}</h1> -->
-        <table class="table table-striped">
-          <thead>
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+        <div class="userContent">
+          <!-- <h1>{{ac.userInModal.first_name}}</h1> -->
+          <table class="table table-striped">
+            <thead>
 
-            <div>
-              <h2>{{ac.userInModal.first_name | uppercase}} {{ac.userInModal.last_name | uppercase}}'S INFO</h2><button class='viewProfile' type="button" name="button" ng-click='ac.goToUserPage()'>View Profile</button></div>
+              <div>
+                <h2>{{ac.userInModal.first_name | uppercase}} {{ac.userInModal.last_name | uppercase}}'S INFO</h2><button class='viewProfile' type="button" name="button" ng-click='ac.goToUserPage()'>View Profile</button></div>
 
-          </thead>
-          <tbody class='table-striped'>
+            </thead>
+            <tbody class='table-striped'>
 
-            <!-- <tr>
+              <!-- <tr>
               <td>
                 <h4>Date of Birth</h4></td>
               <td>{{ac.userInModal.dob | date}} </td>
             </tr> -->
-            <tr>
-              <td>
-                <h4>Gender</h4></td>
-              <td>{{ac.userInModal.gender}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Address</h4></td>
-              <td>{{ac.userInModal.address}} {{ac.userInModal.city}} {{ac.userInModal.state}} {{ac.userInModal.zip}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>{{ac.userInModal.phone_type}} Phone</h4></td>
-              <td>{{ac.userInModal.phone}}</td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Visit Preference</h4></td>
-              <td>{{ac.userInModal.visit_pref}}</td>
-            </tr>
-            <tr>
-              <td>
-                <h4>SCI Relation</h4></td>
-              <td>{{ac.userInModal.sci_relation}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>SCI Cause</h4></td>
-              <td>{{ac.userInModal.sci_cause}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Age of Injury</h4></td>
-              <td>{{ac.userInModal.sci_age}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Paralysis Level</h4></td>
-              <td>{{ac.userInModal.sci_lvl}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>ASIA Score</h4></td>
-              <td>{{ac.userInModal.asia_score}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Mobility Requirements</h4></td>
-              <td>{{ac.userInModal.mobility_req}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Primary Transportaion</h4></td>
-              <td>{{ac.userInModal.trans_type}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Relationship Status</h4></td>
-              <td>{{ac.userInModal.rel_status}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Family Status</h4></td>
-              <td>{{ac.userInModal.fam_status}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Education Level</h4></td>
-              <td>{{ac.userInModal.ed_lvl}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Language Preference</h4></td>
-              <td>{{ac.userInModal.lang}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Occupation</h4></td>
-              <td>{{ac.userInModal.emp_work}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Pet Issues</h4></td>
-              <td>{{ac.userInModal.pets}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Hobbies</h4></td>
-              <td>{{ac.userInModal.hobbies}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Question Sensitivity</h4></td>
-              <td>{{ac.userInModal.questions}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4> SCI Help Experience</h4></td>
-              <td>{{ac.userInModal.experience}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Additional Info</h4></td>
-              <td>{{ac.userInModal.additional}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Comments</h4></td>
-              <td>{{ac.userInModal.comments}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Referal</h4></td>
-              <td>{{ac.userInModal.heard_about}} </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Matched With</h4></td>
-              <td>{{ac.userInModal.matched_with}} </td>
-            </tr>
+              <tr>
+                <td>
+                  <h4>Gender</h4></td>
+                <td>{{ac.userInModal.gender}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Address</h4></td>
+                <td>{{ac.userInModal.address}} {{ac.userInModal.city}} {{ac.userInModal.state}} {{ac.userInModal.zip}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>{{ac.userInModal.phone_type}} Phone</h4></td>
+                <td>{{ac.userInModal.phone}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Visit Preference</h4></td>
+                <td>{{ac.userInModal.visit_pref}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>SCI Relation</h4></td>
+                <td>{{ac.userInModal.sci_relation}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>SCI Cause</h4></td>
+                <td>{{ac.userInModal.sci_cause}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Age of Injury</h4></td>
+                <td>{{ac.userInModal.sci_age}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Paralysis Level</h4></td>
+                <td>{{ac.userInModal.sci_lvl}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>ASIA Score</h4></td>
+                <td>{{ac.userInModal.asia_score}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Mobility Requirements</h4></td>
+                <td>{{ac.userInModal.mobility_req}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Primary Transportaion</h4></td>
+                <td>{{ac.userInModal.trans_type}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Relationship Status</h4></td>
+                <td>{{ac.userInModal.rel_status}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Family Status</h4></td>
+                <td>{{ac.userInModal.fam_status}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Education Level</h4></td>
+                <td>{{ac.userInModal.ed_lvl}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Language Preference</h4></td>
+                <td>{{ac.userInModal.lang}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Occupation</h4></td>
+                <td>{{ac.userInModal.emp_work}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Pet Issues</h4></td>
+                <td>{{ac.userInModal.pets}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Hobbies</h4></td>
+                <td>{{ac.userInModal.hobbies}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Question Sensitivity</h4></td>
+                <td>{{ac.userInModal.questions}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4> SCI Help Experience</h4></td>
+                <td>{{ac.userInModal.experience}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Additional Info</h4></td>
+                <td>{{ac.userInModal.additional}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Comments</h4></td>
+                <td>{{ac.userInModal.comments}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Referal</h4></td>
+                <td>{{ac.userInModal.heard_about}} </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Matched With</h4></td>
+                <td>{{ac.userInModal.matched_with}} </td>
+              </tr>
 
 
-          </tbody>
-        </table>
+            </tbody>
+          </table>
 
+        </div>
+        <!-- END of userContentdiv -->
       </div>
-      <!-- END of userContentdiv -->
+
     </div>
+    <!-- The Modal -->
+    <div id="myModal2" class="modal2">
 
-  </div>
-  <!-- The Modal -->
-  <div id="myModal2" class="modal2">
+      <!-- Modal content -->
+      <div class="modal-content2">
+        <span class="close" onclick="document.getElementById('myModal2').style.display='none'">&times;</span>
+        <div class="userContent2">
 
-    <!-- Modal content -->
-    <div class="modal-content2">
-      <span class="close" onclick="document.getElementById('myModal2').style.display='none'">&times;</span>
-      <div class="userContent2">
+          <div class="container">
+            <div class="row matchRow">
 
-        <div class="container">
-          <div class="row matchRow">
-
-            <div class="col-md-4" ng-repeat='match in ac.matchContent'>
+              <div class="col-md-4" ng-repeat='match in ac.matchContent'>
 
 
-              <div class="matchPic">
-                <img class='img-circle matchImg' ng-src="{{match.image}}" alt="images/gusu-SIGNUP.png">
+                <div class="matchPic">
+                  <img class='img-circle matchImg' ng-src="{{match.image}}" alt="images/gusu-SIGNUP.png">
+                </div>
+                <div class="matchContent">
+                  <h3>{{match.first_name}} {{match.last_name}}</h3>
+                  <h4 class='match3'>{{match.email}}</h4>
+                  <h4 class='match3'>{{match.access_lvl}}</h4>
+                  <!-- <h4 class='match3'>Matched: {{match.matched}}</h4> -->
+                  <button type="button" name="button" ng-click='ac.showMatchUser($index)'>INFO</button>
+                </div>
               </div>
-              <div class="matchContent">
-                <h3>{{match.first_name}} {{match.last_name}}</h3>
-                <h4 class='match3'>{{match.email}}</h4>
-                <h4 class='match3'>{{match.access_lvl}}</h4>
-                <!-- <h4 class='match3'>Matched: {{match.matched}}</h4> -->
-                <button type="button" name="button" ng-click='ac.showMatchUser($index)'>INFO</button>
-              </div>
+
             </div>
-
           </div>
         </div>
+
       </div>
 
     </div>
-
-  </div>
   </div>
 
 
   <div class="someone" ng-hide='ac.stats'>
-      <div class="" style="height:300px; width:400px; margin:9em; display:inline-block;">
-          <canvas id="myChart" width="50px" height="50px"></canvas>
-      </div>
+    <div class="" style="height:300px; width:400px; margin:9em; display:inline-block;">
+      <canvas id="myChart" width="50px" height="50px"></canvas>
+    </div>
 
 
-      <div class="" style="height:300px; width:400px; margin:9em; display:inline-block;">
-          <canvas id="barChart" width="100px" height="100px"></canvas>
-      </div>
-      <div class="" style="height:300px; width:400px;  margin:9em; display:inline-block;">
-          <canvas id="radarChart" width="100px" height="100px"></canvas>
-      </div>
+    <div class="" style="height:300px; width:400px; margin:9em; display:inline-block;">
+      <canvas id="barChart" width="100px" height="100px"></canvas>
+    </div>
+    <div class="" style="height:300px; width:400px;  margin:9em; display:inline-block;">
+      <canvas id="radarChart" width="100px" height="100px"></canvas>
+    </div>
 
 
 

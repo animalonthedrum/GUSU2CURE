@@ -1,3 +1,8 @@
+<div class="headerImgUser">
+  <a href="#!/user"><img class='logoImg2' src="images/gusu-SIGNUP!.png" alt="" ></a>
+  <a href="http://www.mnscia.org/"><img class='logoImgR2' src="images/MN_SCIA_Stacked.png" alt="" ></a>
+</div>
+
 <div class="user" ng-init=vc.checkForUserSearched()>
 
   <p class='logout' ng-click='vc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
@@ -5,11 +10,13 @@
 
 
   <div class="userPage">
+
     <div class="acLvl">
       <h1><i class="fa fa-star" aria-hidden="true"></i>{{vc.thisUser.access_lvl}}</h1>
-      <div class='hangOut' id="placeholder-div"></div>
+
     </div>
-    <p>Matched with: <a href="mailto:{{vc.thisUser.matched_with}}">{{vc.thisUser.matched_with}}</a></p>
+    <h2 class='match'>Matched with: <a href="mailto:{{vc.thisUser.matched_with}}">{{vc.thisUser.matched_with}}</a></h2>
+    <!-- <p>Matched with: <a href="mailto:{{vc.thisUser.matched_with}}">{{vc.thisUser.matched_with}}</a></p> -->
 
 
 
@@ -28,7 +35,7 @@
       <div class="bio">
 
 
-        <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea disabled class='col-md-8' name="bio" rows="5" cols="60" ng-model='vc.userBio' placeholder="{{vc.thisUser.user_bio}}"></textarea>
+        <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea disabled class='col-md-8 visitBio' name="bio" rows="5" cols="60" ng-model='vc.userBio' placeholder="{{vc.thisUser.user_bio}}"></textarea>
 
       </div>
 
@@ -43,9 +50,11 @@
           <h4> {{vc.thisUser.city}}, {{vc.thisUser.state | uppercase}}</h4>
           <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
           <h4>{{vc.thisUser.phone_type}} {{vc.thisUser.phone}}</h4>
+
           <!-- <u>E-Mail</u> -->
           <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
           <h4><a href="mailto:{{users.email}}">{{vc.thisUser.email}}</a></h4>
+          <div class='hangOut' id="placeholder-div"></div><br>
           <!-- <u>Hobbies/Interests</u> -->
           <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
           <h4> {{vc.thisUser.hobbies}}</h4>

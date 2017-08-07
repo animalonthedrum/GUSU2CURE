@@ -1,5 +1,9 @@
-<div class='question1'>
-  <h1>INJURY INFORMATION</h1>
+<div class="headerImg">
+  <a href="#!/user"><img class='logoImg' src="images/gusu-SIGNUP!.png" alt="" ></a>
+  <a href="http://www.mnscia.org/"><img class='logoImgR' src="images/MN_SCIA_Stacked.png" alt="" ></a>
+</div>
+<!-- <div class='question1'>
+  <h1>INJURY INFORMATION</h1> -->
 
 </div>
 <div class='threeHobbies'>
@@ -43,7 +47,7 @@
 
 
         <!-- START sci_age -->
-        <div class='col-md-4 injuryInfo'>
+        <div class='col-md-4 pLevel'>
           <label for='year'>Age SCI Occured</label>
           <input class='ageInj' type='text' name='year' pattern='\d*' min='0' max='99' maxlength='2' ng-model='ic.injAge'>
         </div>
@@ -57,7 +61,7 @@
 
 
         <!-- START sci_lvl -->
-        <div class='pLevel'>
+        <div class='col-md-6 pLevel'>
           <label for='sci_lvl'>Injury Level: </label>
           <select class='' name='sci_lvl' ng-model='ic.injLevel'>
             <option value='C1-C3'>Upper-Cervical (C1-C3)</option>
@@ -90,7 +94,7 @@
       <div class="row">
 
 
-        <div class='col-md-4'>
+        <div class='col-md-4 move'>
           <label for='mobility_req'>Mobility Requirement: </label>
           <select class='movement' name='mobility_req' ng-model='ic.mobility'>
                 <option value='Wheelchair (powered)'>Wheelchair (powered)</option>
@@ -103,7 +107,7 @@
         <!-- END mobility_req -->
 
         <!-- START trans_type -->
-        <div class='col-md-4 asia' ng-init='ic.getTransTypeMenu()'>
+        <div class='col-md-4 move' ng-init='ic.getTransTypeMenu()'>
           <label for='trans_type'>Primary transportation:</label>
           <select class='relation' ng-options='item as item.trans_type for item in ic.trans_type track by item.id' ng-model='ic.trans' name='trans_type'></select>
         </div>

@@ -4,18 +4,25 @@
   max-width: 90vw;
   margin-left: 5vw;
   margin-right: 5vw;
+  margin-top: 12em;
   border-top: solid #4F2223;
-  border-bottom: solid #9a252b;
-  border-left: 1px solid #ECE5E5;
-  border-right: 1px solid #ECE5E5;
+  /*border-bottom: solid #9a252b;*/
+  /*border-left: 1px solid #ECE5E5;
+  border-right: 1px solid #ECE5E5;*/
   background-color: white;
-  opacity: 0.8;
+  /*opacity: 0.8;*/
   border-width: medium;
-  height: 100vh;
+  height: 100%;
 }
 
 .profName {
   font-size: 20px;
+}
+
+.match {
+  font-size: 20px;
+  text-align: center;
+  vertical-align: bottom;
 }
 
 .imageUp {
@@ -28,15 +35,18 @@
 }
 
 .bio {
-  float: right;
-  margin-right: -10em;
-  margin-top: 2em;
+  /*float: right;
+  margin-right: -10em;*/
+  /*margin-top: 2em;*/
+  margin-top: -3em;
+  margin-left: 30%;
+  /*margin-bottom: 2em;*/
   display: grid;
 }
 
 .submitBio {
-  float: right;
-  margin-right: -10em;
+  /*float: right;
+  margin-right: -10em;*/
   height: 50px;
   width: 150px;
   border-radius: 20px;
@@ -46,6 +56,8 @@
   border-right: none;
   padding: 10px;
   box-shadow: 0 9px #999;
+  float: right;
+  margin-right: 5em;
 }
 
 .submitBio:hover {
@@ -58,15 +70,16 @@
 }
 
 .addBio {
-  float: right;
-  margin-right: -15em;
-  margin-top: 16em;
+  /*float: right;
+  /*margin-right: -15em;*/
+  /*margin-top: 16em;*/
 }
 
 .upload {
   margin-top: 100%;
   border-radius: 20px;
   border-bottom: 2px solid #9a252b;
+  border-top: none;
   border-left: none;
   border-right: none;
   padding: 10px;
@@ -86,7 +99,7 @@
   /*display: list-item;*/
   /*text-align: center;*/
   width: 20em;
-  margin-top: -5em;
+  margin-top: -3em;
   max-height: 100%;
   border-left: 1px solid black;
   padding-left: 20px;
@@ -106,10 +119,6 @@ u {
   text-decoration: none;
 }
 
-.hangout {
-  margin: auto auto;
-}
-
 .currentPage {
   text-align: center;
   /*margin-right: 20em;*/
@@ -124,6 +133,7 @@ u {
 .matchBtn {
   border-radius: 20px;
   border-bottom: 2px solid #9a252b;
+  border-top: 2px solid #9a252b;
   border-left: none;
   border-right: none;
   padding: 10px;
@@ -146,6 +156,7 @@ u {
 .matchBtn2 {
   border-radius: 20px;
   border-bottom: 2px solid #9a252b;
+  border-top: 2px solid #9a252b;
   border-left: none;
   border-right: none;
   padding: 10px;
@@ -177,11 +188,44 @@ u {
   /*display: list-item;*/
   /*text-align: center;*/
   width: 20em;
-  margin-top: -20em;
+  margin-top: -1em;
   max-height: 100%;
   border-left: 1px solid black;
   padding-left: 20px;
   /*background-color: red;*/
   float: left;
   /*margin-right: 40%;*/
+}
+
+.headerImgUser {
+  max-height: 1em;
+  /*max-width: 100%;*/
+  /*background-size: contain;
+  background-image: url('../images/header4.png');*/
+  border-bottom: solid #9a252b;
+  border-width: thin;
+  /*margin-bottom: 10em;*/
+}
+
+.visitBio {
+  border: none;
+}
+
+.logoImg2 {
+  height: 150px;
+  width: 150px;
+  float: left;
+  margin-left: 2.5vw;
+}
+
+.logoImgR2 {
+  /*height: 200px;
+
+  width: 200px;*/
+  height: 125px;
+  width: 125px;
+  float: right;
+  margin-right: 2.5vw;
+  margin-top: 10px;
+  padding: 10px;
 }

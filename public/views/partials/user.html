@@ -1,11 +1,23 @@
+<div class="headerImgUser">
+  <a href="#!/user"><img class='logoImg2' src="images/gusu-SIGNUP!.png" alt="" ></a>
+  <a href="http://www.mnscia.org/"><img class='logoImgR2' src="images/MN_SCIA_Stacked.png" alt="" ></a>
+
+
+</div>
+
+
+
+
+
 <div class="user" ng-init=uc.getUserInfo()>
 
   <p class='logout' ng-click='uc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
   <div class="userPage">
     <div class="acLvl">
       <h1><i class="fa fa-star" aria-hidden="true"></i>{{uc.thisUser.access_lvl}}</h1>
+      <h2 class='match'>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></h2>
     </div>
-    <p>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p>
+
 
 
 
@@ -24,12 +36,12 @@
       <div class="bio">
 
 
-        <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea class='col-md-8' name="bio" rows="5" cols="60" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
+        <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea class='' name="bio" rows="5" cols="60" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
+        <div class="addBio">
+          <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD</button>
+        </div>
+      </div>
 
-      </div>
-      <div class="addBio">
-        <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD</button>
-      </div>
 
 
 
