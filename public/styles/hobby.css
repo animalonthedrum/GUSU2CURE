@@ -59,8 +59,9 @@
 }
 
 .active {
-  opacity: 0.6;
   color: #9a252b;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .threeHobbies {

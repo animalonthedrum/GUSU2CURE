@@ -2,11 +2,11 @@
   <a href="#!/user"><img class='logoImg' src="images/gusu-SIGNUP!.png" alt="" ></a>
   <a href="http://www.mnscia.org/"><img class='logoImgR' src="images/MN_SCIA_Stacked.png" alt="" ></a>
 </div>
-
+<p class='logout' ng-click='ac.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
 
 <div class="adminHead">
   <h1>MENTOR MATCH ADMIN</h1></div>
-<p class='logout' ng-click='ac.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
+
 <div class="container " ng-init='ac.mentorsMentees()'>
   <div class="row adminBtn">
     <label class='searchBar' for="search">Search</label>
@@ -26,7 +26,7 @@
           <th>E-Mail</th>
           <!-- <th>Enabled</th> -->
           <th>Info</th>
-          <th>Match</th>
+          <th>Matches</th>
           <th>Delete</th>
 
         </tr>
@@ -39,7 +39,7 @@
           <!-- <td><input type="checkbox" name="" ng-model="users.enabled" ng-click='ac.switchEnabled($index)'></td> -->
           <td><button id="myBtn" onclick="document.getElementById('myModal').style.display='block'" ng-click='ac.displayUserModal($index)'> INFO </button></td>
           <td><button type="button" onclick="document.getElementById('myModal2').style.display='block'" name="button" ng-click='ac.getMatches($index)'>VIEW</button></td>
-          <td><button type="button" name="button" ng-click='ac.deleteThisUser($index)'>Delete</button></td>
+          <td><button class='delete' type="button" name="button" ng-click='ac.deleteThisUser($index)'>SUSPEND ACCOUNT</button></td>
 
         </tr>
       </tbody>
