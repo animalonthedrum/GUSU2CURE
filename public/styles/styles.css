@@ -287,8 +287,9 @@ hr {
 
 .rel {
   /*display: grid;*/
-  margin-top: 6em;
-  margin-bottom: 40px;
+  /*margin-top: 6em;*/
+  margin-top: 3em;
+  float: left;
   /*margin-top: 40px;*/
 }
 

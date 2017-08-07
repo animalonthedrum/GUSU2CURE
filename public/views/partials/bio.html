@@ -28,7 +28,7 @@
       <div class="row">
 
 
-        <div class="col-md-6 rel">
+        <div class="col-md-4 rel">
           <label for="rel_status">Relationship Status:</label>
           <select class='relation' ng-options="item as item.rel_status for item in bc.rel_status track by item.id" ng-model="bc.relationshipStatus" ng-init="bc.getRelStatusMenu()" name="rel_status">
 <!-- <option disabled selected value="">?</option> -->
@@ -36,7 +36,7 @@
           <!-- END rel_status -->
 
         </div>
-        <div class="col-md-6 rel">
+        <div class="col-md-4 rel">
           <label for="fam_status">Family Status</label>
           <select class="" name="fam_status" ng-model='bc.familyStatus'>
             <!-- <option disabled selected value="">?</option> -->
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class='row'>
-        <div class='col-md-6 rel'>
+        <div class='col-md-4'>
           <label for="ed_lvl">Education Level</label>
           <select class="" name="ed_lvl" ng-model='bc.educationLevel'>
             <!-- <option disabled selected value="">?</option> -->
@@ -61,7 +61,7 @@
             <option value="None/NA">None/NA</option>
           </select>
         </div>
-        <div class="col-md-6 rel">
+        <div class="col-md-4">
           <label for="work">Occupation</label>
           <input type="text" name="" value="" ng-model="bc.work">
         </div>
@@ -74,7 +74,7 @@
     <!-- START lang -->
     <div class="container">
       <div class="row">
-        <div class="col-md-6 rel">
+        <div class="col-md-4">
           <label for="lang">Language Preference:</label>
           <select class='relation' ng-options="item as item.lang for item in bc.lang track by item.id" ng-model="bc.language" ng-init="bc.getLangMenu()" name="lang">
 <!-- <option disabled selected value="">?</option> -->
