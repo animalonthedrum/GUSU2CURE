@@ -4,7 +4,7 @@ function adminController(adminService, UserInfoService, userPageService) {
 	vm.users = [];
 	vm.show = true;
 	vm.stats = false;
-    
+
 
 	vm.toggleStats = function() {
 		vm.show = !vm.show;
@@ -41,6 +41,7 @@ function adminController(adminService, UserInfoService, userPageService) {
 	// START displayUserModal
 	vm.displayUserModal = function(index) {
 		vm.userInModal = vm.users[index];
+        console.log(vm.userInModal);
 	};
 	// END displayUserModal
 
