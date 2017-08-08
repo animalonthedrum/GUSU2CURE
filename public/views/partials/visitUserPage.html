@@ -5,7 +5,7 @@
 
 <div class="user" ng-init=vc.checkForUserSearched()>
 
-  <p class='logout' ng-click='vc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
+  <a class='logout' ng-click='vc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></a>
 
 
 
@@ -46,25 +46,33 @@
         <div class="userInfo2">
           <h2 class='profName'>{{vc.thisUser.first_name | uppercase}} {{vc.thisUser.last_name | uppercase}}</h2>
           <!-- <u>City</u> -->
-          <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-          <h4> {{vc.thisUser.city}}, {{vc.thisUser.state | uppercase}}</h4>
-          <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
-          <h4>{{vc.thisUser.phone_type}} {{vc.thisUser.phone}}</h4>
+          <i class="fa fa-map-marker fa-2x pd" aria-hidden="true"></i>
+          <p> {{vc.thisUser.city}}, {{vc.thisUser.state | uppercase}}</p><br>
+          <i class="fa fa-phone fa-2x pd" aria-hidden="true"></i>
+          <p>{{vc.thisUser.phone_type}} {{vc.thisUser.phone}}</p><br>
 
           <!-- <u>E-Mail</u> -->
-          <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-          <h4><a href="mailto:{{users.email}}">{{vc.thisUser.email}}</a></h4>
+          <i class="fa fa-envelope fa-2x pd" aria-hidden="true"></i>
+          <p><a href="mailto:{{users.email}}">{{vc.thisUser.email}}</a></p><br>
           <div class='hangOut' id="placeholder-div"></div><br>
           <!-- <u>Hobbies/Interests</u> -->
-          <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
-          <h4> {{vc.thisUser.hobbies}}</h4>
+          <i class="fa fa-heart fa-2x pd" aria-hidden="true"></i>
+          <p> {{vc.thisUser.hobbies}}</p>
+          <i class="fa fa-calendar fa-2x pd" aria-hidden="true"><u>(DOB)</u></i>
+          <p>{{vc.thisUser.dob | date : "MMMM dd"}}</p>
           <hr>
-          <i class="fa fa-wheelchair fa-2x" aria-hidden="true"><u>Mobility Requirements</u></i>
-          <h4> {{vc.thisUser.mobility_req}}</h4>
-          <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>SCI Age | Cause | Level</u></i>
-          <h4> {{vc.thisUser.sci_age}} | {{uc.thisUser.sci_cause}} | {{vc.thisUser.sci_lvl}}</h4>
-          <i class="fa fa-calendar fa-2x" aria-hidden="true"><u>Date of Birth</u></i>
-          <h4>{{vc.thisUser.dob | date : "MMMM dd"}}</h4>
+
+
+
+          <h4 class='sciInfo'>SPINAL CORD INJURY INFORMATION</h4>
+
+
+          <i class="fa fa-wheelchair fa-2x" aria-hidden="true"><u><p>{{vc.thisUser.mobility_req}}</p></u></i>
+
+          <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>Age of Injury: <p> {{vc.thisUser.sci_age}}</p></u></i><br>
+          <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>Cause: <p>{{vc.thisUser.sci_cause}}</p></u></i><br>
+          <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>Level: <p>{{vc.thisUser.sci_lvl}}</p></u></i><br>
+          <hr>
 
           <!-- <p ng-init='uc.getUserInfo()'>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p> -->
 
