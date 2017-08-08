@@ -11,80 +11,95 @@
 
 
 
-<div class="user" ng-init="uc.getUserInfo()" >
+  <div class="user" ng-init="uc.getUserInfo()">
 
-  <p class='logout' ng-click='uc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
-  <div class="userPage">
-    <div class="acLvl">
-      <h1><i class="fa fa-star" aria-hidden="true"></i>{{uc.thisUser.access_lvl}}</h1>
-      <h2 class='match'>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></h2>
-    </div>
-
-
-
-
-    <div class="row">
-
-      <div class="col-md-6 imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
-        <!-- <img class="img-circle userImage" alt="" ><br> --><br>
-        <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button><br>
-        <button class='matchBtn' type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'><i class="fa fa-users" aria-hidden="true"></i>Match</button><br>
-        <button class='matchBtn2' type="button" name="button" ng-click='uc.unmatchMe()'><i class="fa fa-exclamation-triangle" aria-hidden="true" ></i>Unmatch</button>
-
-      </div>
-
-
-
-      <div class="bio">
-
-
-        <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea class='' name="bio" rows="5" cols="60" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
-        <div class="addBio">
-          <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD</button>
-        </div>
+    <p class='logout' ng-click='uc.logout()'><i class="fa fa-sign-out" aria-hidden="true"><u>LOG OUT</u></i></p>
+    <div class="userPage">
+      <div class="acLvl">
+        <h1><i class="fa fa-star" aria-hidden="true"></i>{{uc.thisUser.access_lvl}}</h1>
+        <h2 class='match'>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></h2>
       </div>
 
 
 
 
+      <div class="row">
 
-      <div class='col-md-6 col-xs-4 editP'>
-        <!-- <h3>Edit Profile</h3> -->
-        <div class="userInfo">
-          <h2 class='profName'>{{uc.thisUser.first_name | uppercase}} {{uc.thisUser.last_name | uppercase}}</h2>
-          <!-- <u>City</u> -->
-          <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-          <h4> {{uc.thisUser.city}}, {{uc.thisUser.state | uppercase}}</h4>
-          <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
-          <h4>{{uc.thisUser.phone_type}} {{uc.thisUser.phone | phoneNumber}}</h4>
-          <!-- <u>E-Mail</u> -->
-          <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-          <h4><a href="mailto:{{users.email}}">{{uc.thisUser.email}}</a></h4>
-          <!-- <u>Hobbies/Interests</u> -->
-          <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
-          <h4> {{uc.thisUser.hobbies}}</h4>
-          <hr>
-          <i class="fa fa-wheelchair fa-2x" aria-hidden="true"><u>Mobility Requirements</u></i>
-          <h4> {{uc.thisUser.mobility_req}}</h4>
-          <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>SCI Age | Cause | Level</u></i>
-          <h4> {{uc.thisUser.sci_age}} | {{uc.thisUser.sci_cause}} | {{uc.thisUser.sci_lvl}}</h4>
-          <i class="fa fa-calendar fa-2x" aria-hidden="true"><u>Date of Birth</u></i>
-          <h4>{{uc.thisUser.dob | date : "MMMM dd"}}</h4>
-
-          <!-- <p ng-init='uc.getUserInfo()'>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p> -->
-
+        <div class="col-md-6 imageUp" style='background-image:url({{uc.thisUser.image}}); height:20em; width: 20em; border-radius:100%; background-size:cover;'>
+          <!-- <img class="img-circle userImage" alt="" ><br> --><br>
+          <button class="upload" ng-click="uc.showPicker()">   <i class="fa fa-camera fa-2x" aria-hidden="true"></i> ADD AN IMAGE</button><br>
+          <button class='matchBtn' type="button" name="button" onclick="document.getElementById('myModal3').style.display='block'" ng-click='uc.showMatches()'><i class="fa fa-users" aria-hidden="true"></i>Match</button><br>
+          <button class='matchBtn2' type="button" name="button" ng-click='uc.unmatchMe()'><i class="fa fa-exclamation-triangle" aria-hidden="true" ></i>Unmatch</button>
 
         </div>
 
 
+
+        <div class="bio">
+
+
+          <i class="fa fa-user fa-2x" aria-hidden="true">Bio</i><textarea class='' name="bio" rows="5" cols="60" ng-model='uc.userBio' placeholder="{{uc.thisUser.user_bio}}"></textarea>
+          <div class="addBio">
+            <button class="submitBio" type="button" name="button" ng-click='uc.submitUserBio()'><i class="fa fa-plus fa-2x" aria-hidden="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>ADD</button>
+          </div>
+        </div>
+
+
+
+
+
+        <div class='col-md-6 col-xs-4 editP'>
+          <!-- <h3>Edit Profile</h3> -->
+          <div class="userInfo">
+            <h2 class='profName'>{{uc.thisUser.first_name | uppercase}} {{uc.thisUser.last_name | uppercase}}</h2>
+            <!-- <u>City</u> -->
+            <i class="fa fa-map-marker fa-2x pd" aria-hidden="true"></i>
+            <p> {{uc.thisUser.city}}, {{uc.thisUser.state | uppercase}}</p><br>
+            <i class="fa fa-phone fa-2x pd" aria-hidden="true"></i>
+            <p>{{uc.thisUser.phone_type}} {{uc.thisUser.phone | phoneNumber}}</p><br>
+            <!-- <u>E-Mail</u> -->
+            <i class="fa fa-envelope fa-2x pd" aria-hidden="true"></i>
+            <p><a href="mailto:{{users.email}}">{{uc.thisUser.email}}</a></p><br>
+            <!-- <u>Hobbies/Interests</u> -->
+            <i class="fa fa-heart fa-2x pd" aria-hidden="true"></i>
+            <p> {{uc.thisUser.hobbies}}</p>
+            <i class="fa fa-calendar fa-2x pd" aria-hidden="true"><u>Date of Birth</u></i>
+            <p>{{uc.thisUser.dob | date : "MMMM dd"}}</p>
+            <hr>
+            <!-- <hr> -->
+            <!-- <i class="fa fa-wheelchair fa-2x" aria-hidden="true"><u>Mobility Requirements</u></i>
+            <p> {{uc.thisUser.mobility_req}}</p>
+            <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>SCI Age | Cause | Level</u></i>
+            <p> {{uc.thisUser.sci_age}} | {{uc.thisUser.sci_cause}} | {{uc.thisUser.sci_lvl}}</p> -->
+            <h4 class='sciInfo'>SPINAL CORD INJURY INFORMATION</h4>
+
+
+            <i class="fa fa-wheelchair fa-2x" aria-hidden="true"><u><p>{{uc.thisUser.mobility_req}}</p></u></i>
+
+            <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>Age of Injury: <p> {{uc.thisUser.sci_age}}</p></u></i><br>
+            <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>Cause: <p>{{uc.thisUser.sci_cause}}</p></u></i><br>
+            <i class="fa fa-plus-square fa-2x" aria-hidden="true"><u>Level: <p>{{uc.thisUser.sci_lvl}}</p></u></i><br>
+            <hr>
+
+            <!-- <p ng-init='uc.getUserInfo()'>Matched with: <a href="mailto:{{uc.thisUser.matched_with}}">{{uc.thisUser.matched_with}}</a></p> -->
+
+
+          </div>
+
+
+        </div>
+
       </div>
 
+
+
+
+
+
+
+
+
     </div>
-
-
-
-
-
 
 
 
@@ -94,33 +109,28 @@
 
 
 
-</div>
+  <div id="myModal3" class="modal3">
 
+    <!-- Modal content -->
+    <div class="modal-content3">
+      <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
+      <div class="userContent3">
 
-
-
-<div id="myModal3" class="modal3">
-
-  <!-- Modal content -->
-  <div class="modal-content3">
-    <span class="close" onclick="document.getElementById('myModal3').style.display='none'">&times;</span>
-    <div class="userContent3">
-
-      <div class='usersMatchedWithUser' ng-repeat='x in uc.matchContent'>
-        <div class="matchPic">
-          <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
+        <div class='usersMatchedWithUser' ng-repeat='x in uc.matchContent'>
+          <div class="matchPic">
+            <img class='img-circle matchImg' ng-src="{{x.image}}" alt="images/gusu-SIGNUP.png">
+          </div>
+          <div class="matchContent">
+            <h3>{{x.first_name}} {{x.last_name}}</h3>
+            <h4 class='match3'>{{x.email}}</h4>
+            <h4 class='match3'>{{x.access_lvl}}</h4>
+          </div>
+          <button type="button" name="button" ng-click='uc.matchMeWithThisUser($index)'>Match</button>
+          <button type="button" name="button" ng-click='uc.showMatchUser($index)'>INFO</button>
         </div>
-        <div class="matchContent">
-          <h3>{{x.first_name}} {{x.last_name}}</h3>
-          <h4 class='match3'>{{x.email}}</h4>
-          <h4 class='match3'>{{x.access_lvl}}</h4>
-        </div>
-        <button type="button" name="button" ng-click='uc.matchMeWithThisUser($index)'>Match</button>
-        <button type="button" name="button" ng-click='uc.showMatchUser($index)'>INFO</button>
       </div>
     </div>
   </div>
-</div>
 </div>
 </div>
 

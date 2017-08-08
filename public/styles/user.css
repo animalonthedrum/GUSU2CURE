@@ -16,7 +16,7 @@
 }
 
 .profName {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .match {
@@ -113,7 +113,7 @@
 }
 
 u {
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Ubuntu', sans-serif;
   margin-left: 15px;
   text-decoration: none;
@@ -228,4 +228,18 @@ u {
   margin-right: 2.5vw;
   margin-top: 10px;
   padding: 10px;
+}
+
+.sciInfo {
+  text-align: center;
+}
+
+.pd {
+  padding: 2px 4px 2px 0px;
+}
+
+p {
+  color: black;
+  font-size: 18px;
+  display: inline-grid;
 }

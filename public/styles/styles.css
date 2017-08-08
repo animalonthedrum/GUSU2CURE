@@ -522,8 +522,7 @@ table, td, th {
   border: 1px solid rgb(195, 194, 194);
 }
 
-p {
-  display: inline-grid;
+td {
   font-size: 16px;
 }
 
