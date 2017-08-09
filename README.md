@@ -1,3 +1,5 @@
+![GetUp SignUp](public/images/gusu-SIGNUP2.png)
+
 # GetUp StandUp: Peer Mentor Portal
 
 ## Issue(s)
@@ -15,3 +17,5 @@
 - CSS3
 - Bootstrap
 - SQL (PostgreSQL)
+- Filestack API
+- Twilio
