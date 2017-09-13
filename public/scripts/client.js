@@ -13,9 +13,9 @@ controller('visitUserPage', visitUserPage);
 
 myApp.config(function($routeProvider) {
   $routeProvider.when('/', {
-    template: '',
+    templateUrl: 'views/partials/register.html',
     controller: "gusuController"
-}).when('/register', {
+  }).when('/register', {
     templateUrl: "views/partials/register.html",
     controller: "registerController as lc"
   }).when('/signup', {
@@ -39,37 +39,39 @@ myApp.config(function($routeProvider) {
   }).when('/user', {
     templateUrl: "views/partials/user.html",
     controller: "userController as uc"
-}).when('/login', {
+  }).when('/login', {
     templateUrl: "views/partials/login.html",
     controller: "loginController as lc"
-}).when('/visit', {
-      templateUrl: "views/partials/visitUserPage.html",
-      controller: "visitUserPage as vc"
-    });
+  }).when('/visit', {
+    templateUrl: "views/partials/visitUserPage.html",
+    controller: "visitUserPage as vc"
+  });
 });
 
 
 
-myApp.filter('phoneNumber', function () {
-        return function (number) {
-            if (!number) { return ''; }
-            number = String(number);
-            number = number.replace(/[^0-9]*/g, '');
-            var formattedNumber = number;
+myApp.filter('phoneNumber', function() {
+  return function(number) {
+    if (!number) {
+      return '';
+    }
+    number = String(number);
+    number = number.replace(/[^0-9]*/g, '');
+    var formattedNumber = number;
 
-            var c = (number[0] == '1') ? '1' : '';
-            number = number[0] == '1' ? number.slice(1) : number;
+    var c = (number[0] == '1') ? '1' : '';
+    number = number[0] == '1' ? number.slice(1) : number;
 
-            var area = number.substring(0, 3);
-            var front = number.substring(3, 6);
-            var end = number.substring(6, 10);
+    var area = number.substring(0, 3);
+    var front = number.substring(3, 6);
+    var end = number.substring(6, 10);
 
-            if (front) {
-                formattedNumber = (c + "(" + area + ") " + front);
-            }
-            if (end) {
-                formattedNumber += ("-" + end);
-            }
-            return formattedNumber;
-        };
-    });
+    if (front) {
+      formattedNumber = (c + "(" + area + ") " + front);
+    }
+    if (end) {
+      formattedNumber += ("-" + end);
+    }
+    return formattedNumber;
+  };
+});

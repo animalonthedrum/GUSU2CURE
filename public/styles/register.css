@@ -3,8 +3,8 @@
 .landPage {
   max-height: 100%;
   max-width: 100%;
-  width: 100vw;
-  height: 100vh;
+  /*width: 100vw;
+  height: 100;*/
   /*width: 80vw;
   margin-left: 10vw;
   margin-right: 10vw;*/
@@ -41,12 +41,13 @@
 .inputs {
   margin-bottom: 20px;
   margin-top: 20px;
-  /*float: right;*/
-  margin-left: 3em;
+  float: right;
+  /*margin-left: 3em;*/
   border-radius: 5px;
   border: solid #9a252b;
   border-width: thin;
   border-left: none;
+  /*float: right;*/
   /*margin-right: 100px;*/
   padding: 40px;
   max-height: 100%;
@@ -96,7 +97,7 @@
 .loginBox {
   margin-bottom: 20px;
   margin-top: 20px;
-  float: left;
+  /*float: left;*/
   border-radius: 5px;
   border: solid #9a252b;
   border-width: thin;
@@ -117,6 +118,7 @@
   margin-top: 5px;
   background-color: transparent;
   max-height: 100%;
+  /*float: right;*/
 }
 
 
@@ -131,4 +133,22 @@
 .signupLogo {
   height: 275px;
   width: 275px;
+}
+
+.feedback {
+  text-align: center;
+  font-size: 24px;
+  border-radius: 5px;
+  border: solid #9a252b;
+  border-width: thin;
+  background-color: white;
+  padding: 10px;
+  margin-left: 2em;
+  /*margin-bottom: 1em;*/
+}
+
+.feed {
+  text-align: center;
+  font-size: 16px;
+  margin-left: 2em;
 }
