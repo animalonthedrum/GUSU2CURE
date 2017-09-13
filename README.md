@@ -1,5 +1,4 @@
-![GetUp SignUp](public/images/gusu-SIGNUP2.png)
-
+![GetUp SignUp logo](/images/logo.png)
 # GetUp StandUp: Peer Mentor Portal
 
 ## Issue(s)
