@@ -15,7 +15,7 @@
     "angular-route": "^1.6.5",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "bootstrap-ui": "^2.3.3",
     "express": "^4.15.3",
     "express-session": "^1.15.4",
